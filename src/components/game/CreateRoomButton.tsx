@@ -73,7 +73,7 @@ export function CreateRoomButton({ gameId, accentColor }: CreateRoomButtonProps)
       <button
         onClick={handleCreateRoom}
         disabled={isCreating}
-        className="inline-flex h-12 items-center gap-2 rounded-xl px-8 text-base font-semibold text-white transition-all hover:shadow-xl active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed"
+        className="inline-flex h-12 cursor-pointer items-center gap-2 rounded-xl px-8 text-base font-semibold text-white transition-all hover:shadow-xl active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed"
         style={{
           backgroundColor: accentColor,
           boxShadow: `0 0 20px ${accentColor}33`,

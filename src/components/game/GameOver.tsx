@@ -202,7 +202,7 @@ export function GameOver({
             onClick={onRematch}
             disabled={hasRequestedRematch}
             className={cn(
-              "inline-flex w-full items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold transition-all active:translate-y-px",
+              "inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold transition-all active:translate-y-px",
               hasRequestedRematch
                 ? "bg-violet/15 text-violet ring-1 ring-violet/30"
                 : "bg-violet text-white shadow-lg shadow-violet/25 hover:bg-violet/90"
@@ -217,7 +217,7 @@ export function GameOver({
 
         <button
           onClick={onBackToGames}
-          className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-white/5 px-5 py-3 text-sm font-medium text-text-secondary transition-all hover:bg-white/10 hover:text-foreground active:translate-y-px"
+          className="inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg bg-white/5 px-5 py-3 text-sm font-medium text-text-secondary transition-all hover:bg-white/10 hover:text-foreground active:translate-y-px"
         >
           <ArrowLeft className="h-4 w-4" />
           Back to Games

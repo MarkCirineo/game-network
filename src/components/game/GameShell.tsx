@@ -7,6 +7,7 @@
 "use client";
 
 import { useEffect, useState, useMemo } from "react";
+import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { useGameSocket } from "@/lib/ws/client";
 import { useGameStore } from "@/lib/stores/gameStore";
@@ -46,6 +47,7 @@ export function GameShell({
   maxPlayers,
   GameComponent,
 }: GameShellProps) {
+  const router = useRouter();
   const [playerName, setPlayerName] = useState("");
   const [hasJoined, setHasJoined] = useState(false);
   const [nameInput, setNameInput] = useState("");
@@ -259,7 +261,7 @@ export function GameShell({
                   onRematch={() =>
                     sendMessage({ type: "rematch_request" })
                   }
-                  onBackToGames={() => {}}
+                  onBackToGames={() => router.push("/games")}
                   rematchRequests={rematchRequests}
                 />
               </motion.div>
