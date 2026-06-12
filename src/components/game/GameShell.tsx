@@ -186,10 +186,10 @@ export function GameShell({
       {/* Ad slot — top */}
       <AdSlot position="top" className="mx-auto max-w-6xl" />
 
-      {/* Main content area */}
-      <div className="mx-auto flex w-full max-w-6xl flex-1 gap-0 px-4 py-4 lg:gap-6">
-        {/* Sidebar (desktop only) */}
-        <aside className="hidden w-64 shrink-0 space-y-4 lg:block">
+      {/* Main content area — game is always centered */}
+      <div className="relative mx-auto flex w-full max-w-6xl flex-1 px-4 py-4">
+        {/* Floating sidebar (desktop only) — doesn't affect game centering */}
+        <aside className="absolute left-4 top-4 hidden w-56 space-y-4 lg:block">
           <PlayerList
             players={players}
             spectators={spectators}
@@ -200,8 +200,8 @@ export function GameShell({
           {phase !== "finished" && <InvitePanel roomCode={roomCode} />}
         </aside>
 
-        {/* Game area */}
-        <div className="flex flex-1 flex-col">
+        {/* Game area — always centered */}
+        <div className="mx-auto flex w-full max-w-lg flex-col">
           <AnimatePresence mode="wait">
             {phase === "waiting" && (
               <motion.div
