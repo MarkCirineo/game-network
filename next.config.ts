@@ -23,6 +23,18 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+
+  // WSL: filesystem events don't propagate, so use polling for HMR
+  webpack: (config, { dev }) => {
+    if (dev) {
+      config.watchOptions = {
+        ...config.watchOptions,
+        poll: 1000,
+        aggregateTimeout: 300,
+      };
+    }
+    return config;
+  },
 };
 
 export default nextConfig;
