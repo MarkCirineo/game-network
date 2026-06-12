@@ -1,0 +1,40 @@
+services:
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - web
+      - gameserver
+    restart: unless-stopped
+    networks:
+      - arcadekit
+
+  web:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.web
+    environment:
+      - NODE_ENV=production
+      - GAME_SERVER_INTERNAL_URL=http://gameserver:3001
+    restart: unless-stopped
+    networks:
+      - arcadekit
+
+  gameserver:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.gameserver
+    environment:
+      - NODE_ENV=production
+      - PORT=3001
+    restart: unless-stopped
+    networks:
+      - arcadekit
+
+networks:
+  arcadekit:
+    driver: bridge
