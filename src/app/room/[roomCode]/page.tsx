@@ -17,6 +17,32 @@ type Props = {
   params: Promise<{ roomCode: string }>;
 };
 
+/**
+ * Fetch room info with fallback.
+ * Tries the Next.js API proxy first, then the game server directly.
+ */
+async function fetchRoomInfoWithFallback(roomCode: string) {
+  // Try Next.js API first
+  try {
+    const res = await fetch(`/api/rooms/${roomCode}`);
+    if (res.ok) {
+      return await res.json();
+    }
+  } catch {
+    // API proxy failed, try direct
+  }
+
+  // Fallback: call game server directly via WS_URL
+  const wsUrl = process.env.NEXT_PUBLIC_WS_URL || "ws://localhost:3001";
+  const httpUrl = wsUrl.replace(/^ws/, "http");
+  
+  const res = await fetch(`${httpUrl}/room-info/${roomCode.toUpperCase()}`);
+  if (!res.ok) {
+    throw new Error(res.status === 404 ? "Room not found" : "Server error");
+  }
+  return await res.json();
+}
+
 export default function RoomPage({ params }: Props) {
   const { roomCode } = use(params);
   const [roomInfo, setRoomInfo] = useState<{
@@ -30,19 +56,15 @@ export default function RoomPage({ params }: Props) {
   useEffect(() => {
     async function fetchRoomInfo() {
       try {
-        const res = await fetch(`/api/rooms/${roomCode}`);
-        if (!res.ok) {
-          if (res.status === 404) {
-            setError("Room not found. It may have expired.");
-          } else {
-            setError("Failed to load room information.");
-          }
-          return;
-        }
-        const data = await res.json();
+        const data = await fetchRoomInfoWithFallback(roomCode);
         setRoomInfo(data);
-      } catch {
-        setError("Failed to connect. Please check your internet connection.");
+      } catch (err) {
+        const msg = err instanceof Error ? err.message : "Unknown error";
+        if (msg.includes("not found")) {
+          setError("Room not found. It may have expired.");
+        } else {
+          setError("Failed to load room information.");
+        }
       } finally {
         setLoading(false);
       }

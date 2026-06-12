@@ -5,11 +5,11 @@
 // ============================================================
 
 import type { ComponentType } from 'react';
-import type { PlayerInfo, SpectatorInfo, GameStatus } from '../../shared/messages';
+import type { PlayerInfo, SpectatorInfo, GameStatus, RoomPhase } from '../../shared/messages';
 import type { GameCategory, PartnerGame } from '../../shared/gameTypes';
 
 // Re-export shared types for convenience
-export type { PlayerInfo, SpectatorInfo, GameStatus, GameCategory, PartnerGame };
+export type { PlayerInfo, SpectatorInfo, GameStatus, GameCategory, PartnerGame, RoomPhase };
 
 // ------------------------------------------------------------
 // Game Definition — the manifest for a game module
@@ -66,5 +66,5 @@ export interface GameComponentProps<TState = any, TAction = any> {
   /** Dispatch a game action to the server */
   sendAction: (action: TAction) => void;
   /** Current room phase */
-  phase: 'lobby' | 'playing' | 'finished';
+  phase: RoomPhase;
 }

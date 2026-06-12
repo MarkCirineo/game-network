@@ -96,8 +96,6 @@ export type ErrorCode =
 
 export interface CreateRoomRequest {
   gameId: string;
-  playerName: string;
-  sessionToken: string;
 }
 
 export interface CreateRoomResponse {

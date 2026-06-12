@@ -6,7 +6,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight, Clock, Users } from "lucide-react";
+import { Clock, Users } from "lucide-react";
+import { CreateRoomButton } from "@/components/game/CreateRoomButton";
 
 // Static game data for SSR (avoids importing client-side registry)
 const gameData: Record<
@@ -138,17 +139,7 @@ export default async function GameDetailPage({ params }: Props) {
 
         {/* Create Room CTA */}
         <div className="mt-8 flex justify-center">
-          <Link
-            href={`/api/rooms/create?gameId=${game.id}`}
-            className="inline-flex h-12 items-center gap-2 rounded-xl px-8 text-base font-semibold text-white transition-all hover:shadow-xl active:scale-[0.98]"
-            style={{
-              backgroundColor: game.accentColor,
-              boxShadow: `0 0 20px ${game.accentColor}33`,
-            }}
-          >
-            Create Room
-            <ArrowRight className="h-4 w-4" />
-          </Link>
+          <CreateRoomButton gameId={game.id} accentColor={game.accentColor} />
         </div>
 
         {/* Rules */}

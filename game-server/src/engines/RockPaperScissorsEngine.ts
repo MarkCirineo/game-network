@@ -27,9 +27,9 @@ export interface RPSState {
   /** Round phase: choosing = waiting for picks, reveal = showing results */
   phase: 'choosing' | 'reveal';
   /** Result of the last completed round (for UI display) */
-  lastRoundResult?: {
+  lastResult?: {
     choices: Record<string, RPSChoice>;
-    winnerId: string | null; // null = tie
+    winner: string | null; // null = tie
   };
 }
 
@@ -123,9 +123,9 @@ export class RockPaperScissorsEngine extends GameEngine {
       newScores[roundWinner] = (newScores[roundWinner] || 0) + 1;
     }
 
-    const lastRoundResult = {
+    const lastResult = {
       choices: { [p1]: p1Choice, [p2]: p2Choice } as Record<string, RPSChoice>,
-      winnerId: roundWinner,
+      winner: roundWinner,
     };
 
     // Check if match is over (someone reached maxRounds wins)
@@ -138,7 +138,7 @@ export class RockPaperScissorsEngine extends GameEngine {
         choices: newChoices,
         scores: newScores,
         phase: 'reveal',
-        lastRoundResult,
+        lastResult,
       };
     }
 
@@ -149,7 +149,7 @@ export class RockPaperScissorsEngine extends GameEngine {
       scores: newScores,
       round: s.round + 1,
       phase: 'choosing',
-      lastRoundResult,
+      lastResult,
     };
   }
 

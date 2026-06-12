@@ -20,11 +20,14 @@ export interface TicTacToeState {
   players: [string, string];
   /** Total moves made so far */
   moveCount: number;
+  /** Indices of the winning line, or null if no winner yet */
+  winningLine: number[] | null;
 }
 
 export interface TicTacToeAction {
+  type: 'place';
   /** Cell index 0–8 (left-to-right, top-to-bottom) */
-  cell: number;
+  cellIndex: number;
 }
 
 // The 8 winning lines (indices into the 9-cell board)
@@ -54,6 +57,7 @@ export class TicTacToeEngine extends GameEngine {
       currentTurn: players[0].id,
       players: [players[0].id, players[1].id],
       moveCount: 0,
+      winningLine: null,
     };
   }
 
@@ -65,12 +69,12 @@ export class TicTacToeEngine extends GameEngine {
     if (s.currentTurn !== playerId) return false;
 
     // Cell index must be 0–8
-    if (typeof a.cell !== 'number' || a.cell < 0 || a.cell > 8 || !Number.isInteger(a.cell)) {
+    if (typeof a.cellIndex !== 'number' || a.cellIndex < 0 || a.cellIndex > 8 || !Number.isInteger(a.cellIndex)) {
       return false;
     }
 
     // Cell must be empty
-    if (s.board[a.cell] !== null) return false;
+    if (s.board[a.cellIndex] !== null) return false;
 
     return true;
   }
@@ -81,16 +85,26 @@ export class TicTacToeEngine extends GameEngine {
 
     // Clone board (immutable update)
     const newBoard = [...s.board];
-    newBoard[a.cell] = playerId;
+    newBoard[a.cellIndex] = playerId;
 
     // Switch turn to the other player
     const nextTurn = s.players[0] === playerId ? s.players[1] : s.players[0];
+
+    // Check for a winning line after this move
+    let winningLine: number[] | null = null;
+    for (const [wa, wb, wc] of WIN_LINES) {
+      if (newBoard[wa] !== null && newBoard[wa] === newBoard[wb] && newBoard[wb] === newBoard[wc]) {
+        winningLine = [wa, wb, wc];
+        break;
+      }
+    }
 
     return {
       board: newBoard,
       currentTurn: nextTurn,
       players: s.players,
       moveCount: s.moveCount + 1,
+      winningLine,
     };
   }
 

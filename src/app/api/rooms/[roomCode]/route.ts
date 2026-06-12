@@ -4,7 +4,10 @@
 // ============================================================
 
 import { NextRequest, NextResponse } from "next/server";
-import { GAME_SERVER_URL } from "@/lib/constants";
+
+function getGameServerUrl(): string {
+  return process.env.GAME_SERVER_INTERNAL_URL || "http://127.0.0.1:3001";
+}
 
 type Props = {
   params: Promise<{ roomCode: string }>;
@@ -14,8 +17,9 @@ export async function GET(_request: NextRequest, { params }: Props) {
   const { roomCode } = await params;
 
   try {
+    const serverUrl = getGameServerUrl();
     const res = await fetch(
-      `${GAME_SERVER_URL}/room-info/${roomCode.toUpperCase()}`
+      `${serverUrl}/room-info/${roomCode.toUpperCase()}`
     );
 
     if (!res.ok) {
