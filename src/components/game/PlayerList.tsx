@@ -11,7 +11,7 @@ import type { PlayerInfo, SpectatorInfo, RoomPhase } from "../../../shared/messa
 
 // Rotating avatar color palette
 const AVATAR_COLORS = [
-  "bg-violet",
+  "bg-ember",
   "bg-cyan",
   "bg-pink",
   "bg-amber",
@@ -52,7 +52,7 @@ export function PlayerList({
             className={cn(
               "group flex items-center gap-2.5 rounded-lg px-2.5 py-1.5 transition-colors",
               isMe && "bg-white/[0.03]",
-              phase === "playing" && isMe && "ring-1 ring-violet/30"
+              phase === "playing" && isMe && "ring-1 ring-ember/30"
             )}
           >
             {/* Avatar with online indicator */}
@@ -93,7 +93,7 @@ export function PlayerList({
                 <span className="shrink-0 text-[10px] text-text-muted">(You)</span>
               )}
               {isHost && (
-                <span className="inline-flex shrink-0 items-center gap-0.5 rounded-full bg-violet/15 px-1.5 py-0.5 text-[10px] font-semibold text-violet">
+                <span className="inline-flex shrink-0 items-center gap-0.5 rounded-full bg-ember/15 px-1.5 py-0.5 text-[10px] font-semibold text-ember">
                   <Crown className="h-2.5 w-2.5" />
                   Host
                 </span>

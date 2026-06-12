@@ -12,7 +12,7 @@ export default function HomePage() {
       <section className="relative flex flex-col items-center justify-center px-4 pb-20 pt-16 text-center md:pb-28 md:pt-24">
         {/* Glow background */}
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          <div className="absolute left-1/2 top-0 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-violet/10 blur-[120px]" />
+          <div className="absolute left-1/2 top-0 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-ember/10 blur-[120px]" />
           <div className="absolute right-1/4 top-1/3 h-[300px] w-[400px] rounded-full bg-cyan/8 blur-[100px]" />
         </div>
 
@@ -38,7 +38,7 @@ export default function HomePage() {
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <Link
               href="/games"
-              className="inline-flex h-12 items-center gap-2 rounded-xl bg-violet px-8 text-base font-semibold text-white transition-all hover:bg-violet/90 hover:shadow-xl hover:shadow-violet/25 active:scale-[0.98]"
+              className="inline-flex h-12 items-center gap-2 rounded-xl bg-ember px-8 text-base font-semibold text-white transition-all hover:bg-ember/90 hover:shadow-xl hover:shadow-ember/25 active:scale-[0.98]"
             >
               Start Playing
               <ArrowRight className="h-4 w-4" />
@@ -71,8 +71,8 @@ export default function HomePage() {
                 title: "Pick a Game",
                 description:
                   "Choose from our collection of instant multiplayer games.",
-                color: "text-violet",
-                bg: "bg-violet/10",
+                color: "text-ember",
+                bg: "bg-ember/10",
               },
               {
                 step: "2",

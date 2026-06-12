@@ -97,7 +97,7 @@ export default function GamesPage() {
                   </span>
                 </div>
 
-                <div className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-violet transition-colors group-hover:text-violet/80">
+                <div className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-ember transition-colors group-hover:text-ember/80">
                   Play Now
                   <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
                 </div>

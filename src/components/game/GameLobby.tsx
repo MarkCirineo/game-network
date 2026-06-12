@@ -127,7 +127,7 @@ export function GameLobby({
               className={cn(
                 "inline-flex w-full items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold transition-all",
                 canStart
-                  ? "bg-violet text-white shadow-lg shadow-violet/25 hover:bg-violet/90 active:translate-y-px"
+                  ? "bg-ember text-white shadow-lg shadow-ember/25 hover:bg-ember/90 active:translate-y-px"
                   : "cursor-not-allowed bg-elevated text-text-muted"
               )}
             >
@@ -167,7 +167,7 @@ export function GameLobby({
         {[0, 1, 2].map((i) => (
           <span
             key={i}
-            className="h-1.5 w-1.5 rounded-full bg-violet/60"
+            className="h-1.5 w-1.5 rounded-full bg-ember/60"
             style={{
               animation: "pulse 1.4s ease-in-out infinite",
               animationDelay: `${i * 0.2}s`,

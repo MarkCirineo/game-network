@@ -25,7 +25,7 @@ interface GameOverProps {
 
 // Confetti colors matching the ArcadeKit palette
 const CONFETTI_COLORS = [
-  "#7C3AED", // violet
+  "#F97316", // ember
   "#06D6A0", // cyan
   "#F472B6", // pink
   "#F59E0B", // amber
@@ -162,7 +162,7 @@ export function GameOver({
                 key={playerId}
                 className={cn(
                   "flex items-center justify-between rounded-md px-2.5 py-1.5 text-sm",
-                  idx === 0 && "bg-violet/10"
+                  idx === 0 && "bg-ember/10"
                 )}
               >
                 <div className="flex items-center gap-2">
@@ -204,8 +204,8 @@ export function GameOver({
             className={cn(
               "inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold transition-all active:translate-y-px",
               hasRequestedRematch
-                ? "bg-violet/15 text-violet ring-1 ring-violet/30"
-                : "bg-violet text-white shadow-lg shadow-violet/25 hover:bg-violet/90"
+                ? "bg-ember/15 text-ember ring-1 ring-ember/30"
+                : "bg-ember text-white shadow-lg shadow-ember/25 hover:bg-ember/90"
             )}
           >
             <RotateCcw className="h-4 w-4" />

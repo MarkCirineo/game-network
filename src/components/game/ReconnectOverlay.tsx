@@ -50,7 +50,7 @@ export function ReconnectOverlay({ status, onRetry }: ReconnectOverlayProps) {
               {onRetry && (
                 <button
                   onClick={onRetry}
-                  className="mt-2 inline-flex items-center gap-2 rounded-lg bg-violet px-5 py-2.5 text-sm font-medium text-white transition-all hover:bg-violet/90 hover:shadow-lg hover:shadow-violet/25 active:translate-y-px"
+                  className="mt-2 inline-flex items-center gap-2 rounded-lg bg-ember px-5 py-2.5 text-sm font-medium text-white transition-all hover:bg-ember/90 hover:shadow-lg hover:shadow-ember/25 active:translate-y-px"
                 >
                   <RefreshCw className="h-4 w-4" />
                   Try Again
@@ -64,7 +64,7 @@ export function ReconnectOverlay({ status, onRetry }: ReconnectOverlayProps) {
                 <div
                   className={cn(
                     "h-10 w-10 rounded-full border-2 border-transparent animate-spin",
-                    "border-t-violet border-r-violet/30"
+                    "border-t-ember border-r-ember/30"
                   )}
                 />
               </div>

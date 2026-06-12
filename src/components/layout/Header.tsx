@@ -14,9 +14,9 @@ export function Header() {
         {/* Logo */}
         <Link
           href="/"
-          className="flex items-center gap-2 font-heading text-lg font-bold tracking-tight text-foreground transition-colors hover:text-violet"
+          className="flex items-center gap-2 font-heading text-lg font-bold tracking-tight text-foreground transition-colors hover:text-ember"
         >
-          <Gamepad2 className="h-5 w-5 text-violet" />
+          <Gamepad2 className="h-5 w-5 text-ember" />
           <span>ArcadeKit</span>
         </Link>
 
@@ -30,7 +30,7 @@ export function Header() {
           </Link>
           <Link
             href="/games"
-            className="inline-flex h-9 items-center rounded-lg bg-violet px-4 text-sm font-medium text-white transition-all hover:bg-violet/90 hover:shadow-lg hover:shadow-violet/25"
+            className="inline-flex h-9 items-center rounded-lg bg-ember px-4 text-sm font-medium text-white transition-all hover:bg-ember/90 hover:shadow-lg hover:shadow-ember/25"
           >
             Play Now
           </Link>
@@ -68,7 +68,7 @@ export function Header() {
           <Link
             href="/games"
             onClick={() => setMobileMenuOpen(false)}
-            className="mt-1 inline-flex h-9 items-center justify-center rounded-lg bg-violet px-4 text-sm font-medium text-white transition-all hover:bg-violet/90"
+            className="mt-1 inline-flex h-9 items-center justify-center rounded-lg bg-ember px-4 text-sm font-medium text-white transition-all hover:bg-ember/90"
           >
             Play Now
           </Link>

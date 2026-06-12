@@ -115,7 +115,7 @@ export function GameShell({
               Join {gameName}
             </h1>
             <p className="mt-1 text-sm text-text-secondary">
-              Room: <span className="font-mono font-bold text-violet">{roomCode}</span>
+              Room: <span className="font-mono font-bold text-ember">{roomCode}</span>
             </p>
           </div>
 
@@ -146,13 +146,13 @@ export function GameShell({
                 placeholder="Enter your name"
                 maxLength={20}
                 autoFocus
-                className="h-11 w-full rounded-lg border border-white/10 bg-white/5 px-4 text-foreground placeholder:text-text-muted focus:border-violet focus:outline-none focus:ring-1 focus:ring-violet"
+                className="h-11 w-full rounded-lg border border-white/10 bg-white/5 px-4 text-foreground placeholder:text-text-muted focus:border-ember focus:outline-none focus:ring-1 focus:ring-ember"
               />
             </div>
             <button
               type="submit"
               disabled={nameInput.trim().length < 1}
-              className="h-11 w-full rounded-lg bg-violet font-medium text-white transition-all hover:bg-violet/90 hover:shadow-lg hover:shadow-violet/25 disabled:opacity-50 disabled:hover:bg-violet disabled:hover:shadow-none"
+              className="h-11 w-full rounded-lg bg-ember font-medium text-white transition-all hover:bg-ember/90 hover:shadow-lg hover:shadow-ember/25 disabled:opacity-50 disabled:hover:bg-ember disabled:hover:shadow-none"
             >
               Join Game
             </button>

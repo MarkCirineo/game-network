@@ -14,7 +14,7 @@ export function Footer() {
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-3 px-4 py-8 sm:flex-row sm:justify-between">
         {/* Brand / Copyright */}
         <div className="flex items-center gap-2 text-sm text-text-secondary">
-          <Gamepad2 className="h-4 w-4 text-violet" />
+          <Gamepad2 className="h-4 w-4 text-ember" />
           <span>&copy; 2024–2025 ArcadeKit. All rights reserved.</span>
         </div>
 
@@ -26,7 +26,7 @@ export function Footer() {
         {/* Games link */}
         <Link
           href="/games"
-          className="text-sm font-medium text-text-secondary transition-colors hover:text-violet"
+          className="text-sm font-medium text-text-secondary transition-colors hover:text-ember"
         >
           Browse Games
         </Link>

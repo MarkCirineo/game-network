@@ -77,7 +77,7 @@ export default function RoomPage({ params }: Props) {
   if (loading) {
     return (
       <div className="flex min-h-[60vh] flex-col items-center justify-center">
-        <Loader2 className="h-8 w-8 animate-spin text-violet" />
+        <Loader2 className="h-8 w-8 animate-spin text-ember" />
         <p className="mt-4 text-sm text-text-secondary">Loading room...</p>
       </div>
     );
@@ -97,7 +97,7 @@ export default function RoomPage({ params }: Props) {
         </p>
         <Link
           href="/games"
-          className="mt-6 inline-flex h-10 items-center rounded-lg bg-violet px-6 text-sm font-medium text-white transition-all hover:bg-violet/90"
+          className="mt-6 inline-flex h-10 items-center rounded-lg bg-ember px-6 text-sm font-medium text-white transition-all hover:bg-ember/90"
         >
           Browse Games
         </Link>
@@ -116,7 +116,7 @@ export default function RoomPage({ params }: Props) {
         </h1>
         <Link
           href="/games"
-          className="mt-6 inline-flex h-10 items-center rounded-lg bg-violet px-6 text-sm font-medium text-white transition-all hover:bg-violet/90"
+          className="mt-6 inline-flex h-10 items-center rounded-lg bg-ember px-6 text-sm font-medium text-white transition-all hover:bg-ember/90"
         >
           Browse Games
         </Link>
