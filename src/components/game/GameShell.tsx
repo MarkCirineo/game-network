@@ -38,6 +38,35 @@ interface GameShellProps {
   optionsSchema?: GameOptionSchema[];
 }
 
+// Helpers to persist join state in sessionStorage (per-tab, survives remounts/HMR)
+function getSessionJoinKey(roomCode: string) {
+  return `arcadekit_joined_${roomCode}`;
+}
+
+function getPersistedJoin(roomCode: string): { name: string } | null {
+  if (typeof window === "undefined") return null;
+  try {
+    const raw = sessionStorage.getItem(getSessionJoinKey(roomCode));
+    if (!raw) return null;
+    return JSON.parse(raw);
+  } catch {
+    return null;
+  }
+}
+
+function persistJoin(roomCode: string, name: string) {
+  if (typeof window === "undefined") return;
+  sessionStorage.setItem(
+    getSessionJoinKey(roomCode),
+    JSON.stringify({ name })
+  );
+}
+
+function clearPersistedJoin(roomCode: string) {
+  if (typeof window === "undefined") return;
+  sessionStorage.removeItem(getSessionJoinKey(roomCode));
+}
+
 export function GameShell({
   roomCode,
   gameId,
@@ -50,8 +79,15 @@ export function GameShell({
   optionsSchema,
 }: GameShellProps) {
   const router = useRouter();
-  const [playerName, setPlayerName] = useState("");
-  const [hasJoined, setHasJoined] = useState(false);
+
+  // Initialize from persisted join state (survives HMR / accidental remounts)
+  const [playerName, setPlayerName] = useState(() => {
+    const persisted = getPersistedJoin(roomCode);
+    return persisted?.name ?? "";
+  });
+  const [hasJoined, setHasJoined] = useState(() => {
+    return getPersistedJoin(roomCode) !== null;
+  });
   const [nameInput, setNameInput] = useState("");
   const [gameOptions, setGameOptions] = useState<Record<string, unknown>>(() => {
     // Initialize from schema defaults
@@ -82,7 +118,6 @@ export function GameShell({
   const gameState = useGameStore((s) => s.gameState);
   const gameResult = useGameStore((s) => s.gameResult);
   const rematchRequests = useGameStore((s) => s.rematchRequests);
-  const reset = useGameStore((s) => s.reset);
 
   const sessionToken = useMemo(() => {
     if (typeof window === "undefined") return "";
@@ -97,12 +132,12 @@ export function GameShell({
     enabled: hasJoined && !!playerName,
   });
 
-  // Cleanup on unmount
+  // Reset store on true unmount (navigation away). Empty deps = only on unmount.
   useEffect(() => {
     return () => {
-      reset();
+      useGameStore.getState().reset();
     };
-  }, [reset]);
+  }, []);
 
   // Apply game accent color
   useEffect(() => {
@@ -111,6 +146,14 @@ export function GameShell({
       document.documentElement.style.removeProperty("--game-accent");
     };
   }, [accentColor]);
+
+  // Handle join — persist to sessionStorage
+  const handleJoin = (name: string) => {
+    setPlayerName(name);
+    savePlayerName(name);
+    persistJoin(roomCode, name);
+    setHasJoined(true);
+  };
 
   // Name entry screen
   if (!hasJoined) {
@@ -136,9 +179,7 @@ export function GameShell({
               e.preventDefault();
               const name = nameInput.trim();
               if (name.length >= 1 && name.length <= 20) {
-                setPlayerName(name);
-                savePlayerName(name);
-                setHasJoined(true);
+                handleJoin(name);
               }
             }}
             className="space-y-4"
@@ -276,7 +317,10 @@ export function GameShell({
                   onRematch={() =>
                     sendMessage({ type: "rematch_request" })
                   }
-                  onBackToGames={() => router.push("/games")}
+                  onBackToGames={() => {
+                    clearPersistedJoin(roomCode);
+                    router.push("/games");
+                  }}
                   rematchRequests={rematchRequests}
                 />
               </motion.div>

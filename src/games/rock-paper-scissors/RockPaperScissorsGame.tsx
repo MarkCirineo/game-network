@@ -114,68 +114,6 @@ function ScorePill({ name, score, isLeading }: { name: string; score: number; is
   );
 }
 
-// ── Reveal overlay ──────────────────────────────────────────
-
-function RevealOverlay({
-  lastResult,
-  gamePlayers,
-  getPlayerName,
-  myPlayerId,
-  isSpectator,
-}: {
-  lastResult: NonNullable<RPSState['lastResult']>;
-  gamePlayers: [string, string];
-  getPlayerName: (id: string) => string;
-  myPlayerId: string;
-  isSpectator: boolean;
-}) {
-  const isTie = lastResult.winner === null;
-
-  // Determine outcome variant for badge
-  const variant = (() => {
-    if (isSpectator) return isTie ? 'tie' as const : 'win' as const;
-    if (isTie) return 'tie' as const;
-    return lastResult.winner === myPlayerId ? 'win' as const : 'lose' as const;
-  })();
-
-  const badgeText = (() => {
-    if (isTie) return '🤝 Tie!';
-    if (isSpectator) return `${getPlayerName(lastResult.winner!)} wins!`;
-    return lastResult.winner === myPlayerId ? '🎉 You win!' : '😤 You lose!';
-  })();
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.95 }}
-      animate={{ opacity: 1, scale: 1 }}
-      exit={{ opacity: 0, scale: 0.95 }}
-      transition={{ duration: 0.3 }}
-      className="flex flex-col items-center gap-5"
-    >
-      {/* Reveal cards */}
-      <div className="flex items-center gap-4 sm:gap-8">
-        {gamePlayers.map((pid, i) => {
-          const choice = lastResult.choices[pid];
-          if (!choice) return null;
-          return (
-            <RevealCard
-              key={pid}
-              playerName={getPlayerName(pid)}
-              choice={choice}
-              isWinner={lastResult.winner === pid}
-              isTie={isTie}
-              delay={i * 0.25}
-            />
-          );
-        })}
-      </div>
-
-      {/* Outcome badge */}
-      <OutcomeBadge text={badgeText} variant={variant} />
-    </motion.div>
-  );
-}
-
 // ── Main Game Component ─────────────────────────────────────
 
 export default function RockPaperScissorsGame({
@@ -200,9 +138,11 @@ export default function RockPaperScissorsGame({
   const hasChosen = myChoice !== null;
 
   // ── Reveal overlay state ───────────────────────────────────
-  const [showReveal, setShowReveal] = useState(false);
+  // Track whether we're in the reveal phase.
+  // We use a timer to show the reveal for 2.5 seconds.
   const [revealResult, setRevealResult] = useState<RPSState['lastResult'] | undefined>(undefined);
   const lastResultRef = useRef<string | null>(null);
+  const revealTimerRef = useRef<ReturnType<typeof setTimeout>>(undefined);
 
   // Detect new lastResult and show the reveal overlay
   useEffect(() => {
@@ -213,17 +153,24 @@ export default function RockPaperScissorsGame({
     if (fingerprint === lastResultRef.current) return;
     lastResultRef.current = fingerprint;
 
-    // Show the reveal overlay
+    // Show the reveal overlay immediately (synchronous with the state update)
     setRevealResult(lastResult);
-    setShowReveal(true);
 
-    // Auto-dismiss after 2.5 seconds (unless game is over — let it show until GameOver takes over)
-    const timer = setTimeout(() => {
-      setShowReveal(false);
+    // Clear any existing timer
+    if (revealTimerRef.current) clearTimeout(revealTimerRef.current);
+
+    // Auto-dismiss after 2.5 seconds
+    revealTimerRef.current = setTimeout(() => {
+      setRevealResult(undefined);
     }, 2500);
 
-    return () => clearTimeout(timer);
+    return () => {
+      if (revealTimerRef.current) clearTimeout(revealTimerRef.current);
+    };
   }, [lastResult]);
+
+  // Derived: are we showing the reveal right now?
+  const showReveal = revealResult !== undefined;
 
   const getPlayerName = useCallback(
     (id: string) => {
@@ -243,10 +190,10 @@ export default function RockPaperScissorsGame({
 
   const handleChoice = useCallback(
     (choice: RPSChoice) => {
-      if (isSpectator || hasChosen || gamePhase !== 'choosing' || isGameOver) return;
+      if (isSpectator || hasChosen || gamePhase !== 'choosing' || isGameOver || showReveal) return;
       sendAction({ type: 'choose', choice });
     },
-    [isSpectator, hasChosen, gamePhase, isGameOver, sendAction],
+    [isSpectator, hasChosen, gamePhase, isGameOver, showReveal, sendAction],
   );
 
   // Determine status message
@@ -263,17 +210,33 @@ export default function RockPaperScissorsGame({
       if (myScore < oppScore) return '😔 You lost the match.';
       return '🤝 Match ended in a draw!';
     }
-    if (showReveal) return ''; // Overlay handles messaging during reveal
+    if (showReveal) return null; // Overlay handles messaging during reveal
     if (isSpectator) return 'Players are choosing…';
     if (hasChosen) return 'Waiting for opponent…';
     return 'Make your choice!';
   }, [isGameOver, showReveal, isSpectator, hasChosen, scores, myPlayerId, opponentId, getPlayerName]);
 
+  // Derive the reveal badge text and variant
+  const revealBadge = useMemo(() => {
+    if (!revealResult) return null;
+    const isTie = revealResult.winner === null;
+    const variant = (() => {
+      if (isSpectator) return isTie ? 'tie' as const : 'win' as const;
+      if (isTie) return 'tie' as const;
+      return revealResult.winner === myPlayerId ? 'win' as const : 'lose' as const;
+    })();
+    const text = (() => {
+      if (isTie) return '🤝 Tie!';
+      if (isSpectator) return `${getPlayerName(revealResult.winner!)} wins!`;
+      return revealResult.winner === myPlayerId ? '🎉 You win!' : '😤 You lose!';
+    })();
+    return { text, variant };
+  }, [revealResult, isSpectator, myPlayerId, getPlayerName]);
+
   return (
     <div className="flex flex-col items-center gap-6 px-4 py-6 sm:py-10">
       {/* ── Score header ──────────────────────────── */}
       <div className="flex w-full max-w-sm flex-col items-center gap-3">
-        {/* Scores */}
         <div className="flex w-full items-center justify-between">
           {gamePlayers.map((pid) => (
             <ScorePill
@@ -303,105 +266,125 @@ export default function RockPaperScissorsGame({
         </motion.div>
       )}
 
-      {/* ── Reveal overlay (shows for ALL rounds including ties) ── */}
-      <AnimatePresence mode="wait">
-        {showReveal && revealResult && (
-          <RevealOverlay
-            key="reveal"
-            lastResult={revealResult}
-            gamePlayers={gamePlayers}
-            getPlayerName={getPlayerName}
-            myPlayerId={myPlayerId}
-            isSpectator={isSpectator}
-          />
-        )}
-      </AnimatePresence>
-
-      {/* ── Choice buttons (choosing phase) ───────── */}
-      <AnimatePresence mode="wait">
-        {gamePhase === 'choosing' && !isGameOver && !showReveal && (
-          <motion.div
-            key="choices"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="flex flex-col items-center gap-5"
-          >
-            {/* Waiting spinner when already chosen */}
-            {hasChosen && !isSpectator && (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="flex flex-col items-center gap-3"
-              >
-                <motion.span
-                  className="text-5xl"
-                  animate={{ rotate: [0, 10, -10, 0] }}
-                  transition={{ repeat: Infinity, duration: 1.5 }}
-                >
-                  {getChoiceEmoji(myChoice!)}
-                </motion.span>
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <motion.span
-                    className="inline-block h-1.5 w-1.5 rounded-full bg-orange-400"
-                    animate={{ opacity: [1, 0.3, 1] }}
-                    transition={{ repeat: Infinity, duration: 1.2 }}
-                  />
-                  Locked in — waiting for opponent
-                </div>
-              </motion.div>
-            )}
-
-            {/* Choice buttons */}
-            {(!hasChosen || isSpectator) && (
-              <div className="flex gap-3 sm:gap-5">
-                {CHOICES.map(({ value, emoji, label }, i) => {
-                  const disabled = isSpectator || hasChosen;
+      {/* ── Central game area (reveal OR choices, never both) ── */}
+      <div className="flex min-h-[160px] flex-col items-center justify-center">
+        <AnimatePresence mode="wait">
+          {showReveal && revealResult ? (
+            /* ── Reveal overlay ── */
+            <motion.div
+              key="reveal"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.3 }}
+              className="flex flex-col items-center gap-5"
+            >
+              <div className="flex items-center gap-4 sm:gap-8">
+                {gamePlayers.map((pid, i) => {
+                  const choice = revealResult.choices[pid];
+                  if (!choice) return null;
                   return (
-                    <motion.button
-                      key={value}
-                      type="button"
-                      onClick={() => handleChoice(value)}
-                      disabled={disabled}
-                      initial={{ opacity: 0, y: 30 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: i * 0.08, type: 'spring', stiffness: 300, damping: 25 }}
-                      whileHover={!disabled ? { scale: 1.1, y: -4 } : undefined}
-                      whileTap={!disabled ? { scale: 0.92 } : undefined}
-                      className={cn(
-                        'group flex flex-col items-center gap-2 rounded-2xl border-2 px-5 py-4',
-                        'min-h-[100px] min-w-[90px] sm:min-h-[120px] sm:min-w-[110px]',
-                        'transition-all duration-200',
-                        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500/50',
-                        disabled
-                          ? 'cursor-default border-white/5 bg-white/[0.03] opacity-60'
-                          : 'cursor-pointer border-white/10 bg-white/5 hover:border-orange-400/50 hover:bg-orange-500/10',
-                      )}
-                    >
-                      <span className="text-4xl sm:text-5xl transition-transform duration-200 group-hover:scale-110">
-                        {emoji}
-                      </span>
-                      <span className="text-xs font-medium text-muted-foreground">{label}</span>
-                    </motion.button>
+                    <RevealCard
+                      key={pid}
+                      playerName={getPlayerName(pid)}
+                      choice={choice}
+                      isWinner={revealResult.winner === pid}
+                      isTie={revealResult.winner === null}
+                      delay={i * 0.25}
+                    />
                   );
                 })}
               </div>
-            )}
+              {revealBadge && (
+                <OutcomeBadge text={revealBadge.text} variant={revealBadge.variant} />
+              )}
+            </motion.div>
+          ) : gamePhase === 'choosing' && !isGameOver ? (
+            /* ── Choice buttons ── */
+            <motion.div
+              key="choices"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.25 }}
+              className="flex flex-col items-center gap-5"
+            >
+              {/* Waiting spinner when already chosen */}
+              {hasChosen && !isSpectator && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  className="flex flex-col items-center gap-3"
+                >
+                  <motion.span
+                    className="text-5xl"
+                    animate={{ rotate: [0, 10, -10, 0] }}
+                    transition={{ repeat: Infinity, duration: 1.5 }}
+                  >
+                    {getChoiceEmoji(myChoice!)}
+                  </motion.span>
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <motion.span
+                      className="inline-block h-1.5 w-1.5 rounded-full bg-orange-400"
+                      animate={{ opacity: [1, 0.3, 1] }}
+                      transition={{ repeat: Infinity, duration: 1.2 }}
+                    />
+                    Locked in — waiting for opponent
+                  </div>
+                </motion.div>
+              )}
 
-            {/* Spectator waiting indicator */}
-            {isSpectator && (
-              <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                <motion.span
-                  className="inline-block h-1.5 w-1.5 rounded-full bg-muted-foreground"
-                  animate={{ opacity: [1, 0.3, 1] }}
-                  transition={{ repeat: Infinity, duration: 1.2 }}
-                />
-                Players are choosing
-              </div>
-            )}
-          </motion.div>
-        )}
-      </AnimatePresence>
+              {/* Choice buttons */}
+              {(!hasChosen || isSpectator) && (
+                <div className="flex gap-3 sm:gap-5">
+                  {CHOICES.map(({ value, emoji, label }, i) => {
+                    const disabled = isSpectator || hasChosen;
+                    return (
+                      <motion.button
+                        key={value}
+                        type="button"
+                        onClick={() => handleChoice(value)}
+                        disabled={disabled}
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: i * 0.08, type: 'spring', stiffness: 300, damping: 25 }}
+                        whileHover={!disabled ? { scale: 1.1, y: -4 } : undefined}
+                        whileTap={!disabled ? { scale: 0.92 } : undefined}
+                        className={cn(
+                          'group flex flex-col items-center gap-2 rounded-2xl border-2 px-5 py-4',
+                          'min-h-[100px] min-w-[90px] sm:min-h-[120px] sm:min-w-[110px]',
+                          'transition-all duration-200',
+                          'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500/50',
+                          disabled
+                            ? 'cursor-default border-white/5 bg-white/[0.03] opacity-60'
+                            : 'cursor-pointer border-white/10 bg-white/5 hover:border-orange-400/50 hover:bg-orange-500/10',
+                        )}
+                      >
+                        <span className="text-4xl sm:text-5xl transition-transform duration-200 group-hover:scale-110">
+                          {emoji}
+                        </span>
+                        <span className="text-xs font-medium text-muted-foreground">{label}</span>
+                      </motion.button>
+                    );
+                  })}
+                </div>
+              )}
+
+              {/* Spectator waiting indicator */}
+              {isSpectator && (
+                <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                  <motion.span
+                    className="inline-block h-1.5 w-1.5 rounded-full bg-muted-foreground"
+                    animate={{ opacity: [1, 0.3, 1] }}
+                    transition={{ repeat: Infinity, duration: 1.2 }}
+                  />
+                  Players are choosing
+                </div>
+              )}
+            </motion.div>
+          ) : null}
+        </AnimatePresence>
+      </div>
 
       {/* ── Footer ────────────────────────────────── */}
       <div className="text-xs text-muted-foreground">

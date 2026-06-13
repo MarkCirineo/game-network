@@ -5,7 +5,7 @@
 
 "use client";
 
-import { useEffect, useRef, useCallback, useState } from "react";
+import { useEffect, useRef, useCallback } from "react";
 import { useGameStore, type ConnectionStatus } from "../stores/gameStore";
 import type { ClientMessage, ServerMessage } from "../../../shared/messages";
 import {
@@ -41,11 +41,38 @@ export function useGameSocket({
   const pingTimerRef = useRef<ReturnType<typeof setInterval>>(undefined);
   const mountedRef = useRef(true);
 
+  // Keep ALL mutable values in refs to avoid dependency churn
+  const roomCodeRef = useRef(roomCode);
+  const playerNameRef = useRef(playerName);
+  const sessionTokenRef = useRef(sessionToken);
+  const enabledRef = useRef(enabled);
+
+  roomCodeRef.current = roomCode;
+  playerNameRef.current = playerName;
+  sessionTokenRef.current = sessionToken;
+  enabledRef.current = enabled;
+
   const connectionStatus = useGameStore((s) => s.connectionStatus);
-  const setConnectionStatus = useGameStore((s) => s.setConnectionStatus);
-  const handleServerMessage = useGameStore((s) => s.handleServerMessage);
-  const setMyPlayerId = useGameStore((s) => s.setMyPlayerId);
-  const setIsSpectator = useGameStore((s) => s.setIsSpectator);
+
+  // Store zustand actions in refs so they don't cause re-renders of callbacks
+  const storeActionsRef = useRef({
+    setConnectionStatus: useGameStore.getState().setConnectionStatus,
+    handleServerMessage: useGameStore.getState().handleServerMessage,
+    setMyPlayerId: useGameStore.getState().setMyPlayerId,
+    setIsSpectator: useGameStore.getState().setIsSpectator,
+  });
+
+  // Keep store actions ref current (they're stable in Zustand, but this is defensive)
+  useEffect(() => {
+    return useGameStore.subscribe((state) => {
+      storeActionsRef.current = {
+        setConnectionStatus: state.setConnectionStatus,
+        handleServerMessage: state.handleServerMessage,
+        setMyPlayerId: state.setMyPlayerId,
+        setIsSpectator: state.setIsSpectator,
+      };
+    });
+  }, []);
 
   const sendMessage = useCallback((msg: ClientMessage) => {
     const ws = wsRef.current;
@@ -61,8 +88,29 @@ export function useGameSocket({
     [sendMessage]
   );
 
-  const connect = useCallback(() => {
-    if (!mountedRef.current || !enabled) return;
+  // All connection logic is ref-based — no React dependency churn
+  const scheduleReconnect = useRef(() => {
+    if (attemptRef.current >= WS_RECONNECT_MAX_ATTEMPTS) {
+      storeActionsRef.current.setConnectionStatus("disconnected");
+      return;
+    }
+
+    storeActionsRef.current.setConnectionStatus("reconnecting");
+
+    const delay = Math.min(
+      WS_RECONNECT_BASE_DELAY * Math.pow(2, attemptRef.current),
+      WS_RECONNECT_MAX_DELAY
+    );
+    const jitter = Math.random() * delay * 0.3;
+    attemptRef.current++;
+
+    reconnectTimerRef.current = setTimeout(() => {
+      connectFn.current();
+    }, delay + jitter);
+  });
+
+  const connectFn = useRef(() => {
+    if (!mountedRef.current || !enabledRef.current) return;
 
     // Clean up existing connection
     if (wsRef.current) {
@@ -75,16 +123,18 @@ export function useGameSocket({
       }
     }
 
-    setConnectionStatus(attemptRef.current === 0 ? "connecting" : "reconnecting");
+    const actions = storeActionsRef.current;
+    actions.setConnectionStatus(attemptRef.current === 0 ? "connecting" : "reconnecting");
 
-    const url = `${WS_URL}?roomCode=${roomCode}&playerName=${encodeURIComponent(playerName)}&sessionToken=${sessionToken}`;
+    const currentPlayerName = playerNameRef.current;
+    const url = `${WS_URL}?roomCode=${roomCodeRef.current}&playerName=${encodeURIComponent(currentPlayerName)}&sessionToken=${sessionTokenRef.current}`;
     const ws = new WebSocket(url);
     wsRef.current = ws;
 
     ws.onopen = () => {
       if (!mountedRef.current) return;
       attemptRef.current = 0;
-      setConnectionStatus("connected");
+      storeActionsRef.current.setConnectionStatus("connected");
 
       // Start ping interval
       pingTimerRef.current = setInterval(() => {
@@ -99,25 +149,25 @@ export function useGameSocket({
 
         // Handle connection identity from room_state
         if (msg.type === "room_state") {
-          // Find ourselves in the player list or spectator list
+          const currentActions = storeActionsRef.current;
           const asPlayer = msg.room.players.find(
-            (p) => p.name === playerName
+            (p) => p.name === currentPlayerName
           );
           if (asPlayer) {
-            setMyPlayerId(asPlayer.id);
-            setIsSpectator(false);
+            currentActions.setMyPlayerId(asPlayer.id);
+            currentActions.setIsSpectator(false);
           } else {
             const asSpectator = msg.room.spectators.find(
-              (s) => s.name === playerName
+              (s) => s.name === currentPlayerName
             );
             if (asSpectator) {
-              setMyPlayerId(asSpectator.id);
-              setIsSpectator(true);
+              currentActions.setMyPlayerId(asSpectator.id);
+              currentActions.setIsSpectator(true);
             }
           }
         }
 
-        handleServerMessage(msg);
+        storeActionsRef.current.handleServerMessage(msg);
       } catch (e) {
         console.error("[ArcadeKit] Failed to parse message:", e);
       }
@@ -126,41 +176,20 @@ export function useGameSocket({
     ws.onclose = () => {
       if (!mountedRef.current) return;
       clearInterval(pingTimerRef.current);
-      setConnectionStatus("disconnected");
-      scheduleReconnect();
+      storeActionsRef.current.setConnectionStatus("disconnected");
+      scheduleReconnect.current();
     };
 
     ws.onerror = () => {
       // onclose will fire after onerror
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [roomCode, playerName, sessionToken, enabled]);
+  });
 
-  const scheduleReconnect = useCallback(() => {
-    if (attemptRef.current >= WS_RECONNECT_MAX_ATTEMPTS) {
-      setConnectionStatus("disconnected");
-      return;
-    }
-
-    setConnectionStatus("reconnecting");
-
-    const delay = Math.min(
-      WS_RECONNECT_BASE_DELAY * Math.pow(2, attemptRef.current),
-      WS_RECONNECT_MAX_DELAY
-    );
-    const jitter = Math.random() * delay * 0.3;
-    attemptRef.current++;
-
-    reconnectTimerRef.current = setTimeout(() => {
-      connect();
-    }, delay + jitter);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [connect]);
-
+  // Single effect: connect when enabled, clean up on unmount
   useEffect(() => {
     mountedRef.current = true;
     if (enabled && roomCode && playerName && sessionToken) {
-      connect();
+      connectFn.current();
     }
 
     return () => {
@@ -175,7 +204,9 @@ export function useGameSocket({
         wsRef.current.close();
       }
     };
-  }, [connect, enabled, roomCode, playerName, sessionToken]);
+  // These are the ONLY real triggers: when the user joins (enabled/playerName change)
+  // or switches rooms (roomCode changes). sessionToken is per-tab, stable.
+  }, [enabled, roomCode, playerName, sessionToken]);
 
   return { sendMessage, connectionStatus, sendAction };
 }

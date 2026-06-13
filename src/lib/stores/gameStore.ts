@@ -104,9 +104,19 @@ export const useGameStore = create<GameStore>((set, get) => ({
     })),
 
   removePlayer: (playerId) =>
-    set((s) => ({
-      players: s.players.filter((p) => p.id !== playerId),
-    })),
+    set((s) => {
+      // During finished phase, keep the player so their name still shows on GameOver
+      if (s.phase === "finished") {
+        return {
+          players: s.players.map((p) =>
+            p.id === playerId ? { ...p, isConnected: false } : p
+          ),
+        };
+      }
+      return {
+        players: s.players.filter((p) => p.id !== playerId),
+      };
+    }),
 
   setPlayerReady: (playerId, isReady) =>
     set((s) => ({
