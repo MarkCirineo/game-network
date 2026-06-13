@@ -1,11 +1,12 @@
 // ============================================================
 // ArcadeKit — Rock-Paper-Scissors Engine
-// Simultaneous-choice game, best of 3 (first to 2 wins).
+// Simultaneous-choice game, configurable wins needed.
 // Both players submit choices, server reveals when both arrive.
 // ============================================================
 
 import { GameEngine } from '../GameEngine.js';
 import type { PlayerInfo, GameStatus } from '../../../shared/messages.js';
+import type { GameOptionSchema } from '../../../shared/gameOptions.js';
 
 // ------------------------------------------------------------
 // State shape
@@ -23,7 +24,7 @@ export interface RPSState {
   /** Current round number (1-based) */
   round: number;
   /** How many round wins needed to win the match (default: 2 for best-of-3) */
-  maxRounds: number;
+  winsNeeded: number;
   /** Round phase: choosing = waiting for picks, reveal = showing results */
   phase: 'choosing' | 'reveal';
   /** Result of the last completed round (for UI display) */
@@ -67,15 +68,37 @@ export class RockPaperScissorsEngine extends GameEngine {
   readonly minPlayers = 2;
   readonly maxPlayers = 2;
 
-  createInitialState(players: PlayerInfo[]): RPSState {
+  getDefaultOptions(): Record<string, unknown> {
+    return { winsNeeded: 2 };
+  }
+
+  getOptionsSchema(): GameOptionSchema[] {
+    return [
+      {
+        key: 'winsNeeded',
+        label: 'Wins Needed',
+        type: 'select',
+        options: [
+          { label: '1 win', value: 1 },
+          { label: '2 wins (Best of 3)', value: 2 },
+          { label: '3 wins (Best of 5)', value: 3 },
+          { label: '5 wins (Best of 9)', value: 5 },
+        ],
+        default: 2,
+      },
+    ];
+  }
+
+  createInitialState(players: PlayerInfo[], options?: Record<string, unknown>): RPSState {
     const p1 = players[0].id;
     const p2 = players[1].id;
+    const winsNeeded = (options?.winsNeeded as number) ?? 2;
     return {
       choices: { [p1]: null, [p2]: null },
       players: [p1, p2],
       scores: { [p1]: 0, [p2]: 0 },
       round: 1,
-      maxRounds: 2, // first to 2 wins (best-of-3)
+      winsNeeded,
       phase: 'choosing',
     };
   }
@@ -128,8 +151,8 @@ export class RockPaperScissorsEngine extends GameEngine {
       winner: roundWinner,
     };
 
-    // Check if match is over (someone reached maxRounds wins)
-    const matchOver = newScores[p1] >= s.maxRounds || newScores[p2] >= s.maxRounds;
+    // Check if match is over (someone reached winsNeeded)
+    const matchOver = newScores[p1] >= s.winsNeeded || newScores[p2] >= s.winsNeeded;
 
     if (matchOver) {
       // Stay in reveal phase with final scores; getGameStatus will report game over
@@ -138,6 +161,17 @@ export class RockPaperScissorsEngine extends GameEngine {
         choices: newChoices,
         scores: newScores,
         phase: 'reveal',
+        lastResult,
+      };
+    }
+
+    if (!roundWinner) {
+      // Tie — don't increment round, include lastResult for client animation
+      return {
+        ...s,
+        choices: { [p1]: null, [p2]: null },
+        scores: newScores,
+        phase: 'choosing',
         lastResult,
       };
     }
@@ -160,7 +194,7 @@ export class RockPaperScissorsEngine extends GameEngine {
     const p2 = s.players[1];
 
     // Check if someone reached the required number of wins
-    if (s.scores[p1] >= s.maxRounds) {
+    if (s.scores[p1] >= s.winsNeeded) {
       return {
         isOver: true,
         winnerId: p1,
@@ -168,7 +202,7 @@ export class RockPaperScissorsEngine extends GameEngine {
         reason: `Won ${s.scores[p1]}–${s.scores[p2]}`,
       };
     }
-    if (s.scores[p2] >= s.maxRounds) {
+    if (s.scores[p2] >= s.winsNeeded) {
       return {
         isOver: true,
         winnerId: p2,

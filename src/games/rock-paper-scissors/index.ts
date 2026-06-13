@@ -30,6 +30,20 @@ const rockPaperScissors: GameDefinition<RPSState, RPSAction> = {
     'If both players choose the same, the round is a tie.',
     'The player who wins the most rounds out of three wins the match.',
   ],
+  optionsSchema: [
+    {
+      key: 'winsNeeded',
+      label: 'First to',
+      type: 'select',
+      options: [
+        { label: '1 win', value: 1 },
+        { label: '2 wins (Best of 3)', value: 2 },
+        { label: '3 wins (Best of 5)', value: 3 },
+        { label: '5 wins (Best of 9)', value: 5 },
+      ],
+      default: 2,
+    },
+  ],
 };
 
 export default rockPaperScissors;

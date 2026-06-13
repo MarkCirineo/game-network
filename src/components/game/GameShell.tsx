@@ -23,7 +23,7 @@ import { ReconnectOverlay } from "./ReconnectOverlay";
 import { GameLobby } from "./GameLobby";
 import { GameOver } from "./GameOver";
 import { AdSlot } from "./AdSlot";
-import type { GameComponentProps } from "@/games/types";
+import type { GameComponentProps, GameOptionSchema } from "@/games/types";
 import type { ComponentType } from "react";
 
 interface GameShellProps {
@@ -35,6 +35,7 @@ interface GameShellProps {
   minPlayers: number;
   maxPlayers: number;
   GameComponent: ComponentType<GameComponentProps>;
+  optionsSchema?: GameOptionSchema[];
 }
 
 export function GameShell({
@@ -46,11 +47,22 @@ export function GameShell({
   minPlayers,
   maxPlayers,
   GameComponent,
+  optionsSchema,
 }: GameShellProps) {
   const router = useRouter();
   const [playerName, setPlayerName] = useState("");
   const [hasJoined, setHasJoined] = useState(false);
   const [nameInput, setNameInput] = useState("");
+  const [gameOptions, setGameOptions] = useState<Record<string, unknown>>(() => {
+    // Initialize from schema defaults
+    const defaults: Record<string, unknown> = {};
+    if (optionsSchema) {
+      for (const opt of optionsSchema) {
+        defaults[opt.key] = opt.default;
+      }
+    }
+    return defaults;
+  });
 
   // Get session token and saved name
   useEffect(() => {
@@ -220,7 +232,10 @@ export function GameShell({
                   minPlayers={minPlayers}
                   maxPlayers={maxPlayers}
                   onReady={() => sendMessage({ type: "player_ready" })}
-                  onStartGame={() => sendMessage({ type: "start_game" })}
+                  onStartGame={() => sendMessage({ type: "start_game", options: gameOptions })}
+                  optionsSchema={optionsSchema}
+                  gameOptions={gameOptions}
+                  onOptionsChange={setGameOptions}
                 />
               </motion.div>
             )}

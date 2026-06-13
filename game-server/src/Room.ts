@@ -74,6 +74,9 @@ export class Room {
   /** Player IDs that have requested a rematch */
   private rematchVotes: Set<string>;
 
+  /** Resolved game options for the current/last game */
+  private gameOptions: Record<string, unknown> = {};
+
   /** Order of player joins (for host migration) */
   private joinOrder: string[];
 
@@ -143,6 +146,7 @@ export class Room {
       hostId: this.hostId ?? '',
       gameState: this.gameState,
       createdAt: this.createdAt,
+      gameOptionsSchema: this.gameEngine.getOptionsSchema(),
     };
   }
 
@@ -382,7 +386,7 @@ export class Room {
         this.handlePlayerReady(playerId);
         break;
       case 'start_game':
-        this.handleStartGame(playerId);
+        this.handleStartGame(playerId, msg.options);
         break;
       case 'game_action':
         this.handleGameAction(playerId, msg.action);
@@ -436,7 +440,7 @@ export class Room {
     });
   }
 
-  private handleStartGame(playerId: string): void {
+  private handleStartGame(playerId: string, options?: Record<string, unknown>): void {
     // Only the host can start
     if (playerId !== this.hostId) {
       this.sendErrorToPlayer(playerId, 'NOT_HOST', 'Only the host can start the game');
@@ -463,9 +467,13 @@ export class Room {
     // No — convention: host clicking "Start" implies readiness. Check non-host players.
     // Simpler: just start. The host decides.
 
+    // Resolve options: merge user options with engine defaults
+    const defaults = this.gameEngine.getDefaultOptions();
+    this.gameOptions = { ...defaults, ...options };
+
     // Create initial game state
     const playerInfos = Array.from(this.players.values()).map((p) => this.toPlayerInfo(p));
-    this.gameState = this.gameEngine.createInitialState(playerInfos);
+    this.gameState = this.gameEngine.createInitialState(playerInfos, this.gameOptions);
     this.phase = 'playing';
 
     this.log('Game started');
@@ -534,7 +542,7 @@ export class Room {
 
     // Create fresh game state and switch back to playing
     const playerInfos = Array.from(this.players.values()).map((p) => this.toPlayerInfo(p));
-    this.gameState = this.gameEngine.createInitialState(playerInfos);
+    this.gameState = this.gameEngine.createInitialState(playerInfos, this.gameOptions);
     this.phase = 'playing';
 
     this.broadcast({ type: 'game_started', initialState: this.gameState });

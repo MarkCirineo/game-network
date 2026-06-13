@@ -7,9 +7,10 @@
 import type { ComponentType } from 'react';
 import type { PlayerInfo, SpectatorInfo, GameStatus, RoomPhase } from '../../shared/messages';
 import type { GameCategory, PartnerGame } from '../../shared/gameTypes';
+import type { GameOptionSchema } from '../../shared/gameOptions';
 
 // Re-export shared types for convenience
-export type { PlayerInfo, SpectatorInfo, GameStatus, GameCategory, PartnerGame, RoomPhase };
+export type { PlayerInfo, SpectatorInfo, GameStatus, GameCategory, PartnerGame, RoomPhase, GameOptionSchema };
 
 // ------------------------------------------------------------
 // Game Definition — the manifest for a game module
@@ -44,6 +45,8 @@ export interface GameDefinition<TState = any, TAction = any> {
   accentColor: string;
   /** Ordered list of rules shown to players */
   rules: string[];
+  /** Optional schema for configurable game options (shown in lobby) */
+  optionsSchema?: GameOptionSchema[];
 }
 
 // ------------------------------------------------------------

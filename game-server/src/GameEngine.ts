@@ -5,6 +5,7 @@
 // ============================================================
 
 import type { PlayerInfo, GameStatus } from '../../shared/messages.js';
+import type { GameOptionSchema } from '../../shared/gameOptions.js';
 
 /**
  * Abstract base class for game engines.
@@ -23,12 +24,23 @@ export abstract class GameEngine {
   /** Maximum players supported */
   abstract readonly maxPlayers: number;
 
+  /** Define available options for this game */
+  getDefaultOptions(): Record<string, unknown> {
+    return {};
+  }
+
+  /** Schema describing available options for the lobby UI */
+  getOptionsSchema(): GameOptionSchema[] {
+    return [];
+  }
+
   /**
    * Create the initial game state for a new round.
    * @param players - Array of players participating in this round
+   * @param options - Optional game configuration from the lobby
    * @returns The initial game state (shape is engine-specific)
    */
-  abstract createInitialState(players: PlayerInfo[]): unknown;
+  abstract createInitialState(players: PlayerInfo[], options?: Record<string, unknown>): unknown;
 
   /**
    * Validate whether an action is legal given the current state.

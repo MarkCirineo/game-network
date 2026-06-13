@@ -4,7 +4,7 @@
 // Rock Paper Scissors — Game UI Component
 // ============================================================
 
-import { useCallback, useMemo } from 'react';
+import { useCallback, useMemo, useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import type { GameComponentProps } from '@/games/types';
@@ -45,11 +45,13 @@ function RevealCard({
   playerName,
   choice,
   isWinner,
+  isTie,
   delay,
 }: {
   playerName: string;
   choice: RPSChoice;
   isWinner: boolean;
+  isTie: boolean;
   delay: number;
 }) {
   return (
@@ -62,13 +64,27 @@ function RevealCard({
         'min-w-[120px] sm:min-w-[140px]',
         isWinner
           ? 'border-orange-400 bg-orange-500/15 shadow-[0_0_24px_rgba(249,115,22,0.3)]'
-          : 'border-white/10 bg-white/5',
+          : isTie
+            ? 'border-amber-400/50 bg-amber-500/10'
+            : 'border-white/10 bg-white/5',
       )}
     >
       <motion.span
         className="text-5xl sm:text-6xl"
-        animate={isWinner ? { scale: [1, 1.15, 1] } : undefined}
-        transition={isWinner ? { repeat: Infinity, duration: 1.5 } : undefined}
+        animate={
+          isWinner
+            ? { scale: [1, 1.15, 1] }
+            : isTie
+              ? { rotate: [0, -5, 5, -5, 0] }
+              : undefined
+        }
+        transition={
+          isWinner
+            ? { repeat: Infinity, duration: 1.5 }
+            : isTie
+              ? { repeat: Infinity, duration: 0.8, ease: 'easeInOut' }
+              : undefined
+        }
       >
         {getChoiceEmoji(choice)}
       </motion.span>
@@ -98,6 +114,68 @@ function ScorePill({ name, score, isLeading }: { name: string; score: number; is
   );
 }
 
+// ── Reveal overlay ──────────────────────────────────────────
+
+function RevealOverlay({
+  lastResult,
+  gamePlayers,
+  getPlayerName,
+  myPlayerId,
+  isSpectator,
+}: {
+  lastResult: NonNullable<RPSState['lastResult']>;
+  gamePlayers: [string, string];
+  getPlayerName: (id: string) => string;
+  myPlayerId: string;
+  isSpectator: boolean;
+}) {
+  const isTie = lastResult.winner === null;
+
+  // Determine outcome variant for badge
+  const variant = (() => {
+    if (isSpectator) return isTie ? 'tie' as const : 'win' as const;
+    if (isTie) return 'tie' as const;
+    return lastResult.winner === myPlayerId ? 'win' as const : 'lose' as const;
+  })();
+
+  const badgeText = (() => {
+    if (isTie) return '🤝 Tie!';
+    if (isSpectator) return `${getPlayerName(lastResult.winner!)} wins!`;
+    return lastResult.winner === myPlayerId ? '🎉 You win!' : '😤 You lose!';
+  })();
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.95 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0.95 }}
+      transition={{ duration: 0.3 }}
+      className="flex flex-col items-center gap-5"
+    >
+      {/* Reveal cards */}
+      <div className="flex items-center gap-4 sm:gap-8">
+        {gamePlayers.map((pid, i) => {
+          const choice = lastResult.choices[pid];
+          if (!choice) return null;
+          return (
+            <RevealCard
+              key={pid}
+              playerName={getPlayerName(pid)}
+              choice={choice}
+              isWinner={lastResult.winner === pid}
+              isTie={isTie}
+              delay={i * 0.25}
+            />
+          );
+        })}
+      </div>
+
+      {/* Outcome badge */}
+      <OutcomeBadge text={badgeText} variant={variant} />
+    </motion.div>
+  );
+}
+
 // ── Main Game Component ─────────────────────────────────────
 
 export default function RockPaperScissorsGame({
@@ -112,8 +190,7 @@ export default function RockPaperScissorsGame({
     choices,
     players: gamePlayers,
     scores,
-    round,
-    maxRounds,
+    winsNeeded,
     phase: gamePhase,
     lastResult,
   } = gameState;
@@ -121,6 +198,32 @@ export default function RockPaperScissorsGame({
   const isGameOver = phase === 'finished';
   const myChoice = choices[myPlayerId] ?? null;
   const hasChosen = myChoice !== null;
+
+  // ── Reveal overlay state ───────────────────────────────────
+  const [showReveal, setShowReveal] = useState(false);
+  const [revealResult, setRevealResult] = useState<RPSState['lastResult'] | undefined>(undefined);
+  const lastResultRef = useRef<string | null>(null);
+
+  // Detect new lastResult and show the reveal overlay
+  useEffect(() => {
+    if (!lastResult) return;
+
+    // Fingerprint the result to detect changes
+    const fingerprint = JSON.stringify(lastResult);
+    if (fingerprint === lastResultRef.current) return;
+    lastResultRef.current = fingerprint;
+
+    // Show the reveal overlay
+    setRevealResult(lastResult);
+    setShowReveal(true);
+
+    // Auto-dismiss after 2.5 seconds (unless game is over — let it show until GameOver takes over)
+    const timer = setTimeout(() => {
+      setShowReveal(false);
+    }, 2500);
+
+    return () => clearTimeout(timer);
+  }, [lastResult]);
 
   const getPlayerName = useCallback(
     (id: string) => {
@@ -160,44 +263,16 @@ export default function RockPaperScissorsGame({
       if (myScore < oppScore) return '😔 You lost the match.';
       return '🤝 Match ended in a draw!';
     }
-    if (gamePhase === 'reveal' && lastResult) {
-      if (lastResult.winner === null) return '🤝 Tie round!';
-      return isSpectator
-        ? `${getPlayerName(lastResult.winner)} wins the round!`
-        : lastResult.winner === myPlayerId
-          ? '🎉 You won this round!'
-          : '😤 You lost this round.';
-    }
+    if (showReveal) return ''; // Overlay handles messaging during reveal
     if (isSpectator) return 'Players are choosing…';
     if (hasChosen) return 'Waiting for opponent…';
     return 'Make your choice!';
-  }, [isGameOver, gamePhase, lastResult, isSpectator, hasChosen, scores, myPlayerId, opponentId, getPlayerName]);
-
-  // Overall winner result variant
-  const resultVariant = useMemo(() => {
-    if (!isGameOver) {
-      if (gamePhase === 'reveal' && lastResult) {
-        if (lastResult.winner === null) return 'tie' as const;
-        return lastResult.winner === myPlayerId ? 'win' as const : 'lose' as const;
-      }
-      return null;
-    }
-    const myScore = scores[myPlayerId] ?? 0;
-    const oppScore = scores[opponentId] ?? 0;
-    if (myScore > oppScore) return 'win' as const;
-    if (myScore < oppScore) return 'lose' as const;
-    return 'tie' as const;
-  }, [isGameOver, gamePhase, lastResult, scores, myPlayerId, opponentId]);
+  }, [isGameOver, showReveal, isSpectator, hasChosen, scores, myPlayerId, opponentId, getPlayerName]);
 
   return (
     <div className="flex flex-col items-center gap-6 px-4 py-6 sm:py-10">
-      {/* ── Round & Score header ──────────────────── */}
+      {/* ── Score header ──────────────────────────── */}
       <div className="flex w-full max-w-sm flex-col items-center gap-3">
-        {/* Round indicator */}
-        <div className="rounded-full bg-white/5 px-4 py-1 text-xs font-medium text-muted-foreground">
-          Round {round} of {maxRounds}
-        </div>
-
         {/* Scores */}
         <div className="flex w-full items-center justify-between">
           {gamePlayers.map((pid) => (
@@ -212,54 +287,39 @@ export default function RockPaperScissorsGame({
       </div>
 
       {/* ── Status bar ────────────────────────────── */}
-      <motion.div
-        key={statusMessage}
-        initial={{ opacity: 0, y: -6 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="text-center"
-      >
-        {resultVariant && (isGameOver || gamePhase === 'reveal') ? (
-          <OutcomeBadge text={statusMessage} variant={isSpectator ? 'tie' : resultVariant} />
-        ) : (
+      {statusMessage && (
+        <motion.div
+          key={statusMessage}
+          initial={{ opacity: 0, y: -6 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-center"
+        >
           <p className={cn(
             'text-sm font-semibold',
             hasChosen ? 'text-muted-foreground' : 'text-foreground',
           )}>
             {statusMessage}
           </p>
-        )}
-      </motion.div>
+        </motion.div>
+      )}
 
-      {/* ── Reveal phase ──────────────────────────── */}
+      {/* ── Reveal overlay (shows for ALL rounds including ties) ── */}
       <AnimatePresence mode="wait">
-        {gamePhase === 'reveal' && lastResult && (
-          <motion.div
+        {showReveal && revealResult && (
+          <RevealOverlay
             key="reveal"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="flex items-center gap-4 sm:gap-8"
-          >
-            {gamePlayers.map((pid, i) => {
-              const choice = lastResult.choices[pid];
-              if (!choice) return null;
-              return (
-                <RevealCard
-                  key={pid}
-                  playerName={getPlayerName(pid)}
-                  choice={choice}
-                  isWinner={lastResult.winner === pid}
-                  delay={i * 0.25}
-                />
-              );
-            })}
-          </motion.div>
+            lastResult={revealResult}
+            gamePlayers={gamePlayers}
+            getPlayerName={getPlayerName}
+            myPlayerId={myPlayerId}
+            isSpectator={isSpectator}
+          />
         )}
       </AnimatePresence>
 
       {/* ── Choice buttons (choosing phase) ───────── */}
       <AnimatePresence mode="wait">
-        {gamePhase === 'choosing' && !isGameOver && (
+        {gamePhase === 'choosing' && !isGameOver && !showReveal && (
           <motion.div
             key="choices"
             initial={{ opacity: 0, y: 20 }}
@@ -345,7 +405,7 @@ export default function RockPaperScissorsGame({
 
       {/* ── Footer ────────────────────────────────── */}
       <div className="text-xs text-muted-foreground">
-        Best of {maxRounds}
+        Best of {winsNeeded * 2 - 1}
         {isSpectator && (
           <span className="ml-2 rounded-full bg-muted px-2 py-0.5 text-[10px] uppercase tracking-wider">
             Spectating

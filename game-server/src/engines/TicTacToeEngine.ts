@@ -51,7 +51,7 @@ export class TicTacToeEngine extends GameEngine {
   readonly minPlayers = 2;
   readonly maxPlayers = 2;
 
-  createInitialState(players: PlayerInfo[]): TicTacToeState {
+  createInitialState(players: PlayerInfo[], _options?: Record<string, unknown>): TicTacToeState {
     return {
       board: Array(9).fill(null) as (string | null)[],
       currentTurn: players[0].id,

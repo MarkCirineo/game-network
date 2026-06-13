@@ -11,10 +11,10 @@ export interface RPSState {
   players: [string, string];
   /** Cumulative scores keyed by player ID */
   scores: Record<string, number>;
-  /** Current round number (1-indexed) */
+  /** Current round number (1-indexed, only increments on decisive rounds) */
   round: number;
-  /** Total rounds to play */
-  maxRounds: number;
+  /** Number of round wins needed to win the match (e.g. 2 = best of 3) */
+  winsNeeded: number;
   /** 'choosing' = players picking, 'reveal' = showing results */
   phase: 'choosing' | 'reveal';
   /** Result of the last completed round (present during 'reveal' phase) */

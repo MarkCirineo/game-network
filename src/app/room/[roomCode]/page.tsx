@@ -134,6 +134,7 @@ export default function RoomPage({ params }: Props) {
       minPlayers={game.minPlayers}
       maxPlayers={game.maxPlayers}
       GameComponent={game.component}
+      optionsSchema={game.optionsSchema}
     />
   );
 }

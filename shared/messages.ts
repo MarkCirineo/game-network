@@ -3,6 +3,8 @@
 // Shared between client (Next.js) and game server
 // ============================================================
 
+import type { GameOptionSchema } from './gameOptions.js';
+
 // ------------------------------------------------------------
 // Player & Room Types (used in messages)
 // ------------------------------------------------------------
@@ -32,6 +34,7 @@ export interface RoomState {
   hostId: string;
   gameState?: unknown;
   createdAt: number;
+  gameOptionsSchema?: GameOptionSchema[];
 }
 
 export interface GameStatus {
@@ -49,7 +52,7 @@ export type ClientMessage =
   | { type: 'join_room'; roomCode: string; playerName: string; sessionToken: string }
   | { type: 'game_action'; action: unknown }
   | { type: 'player_ready' }
-  | { type: 'start_game' }
+  | { type: 'start_game'; options?: Record<string, unknown> }
   | { type: 'rematch_request' }
   | { type: 'ping' };
 

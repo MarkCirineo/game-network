@@ -166,9 +166,15 @@ export const useGameStore = create<GameStore>((set, get) => ({
       case "game_started":
         set({ phase: "playing", gameState: msg.initialState, gameResult: null, rematchRequests: new Set() });
         break;
-      case "game_over":
-        store.setGameResult(msg.result);
+      case "game_over": {
+        // Delay game_over processing so the reveal animation can play
+        const timer = setTimeout(() => {
+          store.setGameResult(msg.result);
+        }, 2500);
+        // Store the timer so it can be cleared on reset
+        set({ _gameOverTimer: timer } as Partial<GameStore>);
         break;
+      }
       case "host_changed":
         store.setHostId(msg.newHostId);
         break;
