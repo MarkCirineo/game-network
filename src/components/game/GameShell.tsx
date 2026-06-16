@@ -22,7 +22,7 @@ import { InvitePanel } from "./InvitePanel";
 import { ReconnectOverlay } from "./ReconnectOverlay";
 import { GameLobby } from "./GameLobby";
 import { GameOver } from "./GameOver";
-import { AdSlot } from "./AdSlot";
+
 import type { GameComponentProps, GameOptionSchema } from "@/games/types";
 import type { ComponentType } from "react";
 
@@ -236,8 +236,7 @@ export function GameShell({
       {/* Spectator banner */}
       {isSpectator && <SpectatorBanner spectatorCount={spectators.length} />}
 
-      {/* Ad slot — top */}
-      <AdSlot position="top" className="mx-auto max-w-6xl" />
+
 
       {/* Main content area — game is always centered */}
       <div className="relative mx-auto flex w-full max-w-6xl flex-1 px-4 py-4">
@@ -356,8 +355,7 @@ export function GameShell({
         </details>
       </div>
 
-      {/* Ad slot — bottom */}
-      <AdSlot position="bottom" className="mx-auto max-w-6xl" />
+
     </div>
   );
 }
