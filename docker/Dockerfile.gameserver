@@ -1,9 +1,9 @@
 # Stage 1: Build
 FROM node:20-alpine AS builder
 WORKDIR /app
-COPY game-server/package.json game-server/package-lock.json* ./game-server/
+COPY game-server/package.json game-server/yarn.lock* ./game-server/
 COPY shared/ ./shared/
-RUN cd game-server && npm ci
+RUN cd game-server && yarn install --frozen-lockfile
 COPY game-server/ ./game-server/
 RUN cd game-server && npx tsc
 
