@@ -1,187 +1,135 @@
 // ============================================================
-// ArcadeKit — Landing Page
+// ArcadeKit — Landing Page (Hybrid: compact hero + games grid)
 // ============================================================
 
 import Link from "next/link";
-import { ArrowRight, Users, Zap, Link as LinkIcon } from "lucide-react";
+import {
+  ArrowRight,
+  Users,
+  Clock,
+  ExternalLink,
+  Sparkles,
+} from "lucide-react";
+
+// Game data — mirrors registry.ts (server component can't import
+// the registry directly because it contains React component refs).
+const games = [
+  {
+    id: "tic-tac-toe",
+    emoji: "❌",
+    name: "Tic-Tac-Toe",
+    shortDescription: "Classic 3-in-a-row strategy",
+    players: "2 players",
+    duration: "1–2 min",
+    accentColor: "#3B82F6",
+    category: "Strategy",
+  },
+  {
+    id: "rock-paper-scissors",
+    emoji: "✊",
+    name: "Rock Paper Scissors",
+    shortDescription: "Best of 3 — outsmart your opponent",
+    players: "2 players",
+    duration: "~2 min",
+    accentColor: "#F97316",
+    category: "Quick",
+  },
+];
+
+const partnerGames = [
+  {
+    name: "Guess Who",
+    description: "Classic deduction — find the mystery character",
+    emoji: "🔍",
+    url: "https://playguesswho.net",
+    accentColor: "#8B5CF6",
+  },
+];
 
 export default function HomePage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative flex flex-col items-center justify-center px-4 pb-20 pt-16 text-center md:pb-28 md:pt-24">
-        {/* Glow background */}
+      {/* ── Compact Hero ─────────────────────────────────── */}
+      <section className="relative px-4 pb-4 pt-10 text-center md:pb-6 md:pt-14">
+        {/* Subtle ambient glow — much smaller than the old SaaS hero */}
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          <div className="absolute left-1/2 top-0 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-ember/10 blur-[120px]" />
-          <div className="absolute right-1/4 top-1/3 h-[300px] w-[400px] rounded-full bg-cyan/8 blur-[100px]" />
+          <div className="absolute left-1/2 top-0 h-[300px] w-[600px] -translate-x-1/2 rounded-full bg-ember/8 blur-[100px]" />
         </div>
 
-        <div className="relative z-10 mx-auto max-w-3xl">
-          {/* Badge */}
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm text-text-secondary backdrop-blur-sm">
-            <span className="inline-block h-2 w-2 rounded-full bg-cyan animate-pulse" />
-            Instant multiplayer games
-          </div>
-
-          <h1 className="font-heading text-4xl font-bold leading-tight tracking-tight md:text-6xl lg:text-7xl">
+        <div className="relative z-10 mx-auto max-w-2xl">
+          <h1 className="font-heading text-3xl font-bold leading-tight tracking-tight md:text-4xl">
             Play Games With{" "}
             <span className="gradient-text">Friends</span>
-            <br />
-            In Seconds
           </h1>
-
-          <p className="mx-auto mt-5 max-w-xl text-base text-text-secondary md:text-lg">
-            No downloads. No accounts. Just create a room, share the link, and
-            start playing. Instant multiplayer fun in your browser.
+          <p className="mx-auto mt-2 max-w-md text-sm text-text-secondary md:text-base">
+            No downloads, no sign-ups. Pick a game, share the link, play
+            instantly.
           </p>
-
-          <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-            <Link
-              href="/games"
-              className="inline-flex h-12 items-center gap-2 rounded-xl bg-ember px-8 text-base font-semibold text-white transition-all hover:bg-ember/90 hover:shadow-xl hover:shadow-ember/25 active:scale-[0.98]"
-            >
-              Start Playing
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-            <Link
-              href="/games"
-              className="inline-flex h-12 items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-8 text-base font-medium text-text-secondary transition-all hover:bg-white/10 hover:text-foreground"
-            >
-              Browse Games
-            </Link>
-          </div>
         </div>
       </section>
 
-      {/* How It Works */}
-      <section className="border-t border-white/5 px-4 py-16 md:py-24">
+      {/* ── Games Grid ───────────────────────────────────── */}
+      <section className="px-4 pb-8 pt-4 md:pb-12 md:pt-6">
         <div className="mx-auto max-w-4xl">
-          <h2 className="text-center font-heading text-2xl font-bold md:text-3xl">
-            How It Works
-          </h2>
-          <p className="mt-2 text-center text-text-secondary">
-            Three steps. Zero friction.
-          </p>
-
-          <div className="mt-12 grid gap-8 md:grid-cols-3">
-            {[
-              {
-                step: "1",
-                icon: Zap,
-                title: "Pick a Game",
-                description:
-                  "Choose from our collection of instant multiplayer games.",
-                color: "text-ember",
-                bg: "bg-ember/10",
-              },
-              {
-                step: "2",
-                icon: LinkIcon,
-                title: "Share the Link",
-                description:
-                  "Send your unique room link to friends — or have them scan the QR code.",
-                color: "text-cyan",
-                bg: "bg-cyan/10",
-              },
-              {
-                step: "3",
-                icon: Users,
-                title: "Play Instantly",
-                description:
-                  "Everyone joins in their browser. No downloads, no sign-ups required.",
-                color: "text-pink",
-                bg: "bg-pink/10",
-              },
-            ].map((item) => (
-              <div
-                key={item.step}
-                className="group relative rounded-2xl border border-white/5 bg-surface p-6 transition-all hover:border-white/10 hover:bg-elevated"
-              >
-                <div
-                  className={`inline-flex h-10 w-10 items-center justify-center rounded-xl ${item.bg}`}
-                >
-                  <item.icon className={`h-5 w-5 ${item.color}`} />
-                </div>
-                <h3 className="mt-4 font-heading text-lg font-semibold">
-                  {item.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-text-secondary">
-                  {item.description}
-                </p>
-              </div>
-            ))}
+          {/* Section label */}
+          <div className="mb-5 flex items-center gap-2">
+            <Sparkles className="h-4 w-4 text-ember" />
+            <h2 className="text-sm font-semibold uppercase tracking-wider text-text-muted">
+              Games
+            </h2>
           </div>
-        </div>
-      </section>
 
-      {/* Games Preview */}
-      <section className="border-t border-white/5 px-4 py-16 md:py-24">
-        <div className="mx-auto max-w-4xl">
-          <h2 className="text-center font-heading text-2xl font-bold md:text-3xl">
-            Ready to Play
-          </h2>
-          <p className="mt-2 text-center text-text-secondary">
-            Jump into any game in seconds.
-          </p>
-
-          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              {
-                emoji: "❌",
-                name: "Tic Tac Toe",
-                desc: "Classic strategy — get three in a row",
-                href: "/games/tic-tac-toe",
-                color: "#3B82F6",
-                players: "2 players",
-                time: "~2 min",
-              },
-              {
-                emoji: "✊",
-                name: "Rock Paper Scissors",
-                desc: "Best of 3 — outsmart your opponent",
-                href: "/games/rock-paper-scissors",
-                color: "#F97316",
-                players: "2 players",
-                time: "~2 min",
-              },
-              {
-                emoji: "🔍",
-                name: "Guess Who",
-                desc: "Classic deduction — find the mystery character",
-                href: "https://playguesswho.net",
-                color: "#F59E0B",
-                players: "2 players",
-                time: "~10 min",
-                external: true,
-              },
-            ].map((game) => (
+          <div className="stagger-children grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {games.map((game) => (
               <Link
-                key={game.name}
-                href={game.href}
-                target={game.external ? "_blank" : undefined}
-                rel={game.external ? "noopener noreferrer" : undefined}
-                className="group relative overflow-hidden rounded-2xl border border-white/5 bg-surface p-6 transition-all hover:border-white/10 hover:shadow-xl"
+                key={game.id}
+                href={`/games/${game.id}`}
+                className="group relative overflow-hidden rounded-2xl border border-white/5 bg-surface p-6 transition-all duration-200 hover:border-white/10 hover:shadow-2xl hover:-translate-y-0.5"
                 style={
                   {
-                    "--card-accent": game.color,
+                    "--card-accent": game.accentColor,
                   } as React.CSSProperties
                 }
               >
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[var(--card-accent)]/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-                <span className="text-3xl">{game.emoji}</span>
-                <h3 className="mt-3 font-heading text-lg font-semibold">
-                  {game.name}
-                  {game.external && (
-                    <span className="ml-2 text-xs font-normal text-text-muted">
-                      ↗
+                {/* Hover gradient overlay */}
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[var(--card-accent)]/8 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+
+                {/* Accent top-border line */}
+                <div
+                  className="absolute left-0 right-0 top-0 h-[2px] opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                  style={{ background: game.accentColor }}
+                />
+
+                <div className="relative">
+                  <span className="text-4xl">{game.emoji}</span>
+
+                  <h3 className="mt-4 font-heading text-lg font-bold">
+                    {game.name}
+                  </h3>
+                  <p className="mt-1 text-sm leading-relaxed text-text-secondary">
+                    {game.shortDescription}
+                  </p>
+
+                  {/* Meta pills */}
+                  <div className="mt-4 flex flex-wrap items-center gap-2 text-xs text-text-muted">
+                    <span className="inline-flex items-center gap-1 rounded-full bg-white/5 px-2.5 py-1">
+                      <Users className="h-3 w-3" />
+                      {game.players}
                     </span>
-                  )}
-                </h3>
-                <p className="mt-1 text-sm text-text-secondary">{game.desc}</p>
-                <div className="mt-4 flex items-center gap-3 text-xs text-text-muted">
-                  <span>{game.players}</span>
-                  <span>•</span>
-                  <span>{game.time}</span>
+                    <span className="inline-flex items-center gap-1 rounded-full bg-white/5 px-2.5 py-1">
+                      <Clock className="h-3 w-3" />
+                      {game.duration}
+                    </span>
+                    <span className="rounded-full bg-white/5 px-2.5 py-1 capitalize">
+                      {game.category}
+                    </span>
+                  </div>
+
+                  {/* Play CTA */}
+                  <div className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-ember transition-colors group-hover:text-ember/80">
+                    Play Now
+                    <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
+                  </div>
                 </div>
               </Link>
             ))}
@@ -189,15 +137,63 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-white/5 px-4 py-8">
+      {/* ── Partner / External Games ─────────────────────── */}
+      {partnerGames.length > 0 && (
+        <section className="border-t border-white/5 px-4 py-8 md:py-12">
+          <div className="mx-auto max-w-4xl">
+            <div className="mb-5 flex items-center gap-2">
+              <ExternalLink className="h-4 w-4 text-text-muted" />
+              <h2 className="text-sm font-semibold uppercase tracking-wider text-text-muted">
+                More Games
+              </h2>
+            </div>
+
+            <div className="stagger-children grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {partnerGames.map((game) => (
+                <a
+                  key={game.name}
+                  href={game.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative overflow-hidden rounded-2xl border border-white/5 bg-surface p-6 transition-all duration-200 hover:border-white/10 hover:shadow-2xl hover:-translate-y-0.5"
+                  style={
+                    {
+                      "--card-accent": game.accentColor,
+                    } as React.CSSProperties
+                  }
+                >
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[var(--card-accent)]/8 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                  <div
+                    className="absolute left-0 right-0 top-0 h-[2px] opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                    style={{ background: game.accentColor }}
+                  />
+
+                  <div className="relative">
+                    <span className="text-4xl">{game.emoji}</span>
+                    <h3 className="mt-4 font-heading text-lg font-bold">
+                      {game.name}
+                      <ExternalLink className="ml-2 inline h-3.5 w-3.5 text-text-muted" />
+                    </h3>
+                    <p className="mt-1 text-sm leading-relaxed text-text-secondary">
+                      {game.description}
+                    </p>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── Footer ───────────────────────────────────────── */}
+      <footer className="mt-auto border-t border-white/5 px-4 py-8">
         <div className="mx-auto flex max-w-4xl flex-col items-center justify-between gap-4 sm:flex-row">
           <p className="text-sm text-text-muted">
             © {new Date().getFullYear()} ArcadeKit. Built with ❤️
           </p>
           <div className="flex items-center gap-4 text-sm text-text-muted">
             <Link href="/games" className="hover:text-text-secondary">
-              Games
+              All Games
             </Link>
           </div>
         </div>
