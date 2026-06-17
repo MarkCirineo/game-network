@@ -91,15 +91,15 @@ export function GameLobby({
       variants={container}
       initial="hidden"
       animate="show"
-      className="mx-auto flex w-full max-w-md flex-col gap-6 px-4 py-8"
+      className="mx-auto flex w-full max-w-lg flex-col gap-6 px-4 py-8 xl:max-w-xl xl:gap-8"
     >
       {/* Game header */}
       <motion.div variants={item} className="text-center">
-        <span className="text-4xl">{game?.emoji ?? "🎮"}</span>
-        <h1 className="mt-2 text-2xl font-bold text-foreground">
+        <span className="text-4xl xl:text-5xl">{game?.emoji ?? "🎮"}</span>
+        <h1 className="mt-2 text-2xl font-bold text-foreground xl:text-3xl">
           {game?.name ?? "Game Lobby"}
         </h1>
-        <p className="mt-1 text-sm text-text-secondary">
+        <p className="mt-1 text-sm text-text-secondary xl:text-base">
           Waiting for players to join…
         </p>
       </motion.div>
@@ -111,7 +111,7 @@ export function GameLobby({
 
       {/* Player list */}
       <motion.div variants={item}>
-        <div className="rounded-xl border border-white/5 bg-surface p-4">
+        <div className="rounded-xl border border-white/5 bg-surface p-4 xl:p-5">
           <div className="mb-3 flex items-center gap-2 text-sm font-medium text-text-secondary">
             <Users className="h-4 w-4" />
             <span>
@@ -131,7 +131,7 @@ export function GameLobby({
       {/* Game options */}
       {optionsSchema && optionsSchema.length > 0 && gameOptions && (
         <motion.div variants={item}>
-          <div className="rounded-xl border border-white/5 bg-surface p-4">
+          <div className="rounded-xl border border-white/5 bg-surface p-4 xl:p-5">
             <div className="mb-3 flex items-center gap-2 text-sm font-medium text-text-secondary">
               <Settings className="h-4 w-4" />
               <span>Game Settings</span>
@@ -204,7 +204,7 @@ export function GameLobby({
               onClick={onStartGame}
               disabled={!canStart}
               className={cn(
-                "inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold transition-all",
+                "inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold transition-all xl:py-3.5 xl:text-base",
                 canStart
                   ? "bg-violet text-white shadow-lg shadow-violet/25 hover:bg-violet/90 active:translate-y-px"
                   : "cursor-not-allowed bg-elevated text-text-muted"
@@ -223,7 +223,7 @@ export function GameLobby({
             <button
               onClick={onReady}
               className={cn(
-                "inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold transition-all active:translate-y-px",
+                "inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold transition-all active:translate-y-px xl:py-3.5 xl:text-base",
                 me.isReady
                   ? "bg-cyan/15 text-cyan ring-1 ring-cyan/30 hover:bg-cyan/20"
                   : "bg-elevated text-text-secondary hover:bg-white/10 hover:text-foreground"

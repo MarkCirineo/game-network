@@ -237,23 +237,22 @@ export function GameShell({
       {isSpectator && <SpectatorBanner spectatorCount={spectators.length} />}
 
 
+      {/* Desktop sidebar — fixed HUD rail at viewport left edge */}
+      <aside className="fixed left-6 top-14 bottom-0 z-10 hidden w-56 flex-col justify-center space-y-4 overflow-y-auto lg:flex xl:left-8 xl:w-64">
+        <PlayerList
+          players={players}
+          spectators={spectators}
+          myPlayerId={myPlayerId}
+          hostId={hostId}
+          phase={phase}
+        />
+        {phase !== "finished" && <InvitePanel roomCode={roomCode} />}
+      </aside>
 
       {/* Main content area — game is always centered */}
-      <div className="relative mx-auto flex w-full max-w-6xl flex-1 px-4 py-4">
-        {/* Floating sidebar (desktop only) — doesn't affect game centering */}
-        <aside className="absolute left-4 top-4 hidden w-56 space-y-4 lg:block">
-          <PlayerList
-            players={players}
-            spectators={spectators}
-            myPlayerId={myPlayerId}
-            hostId={hostId}
-            phase={phase}
-          />
-          {phase !== "finished" && <InvitePanel roomCode={roomCode} />}
-        </aside>
-
+      <div className="mx-auto flex w-full max-w-4xl flex-1 px-4 py-4">
         {/* Game area — always centered */}
-        <div className="mx-auto flex w-full max-w-lg flex-col">
+        <div className="mx-auto flex w-full flex-col items-center lg:mt-[12vh] xl:mt-[15vh]">
           <AnimatePresence mode="wait">
             {phase === "waiting" && (
               <motion.div

@@ -61,7 +61,7 @@ function RevealCard({
       transition={{ type: 'spring', stiffness: 200, damping: 20, delay }}
       className={cn(
         'flex flex-col items-center gap-2 rounded-2xl border-2 px-6 py-5',
-        'min-w-[120px] sm:min-w-[140px]',
+        'min-w-[120px] sm:min-w-[140px] lg:min-w-[160px] xl:min-w-[190px] xl:px-8 xl:py-6',
         isWinner
           ? 'border-orange-400 bg-orange-500/15 shadow-[0_0_24px_rgba(249,115,22,0.3)]'
           : isTie
@@ -70,7 +70,7 @@ function RevealCard({
       )}
     >
       <motion.span
-        className="text-5xl sm:text-6xl"
+        className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl"
         animate={
           isWinner
             ? { scale: [1, 1.15, 1] }
@@ -88,7 +88,7 @@ function RevealCard({
       >
         {getChoiceEmoji(choice)}
       </motion.span>
-      <span className="text-sm font-medium text-foreground">{playerName}</span>
+      <span className="text-sm font-medium text-foreground xl:text-base">{playerName}</span>
     </motion.div>
   );
 }
@@ -99,13 +99,13 @@ function ScorePill({ name, score, isLeading }: { name: string; score: number; is
   return (
     <div
       className={cn(
-        'flex items-center gap-2 rounded-lg px-3 py-1.5 text-sm font-medium',
+        'flex items-center gap-2 rounded-lg px-3 py-1.5 text-sm font-medium xl:px-4 xl:py-2 xl:text-base',
         isLeading ? 'bg-orange-500/15 text-orange-400' : 'text-muted-foreground',
       )}
     >
       <span className="max-w-[80px] truncate">{name}</span>
       <span className={cn(
-        'flex h-6 min-w-6 items-center justify-center rounded-md text-xs font-bold',
+        'flex h-6 min-w-6 items-center justify-center rounded-md text-xs font-bold xl:h-8 xl:min-w-8 xl:text-sm',
         isLeading ? 'bg-orange-500/25 text-orange-300' : 'bg-white/10 text-muted-foreground',
       )}>
         {score}
@@ -236,7 +236,7 @@ export default function RockPaperScissorsGame({
   return (
     <div className="flex flex-col items-center gap-6 px-4 py-6 sm:py-10">
       {/* ── Score header ──────────────────────────── */}
-      <div className="flex w-full max-w-sm flex-col items-center gap-3">
+      <div className="flex w-full max-w-sm flex-col items-center gap-3 xl:max-w-lg xl:gap-4">
         <div className="flex w-full items-center justify-between">
           {gamePlayers.map((pid) => (
             <ScorePill
@@ -258,7 +258,7 @@ export default function RockPaperScissorsGame({
           className="text-center"
         >
           <p className={cn(
-            'text-sm font-semibold',
+            'text-sm font-semibold xl:text-base',
             hasChosen ? 'text-muted-foreground' : 'text-foreground',
           )}>
             {statusMessage}
@@ -267,7 +267,7 @@ export default function RockPaperScissorsGame({
       )}
 
       {/* ── Central game area (reveal OR choices, never both) ── */}
-      <div className="flex min-h-[160px] flex-col items-center justify-center">
+      <div className="flex min-h-[160px] flex-col items-center justify-center lg:min-h-[200px] xl:min-h-[260px]">
         <AnimatePresence mode="wait">
           {showReveal && revealResult ? (
             /* ── Reveal overlay ── */
@@ -279,7 +279,7 @@ export default function RockPaperScissorsGame({
               transition={{ duration: 0.3 }}
               className="flex flex-col items-center gap-5"
             >
-              <div className="flex items-center gap-4 sm:gap-8">
+              <div className="flex items-center gap-4 sm:gap-8 xl:gap-12">
                 {gamePlayers.map((pid, i) => {
                   const choice = revealResult.choices[pid];
                   if (!choice) return null;
@@ -317,7 +317,7 @@ export default function RockPaperScissorsGame({
                   className="flex flex-col items-center gap-3"
                 >
                   <motion.span
-                    className="text-5xl"
+                    className="text-5xl xl:text-7xl"
                     animate={{ rotate: [0, 10, -10, 0] }}
                     transition={{ repeat: Infinity, duration: 1.5 }}
                   >
@@ -336,7 +336,7 @@ export default function RockPaperScissorsGame({
 
               {/* Choice buttons */}
               {(!hasChosen || isSpectator) && (
-                <div className="flex gap-3 sm:gap-5">
+                <div className="flex gap-3 sm:gap-5 xl:gap-8">
                   {CHOICES.map(({ value, emoji, label }, i) => {
                     const disabled = isSpectator || hasChosen;
                     return (
@@ -351,8 +351,8 @@ export default function RockPaperScissorsGame({
                         whileHover={!disabled ? { scale: 1.1, y: -4 } : undefined}
                         whileTap={!disabled ? { scale: 0.92 } : undefined}
                         className={cn(
-                          'group flex flex-col items-center gap-2 rounded-2xl border-2 px-5 py-4',
-                          'min-h-[100px] min-w-[90px] sm:min-h-[120px] sm:min-w-[110px]',
+                          'group flex flex-col items-center gap-2 rounded-2xl border-2 px-5 py-4 xl:gap-3 xl:px-8 xl:py-6',
+                          'min-h-[100px] min-w-[90px] sm:min-h-[120px] sm:min-w-[110px] lg:min-h-[150px] lg:min-w-[130px] xl:min-h-[180px] xl:min-w-[160px]',
                           'transition-all duration-200',
                           'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500/50',
                           disabled
@@ -360,10 +360,10 @@ export default function RockPaperScissorsGame({
                             : 'cursor-pointer border-white/10 bg-white/5 hover:border-orange-400/50 hover:bg-orange-500/10',
                         )}
                       >
-                        <span className="text-4xl sm:text-5xl transition-transform duration-200 group-hover:scale-110">
+                        <span className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl transition-transform duration-200 group-hover:scale-110">
                           {emoji}
                         </span>
-                        <span className="text-xs font-medium text-muted-foreground">{label}</span>
+                        <span className="text-xs font-medium text-muted-foreground xl:text-sm">{label}</span>
                       </motion.button>
                     );
                   })}

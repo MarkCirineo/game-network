@@ -16,7 +16,7 @@ function XMark({ className }: { className?: string }) {
   return (
     <motion.svg
       viewBox="0 0 64 64"
-      className={cn('h-8 w-8 sm:h-10 sm:w-10', className)}
+      className={cn('h-8 w-8 sm:h-10 sm:w-10 lg:h-14 lg:w-14 xl:h-20 xl:w-20', className)}
       initial={{ scale: 0, rotate: -180 }}
       animate={{ scale: 1, rotate: 0 }}
       transition={{ type: 'spring', stiffness: 260, damping: 20 }}
@@ -47,7 +47,7 @@ function OMark({ className }: { className?: string }) {
   return (
     <motion.svg
       viewBox="0 0 64 64"
-      className={cn('h-8 w-8 sm:h-10 sm:w-10', className)}
+      className={cn('h-8 w-8 sm:h-10 sm:w-10 lg:h-14 lg:w-14 xl:h-20 xl:w-20', className)}
       initial={{ scale: 0 }}
       animate={{ scale: 1 }}
       transition={{ type: 'spring', stiffness: 260, damping: 20 }}
@@ -197,9 +197,9 @@ export default function TicTacToeGame({
   return (
     <div className="flex flex-col items-center gap-6 px-4 py-6 sm:py-10">
       {/* ── Header ────────────────────────────────── */}
-      <div className="flex w-full max-w-xs flex-col items-center gap-3">
+      <div className="flex w-full max-w-sm flex-col items-center gap-3 xl:max-w-md xl:gap-4">
         {/* Player indicators */}
-        <div className="flex w-full items-center justify-between text-sm font-medium">
+        <div className="flex w-full items-center justify-between text-sm font-medium xl:text-base">
           {gamePlayers.map((pid, i) => {
             const symbol = i === 0 ? 'X' : 'O';
             const name = getPlayerName(pid);
@@ -239,7 +239,7 @@ export default function TicTacToeGame({
           initial={{ opacity: 0, y: -4 }}
           animate={{ opacity: 1, y: 0 }}
           className={cn(
-            'rounded-full px-4 py-1.5 text-sm font-semibold',
+            'rounded-full px-4 py-1.5 text-sm font-semibold xl:px-5 xl:py-2 xl:text-base',
             isGameOver
               ? winningLine
                 ? 'bg-blue-500/15 text-blue-400'
@@ -254,7 +254,7 @@ export default function TicTacToeGame({
       </div>
 
       {/* ── Board ─────────────────────────────────── */}
-      <div className="grid grid-cols-3 gap-2 sm:gap-3">
+      <div className="grid grid-cols-3 gap-2 sm:gap-3 lg:gap-4 xl:gap-5">
         {board.map((cell, i) => {
           const symbol = getCellSymbol(cell);
           const isWinCell = winningSet.has(i);
@@ -268,7 +268,7 @@ export default function TicTacToeGame({
               disabled={!canPlace}
               className={cn(
                 'relative flex items-center justify-center',
-                'h-[72px] w-[72px] sm:h-[96px] sm:w-[96px] md:h-[110px] md:w-[110px]',
+                'h-[72px] w-[72px] sm:h-[96px] sm:w-[96px] md:h-[110px] md:w-[110px] lg:h-[140px] lg:w-[140px] xl:h-[170px] xl:w-[170px]',
                 'rounded-xl border-2 transition-all duration-200',
                 'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/50',
                 // Empty & clickable
