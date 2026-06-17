@@ -73,11 +73,13 @@ export default function RootLayout({
           <main className="flex-1 flex flex-col">{children}</main>
           <Toaster position="bottom-center" richColors />
         </TooltipProvider>
-        <Script
-          src="https://analytics.markcirineo.com/script.js"
-          data-website-id="0a833a1c-b423-449c-bcc8-347bf484e0b8"
-          strategy="afterInteractive"
-        />
+        {process.env.NODE_ENV === "production" && (
+          <Script
+            src="https://analytics.markcirineo.com/script.js"
+            data-website-id="0a833a1c-b423-449c-bcc8-347bf484e0b8"
+            strategy="afterInteractive"
+          />
+        )}
       </body>
     </html>
   );
