@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Inter, Space_Grotesk } from "next/font/google";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/sonner";
@@ -72,6 +73,11 @@ export default function RootLayout({
           <main className="flex-1 flex flex-col">{children}</main>
           <Toaster position="bottom-center" richColors />
         </TooltipProvider>
+        <Script
+          src="https://analytics.markcirineo.com/script.js"
+          data-website-id="0a833a1c-b423-449c-bcc8-347bf484e0b8"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
