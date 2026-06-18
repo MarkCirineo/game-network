@@ -40,6 +40,7 @@ export function useGameSocket({
   const reconnectTimerRef = useRef<ReturnType<typeof setTimeout>>(undefined);
   const pingTimerRef = useRef<ReturnType<typeof setInterval>>(undefined);
   const mountedRef = useRef(true);
+  const terminalErrorRef = useRef(false);
 
   // Keep ALL mutable values in refs to avoid dependency churn
   const roomCodeRef = useRef(roomCode);
@@ -60,6 +61,7 @@ export function useGameSocket({
     handleServerMessage: useGameStore.getState().handleServerMessage,
     setMyPlayerId: useGameStore.getState().setMyPlayerId,
     setIsSpectator: useGameStore.getState().setIsSpectator,
+    setJoinError: useGameStore.getState().setJoinError,
   });
 
   // Keep store actions ref current (they're stable in Zustand, but this is defensive)
@@ -70,6 +72,7 @@ export function useGameSocket({
         handleServerMessage: state.handleServerMessage,
         setMyPlayerId: state.setMyPlayerId,
         setIsSpectator: state.setIsSpectator,
+        setJoinError: state.setJoinError,
       };
     });
   }, []);
@@ -148,26 +151,25 @@ export function useGameSocket({
         const msg: ServerMessage = JSON.parse(event.data);
 
         // Handle connection identity from room_state
-        if (msg.type === "room_state") {
+        if (msg.type === "room_state" && msg.yourPlayerId) {
           const currentActions = storeActionsRef.current;
-          const asPlayer = msg.room.players.find(
-            (p) => p.name === currentPlayerName
+          currentActions.setMyPlayerId(msg.yourPlayerId);
+          // Determine if we're a spectator by checking which list we're in
+          const isSpec = !msg.room.players.some(
+            (p) => p.id === msg.yourPlayerId
           );
-          if (asPlayer) {
-            currentActions.setMyPlayerId(asPlayer.id);
-            currentActions.setIsSpectator(false);
-          } else {
-            const asSpectator = msg.room.spectators.find(
-              (s) => s.name === currentPlayerName
-            );
-            if (asSpectator) {
-              currentActions.setMyPlayerId(asSpectator.id);
-              currentActions.setIsSpectator(true);
-            }
-          }
+          currentActions.setIsSpectator(isSpec);
         }
 
         storeActionsRef.current.handleServerMessage(msg);
+
+        // If this was a terminal error, flag so onclose won't reconnect
+        if (msg.type === "error") {
+          const terminalCodes = ['DUPLICATE_NAME', 'SESSION_CONFLICT', 'ROOM_NOT_FOUND', 'ROOM_FULL'];
+          if (terminalCodes.includes(msg.code)) {
+            terminalErrorRef.current = true;
+          }
+        }
       } catch (e) {
         console.error("[ArcadeKit] Failed to parse message:", e);
       }
@@ -177,6 +179,11 @@ export function useGameSocket({
       if (!mountedRef.current) return;
       clearInterval(pingTimerRef.current);
       storeActionsRef.current.setConnectionStatus("disconnected");
+      // Don't reconnect if the server rejected us with a terminal error
+      if (terminalErrorRef.current) {
+        terminalErrorRef.current = false;
+        return;
+      }
       scheduleReconnect.current();
     };
 

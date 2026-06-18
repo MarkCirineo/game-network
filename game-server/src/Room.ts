@@ -215,7 +215,7 @@ export class Room {
         this.log(`Player "${player.name}" (${player.id}) reconnected`);
 
         // Send the full room state to the reconnecting player
-        player.send({ type: 'room_state', room: this.getRoomState() });
+        player.send({ type: 'room_state', room: this.getRoomState(), yourPlayerId: player.id });
 
         // Notify others
         this.broadcast({ type: 'player_joined', player: this.toPlayerInfo(player) });
@@ -239,6 +239,14 @@ export class Room {
       }
     }
 
+    // Check for duplicate name (case-insensitive)
+    for (const p of this.players.values()) {
+      if (p.name.toLowerCase() === name.toLowerCase() && p.isConnected) {
+        this.sendError(ws, 'DUPLICATE_NAME', 'A player with that name is already in the room. Please choose a different name.');
+        return null;
+      }
+    }
+
     // If game is in progress or room is full, join as spectator
     if (this.phase !== 'waiting' || this.players.size >= this.maxPlayers) {
       return this.addSpectator(id, name, ws);
@@ -257,7 +265,7 @@ export class Room {
     this.log(`Player "${name}" (${id}) joined [${this.players.size}/${this.maxPlayers}]`);
 
     // Send room state to the new player
-    player.send({ type: 'room_state', room: this.getRoomState() });
+    player.send({ type: 'room_state', room: this.getRoomState(), yourPlayerId: player.id });
 
     // Notify everyone else
     const joinMsg: ServerMessage = { type: 'player_joined', player: this.toPlayerInfo(player) };
@@ -283,7 +291,7 @@ export class Room {
     // Send room state to the spectator
     const roomState = this.getRoomState();
     try {
-      ws.send(JSON.stringify({ type: 'room_state', room: roomState } satisfies ServerMessage));
+      ws.send(JSON.stringify({ type: 'room_state', room: roomState, yourPlayerId: id } satisfies ServerMessage));
     } catch { /* ignore */ }
 
     // Notify others

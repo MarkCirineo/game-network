@@ -43,6 +43,9 @@ interface GameStore {
   // Rematch
   rematchRequests: Set<string>;
 
+  // Join errors (terminal — should not trigger reconnect)
+  joinError: string | null;
+
   // Actions
   setRoomState: (room: RoomState) => void;
   setGameState: (state: unknown) => void;
@@ -56,6 +59,7 @@ interface GameStore {
   addRematchRequest: (playerId: string) => void;
   setMyPlayerId: (id: string) => void;
   setIsSpectator: (isSpectator: boolean) => void;
+  setJoinError: (error: string | null) => void;
   handleServerMessage: (msg: ServerMessage) => void;
   reset: () => void;
 
@@ -77,6 +81,7 @@ const initialState = {
   gameState: null as unknown,
   gameResult: null as GameStatus | null,
   rematchRequests: new Set<string>(),
+  joinError: null as string | null,
 };
 
 export const useGameStore = create<GameStore>((set, get) => ({
@@ -148,6 +153,7 @@ export const useGameStore = create<GameStore>((set, get) => ({
 
   setMyPlayerId: (id) => set({ myPlayerId: id }),
   setIsSpectator: (isSpectator) => set({ isSpectator }),
+  setJoinError: (error) => set({ joinError: error }),
 
   handleServerMessage: (msg) => {
     const store = get();
@@ -191,13 +197,19 @@ export const useGameStore = create<GameStore>((set, get) => ({
       case "rematch_requested":
         store.addRematchRequest(msg.playerId);
         break;
-      case "error":
+      case "error": {
         console.error(`[ArcadeKit] Server error: ${msg.code} — ${msg.message}`);
+        // Terminal join errors — surface to UI instead of silently reconnecting
+        const terminalCodes = ['DUPLICATE_NAME', 'SESSION_CONFLICT', 'ROOM_NOT_FOUND', 'ROOM_FULL'];
+        if (terminalCodes.includes(msg.code)) {
+          set({ joinError: msg.message });
+        }
         break;
+      }
     }
   },
 
-  reset: () => set({ ...initialState, rematchRequests: new Set() }),
+  reset: () => set({ ...initialState, rematchRequests: new Set(), joinError: null }),
 
   get isMyTurn() {
     const state = get();

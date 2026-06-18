@@ -118,6 +118,7 @@ export function GameShell({
   const gameState = useGameStore((s) => s.gameState);
   const gameResult = useGameStore((s) => s.gameResult);
   const rematchRequests = useGameStore((s) => s.rematchRequests);
+  const joinError = useGameStore((s) => s.joinError);
 
   const sessionToken = useMemo(() => {
     if (typeof window === "undefined") return "";
@@ -147,8 +148,17 @@ export function GameShell({
     };
   }, [accentColor]);
 
+  // Handle terminal join errors — return to name entry
+  useEffect(() => {
+    if (joinError) {
+      clearPersistedJoin(roomCode);
+      setHasJoined(false);
+    }
+  }, [joinError, roomCode]);
+
   // Handle join — persist to sessionStorage
   const handleJoin = (name: string) => {
+    useGameStore.getState().setJoinError(null);
     setPlayerName(name);
     savePlayerName(name);
     persistJoin(roomCode, name);
@@ -210,6 +220,12 @@ export function GameShell({
               Join Game
             </button>
           </form>
+
+          {joinError && (
+            <p className="rounded-lg bg-red-500/10 px-4 py-2.5 text-center text-sm text-red-400">
+              {joinError}
+            </p>
+          )}
         </motion.div>
       </div>
     );

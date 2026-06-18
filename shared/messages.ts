@@ -61,7 +61,7 @@ export type ClientMessage =
 // ------------------------------------------------------------
 
 export type ServerMessage =
-  | { type: 'room_state'; room: RoomState }
+  | { type: 'room_state'; room: RoomState; yourPlayerId: string }
   | { type: 'game_state_update'; state: unknown }
   | { type: 'player_joined'; player: PlayerInfo }
   | { type: 'player_left'; playerId: string }
@@ -91,7 +91,8 @@ export type ErrorCode =
   | 'NOT_ENOUGH_PLAYERS'
   | 'INVALID_MESSAGE'
   | 'RATE_LIMITED'
-  | 'SESSION_CONFLICT';
+  | 'SESSION_CONFLICT'
+  | 'DUPLICATE_NAME';
 
 // ------------------------------------------------------------
 // Internal Server Messages (game server ↔ Next.js API)
