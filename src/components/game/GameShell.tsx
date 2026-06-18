@@ -276,6 +276,7 @@ export function GameShell({
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
+                className="w-full"
               >
                 <GameLobby
                   roomCode={roomCode}
@@ -301,7 +302,7 @@ export function GameShell({
                 initial={{ opacity: 0, scale: 0.98 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0 }}
-                className="flex flex-1 flex-col"
+                className="flex w-full flex-1 flex-col"
               >
                 <GameComponent
                   gameState={gameState}
@@ -322,6 +323,7 @@ export function GameShell({
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0 }}
+                className="w-full"
               >
                 <GameOver
                   result={gameResult}

@@ -104,7 +104,7 @@ export function GameOver({
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="relative mx-auto flex w-full max-w-sm flex-col items-center gap-6 rounded-2xl border border-white/5 bg-surface p-8 shadow-2xl"
+      className="relative mx-auto flex w-full max-w-lg flex-col items-center gap-6 rounded-2xl border border-white/5 bg-surface p-8 shadow-2xl xl:max-w-2xl xl:gap-8 xl:p-10"
     >
       {/* Confetti for the winner */}
       {isMyWin && <ConfettiParticles />}
@@ -116,9 +116,9 @@ export function GameOver({
         transition={{ delay: 0.2, type: "spring", stiffness: 200, damping: 12 }}
       >
         {isDraw ? (
-          <span className="text-5xl">🤝</span>
+          <span className="text-5xl xl:text-6xl">🤝</span>
         ) : (
-          <span className="text-5xl">🏆</span>
+          <span className="text-5xl xl:text-6xl">🏆</span>
         )}
       </motion.div>
 
@@ -130,13 +130,13 @@ export function GameOver({
         className="text-center"
       >
         {isDraw ? (
-          <h2 className="text-2xl font-bold text-foreground">It&apos;s a Draw!</h2>
+          <h2 className="text-2xl font-bold text-foreground xl:text-3xl">It&apos;s a Draw!</h2>
         ) : isMyWin ? (
-          <h2 className="text-2xl font-bold text-foreground">
+          <h2 className="text-2xl font-bold text-foreground xl:text-3xl">
             You Win! <span className="ml-1">🎉</span>
           </h2>
         ) : (
-          <h2 className="text-2xl font-bold text-foreground">
+          <h2 className="text-2xl font-bold text-foreground xl:text-3xl">
             {winner?.name ?? "Unknown"} Wins!
           </h2>
         )}
@@ -151,7 +151,7 @@ export function GameOver({
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.4 }}
-          className="w-full rounded-lg border border-white/5 bg-elevated/50 p-3"
+          className="w-full rounded-lg border border-white/5 bg-elevated/50 p-3 xl:p-4"
         >
           <h3 className="mb-2 text-xs font-semibold uppercase tracking-wider text-text-muted">
             Scores
@@ -161,7 +161,7 @@ export function GameOver({
               <div
                 key={playerId}
                 className={cn(
-                  "flex items-center justify-between rounded-md px-2.5 py-1.5 text-sm",
+                  "flex items-center justify-between rounded-md px-2.5 py-1.5 text-sm xl:px-3 xl:py-2 xl:text-base",
                   idx === 0 && "bg-ember/10"
                 )}
               >
@@ -202,7 +202,7 @@ export function GameOver({
             onClick={onRematch}
             disabled={hasRequestedRematch}
             className={cn(
-              "inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold transition-all active:translate-y-px",
+              "inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold transition-all active:translate-y-px xl:py-3.5 xl:text-base",
               hasRequestedRematch
                 ? "bg-ember/15 text-ember ring-1 ring-ember/30"
                 : "bg-ember text-white shadow-lg shadow-ember/25 hover:bg-ember/90"
@@ -217,7 +217,7 @@ export function GameOver({
 
         <button
           onClick={onBackToGames}
-          className="inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg bg-white/5 px-5 py-3 text-sm font-medium text-text-secondary transition-all hover:bg-white/10 hover:text-foreground active:translate-y-px"
+          className="inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg bg-white/5 px-5 py-3 text-sm font-medium text-text-secondary transition-all hover:bg-white/10 hover:text-foreground active:translate-y-px xl:py-3.5 xl:text-base"
         >
           <ArrowLeft className="h-4 w-4" />
           Back to Games
