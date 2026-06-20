@@ -140,8 +140,14 @@ export default function RockPaperScissorsGame({
   // ── Reveal overlay state ───────────────────────────────────
   // Track whether we're in the reveal phase.
   // We use a timer to show the reveal for 2.5 seconds.
+  //
+  // The ref is initialized with the current lastResult fingerprint so that
+  // any result already present on mount (reconnect / spectator join) is
+  // treated as "already seen" and won't replay the reveal animation.
   const [revealResult, setRevealResult] = useState<RPSState['lastResult'] | undefined>(undefined);
-  const lastResultRef = useRef<string | null>(null);
+  const lastResultRef = useRef<string | null>(
+    lastResult ? JSON.stringify(lastResult) : null,
+  );
   const revealTimerRef = useRef<ReturnType<typeof setTimeout>>(undefined);
 
   // Detect new lastResult and show the reveal overlay
@@ -153,20 +159,18 @@ export default function RockPaperScissorsGame({
     if (fingerprint === lastResultRef.current) return;
     lastResultRef.current = fingerprint;
 
-    // Show the reveal overlay immediately (synchronous with the state update)
+    // Show the reveal overlay immediately
     setRevealResult(lastResult);
 
     // Clear any existing timer
     if (revealTimerRef.current) clearTimeout(revealTimerRef.current);
 
     // Auto-dismiss after 2.5 seconds
+    // NOTE: No cleanup return — the timer must survive React Strict Mode's
+    // mount→cleanup→mount cycle. Setting state after unmount is a no-op in React 18.
     revealTimerRef.current = setTimeout(() => {
       setRevealResult(undefined);
     }, 2500);
-
-    return () => {
-      if (revealTimerRef.current) clearTimeout(revealTimerRef.current);
-    };
   }, [lastResult]);
 
   // Derived: are we showing the reveal right now?

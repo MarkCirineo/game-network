@@ -1,7 +1,7 @@
 // ============================================================
 // ArcadeKit — Game Server Entry Point
 // HTTP + WebSocket server. Handles connection routing, heartbeat,
-// room creation API, and graceful shutdown.
+// room creation API, Redis persistence, and graceful shutdown.
 // ============================================================
 
 import { createServer, type IncomingMessage, type ServerResponse } from 'node:http';
@@ -9,6 +9,7 @@ import { WebSocketServer, WebSocket } from 'ws';
 import { URL } from 'node:url';
 import { randomUUID } from 'node:crypto';
 import { RoomManager } from './RoomManager.js';
+import { RoomStore } from './RoomStore.js';
 import type { CreateRoomRequest } from '../../shared/messages.js';
 
 // ------------------------------------------------------------
@@ -16,13 +17,15 @@ import type { CreateRoomRequest } from '../../shared/messages.js';
 // ------------------------------------------------------------
 
 const PORT = parseInt(process.env.PORT ?? '3001', 10);
+const REDIS_URL = process.env.REDIS_URL ?? 'redis://localhost:6379';
 const HEARTBEAT_INTERVAL_MS = 30_000;
 
 // ------------------------------------------------------------
 // State
 // ------------------------------------------------------------
 
-const roomManager = new RoomManager();
+const roomStore = new RoomStore(REDIS_URL);
+const roomManager = new RoomManager(roomStore);
 
 /**
  * Track which room & role each WebSocket belongs to,
@@ -77,7 +80,11 @@ const httpServer = createServer((req: IncomingMessage, res: ServerResponse) => {
   // GET /health
   if (req.method === 'GET' && url.pathname === '/health') {
     res.writeHead(200, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify({ status: 'ok', rooms: roomManager.getAllRooms().length }));
+    res.end(JSON.stringify({
+      status: 'ok',
+      rooms: roomManager.getAllRooms().length,
+      redis: roomStore.isConnected ? 'connected' : 'disconnected',
+    }));
     return;
   }
 
@@ -193,10 +200,11 @@ function setupPlayerSocket(ws: WebSocket, room: ReturnType<typeof roomManager.ge
 
   ws.on('close', () => {
     log(`WebSocket closed: player=${playerId} spectator=${isSpectator}`);
-    room.removePlayer(playerId);
+    // Use handleDisconnect instead of removePlayer to enable
+    // reconnection grace window. Spectators are removed immediately
+    // inside handleDisconnect.
+    room.handleDisconnect(playerId);
     connectionMap.delete(ws);
-
-    // If room is now empty, it will be cleaned up by periodic cleanup
   });
 
   ws.on('error', (err) => {
@@ -234,10 +242,23 @@ wss.on('connection', (ws: WebSocket) => {
 // Startup
 // ------------------------------------------------------------
 
-httpServer.listen(PORT, () => {
-  log(`🎮 ArcadeKit Game Server running on port ${PORT}`);
-  log(`   WebSocket: ws://localhost:${PORT}`);
-  log(`   HTTP API:  http://localhost:${PORT}`);
+async function start(): Promise<void> {
+  // Connect to Redis and rehydrate rooms
+  await roomStore.connect();
+  await roomManager.rehydrate();
+
+  // Start HTTP + WS server
+  httpServer.listen(PORT, () => {
+    log(`🎮 ArcadeKit Game Server running on port ${PORT}`);
+    log(`   WebSocket: ws://localhost:${PORT}`);
+    log(`   HTTP API:  http://localhost:${PORT}`);
+    log(`   Redis:     ${roomStore.isConnected ? 'connected' : 'not connected'}`);
+  });
+}
+
+start().catch((err) => {
+  console.error('Failed to start server:', err);
+  process.exit(1);
 });
 
 // ------------------------------------------------------------
@@ -259,6 +280,11 @@ function shutdown(signal: string): void {
   });
 
   roomManager.shutdown();
+
+  // Disconnect Redis
+  roomStore.disconnect().then(() => {
+    log('Redis disconnected');
+  }).catch(() => {});
 
   httpServer.close(() => {
     log('HTTP server closed');

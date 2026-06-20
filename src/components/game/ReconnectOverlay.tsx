@@ -5,6 +5,8 @@
 
 "use client";
 
+import { useState, useEffect } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { WifiOff, RefreshCw } from "lucide-react";
@@ -16,6 +18,12 @@ interface ReconnectOverlayProps {
 
 export function ReconnectOverlay({ status, onRetry }: ReconnectOverlayProps) {
   const isDisconnected = status === "disconnected";
+  const [showEscape, setShowEscape] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShowEscape(true), 5000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <AnimatePresence>
@@ -78,6 +86,14 @@ export function ReconnectOverlay({ status, onRetry }: ReconnectOverlayProps) {
                   </p>
                 )}
               </div>
+              {showEscape && (
+                <Link
+                  href="/games"
+                  className="mt-2 text-sm text-text-secondary underline underline-offset-2 transition-colors hover:text-foreground"
+                >
+                  Return to Games
+                </Link>
+              )}
             </>
           )}
         </motion.div>

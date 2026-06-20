@@ -2,10 +2,12 @@
 // ArcadeKit — Room Manager
 // Central registry for all active rooms. Handles room creation,
 // lookup, cleanup, and the HTTP API for room creation.
+// Integrates with RoomStore for Redis persistence.
 // ============================================================
 
 import { Room } from './Room.js';
 import { getEngine, hasEngine } from './engines/registry.js';
+import { RoomStore } from './RoomStore.js';
 import type { CreateRoomRequest, CreateRoomResponse, RoomInfoResponse } from '../../shared/messages.js';
 
 // Custom alphabet for room codes: excludes ambiguous characters (0, O, 1, I)
@@ -32,10 +34,44 @@ export class RoomManager {
   /** Handle for the periodic cleanup timer */
   private cleanupTimer: ReturnType<typeof setInterval> | null = null;
 
-  constructor() {
+  /** Redis persistence layer */
+  private store: RoomStore | null;
+
+  constructor(store?: RoomStore) {
+    this.store = store ?? null;
+
     // Start periodic cleanup
     this.cleanupTimer = setInterval(() => this.cleanup(), CLEANUP_INTERVAL_MS);
     this.log('Room manager initialized');
+  }
+
+  // ----------------------------------------------------------
+  // Initialization (rehydration from Redis)
+  // ----------------------------------------------------------
+
+  /**
+   * Load persisted rooms from Redis on startup.
+   * Should be called once during server initialization.
+   */
+  async rehydrate(): Promise<void> {
+    if (!this.store) return;
+
+    try {
+      const rooms = await this.store.loadAll(getEngine);
+
+      for (const room of rooms) {
+        // Wire up the dirty callback so state changes persist
+        this.wireRoomPersistence(room);
+        this.rooms.set(room.roomCode, room);
+      }
+
+      if (rooms.length > 0) {
+        this.log(`Rehydrated ${rooms.length} room(s) from Redis`);
+      }
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : String(err);
+      this.log(`Failed to rehydrate rooms: ${msg}`);
+    }
   }
 
   // ----------------------------------------------------------
@@ -66,9 +102,14 @@ export class RoomManager {
     } while (this.rooms.has(roomCode));
 
     const room = new Room(roomCode, gameId, engine);
+    this.wireRoomPersistence(room);
     this.rooms.set(roomCode, room);
 
     this.log(`Room ${roomCode} created for game "${gameId}" [${this.rooms.size} total rooms]`);
+
+    // Persist the new room
+    this.store?.save(room).catch(() => {});
+
     return room;
   }
 
@@ -79,7 +120,11 @@ export class RoomManager {
 
   /** Remove a room by code */
   removeRoom(roomCode: string): void {
-    if (this.rooms.delete(roomCode)) {
+    const room = this.rooms.get(roomCode);
+    if (room) {
+      room.clearAllTimers();
+      this.rooms.delete(roomCode);
+      this.store?.delete(roomCode).catch(() => {});
       this.log(`Room ${roomCode} removed [${this.rooms.size} total rooms]`);
     }
   }
@@ -87,6 +132,23 @@ export class RoomManager {
   /** Get all active rooms (for debugging / admin) */
   getAllRooms(): Room[] {
     return Array.from(this.rooms.values());
+  }
+
+  // ----------------------------------------------------------
+  // Persistence Wiring
+  // ----------------------------------------------------------
+
+  /**
+   * Wire the onDirty callback on a room so that every state
+   * change triggers a Redis save.
+   */
+  private wireRoomPersistence(room: Room): void {
+    if (!this.store) return;
+
+    const store = this.store;
+    room.onDirty = () => {
+      store.save(room).catch(() => {});
+    };
   }
 
   // ----------------------------------------------------------
@@ -168,7 +230,12 @@ export class RoomManager {
     }
 
     for (const code of toRemove) {
+      const room = this.rooms.get(code);
+      if (room) {
+        room.clearAllTimers();
+      }
       this.rooms.delete(code);
+      this.store?.delete(code).catch(() => {});
       this.log(`Cleanup: removed stale room ${code}`);
     }
 
@@ -187,6 +254,12 @@ export class RoomManager {
       clearInterval(this.cleanupTimer);
       this.cleanupTimer = null;
     }
+
+    // Clear all disconnect timers in all rooms
+    for (const room of this.rooms.values()) {
+      room.clearAllTimers();
+    }
+
     this.rooms.clear();
     this.log('Room manager shut down');
   }

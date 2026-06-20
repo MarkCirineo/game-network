@@ -175,15 +175,24 @@ export function useGameSocket({
       }
     };
 
-    ws.onclose = () => {
+    ws.onclose = (event) => {
       if (!mountedRef.current) return;
       clearInterval(pingTimerRef.current);
-      storeActionsRef.current.setConnectionStatus("disconnected");
-      // Don't reconnect if the server rejected us with a terminal error
-      if (terminalErrorRef.current) {
+
+      // Check close codes from the game server for terminal conditions
+      const terminalCloseCodes = [4000, 4001, 4002];
+      if (terminalCloseCodes.includes(event.code) || terminalErrorRef.current) {
         terminalErrorRef.current = false;
+        storeActionsRef.current.setConnectionStatus("disconnected");
+        // Set a user-friendly error if the room is gone
+        if (event.code === 4001) {
+          storeActionsRef.current.setJoinError("This room no longer exists. It may have expired.");
+        }
         return;
       }
+
+      // Non-terminal close — attempt reconnection
+      // Don't set 'disconnected' here to avoid status oscillation flash
       scheduleReconnect.current();
     };
 

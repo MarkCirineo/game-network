@@ -7,6 +7,7 @@
 "use client";
 
 import { useEffect, useState, useMemo } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { useGameSocket } from "@/lib/ws/client";
@@ -89,6 +90,7 @@ export function GameShell({
     return getPersistedJoin(roomCode) !== null;
   });
   const [nameInput, setNameInput] = useState("");
+  const [roomExpired, setRoomExpired] = useState(false);
   const [gameOptions, setGameOptions] = useState<Record<string, unknown>>(() => {
     // Initialize from schema defaults
     const defaults: Record<string, unknown> = {};
@@ -148,13 +150,18 @@ export function GameShell({
     };
   }, [accentColor]);
 
-  // Handle terminal join errors — return to name entry
+  // Handle terminal join errors — return to name entry or show room-expired screen
   useEffect(() => {
     if (joinError) {
-      clearPersistedJoin(roomCode);
-      setHasJoined(false);
+      // If we were already connected (had a player ID), this is a room-expired scenario
+      if (myPlayerId) {
+        setRoomExpired(true);
+      } else {
+        clearPersistedJoin(roomCode);
+        setHasJoined(false);
+      }
     }
-  }, [joinError, roomCode]);
+  }, [joinError, roomCode, myPlayerId]);
 
   // Handle join — persist to sessionStorage
   const handleJoin = (name: string) => {
@@ -164,6 +171,31 @@ export function GameShell({
     persistJoin(roomCode, name);
     setHasJoined(true);
   };
+
+  // Room expired screen — shown when the room disappears mid-session
+  if (roomExpired) {
+    return (
+      <div className="flex min-h-[60vh] flex-col items-center justify-center px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="flex flex-col items-center gap-4"
+        >
+          <span className="text-4xl">⏰</span>
+          <h1 className="font-heading text-2xl font-bold">Room Expired</h1>
+          <p className="text-center text-sm text-text-secondary">
+            {joinError || "This room no longer exists. It may have been closed or timed out."}
+          </p>
+          <Link
+            href="/games"
+            className="mt-2 inline-flex h-10 items-center rounded-lg bg-ember px-6 text-sm font-medium text-white transition-all hover:bg-ember/90 hover:shadow-lg hover:shadow-ember/25"
+          >
+            Browse Games
+          </Link>
+        </motion.div>
+      </div>
+    );
+  }
 
   // Name entry screen
   if (!hasJoined) {

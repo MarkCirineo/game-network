@@ -7,6 +7,7 @@
 
 import type { WebSocket } from 'ws';
 import { Player } from './Player.js';
+import type { PlayerSnapshot } from './Player.js';
 import { GameEngine } from './GameEngine.js';
 import type {
   ClientMessage,
@@ -24,6 +25,24 @@ export type { RoomPhase };
 
 /** How long a disconnected player can reconnect (ms) */
 const RECONNECT_WINDOW_MS = 60_000;
+
+// ------------------------------------------------------------
+// Snapshot types for persistence (JSON-serializable)
+// ------------------------------------------------------------
+
+export interface RoomSnapshot {
+  roomCode: string;
+  gameId: string;
+  phase: RoomPhase;
+  players: PlayerSnapshot[];
+  hostId: string | null;
+  gameState: unknown;
+  gameOptions: Record<string, unknown>;
+  joinOrder: string[];
+  createdAt: number;
+  lastActivity: number;
+  rematchVotes: string[];
+}
 
 // ------------------------------------------------------------
 // Spectator wrapper (lightweight — no game participation)
@@ -79,6 +98,12 @@ export class Room {
 
   /** Order of player joins (for host migration) */
   private joinOrder: string[];
+
+  /** Timers for disconnect grace windows (keyed by player ID) */
+  private disconnectTimers: Map<string, ReturnType<typeof setTimeout>> = new Map();
+
+  /** Callback invoked when room state changes and should be persisted */
+  onDirty?: () => void;
 
   constructor(roomCode: string, gameId: string, gameEngine: GameEngine) {
     this.roomCode = roomCode;
@@ -194,6 +219,11 @@ export class Room {
     this.broadcastToSpectators(spectatorMsg);
   }
 
+  /** Notify the persistence layer that state has changed */
+  private markDirty(): void {
+    this.onDirty?.();
+  }
+
   // ----------------------------------------------------------
   // Player Management
   // ----------------------------------------------------------
@@ -210,6 +240,13 @@ export class Room {
         player.disconnectedAt !== null &&
         Date.now() - player.disconnectedAt < RECONNECT_WINDOW_MS
       ) {
+        // Cancel the disconnect grace timer if one exists
+        const timer = this.disconnectTimers.get(player.id);
+        if (timer) {
+          clearTimeout(timer);
+          this.disconnectTimers.delete(player.id);
+        }
+
         player.reconnect(ws);
         this.lastActivity = Date.now();
         this.log(`Player "${player.name}" (${player.id}) reconnected`);
@@ -217,13 +254,49 @@ export class Room {
         // Send the full room state to the reconnecting player
         player.send({ type: 'room_state', room: this.getRoomState(), yourPlayerId: player.id });
 
-        // Notify others
+        // Notify others that the player is back (upsert with isConnected: true)
         this.broadcast({ type: 'player_joined', player: this.toPlayerInfo(player) });
 
+        this.markDirty();
         return true;
       }
     }
     return false;
+  }
+
+  /**
+   * Handle a WebSocket disconnection (socket close event).
+   * Unlike removePlayer, this keeps the player in the Map
+   * with a grace window to allow reconnection.
+   */
+  handleDisconnect(id: string): void {
+    // Check spectators first — they are removed immediately
+    if (this.spectators.has(id)) {
+      this.spectators.delete(id);
+      this.broadcast({ type: 'spectator_left', spectatorId: id });
+      this.log(`Spectator ${id} left`);
+      return;
+    }
+
+    const player = this.players.get(id);
+    if (!player || !player.isConnected) return;
+
+    player.disconnect();
+    this.lastActivity = Date.now();
+    this.log(`Player "${player.name}" (${id}) disconnected — grace window started`);
+
+    // Broadcast updated player state so others see them as disconnected
+    this.broadcast({ type: 'player_joined', player: this.toPlayerInfo(player) });
+
+    // Set a grace timer — if they don't reconnect in time, hard-remove them
+    const timer = setTimeout(() => {
+      this.disconnectTimers.delete(id);
+      this.log(`Player "${player.name}" (${id}) grace window expired — removing`);
+      this.removePlayer(id);
+    }, RECONNECT_WINDOW_MS);
+
+    this.disconnectTimers.set(id, timer);
+    this.markDirty();
   }
 
   /**
@@ -274,6 +347,7 @@ export class Room {
     }
     this.broadcastToSpectators(joinMsg);
 
+    this.markDirty();
     return id;
   }
 
@@ -301,8 +375,9 @@ export class Room {
   }
 
   /**
-   * Remove a player or spectator from the room.
-   * Handles host migration and game abandonment.
+   * Hard-remove a player from the room (called when grace window expires
+   * or when the room is being cleaned up). Handles host migration and
+   * game abandonment.
    */
   removePlayer(id: string): void {
     // Check spectators first
@@ -316,12 +391,23 @@ export class Room {
     const player = this.players.get(id);
     if (!player) return;
 
-    player.disconnect();
+    // Cancel any pending disconnect timer
+    const timer = this.disconnectTimers.get(id);
+    if (timer) {
+      clearTimeout(timer);
+      this.disconnectTimers.delete(id);
+    }
+
+    // Ensure WebSocket is closed
+    if (player.isConnected) {
+      player.disconnect();
+    }
+
     this.players.delete(id);
     this.joinOrder = this.joinOrder.filter((pid) => pid !== id);
     this.lastActivity = Date.now();
 
-    this.log(`Player "${player.name}" (${id}) left`);
+    this.log(`Player "${player.name}" (${id}) removed`);
 
     // Notify everyone
     this.broadcast({ type: 'player_left', playerId: id });
@@ -332,8 +418,8 @@ export class Room {
     }
 
     // If a game was in progress and not enough players remain, end the game
-    if (this.phase === 'playing' && this.players.size < this.gameEngine.minPlayers) {
-      const remainingPlayer = this.players.values().next().value as Player | undefined;
+    if (this.phase === 'playing' && this.connectedPlayerCount < this.gameEngine.minPlayers) {
+      const remainingPlayer = this.findFirstConnectedPlayer();
       const status: GameStatus = {
         isOver: true,
         winnerId: remainingPlayer?.id ?? null,
@@ -343,6 +429,25 @@ export class Room {
       this.broadcast({ type: 'game_over', result: status });
       this.log('Game ended: opponent disconnected');
     }
+
+    this.markDirty();
+  }
+
+  /** Count of players that are currently connected */
+  private get connectedPlayerCount(): number {
+    let count = 0;
+    for (const p of this.players.values()) {
+      if (p.isConnected) count++;
+    }
+    return count;
+  }
+
+  /** Find the first connected player (for game-over winner) */
+  private findFirstConnectedPlayer(): Player | undefined {
+    for (const p of this.players.values()) {
+      if (p.isConnected) return p;
+    }
+    return undefined;
   }
 
   /** Promote the oldest remaining player to host */
@@ -361,6 +466,16 @@ export class Room {
       }
     }
     this.hostId = null;
+  }
+
+  /**
+   * Clean up all disconnect timers (called during room destruction)
+   */
+  clearAllTimers(): void {
+    for (const timer of this.disconnectTimers.values()) {
+      clearTimeout(timer);
+    }
+    this.disconnectTimers.clear();
   }
 
   // ----------------------------------------------------------
@@ -446,6 +561,8 @@ export class Room {
       playerId: player.id,
       isReady: player.isReady,
     });
+
+    this.markDirty();
   }
 
   private handleStartGame(playerId: string, options?: Record<string, unknown>): void {
@@ -470,11 +587,6 @@ export class Room {
       return;
     }
 
-    // All players must be ready (except the host, who can start regardless)
-    // Actually, let's require all players to be ready
-    // No — convention: host clicking "Start" implies readiness. Check non-host players.
-    // Simpler: just start. The host decides.
-
     // Resolve options: merge user options with engine defaults
     const defaults = this.gameEngine.getDefaultOptions();
     this.gameOptions = { ...defaults, ...options };
@@ -491,6 +603,8 @@ export class Room {
 
     // Also send per-player views (for games with hidden info)
     this.broadcastGameState();
+
+    this.markDirty();
   }
 
   private handleGameAction(playerId: string, action: unknown): void {
@@ -518,6 +632,8 @@ export class Room {
       this.broadcast({ type: 'game_over', result: status });
       this.log(`Game over: ${status.reason ?? 'finished'}`);
     }
+
+    this.markDirty();
   }
 
   private handleRematchRequest(playerId: string): void {
@@ -536,6 +652,8 @@ export class Room {
     if (allVoted && this.players.size >= this.gameEngine.minPlayers) {
       this.startRematch();
     }
+
+    this.markDirty();
   }
 
   /** Reset the room for a new round */
@@ -555,6 +673,59 @@ export class Room {
 
     this.broadcast({ type: 'game_started', initialState: this.gameState });
     this.broadcastGameState();
+
+    this.markDirty();
+  }
+
+  // ----------------------------------------------------------
+  // Persistence
+  // ----------------------------------------------------------
+
+  /** Serialize the room to a JSON-safe snapshot */
+  serialize(): RoomSnapshot {
+    return {
+      roomCode: this.roomCode,
+      gameId: this.gameId,
+      phase: this.phase,
+      players: Array.from(this.players.values()).map((p) => p.serialize()),
+      hostId: this.hostId,
+      gameState: this.gameState,
+      gameOptions: this.gameOptions,
+      joinOrder: [...this.joinOrder],
+      createdAt: this.createdAt,
+      lastActivity: this.lastActivity,
+      rematchVotes: Array.from(this.rematchVotes),
+    };
+  }
+
+  /**
+   * Reconstruct a Room from a persisted snapshot.
+   * All players start disconnected and must reconnect via tryReconnect.
+   */
+  static fromSnapshot(snapshot: RoomSnapshot, gameEngine: GameEngine): Room {
+    const room = new Room(snapshot.roomCode, snapshot.gameId, gameEngine);
+
+    // Override constructor defaults with snapshot data
+    room.phase = snapshot.phase;
+    room.hostId = snapshot.hostId;
+    room.gameState = snapshot.gameState;
+    room.gameOptions = snapshot.gameOptions;
+    room.joinOrder = [...snapshot.joinOrder];
+    // Use Object.assign to set readonly properties from snapshot
+    Object.assign(room, {
+      createdAt: snapshot.createdAt,
+    });
+    room.lastActivity = snapshot.lastActivity;
+    room.rematchVotes = new Set(snapshot.rematchVotes);
+
+    // Restore players (all start disconnected)
+    for (const ps of snapshot.players) {
+      const player = Player.fromSnapshot(ps);
+      room.players.set(player.id, player);
+    }
+
+    room.log(`Rehydrated from persistence [${room.players.size} players, phase=${room.phase}]`);
+    return room;
   }
 
   // ----------------------------------------------------------
