@@ -29,7 +29,7 @@ export function checkWinner(
   for (const line of WINNING_LINES) {
     const [a, b, c] = line;
     if (board[a] !== null && board[a] === board[b] && board[b] === board[c]) {
-      return { winnerId: board[a]!, line };
+      return { winnerId: board[a]!, line: [...line] };
     }
   }
   return null;
