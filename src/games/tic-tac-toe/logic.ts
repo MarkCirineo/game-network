@@ -5,7 +5,7 @@
 import type { TicTacToeState, TicTacToeAction } from './types';
 
 // All eight possible winning lines (row, col, diagonal indices)
-export const WINNING_LINES: readonly number[][] = [
+export const WINNING_LINES: readonly (readonly number[])[] = [
   // Rows
   [0, 1, 2],
   [3, 4, 5],
