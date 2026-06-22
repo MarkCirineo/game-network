@@ -34,6 +34,16 @@ const games = [
     accentColor: "#F97316",
     category: "Quick",
   },
+  {
+    id: "connect-four",
+    emoji: "🔴",
+    name: "Connect Four",
+    shortDescription: "Drop discs, connect four to win",
+    players: "2 players",
+    duration: "2–5 min",
+    accentColor: "#EF4444",
+    category: "Strategy",
+  },
 ];
 
 const partnerGames = [

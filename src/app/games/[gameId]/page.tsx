@@ -65,6 +65,27 @@ const gameData: Record<
     ],
     tags: ["classic", "quick", "two-player"],
   },
+  "connect-four": {
+    id: "connect-four",
+    name: "Connect Four",
+    emoji: "🔴",
+    description:
+      "The classic disc-dropping strategy game. Take turns dropping colored discs into a 7-column grid — connect four in a row horizontally, vertically, or diagonally to win!",
+    shortDescription: "Drop discs, connect four to win",
+    accentColor: "#EF4444",
+    minPlayers: 2,
+    maxPlayers: 2,
+    estimatedDuration: "2–5 min",
+    category: "strategy",
+    rules: [
+      "Players take turns dropping a disc into one of the 7 columns",
+      "Discs fall to the lowest available position in the chosen column",
+      "First player to connect 4 discs in a row (horizontal, vertical, or diagonal) wins",
+      "If all 42 cells are filled with no winner, the game is a draw",
+      "Red always goes first",
+    ],
+    tags: ["classic", "strategy", "two-player", "grid"],
+  },
 };
 
 type Props = {

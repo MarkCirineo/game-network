@@ -7,6 +7,7 @@
 import { GameEngine } from '../GameEngine.js';
 import { TicTacToeEngine } from './TicTacToeEngine.js';
 import { RockPaperScissorsEngine } from './RockPaperScissorsEngine.js';
+import { ConnectFourEngine } from './ConnectFourEngine.js';
 
 /**
  * Registry of all available game engines, keyed by game ID.
@@ -17,6 +18,7 @@ const engineRegistry: Map<string, GameEngine> = new Map();
 // Register built-in engines
 engineRegistry.set('tic-tac-toe', new TicTacToeEngine());
 engineRegistry.set('rock-paper-scissors', new RockPaperScissorsEngine());
+engineRegistry.set('connect-four', new ConnectFourEngine());
 
 /**
  * Retrieve a game engine by its game ID.
