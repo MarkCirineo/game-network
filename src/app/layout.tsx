@@ -4,6 +4,7 @@ import { Inter, Space_Grotesk } from "next/font/google";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/sonner";
 import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
 import "./globals.css";
 
 const inter = Inter({
@@ -71,6 +72,7 @@ export default function RootLayout({
         <TooltipProvider>
           <Header />
           <main className="flex-1 flex flex-col">{children}</main>
+          <Footer />
           <Toaster position="bottom-center" richColors />
         </TooltipProvider>
         {process.env.NODE_ENV === "production" && (

@@ -205,19 +205,8 @@ export default function HomePage() {
         </section>
       )}
 
-      {/* ── Footer ───────────────────────────────────────── */}
-      <footer className="mt-auto border-t border-white/5 px-4 py-8">
-        <div className="mx-auto flex max-w-4xl flex-col items-center justify-between gap-4 sm:flex-row">
-          <p className="text-sm text-text-muted">
-            © {new Date().getFullYear()} ArcadeKit. Built with ❤️
-          </p>
-          <div className="flex items-center gap-4 text-sm text-text-muted">
-            <Link href="/games" className="hover:text-text-secondary">
-              All Games
-            </Link>
-          </div>
-        </div>
-      </footer>
+
+
     </>
   );
 }
