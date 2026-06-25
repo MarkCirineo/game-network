@@ -9,6 +9,7 @@ import type { PartnerGame, GameCategory } from '../../shared/gameTypes';
 import ticTacToe from './tic-tac-toe';
 import rockPaperScissors from './rock-paper-scissors';
 import connectFour from './connect-four';
+import battleship from './battleship';
 
 // ------------------------------------------------------------
 // Internal registry map (id → definition)
@@ -18,6 +19,7 @@ const games: Record<string, GameDefinition> = {
   [ticTacToe.id]: ticTacToe,
   [rockPaperScissors.id]: rockPaperScissors,
   [connectFour.id]: connectFour,
+  [battleship.id]: battleship,
 };
 
 // ------------------------------------------------------------

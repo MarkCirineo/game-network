@@ -47,6 +47,17 @@ const games = [
     accentColor: "#EF4444",
     tags: ["classic", "strategy", "two-player", "grid"],
   },
+  {
+    id: "battleship",
+    emoji: "🚢",
+    name: "Battleship",
+    shortDescription: "Sink the enemy fleet",
+    category: "strategy",
+    players: "2 players",
+    duration: "5–15 min",
+    accentColor: "#0EA5E9",
+    tags: ["classic", "strategy", "two-player", "hidden-info", "naval"],
+  },
 ];
 
 const partnerGames = [

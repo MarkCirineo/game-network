@@ -86,6 +86,28 @@ const gameData: Record<
     ],
     tags: ["classic", "strategy", "two-player", "grid"],
   },
+  "battleship": {
+    id: "battleship",
+    name: "Battleship",
+    emoji: "🚢",
+    description:
+      "The classic naval combat game. Place your fleet on a hidden grid, then take turns firing at your opponent's waters. Sink all 5 enemy ships before they sink yours!",
+    shortDescription: "Sink the enemy fleet",
+    accentColor: "#0EA5E9",
+    minPlayers: 2,
+    maxPlayers: 2,
+    estimatedDuration: "5–15 min",
+    category: "strategy",
+    rules: [
+      "Each player secretly places 5 ships on their 10×10 grid: Carrier (5), Battleship (4), Cruiser (3), Submarine (3), Destroyer (2)",
+      "Ships can be placed horizontally or vertically, but cannot overlap",
+      "Players take turns firing at a cell on their opponent's grid",
+      "A hit is marked with fire 🔥, a miss with a dot",
+      "When all cells of a ship are hit, it is sunk",
+      "The first player to sink all 5 enemy ships wins!",
+    ],
+    tags: ["classic", "strategy", "two-player", "hidden-info", "naval"],
+  },
 };
 
 type Props = {
