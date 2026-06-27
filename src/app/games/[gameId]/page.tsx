@@ -108,6 +108,28 @@ const gameData: Record<
     ],
     tags: ["classic", "strategy", "two-player", "hidden-info", "naval"],
   },
+  "word-scramble": {
+    id: "word-scramble",
+    name: "Word Scramble",
+    emoji: "🔤",
+    description:
+      "Race to unscramble words before your friends! Choose from themed categories like Animals, Food, or Countries. First to figure out the scrambled word scores a point. Supports 2–8 players!",
+    shortDescription: "Unscramble words faster than your friends",
+    accentColor: "#8B5CF6",
+    minPlayers: 2,
+    maxPlayers: 8,
+    estimatedDuration: "3–5 min",
+    category: "party",
+    rules: [
+      "A scrambled word is shown to all players at the same time",
+      "Type your guess and press Enter — unlimited attempts, no penalty",
+      "The first player to type the correct word scores a point",
+      "Each round has a 30-second time limit",
+      "Choose from themed categories: Animals, Food, Countries, Sports, Science, Entertainment",
+      "Play fixed rounds (5, 10, or 15) or first to a target score (3, 5, or 10)",
+    ],
+    tags: ["party", "word", "multiplayer", "fast-paced"],
+  },
 };
 
 type Props = {

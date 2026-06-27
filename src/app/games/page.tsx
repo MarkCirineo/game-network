@@ -58,6 +58,17 @@ const games = [
     accentColor: "#0EA5E9",
     tags: ["classic", "strategy", "two-player", "hidden-info", "naval"],
   },
+  {
+    id: "word-scramble",
+    emoji: "🔤",
+    name: "Word Scramble",
+    shortDescription: "Unscramble words faster than your friends",
+    category: "party",
+    players: "2–8 players",
+    duration: "3–5 min",
+    accentColor: "#8B5CF6",
+    tags: ["party", "word", "multiplayer", "fast-paced"],
+  },
 ];
 
 const partnerGames = [

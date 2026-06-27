@@ -183,7 +183,8 @@ export const useGameStore = create<GameStore>((set, get) => ({
         set({ phase: "playing", gameState: msg.initialState, gameResult: null, rematchRequests: new Set() });
         break;
       case "game_over": {
-        // Delay game_over processing so the reveal animation can play
+        // Delay game_over processing so the final state / reveal animation can play.
+        // Games like RPS send game_over simultaneously with the winning round reveal.
         const timer = setTimeout(() => {
           store.setGameResult(msg.result);
         }, 2500);

@@ -10,6 +10,7 @@ import ticTacToe from './tic-tac-toe';
 import rockPaperScissors from './rock-paper-scissors';
 import connectFour from './connect-four';
 import battleship from './battleship';
+import wordScramble from './word-scramble';
 
 // ------------------------------------------------------------
 // Internal registry map (id → definition)
@@ -20,6 +21,7 @@ const games: Record<string, GameDefinition> = {
   [rockPaperScissors.id]: rockPaperScissors,
   [connectFour.id]: connectFour,
   [battleship.id]: battleship,
+  [wordScramble.id]: wordScramble,
 };
 
 // ------------------------------------------------------------

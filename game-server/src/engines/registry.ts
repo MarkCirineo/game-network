@@ -9,6 +9,7 @@ import { TicTacToeEngine } from './TicTacToeEngine.js';
 import { RockPaperScissorsEngine } from './RockPaperScissorsEngine.js';
 import { ConnectFourEngine } from './ConnectFourEngine.js';
 import { BattleshipEngine } from './BattleshipEngine.js';
+import { WordScrambleEngine } from './WordScrambleEngine.js';
 
 /**
  * Registry of all available game engines, keyed by game ID.
@@ -21,6 +22,7 @@ engineRegistry.set('tic-tac-toe', new TicTacToeEngine());
 engineRegistry.set('rock-paper-scissors', new RockPaperScissorsEngine());
 engineRegistry.set('connect-four', new ConnectFourEngine());
 engineRegistry.set('battleship', new BattleshipEngine());
+engineRegistry.set('word-scramble', new WordScrambleEngine());
 
 /**
  * Retrieve a game engine by its game ID.
