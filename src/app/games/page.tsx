@@ -69,6 +69,17 @@ const games = [
     accentColor: "#8B5CF6",
     tags: ["party", "word", "multiplayer", "fast-paced"],
   },
+  {
+    id: "reaction-race",
+    emoji: "⚡",
+    name: "Reaction Race",
+    shortDescription: "Test your reflexes against your friends",
+    category: "party",
+    players: "2–8 players",
+    duration: "2–3 min",
+    accentColor: "#22C55E",
+    tags: ["party", "reflex", "multiplayer", "fast-paced"],
+  },
 ];
 
 const partnerGames = [

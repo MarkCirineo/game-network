@@ -10,6 +10,7 @@ import { RockPaperScissorsEngine } from './RockPaperScissorsEngine.js';
 import { ConnectFourEngine } from './ConnectFourEngine.js';
 import { BattleshipEngine } from './BattleshipEngine.js';
 import { WordScrambleEngine } from './WordScrambleEngine.js';
+import { ReactionRaceEngine } from './ReactionRaceEngine.js';
 
 /**
  * Registry of all available game engines, keyed by game ID.
@@ -23,6 +24,7 @@ engineRegistry.set('rock-paper-scissors', new RockPaperScissorsEngine());
 engineRegistry.set('connect-four', new ConnectFourEngine());
 engineRegistry.set('battleship', new BattleshipEngine());
 engineRegistry.set('word-scramble', new WordScrambleEngine());
+engineRegistry.set('reaction-race', new ReactionRaceEngine());
 
 /**
  * Retrieve a game engine by its game ID.

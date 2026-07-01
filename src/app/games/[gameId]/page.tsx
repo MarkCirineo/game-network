@@ -130,6 +130,27 @@ const gameData: Record<
     ],
     tags: ["party", "word", "multiplayer", "fast-paced"],
   },
+  "reaction-race": {
+    id: "reaction-race",
+    name: "Reaction Race",
+    emoji: "⚡",
+    description:
+      "A fast-paced reaction time game. Wait for the screen to turn green, then click as fast as you can! Fastest reaction wins the round. But click too early and you get a false start! Supports 2–8 players.",
+    shortDescription: "Test your reflexes against your friends",
+    accentColor: "#22C55E",
+    minPlayers: 2,
+    maxPlayers: 8,
+    estimatedDuration: "2–3 min",
+    category: "party",
+    rules: [
+      "Wait for the screen to turn green before clicking",
+      "Click or press Space as fast as you can when you see 'GO!'",
+      "Fastest reaction time wins the round and scores a point",
+      "Clicking before the green signal is a false start — you miss that round",
+      "Play fixed rounds or first to a target score",
+    ],
+    tags: ["party", "reflex", "multiplayer", "fast-paced"],
+  },
 };
 
 type Props = {
