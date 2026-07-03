@@ -29,6 +29,12 @@ export function Header() {
             Games
           </Link>
           <Link
+            href="/tools"
+            className="text-sm font-medium text-text-secondary transition-colors hover:text-foreground"
+          >
+            Tools
+          </Link>
+          <Link
             href="/games"
             className="inline-flex h-9 items-center rounded-lg bg-ember px-4 text-sm font-medium text-white transition-all hover:bg-ember/90 hover:shadow-lg hover:shadow-ember/25"
           >
@@ -64,6 +70,13 @@ export function Header() {
             className="rounded-lg px-3 py-2 text-sm font-medium text-text-secondary transition-colors hover:bg-white/5 hover:text-foreground"
           >
             Games
+          </Link>
+          <Link
+            href="/tools"
+            onClick={() => setMobileMenuOpen(false)}
+            className="rounded-lg px-3 py-2 text-sm font-medium text-text-secondary transition-colors hover:bg-white/5 hover:text-foreground"
+          >
+            Tools
           </Link>
           <Link
             href="/games"

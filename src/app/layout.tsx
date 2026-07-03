@@ -5,6 +5,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/sonner";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { CookieConsent } from "@/components/ads/CookieConsent";
 import "./globals.css";
 
 const inter = Inter({
@@ -18,6 +19,8 @@ const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   display: "swap",
 });
+
+const adsenseId = process.env.NEXT_PUBLIC_ADSENSE_ID;
 
 export const metadata: Metadata = {
   metadataBase: new URL(
@@ -73,8 +76,17 @@ export default function RootLayout({
           <Header />
           <main className="flex-1 flex flex-col">{children}</main>
           <Footer />
+          <CookieConsent />
           <Toaster position="bottom-center" richColors />
         </TooltipProvider>
+        {/* Google AdSense — only loads when NEXT_PUBLIC_ADSENSE_ID is set */}
+        {adsenseId && (
+          <Script
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseId}`}
+            crossOrigin="anonymous"
+            strategy="afterInteractive"
+          />
+        )}
         {process.env.NODE_ENV === "production" && (
           <Script
             src="https://analytics.markcirineo.com/script.js"
@@ -86,3 +98,4 @@ export default function RootLayout({
     </html>
   );
 }
+
