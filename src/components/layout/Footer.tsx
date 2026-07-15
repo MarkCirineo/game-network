@@ -37,6 +37,13 @@ export function Footer() {
             </Link>
             <span className="text-white/10">·</span>
             <Link
+              href="/guides"
+              className="text-text-secondary transition-colors hover:text-ember"
+            >
+              Guides
+            </Link>
+            <span className="text-white/10">·</span>
+            <Link
               href="/about"
               className="text-text-secondary transition-colors hover:text-ember"
             >

@@ -6,7 +6,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Clock, Users } from "lucide-react";
+import { BookOpen, Clock, Users } from "lucide-react";
 import { CreateRoomButton } from "@/components/game/CreateRoomButton";
 
 // Static game data for SSR (avoids importing client-side registry)
@@ -242,6 +242,25 @@ export default async function GameDetailPage({ params }: Props) {
             ))}
           </ul>
         </div>
+
+        {/* Full guide link */}
+        <Link
+          href={`/games/${game.id}/how-to-play`}
+          className="mt-4 flex items-center justify-between rounded-2xl border border-white/5 bg-surface p-5 transition-colors hover:border-white/15"
+        >
+          <div className="flex items-center gap-3">
+            <BookOpen className="h-5 w-5 text-ember" />
+            <div>
+              <p className="text-sm font-semibold">
+                Full {game.name} Guide
+              </p>
+              <p className="text-xs text-text-muted">
+                History, strategy tips, variations &amp; FAQ
+              </p>
+            </div>
+          </div>
+          <span className="text-text-muted">→</span>
+        </Link>
 
         {/* Tags */}
         <div className="mt-6 flex flex-wrap gap-2">
