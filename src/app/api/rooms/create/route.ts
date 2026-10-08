@@ -6,13 +6,22 @@
 
 import { NextRequest, NextResponse } from "next/server";
 
-const VALID_GAME_IDS = ["tic-tac-toe", "rock-paper-scissors"];
+// Shape check only — the game server's engine registry decides which game
+// IDs exist (it answers 400 for unknown ones). A hard-coded list here goes
+// stale every time a game ships.
+const GAME_ID_PATTERN = /^[a-z0-9-]{1,40}$/;
+
+function isPlausibleGameId(gameId: unknown): gameId is string {
+  return typeof gameId === "string" && GAME_ID_PATTERN.test(gameId);
+}
 
 function getGameServerUrl(): string {
   return process.env.GAME_SERVER_INTERNAL_URL || "http://127.0.0.1:3001";
 }
 
-async function createRoomOnServer(gameId: string): Promise<{ roomCode: string } | null> {
+async function createRoomOnServer(
+  gameId: string
+): Promise<{ roomCode: string } | { error: string; status: number }> {
   const serverUrl = getGameServerUrl();
   const url = `${serverUrl}/create-room`;
   
@@ -28,7 +37,9 @@ async function createRoomOnServer(gameId: string): Promise<{ roomCode: string } 
   if (!res.ok) {
     const errText = await res.text();
     console.error(`[ArcadeKit] Game server returned ${res.status}: ${errText}`);
-    return null;
+    return res.status === 400
+      ? { error: "Invalid game ID", status: 400 }
+      : { error: "Failed to create room", status: 500 };
   }
 
   const data = await res.json();
@@ -41,7 +52,7 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const { gameId } = body;
 
-    if (!gameId || !VALID_GAME_IDS.includes(gameId)) {
+    if (!isPlausibleGameId(gameId)) {
       return NextResponse.json(
         { error: "Invalid game ID" },
         { status: 400 }
@@ -49,11 +60,8 @@ export async function POST(request: NextRequest) {
     }
 
     const data = await createRoomOnServer(gameId);
-    if (!data) {
-      return NextResponse.json(
-        { error: "Failed to create room" },
-        { status: 500 }
-      );
+    if ("error" in data) {
+      return NextResponse.json({ error: data.error }, { status: data.status });
     }
 
     return NextResponse.json(data);
@@ -75,15 +83,16 @@ export async function POST(request: NextRequest) {
 export async function GET(request: NextRequest) {
   const gameId = request.nextUrl.searchParams.get("gameId");
 
-  if (!gameId || !VALID_GAME_IDS.includes(gameId)) {
+  if (!isPlausibleGameId(gameId)) {
     return NextResponse.redirect(new URL("/games", request.url));
   }
 
   try {
     const data = await createRoomOnServer(gameId);
-    
-    if (!data) {
-      return NextResponse.redirect(new URL(`/games/${gameId}`, request.url));
+
+    if ("error" in data) {
+      const fallback = data.status === 400 ? "/games" : `/games/${gameId}`;
+      return NextResponse.redirect(new URL(fallback, request.url));
     }
 
     return NextResponse.redirect(

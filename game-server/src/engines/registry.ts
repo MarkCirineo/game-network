@@ -11,6 +11,7 @@ import { ConnectFourEngine } from './ConnectFourEngine.js';
 import { BattleshipEngine } from './BattleshipEngine.js';
 import { WordScrambleEngine } from './WordScrambleEngine.js';
 import { ReactionRaceEngine } from './ReactionRaceEngine.js';
+import { HangmanEngine } from './HangmanEngine.js';
 
 /**
  * Registry of all available game engines, keyed by game ID.
@@ -25,6 +26,7 @@ engineRegistry.set('connect-four', new ConnectFourEngine());
 engineRegistry.set('battleship', new BattleshipEngine());
 engineRegistry.set('word-scramble', new WordScrambleEngine());
 engineRegistry.set('reaction-race', new ReactionRaceEngine());
+engineRegistry.set('hangman', new HangmanEngine());
 
 /**
  * Retrieve a game engine by its game ID.

@@ -74,6 +74,16 @@ const games = [
     accentColor: "#22C55E",
     category: "Party",
   },
+  {
+    id: "hangman",
+    emoji: "🪢",
+    name: "Hangman",
+    shortDescription: "Guess letters, dodge the gallows, solve the word",
+    players: "2–8 players",
+    duration: "5–10 min",
+    accentColor: "#F59E0B",
+    category: "Word",
+  },
 ];
 
 const partnerGames = [

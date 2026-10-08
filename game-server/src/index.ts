@@ -203,7 +203,7 @@ function setupPlayerSocket(ws: WebSocket, room: ReturnType<typeof roomManager.ge
     // Use handleDisconnect instead of removePlayer to enable
     // reconnection grace window. Spectators are removed immediately
     // inside handleDisconnect.
-    room.handleDisconnect(playerId);
+    room.handleDisconnect(playerId, ws);
     connectionMap.delete(ws);
   });
 

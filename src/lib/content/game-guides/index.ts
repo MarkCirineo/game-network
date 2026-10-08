@@ -10,6 +10,7 @@ import { connectFourGuide } from "./connect-four";
 import { battleshipGuide } from "./battleship";
 import { wordScrambleGuide } from "./word-scramble";
 import { reactionRaceGuide } from "./reaction-race";
+import { hangmanGuide } from "./hangman";
 
 export type { GameGuide, HowToStep, StrategyTip, Variation, FaqItem, GearItem, RelatedTool } from "./types";
 
@@ -20,6 +21,7 @@ const guides: Record<string, GameGuide> = {
   [battleshipGuide.gameId]: battleshipGuide,
   [wordScrambleGuide.gameId]: wordScrambleGuide,
   [reactionRaceGuide.gameId]: reactionRaceGuide,
+  [hangmanGuide.gameId]: hangmanGuide,
 };
 
 /** Look up a guide by game ID. Returns undefined if none exists. */

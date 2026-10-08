@@ -26,6 +26,9 @@ export type { RoomPhase };
 /** How long a disconnected player can reconnect (ms) */
 const RECONNECT_WINDOW_MS = 60_000;
 
+/** Close code sent to a socket whose session was taken over by a newer one */
+export const REPLACED_CLOSE_CODE = 4003;
+
 // ------------------------------------------------------------
 // Snapshot types for persistence (JSON-serializable)
 // ------------------------------------------------------------
@@ -160,8 +163,13 @@ export class Room {
     };
   }
 
-  /** Snapshot the full room state (sent on join and reconnect) */
-  getRoomState(): RoomState {
+  /**
+   * Snapshot the full room state (sent on join and reconnect).
+   * gameState is sanitized through getPlayerView for the given viewer —
+   * pass the recipient's player ID, or omit for the spectator-safe view
+   * (the default keeps any future caller from leaking hidden info).
+   */
+  getRoomState(viewerId: string = '__spectator__'): RoomState {
     return {
       roomCode: this.roomCode,
       gameId: this.gameId,
@@ -169,7 +177,10 @@ export class Room {
       players: Array.from(this.players.values()).map((p) => this.toPlayerInfo(p)),
       spectators: Array.from(this.spectators.values()).map((s) => this.toSpectatorInfo(s)),
       hostId: this.hostId ?? '',
-      gameState: this.gameState,
+      gameState:
+        this.gameState === null
+          ? null
+          : this.gameEngine.getPlayerView(this.gameState, viewerId),
       createdAt: this.createdAt,
       gameOptionsSchema: this.gameEngine.getOptionsSchema(),
     };
@@ -207,16 +218,34 @@ export class Room {
 
   /**
    * Send per-player game state updates (uses getPlayerView for hidden info).
-   * Spectators receive the host's view (full state for most games).
    */
   private broadcastGameState(): void {
     for (const player of this.players.values()) {
       const view = this.gameEngine.getPlayerView(this.gameState, player.id);
       player.send({ type: 'game_state_update', state: view });
     }
-    // Spectators see the full state
-    const spectatorMsg: ServerMessage = { type: 'game_state_update', state: this.gameState };
+    // Spectators get a sanitized view too — the sentinel ID matches no
+    // player, so engines hide ALL hidden information (words, ships, choices)
+    const spectatorView = this.gameEngine.getPlayerView(this.gameState, '__spectator__');
+    const spectatorMsg: ServerMessage = { type: 'game_state_update', state: spectatorView };
     this.broadcastToSpectators(spectatorMsg);
+  }
+
+  /**
+   * Send game_started to everyone with a per-recipient sanitized
+   * initial state (raw state would leak hidden info like words/ships).
+   */
+  private broadcastGameStarted(): void {
+    for (const player of this.players.values()) {
+      player.send({
+        type: 'game_started',
+        initialState: this.gameEngine.getPlayerView(this.gameState, player.id),
+      });
+    }
+    this.broadcastToSpectators({
+      type: 'game_started',
+      initialState: this.gameEngine.getPlayerView(this.gameState, '__spectator__'),
+    });
   }
 
   /** Notify the persistence layer that state has changed */
@@ -230,16 +259,39 @@ export class Room {
 
   /**
    * Attempt to reconnect a player by session token.
+   *
+   * A matching token on a player the server still believes is connected
+   * is a takeover, not a conflict: the session token is a per-tab secret,
+   * so a second socket with it means that tab reconnected (page refresh,
+   * or a network drop the server has not detected yet). The new socket
+   * wins and the stale one is closed with REPLACED_CLOSE_CODE.
+   *
    * @returns true if reconnected, false if no match found.
    */
   tryReconnect(sessionToken: string, ws: WebSocket): boolean {
     for (const player of this.players.values()) {
-      if (
-        player.sessionToken === sessionToken &&
+      if (player.sessionToken !== sessionToken) continue;
+
+      const isTakeover = player.isConnected;
+      const withinGraceWindow =
         !player.isConnected &&
         player.disconnectedAt !== null &&
-        Date.now() - player.disconnectedAt < RECONNECT_WINDOW_MS
-      ) {
+        Date.now() - player.disconnectedAt < RECONNECT_WINDOW_MS;
+      if (!isTakeover && !withinGraceWindow) continue;
+
+      if (isTakeover) {
+        const staleWs = player.ws;
+        player.reconnect(ws);
+        if (staleWs && staleWs !== ws) {
+          try {
+            staleWs.close(REPLACED_CLOSE_CODE, 'Replaced by a newer connection');
+          } catch {
+            // Stale socket may already be dead — ignore
+          }
+        }
+        this.lastActivity = Date.now();
+        this.log(`Player "${player.name}" (${player.id}) session taken over by a new connection`);
+      } else {
         // Cancel the disconnect grace timer if one exists
         const timer = this.disconnectTimers.get(player.id);
         if (timer) {
@@ -250,16 +302,16 @@ export class Room {
         player.reconnect(ws);
         this.lastActivity = Date.now();
         this.log(`Player "${player.name}" (${player.id}) reconnected`);
-
-        // Send the full room state to the reconnecting player
-        player.send({ type: 'room_state', room: this.getRoomState(), yourPlayerId: player.id });
-
-        // Notify others that the player is back (upsert with isConnected: true)
-        this.broadcast({ type: 'player_joined', player: this.toPlayerInfo(player) });
-
-        this.markDirty();
-        return true;
       }
+
+      // Send the full room state to the reconnecting player
+      player.send({ type: 'room_state', room: this.getRoomState(player.id), yourPlayerId: player.id });
+
+      // Notify others that the player is back (upsert with isConnected: true)
+      this.broadcast({ type: 'player_joined', player: this.toPlayerInfo(player) });
+
+      this.markDirty();
+      return true;
     }
     return false;
   }
@@ -268,8 +320,12 @@ export class Room {
    * Handle a WebSocket disconnection (socket close event).
    * Unlike removePlayer, this keeps the player in the Map
    * with a grace window to allow reconnection.
+   *
+   * @param ws - The socket that closed. A close from a socket that has
+   *   since been replaced (see tryReconnect) is ignored, so a late close
+   *   event can't disconnect a player who is live on a newer socket.
    */
-  handleDisconnect(id: string): void {
+  handleDisconnect(id: string, ws?: WebSocket): void {
     // Check spectators first — they are removed immediately
     if (this.spectators.has(id)) {
       this.spectators.delete(id);
@@ -280,6 +336,7 @@ export class Room {
 
     const player = this.players.get(id);
     if (!player || !player.isConnected) return;
+    if (ws && player.ws !== ws) return;
 
     player.disconnect();
     this.lastActivity = Date.now();
@@ -338,7 +395,7 @@ export class Room {
     this.log(`Player "${name}" (${id}) joined [${this.players.size}/${this.maxPlayers}]`);
 
     // Send room state to the new player
-    player.send({ type: 'room_state', room: this.getRoomState(), yourPlayerId: player.id });
+    player.send({ type: 'room_state', room: this.getRoomState(player.id), yourPlayerId: player.id });
 
     // Notify everyone else
     const joinMsg: ServerMessage = { type: 'player_joined', player: this.toPlayerInfo(player) };
@@ -362,8 +419,9 @@ export class Room {
     this.spectators.set(id, spectator);
     this.log(`Spectator "${name}" (${id}) joined [${this.spectators.size} spectators]`);
 
-    // Send room state to the spectator
+    // Send room state to the spectator (spectator-safe view)
     const roomState = this.getRoomState();
+
     try {
       ws.send(JSON.stringify({ type: 'room_state', room: roomState, yourPlayerId: id } satisfies ServerMessage));
     } catch { /* ignore */ }
@@ -415,6 +473,13 @@ export class Room {
     // Host migration: if the leaving player was host, pick the oldest remaining player
     if (this.hostId === id) {
       this.migrateHost();
+    }
+
+    // Let the engine drop the player from any in-game rotation
+    // (prevents turn-based 3+ player games stalling on a ghost turn)
+    if (this.phase === 'playing' && this.gameState !== null) {
+      this.gameState = this.gameEngine.handlePlayerRemoved(this.gameState, id);
+      this.broadcastGameState();
     }
 
     // If a game was in progress and not enough players remain, end the game
@@ -598,8 +663,8 @@ export class Room {
 
     this.log('Game started');
 
-    // Broadcast the game_started message with initial state
-    this.broadcast({ type: 'game_started', initialState: this.gameState });
+    // Broadcast game_started with per-recipient sanitized initial state
+    this.broadcastGameStarted();
 
     // Also send per-player views (for games with hidden info)
     this.broadcastGameState();
@@ -671,7 +736,7 @@ export class Room {
     this.gameState = this.gameEngine.createInitialState(playerInfos, this.gameOptions);
     this.phase = 'playing';
 
-    this.broadcast({ type: 'game_started', initialState: this.gameState });
+    this.broadcastGameStarted();
     this.broadcastGameState();
 
     this.markDirty();

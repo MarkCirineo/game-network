@@ -16,6 +16,7 @@ const gameIds = [
   "battleship",
   "word-scramble",
   "reaction-race",
+  "hangman",
 ];
 
 // All tool slugs

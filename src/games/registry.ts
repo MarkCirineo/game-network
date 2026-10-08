@@ -12,6 +12,7 @@ import connectFour from './connect-four';
 import battleship from './battleship';
 import wordScramble from './word-scramble';
 import reactionRace from './reaction-race';
+import hangman from './hangman';
 
 // ------------------------------------------------------------
 // Internal registry map (id → definition)
@@ -24,6 +25,7 @@ const games: Record<string, GameDefinition> = {
   [battleship.id]: battleship,
   [wordScramble.id]: wordScramble,
   [reactionRace.id]: reactionRace,
+  [hangman.id]: hangman,
 };
 
 // ------------------------------------------------------------

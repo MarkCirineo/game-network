@@ -84,4 +84,19 @@ export abstract class GameEngine {
   getPlayerView(state: unknown, _playerId: string): unknown {
     return state;
   }
+
+  /**
+   * Optional: react to a player being permanently removed mid-game
+   * (disconnect grace window expired). Engines with a turn rotation
+   * MUST override this to drop the player, or the game can stall
+   * waiting on a ghost turn. Games that end on removal via the
+   * min-player check (all 2-player games) can use the default.
+   *
+   * @param state    - Current game state
+   * @param playerId - The removed player's ID
+   * @returns New game state with the player accounted for
+   */
+  handlePlayerRemoved(state: unknown, _playerId: string): unknown {
+    return state;
+  }
 }

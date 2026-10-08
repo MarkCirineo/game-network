@@ -130,6 +130,28 @@ const gameData: Record<
     ],
     tags: ["party", "word", "multiplayer", "fast-paced"],
   },
+  "hangman": {
+    id: "hangman",
+    name: "Hangman",
+    emoji: "🪢",
+    description:
+      "The classic word-guessing game, multiplayer. Take turns guessing letters on a shared gallows — score for every letter you reveal, risk a full-word solve for big points, and don't let the hangman finish! Supports 2–8 players.",
+    shortDescription: "Guess letters, dodge the gallows, solve the word",
+    accentColor: "#F59E0B",
+    minPlayers: 2,
+    maxPlayers: 8,
+    estimatedDuration: "5–10 min",
+    category: "word",
+    rules: [
+      "Everyone guesses the same hidden word — players take turns picking letters",
+      "Correct letter: +10 points per appearance, and you keep your turn",
+      "Wrong letter: a strike is added to the shared gallows and your turn passes",
+      "On your turn you can try to solve the whole word: +20 points per hidden letter if right, a strike and your turn if wrong",
+      "If the gallows fills up (6, 8, or 10 strikes), the round ends with no winner",
+      "Most points after all rounds wins the match",
+    ],
+    tags: ["classic", "word", "multiplayer", "turn-based"],
+  },
   "reaction-race": {
     id: "reaction-race",
     name: "Reaction Race",

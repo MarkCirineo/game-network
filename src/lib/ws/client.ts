@@ -179,14 +179,19 @@ export function useGameSocket({
       if (!mountedRef.current) return;
       clearInterval(pingTimerRef.current);
 
-      // Check close codes from the game server for terminal conditions
-      const terminalCloseCodes = [4000, 4001, 4002];
+      // Check close codes from the game server for terminal conditions.
+      // 4003 = this session was taken over by a newer connection (e.g. a
+      // duplicated tab) — reconnecting would just steal it back, forever.
+      const terminalCloseCodes = [4000, 4001, 4002, 4003];
       if (terminalCloseCodes.includes(event.code) || terminalErrorRef.current) {
         terminalErrorRef.current = false;
         storeActionsRef.current.setConnectionStatus("disconnected");
         // Set a user-friendly error if the room is gone
         if (event.code === 4001) {
           storeActionsRef.current.setJoinError("This room no longer exists. It may have expired.");
+        }
+        if (event.code === 4003) {
+          storeActionsRef.current.setJoinError("This game is open in another tab. Close it there to keep playing here.");
         }
         return;
       }
