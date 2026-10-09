@@ -26,7 +26,6 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 |------|---------|------|----------|
 | ❌ Tic Tac Toe | 2 | Strategy | ~2 min |
 | ✊ Rock Paper Scissors | 2 | Quick | ~2 min |
-| 🔍 [Guess Who](https://playguesswho.net) | 2 | Deduction | ~10 min |
 
 ## How It Works
 
