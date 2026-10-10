@@ -99,6 +99,11 @@ export default async function ComingSoonPage({ searchParams }: Props) {
                 <strong className="text-text-primary">Not ready yet.</strong>{" "}
                 There&apos;s no release date.
               </p>
+              <p className="mt-2">
+                {feature
+                  ? "When it's ready, this same link will take you straight to it."
+                  : "When a feature is ready, this page will link to it."}
+              </p>
             </div>
           </section>
 
