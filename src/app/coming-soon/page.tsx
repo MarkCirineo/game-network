@@ -55,83 +55,86 @@ export default async function ComingSoonPage({ searchParams }: Props) {
     <div className="px-4 py-8 md:py-12">
       <ComingSoonTracker feature={tracked} />
 
-      <div className="mx-auto max-w-md">
-        {/* ── Feature ─────────────────────────────────────── */}
-        <section className="rounded-2xl border border-white/5 bg-surface p-6">
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-ember/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-ember">
-            <Sparkles className="h-3.5 w-3.5" />
-            Coming soon
-          </span>
+      <div className="mx-auto max-w-md md:max-w-2xl lg:max-w-5xl">
+        {/* Phone: stacked. Desktop: feature card beside the planned list */}
+        <div className="lg:grid lg:grid-cols-[3fr_2fr] lg:items-start lg:gap-6">
+          {/* ── Feature ─────────────────────────────────────── */}
+          <section className="rounded-2xl border border-white/5 bg-surface p-6 md:p-8">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-ember/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-ember">
+              <Sparkles className="h-3.5 w-3.5" />
+              Coming soon
+            </span>
 
-          {feature && key ? (
-            <>
-              <FeatureIcon featureKey={key} className="mt-5 h-12 w-12" />
-              <h1 className="mt-4 font-heading text-2xl font-bold leading-tight md:text-3xl">
-                {feature.title}
-              </h1>
-              <p className="mt-2 text-text-secondary">{feature.summary}</p>
+            {feature && key ? (
+              <>
+                <FeatureIcon featureKey={key} className="mt-5 h-12 w-12" />
+                <h1 className="mt-4 font-heading text-2xl font-bold leading-tight md:text-3xl">
+                  {feature.title}
+                </h1>
+                <p className="mt-2 text-text-secondary">{feature.summary}</p>
 
-              <h2 className="mt-5 text-xs font-semibold uppercase tracking-wider text-text-secondary">
-                What we&apos;re planning
-              </h2>
-              <ul className="mt-2 space-y-2">
-                {feature.plans.map((plan) => (
-                  <li key={plan} className="flex gap-2.5 text-sm text-text-primary">
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-ember" />
-                    {plan}
+                <h2 className="mt-5 text-xs font-semibold uppercase tracking-wider text-text-secondary">
+                  What we&apos;re planning
+                </h2>
+                <ul className="mt-2 space-y-2">
+                  {feature.plans.map((plan) => (
+                    <li key={plan} className="flex gap-2.5 text-sm text-text-primary">
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-ember" />
+                      {plan}
+                    </li>
+                  ))}
+                </ul>
+              </>
+            ) : (
+              <>
+                <h1 className="mt-4 font-heading text-2xl font-bold leading-tight md:text-3xl">
+                  {GENERAL_TITLE}
+                </h1>
+                <p className="mt-2 text-text-secondary">{GENERAL_SUMMARY}</p>
+              </>
+            )}
+
+            <div className="mt-6 rounded-xl bg-white/5 p-4 text-sm text-text-secondary">
+              <p>
+                <strong className="text-text-primary">Not ready yet.</strong>{" "}
+                There&apos;s no release date.
+              </p>
+              <p className="mt-2">
+                Visits to this page are counted anonymously so we can see which
+                features people want most. We don&apos;t ask for your email or
+                any other personal details.
+              </p>
+            </div>
+          </section>
+
+          {/* ── Other planned features ──────────────────────── */}
+          <section className="mt-8 lg:mt-0">
+            <h2 className="font-heading text-lg font-semibold">
+              {feature ? "Also planned" : "Planned features"}
+            </h2>
+            <ul className="mt-3 space-y-3">
+              {otherKeys.map((otherKey) => {
+                const other = FEATURES[otherKey];
+                return (
+                  <li
+                    key={otherKey}
+                    className="flex items-center gap-3 rounded-2xl border border-white/5 bg-surface p-4"
+                  >
+                    <FeatureIcon featureKey={otherKey} className="h-10 w-10" />
+                    <div className="min-w-0 flex-1">
+                      <p className="text-sm font-semibold">{other.title}</p>
+                      <p className="text-xs text-text-secondary">{other.summary}</p>
+                    </div>
+                    <InterestButton feature={otherKey} from={tracked} />
                   </li>
-                ))}
-              </ul>
-            </>
-          ) : (
-            <>
-              <h1 className="mt-4 font-heading text-2xl font-bold leading-tight md:text-3xl">
-                {GENERAL_TITLE}
-              </h1>
-              <p className="mt-2 text-text-secondary">{GENERAL_SUMMARY}</p>
-            </>
-          )}
-
-          <div className="mt-6 rounded-xl bg-white/5 p-4 text-sm text-text-secondary">
-            <p>
-              <strong className="text-text-primary">Not ready yet.</strong>{" "}
-              There&apos;s no release date.
-            </p>
-            <p className="mt-2">
-              Visits to this page are counted anonymously so we can see which
-              features people want most. We don&apos;t ask for your email or
-              any other personal details.
-            </p>
-          </div>
-        </section>
-
-        {/* ── Other planned features ──────────────────────── */}
-        <section className="mt-8">
-          <h2 className="font-heading text-lg font-semibold">
-            {feature ? "Also planned" : "Planned features"}
-          </h2>
-          <ul className="mt-3 space-y-3">
-            {otherKeys.map((otherKey) => {
-              const other = FEATURES[otherKey];
-              return (
-                <li
-                  key={otherKey}
-                  className="flex items-center gap-3 rounded-2xl border border-white/5 bg-surface p-4"
-                >
-                  <FeatureIcon featureKey={otherKey} className="h-10 w-10" />
-                  <div className="min-w-0 flex-1">
-                    <p className="text-sm font-semibold">{other.title}</p>
-                    <p className="text-xs text-text-secondary">{other.summary}</p>
-                  </div>
-                  <InterestButton feature={otherKey} from={tracked} />
-                </li>
-              );
-            })}
-          </ul>
-        </section>
+                );
+              })}
+            </ul>
+          </section>
+        </div>
 
         {/* ── Play now ────────────────────────────────────── */}
-        <section className="mt-10">
+        <section className="mt-10 md:mt-14">
           <h2 className="font-heading text-lg font-semibold">
             Play something now
           </h2>
@@ -140,7 +143,7 @@ export default async function ComingSoonPage({ searchParams }: Props) {
             share the link, and play.
           </p>
 
-          <div className="mt-4 grid gap-3">
+          <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {gameCatalog.map((game) => (
               <Link
                 key={game.id}
@@ -166,14 +169,14 @@ export default async function ComingSoonPage({ searchParams }: Props) {
 
           <Link
             href="/games"
-            className="mt-5 flex h-12 items-center justify-center rounded-xl bg-ember text-sm font-semibold text-white transition-colors hover:bg-ember/90"
+            className="mx-auto mt-5 flex h-12 w-full items-center justify-center rounded-xl sm:w-64 bg-ember text-sm font-semibold text-white transition-colors hover:bg-ember/90"
           >
             See all games
           </Link>
         </section>
 
         {/* ── About ───────────────────────────────────────── */}
-        <p className="mt-10 text-center text-xs leading-relaxed text-text-secondary">
+        <p className="mx-auto mt-10 max-w-md text-center text-xs leading-relaxed text-text-secondary">
           ArcadeKit is a free collection of multiplayer browser games, built by
           the same solo developer as the face-guessing game you may have come
           from.{" "}
