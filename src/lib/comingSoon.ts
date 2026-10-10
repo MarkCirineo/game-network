@@ -23,7 +23,7 @@ export const FEATURES: Record<FeatureKey, ComingSoonFeature> = {
     key: "custom-boards",
     title: "Custom photo boards",
     summary:
-      "Build a board for the face-guessing game from your own photos, then play it with a friend.",
+      "Build a board for the game you came from using your own photos, then play it with a friend.",
     plans: [
       "Upload your own pictures to make a set of cards",
       "Share the board only with the people you play with",
@@ -42,7 +42,7 @@ export const FEATURES: Record<FeatureKey, ComingSoonFeature> = {
     key: "packs",
     title: "Themed board packs",
     summary:
-      "New sets of cards with different themes for the face-guessing game.",
+      "New sets of cards with different themes for the game you came from.",
     plans: [
       "Pick a themed set of faces before the game starts",
       "More variety than playing the same board every time",

@@ -182,8 +182,7 @@ export default async function ComingSoonPage({ searchParams }: Props) {
         {/* ── About ───────────────────────────────────────── */}
         <p className="mx-auto mt-10 max-w-md text-center text-xs leading-relaxed text-text-secondary">
           ArcadeKit is a free collection of multiplayer browser games, built by
-          the same solo developer as the face-guessing game you may have come
-          from.{" "}
+          the same solo developer as the game you came from.{" "}
           <Link href="/about" className="text-ember hover:text-ember/80">
             About ArcadeKit
           </Link>
