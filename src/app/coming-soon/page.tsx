@@ -84,6 +84,10 @@ export default async function ComingSoonPage({ searchParams }: Props) {
                     </li>
                   ))}
                 </ul>
+
+                <div className="mt-6">
+                  <InterestButton feature={key} from={tracked} placement="main" />
+                </div>
               </>
             ) : (
               <>
@@ -125,7 +129,7 @@ export default async function ComingSoonPage({ searchParams }: Props) {
                       <p className="text-sm font-semibold">{other.title}</p>
                       <p className="text-xs text-text-secondary">{other.summary}</p>
                     </div>
-                    <InterestButton feature={otherKey} from={tracked} />
+                    <InterestButton feature={otherKey} from={tracked} placement="list" />
                   </li>
                 );
               })}
