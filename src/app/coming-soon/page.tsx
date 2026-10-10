@@ -99,11 +99,6 @@ export default async function ComingSoonPage({ searchParams }: Props) {
                 <strong className="text-text-primary">Not ready yet.</strong>{" "}
                 There&apos;s no release date.
               </p>
-              <p className="mt-2">
-                Visits to this page are counted anonymously so we can see which
-                features people want most. We don&apos;t ask for your email or
-                any other personal details.
-              </p>
             </div>
           </section>
 
