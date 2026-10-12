@@ -15,7 +15,7 @@ export function ComingSoonTracker({ feature }: { feature: string }) {
   useEffect(() => {
     if (lastSent.current === feature) return;
     lastSent.current = feature;
-    trackEvent("coming-soon-view", { feature });
+    trackEvent(`coming-soon-view-${feature}`, { feature });
   }, [feature]);
 
   return null;

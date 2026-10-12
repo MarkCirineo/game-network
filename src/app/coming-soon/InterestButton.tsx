@@ -61,7 +61,7 @@ export function InterestButton({ feature, from, placement }: InterestButtonProps
 
   function handleClick() {
     if (noted) return;
-    trackEvent("coming-soon-interest", { feature, from, placement });
+    trackEvent(`coming-soon-interest-${placement}-${feature}`, { feature, from, placement });
     setClicked(true);
     writeNoted(feature);
   }
