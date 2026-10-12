@@ -9,14 +9,7 @@
 // ============================================================
 
 import { ExternalLink } from "lucide-react";
-
-declare global {
-  interface Window {
-    umami?: {
-      track: (event: string, data?: Record<string, unknown>) => void;
-    };
-  }
-}
+import { trackEvent } from "@/lib/analytics";
 
 const AMAZON_TAG = process.env.NEXT_PUBLIC_AMAZON_TAG;
 
@@ -40,7 +33,7 @@ export function AffiliateLink({
   const href = `https://www.amazon.com/s?k=${encodeURIComponent(searchQuery)}&tag=${AMAZON_TAG}`;
 
   const handleClick = () => {
-    window.umami?.track("affiliate-click", { product: productName });
+    trackEvent("affiliate-click", { product: productName });
   };
 
   return (

@@ -7,7 +7,6 @@ import {
   ArrowRight,
   Users,
   Clock,
-  ExternalLink,
   Sparkles,
 } from "lucide-react";
 
@@ -83,16 +82,6 @@ const games = [
     duration: "5–10 min",
     accentColor: "#F59E0B",
     category: "Word",
-  },
-];
-
-const partnerGames = [
-  {
-    name: "Guess Who",
-    description: "Classic deduction — find the mystery character",
-    emoji: "🔍",
-    url: "https://playguesswho.net",
-    accentColor: "#8B5CF6",
   },
 ];
 
@@ -186,57 +175,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* ── Partner / External Games ─────────────────────── */}
-      {partnerGames.length > 0 && (
-        <section className="border-t border-white/5 px-4 py-8 md:py-12">
-          <div className="mx-auto max-w-4xl">
-            <div className="mb-5 flex items-center gap-2">
-              <ExternalLink className="h-4 w-4 text-text-muted" />
-              <h2 className="text-sm font-semibold uppercase tracking-wider text-text-muted">
-                More Games
-              </h2>
-            </div>
-
-            <div className="stagger-children grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {partnerGames.map((game) => (
-                <a
-                  key={game.name}
-                  href={game.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group relative overflow-hidden rounded-2xl border border-white/5 bg-surface p-6 transition-all duration-200 hover:border-white/10 hover:shadow-2xl hover:-translate-y-0.5"
-                  style={
-                    {
-                      "--card-accent": game.accentColor,
-                    } as React.CSSProperties
-                  }
-                >
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[var(--card-accent)]/8 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                  <div
-                    className="absolute left-0 right-0 top-0 h-[2px] opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                    style={{ background: game.accentColor }}
-                  />
-
-                  <div className="relative">
-                    <span className="text-4xl">{game.emoji}</span>
-                    <h3 className="mt-4 font-heading text-lg font-bold">
-                      {game.name}
-                      <ExternalLink className="ml-2 inline h-3.5 w-3.5 text-text-muted" />
-                    </h3>
-                    <p className="mt-1 text-sm leading-relaxed text-text-secondary">
-                      {game.description}
-                    </p>
-                  </div>
-                </a>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-
-
     </>
   );
 }

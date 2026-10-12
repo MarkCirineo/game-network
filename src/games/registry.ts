@@ -4,7 +4,7 @@
 // ============================================================
 
 import type { GameDefinition } from './types';
-import type { PartnerGame, GameCategory } from '../../shared/gameTypes';
+import type { GameCategory } from '../../shared/gameTypes';
 
 import ticTacToe from './tic-tac-toe';
 import rockPaperScissors from './rock-paper-scissors';
@@ -53,18 +53,3 @@ export const gameRegistry = {
     return Object.keys(games);
   },
 } as const;
-
-// ------------------------------------------------------------
-// Partner / External Games
-// ------------------------------------------------------------
-
-export const partnerGames: PartnerGame[] = [
-  {
-    name: 'Guess Who',
-    description:
-      'The classic deduction game — ask yes-or-no questions to figure out your opponent\'s mystery character before they guess yours.',
-    emoji: '🔎',
-    url: 'https://playguesswho.net',
-    accentColor: '#8B5CF6',
-  },
-];

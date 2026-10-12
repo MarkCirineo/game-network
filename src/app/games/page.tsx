@@ -4,7 +4,7 @@
 
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Games",
@@ -93,17 +93,6 @@ const games = [
   },
 ];
 
-const partnerGames = [
-  {
-    name: "Guess Who",
-    description:
-      "Classic deduction game — figure out your opponent's mystery character!",
-    emoji: "🔍",
-    url: "https://playguesswho.net",
-    accentColor: "#F59E0B",
-  },
-];
-
 export default function GamesPage() {
   return (
     <div className="px-4 py-8 md:py-12">
@@ -161,42 +150,6 @@ export default function GamesPage() {
           ))}
         </div>
 
-        {/* Partner Games */}
-        {partnerGames.length > 0 && (
-          <div className="mt-12">
-            <h2 className="mb-4 font-heading text-lg font-semibold text-text-secondary">
-              More Games
-            </h2>
-            <div className="grid gap-4 sm:grid-cols-2">
-              {partnerGames.map((game) => (
-                <a
-                  key={game.name}
-                  href={game.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group relative overflow-hidden rounded-2xl border border-white/5 bg-surface p-6 transition-all hover:border-white/10 hover:shadow-xl"
-                  style={
-                    {
-                      "--card-accent": game.accentColor,
-                    } as React.CSSProperties
-                  }
-                >
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[var(--card-accent)]/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-                  <div className="relative">
-                    <span className="text-3xl">{game.emoji}</span>
-                    <h3 className="mt-3 font-heading text-xl font-bold">
-                      {game.name}
-                      <ExternalLink className="ml-2 inline h-4 w-4 text-text-muted" />
-                    </h3>
-                    <p className="mt-1 text-sm text-text-secondary">
-                      {game.description}
-                    </p>
-                  </div>
-                </a>
-              ))}
-            </div>
-          </div>
-        )}
       </div>
     </div>
   );

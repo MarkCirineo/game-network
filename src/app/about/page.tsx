@@ -12,7 +12,6 @@ import {
   Share2,
   Heart,
   ArrowRight,
-  ExternalLink,
   Sparkles,
 } from "lucide-react";
 
@@ -224,40 +223,6 @@ export default function AboutPage() {
             ))}
           </div>
 
-          {/* Partner game */}
-          <div className="mt-6 rounded-2xl border border-white/5 bg-surface p-5">
-            <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-text-muted">
-              <ExternalLink className="h-3.5 w-3.5" />
-              Partner Game
-            </div>
-            <div className="mt-3 flex items-center gap-4">
-              <span className="text-3xl">🔍</span>
-              <div>
-                <a
-                  href="https://playguesswho.net"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-heading text-base font-bold text-ember hover:text-ember/80 transition-colors"
-                >
-                  Guess Who
-                  <ExternalLink className="ml-1.5 inline h-3.5 w-3.5" />
-                </a>
-                <p className="mt-0.5 text-sm text-text-secondary">
-                  Classic deduction — figure out your opponent&apos;s mystery
-                  character. Hosted on{" "}
-                  <a
-                    href="https://playguesswho.net"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-ember hover:text-ember/80"
-                  >
-                    playguesswho.net
-                  </a>
-                  .
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
