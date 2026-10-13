@@ -9,8 +9,9 @@
 
 import { useMemo, useState, type ReactNode } from 'react';
 import Image from 'next/image';
-import { Check, HelpCircle, Send, Target, X } from 'lucide-react';
+import { Check, HelpCircle, Send, Target, X, ZoomIn } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
 import type { GameComponentProps } from '@/games/types';
 import { RULE_OUT_MAX_QUESTION_LENGTH } from '../../../shared/ruleOut';
 import type { BoardCard, RuleOutAction, RuleOutState } from './types';
@@ -85,6 +86,50 @@ function FaceCard({
         {card.name}
       </span>
     </button>
+  );
+}
+
+// ── Your card (tap to enlarge) ──────────────────────────────
+
+function MyCard({ card }: { card: BoardCard }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <>
+      <button
+        type="button"
+        onClick={() => setOpen(true)}
+        aria-label={`Your card: ${card.name}. Tap to enlarge`}
+        className="group flex cursor-pointer items-center gap-2.5 text-left"
+      >
+        <span className="relative h-14 w-14 shrink-0 overflow-hidden rounded-xl border-2 border-teal-400/60 xl:h-20 xl:w-20">
+          <Image src={card.image} alt="" fill sizes="80px" className="object-cover" />
+          <span className="absolute bottom-0.5 right-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-midnight/80 text-white transition-colors group-hover:bg-teal-500">
+            <ZoomIn className="h-3 w-3" aria-hidden />
+          </span>
+        </span>
+        <span className="leading-tight">
+          <span className="block text-[10px] font-semibold uppercase tracking-wider text-text-secondary">
+            Your card
+          </span>
+          <span className="block text-base font-bold xl:text-lg">{card.name}</span>
+          <span className="block text-[11px] text-text-secondary">Tap to enlarge</span>
+        </span>
+      </button>
+
+      <Dialog open={open} onOpenChange={setOpen}>
+        <DialogContent className="bg-surface sm:max-w-sm">
+          <DialogTitle className="text-center font-heading text-lg">
+            Your card: {card.name}
+          </DialogTitle>
+          <div className="relative mx-auto aspect-square w-full max-w-80 overflow-hidden rounded-xl">
+            <Image src={card.image} alt={card.name} fill sizes="320px" className="object-cover" />
+          </div>
+          <p className="text-center text-xs text-text-secondary">
+            Your opponent is trying to guess this face. Answer their questions about it.
+          </p>
+        </DialogContent>
+      </Dialog>
+    </>
   );
 }
 
@@ -188,17 +233,7 @@ export default function RuleOutGame({
         <div className="flex items-center gap-3">
           {/* Your card */}
           {myCard ? (
-            <div className="flex items-center gap-2">
-              <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-lg border border-teal-400/40">
-                <Image src={myCard.image} alt="" fill sizes="40px" className="object-cover" />
-              </div>
-              <div className="leading-tight">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-text-secondary">
-                  Your card
-                </p>
-                <p className="text-sm font-bold">{myCard.name}</p>
-              </div>
-            </div>
+            <MyCard card={myCard} />
           ) : (
             <p className="text-sm font-semibold">
               {s.playerNames[s.players[0]]} vs {s.playerNames[s.players[1]]}
@@ -247,9 +282,14 @@ export default function RuleOutGame({
         {/* Answer a question */}
         {iMustAnswer && pending && !finished && (
           <div className="mt-2">
-            <p className="rounded-lg bg-white/5 px-3 py-2 text-base font-semibold">
-              &ldquo;{pending.text}&rdquo;
-            </p>
+            <div className="flex items-center gap-3 rounded-lg bg-white/5 p-2">
+              {myCard && (
+                <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-lg border-2 border-teal-400/60 xl:h-24 xl:w-24">
+                  <Image src={myCard.image} alt={`Your card: ${myCard.name}`} fill sizes="96px" className="object-cover" />
+                </div>
+              )}
+              <p className="min-w-0 text-base font-semibold">&ldquo;{pending.text}&rdquo;</p>
+            </div>
             <div className="mt-2 grid grid-cols-2 gap-2">
               <button
                 type="button"
