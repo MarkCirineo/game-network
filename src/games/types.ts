@@ -49,6 +49,8 @@ export interface GameDefinition<TState = any, TAction = any> {
   optionsSchema?: GameOptionSchema[];
   /** Optional extra content for the game-over screen (e.g. a reveal) */
   ResultComponent?: ComponentType<GameResultProps<TState>>;
+  /** Let the game area grow past the default width on large screens */
+  wideLayout?: boolean;
 }
 
 // ------------------------------------------------------------

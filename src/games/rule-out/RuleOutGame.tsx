@@ -57,7 +57,7 @@ function FaceCard({
           src={card.image}
           alt=""
           fill
-          sizes="(min-width: 1024px) 100px, (min-width: 640px) 16vw, 25vw"
+          sizes="(min-width: 1280px) 160px, (min-width: 640px) 16vw, 25vw"
           className={cn(
             'object-cover transition-all duration-200',
             ruledOut && 'opacity-25 grayscale',
@@ -78,7 +78,7 @@ function FaceCard({
       </div>
       <span
         className={cn(
-          'truncate px-1.5 py-1 text-center text-[11px] font-medium sm:text-xs',
+          'truncate px-1.5 py-1 text-center text-[11px] font-medium sm:text-xs 2xl:text-sm',
           ruledOut ? 'text-text-muted line-through' : 'text-text-primary',
         )}
       >
@@ -180,8 +180,9 @@ export default function RuleOutGame({
 
   return (
     // On desktop, stay clear of the fixed player rail on the left
-    // (GameShell: left-6 w-56 at lg, left-8 w-64 at xl)
-    <div className="mx-auto flex w-full flex-col gap-3 pb-4 lg:max-w-[min(48rem,calc(100vw_-_33rem))] xl:max-w-[min(48rem,calc(100vw_-_38rem))]">
+    // (GameShell: left-6 w-56 at lg, left-8 w-64 at xl). From xl up the
+    // board grows with the window, capped so 3 rows fit the height.
+    <div className="mx-auto flex w-full flex-col gap-3 pb-4 lg:max-w-[min(48rem,calc(100vw_-_33rem))] xl:max-w-[min(84rem,calc(100vw_-_38rem),calc(200vh_-_28rem))]">
       {/* ── Sticky status bar ── */}
       <div className="sticky top-14 z-20 -mx-4 border-b border-white/5 bg-midnight/90 px-4 py-3 backdrop-blur-lg sm:mx-0 sm:rounded-2xl sm:border sm:border-white/10">
         <div className="flex items-center gap-3">

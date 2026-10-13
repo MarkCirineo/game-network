@@ -28,6 +28,7 @@ const ruleOut: GameDefinition<RuleOutState, RuleOutAction> = {
   estimatedDuration: catalog.duration,
   component: RuleOutGame,
   ResultComponent: RuleOutResult,
+  wideLayout: true,
   accentColor: catalog.accentColor,
   rules: catalog.rules,
   optionsSchema: [

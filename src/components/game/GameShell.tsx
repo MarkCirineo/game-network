@@ -37,6 +37,8 @@ interface GameShellProps {
   maxPlayers: number;
   GameComponent: ComponentType<GameComponentProps>;
   ResultComponent?: ComponentType<GameResultProps>;
+  /** Drop the max-w-4xl cap from xl up (the game sizes itself) */
+  wideLayout?: boolean;
   optionsSchema?: GameOptionSchema[];
 }
 
@@ -79,6 +81,7 @@ export function GameShell({
   maxPlayers,
   GameComponent,
   ResultComponent,
+  wideLayout,
   optionsSchema,
 }: GameShellProps) {
   const router = useRouter();
@@ -300,7 +303,9 @@ export function GameShell({
       </aside>
 
       {/* Main content area — game is always centered */}
-      <div className="mx-auto flex w-full max-w-4xl flex-1 px-4 py-4">
+      <div
+        className={`mx-auto flex w-full max-w-4xl flex-1 px-4 py-4 ${wideLayout ? "xl:max-w-none" : ""}`}
+      >
         {/* Game area — always centered */}
         <div className="mx-auto flex w-full flex-col items-center lg:mt-[12vh] xl:mt-[15vh]">
           <AnimatePresence mode="wait">
