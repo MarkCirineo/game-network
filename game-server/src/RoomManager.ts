@@ -9,10 +9,7 @@ import { Room } from './Room.js';
 import { getEngine, hasEngine } from './engines/registry.js';
 import { RoomStore } from './RoomStore.js';
 import type { CreateRoomRequest, CreateRoomResponse, RoomInfoResponse } from '../../shared/messages.js';
-
-// Custom alphabet for room codes: excludes ambiguous characters (0, O, 1, I)
-const ROOM_CODE_ALPHABET = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
-const ROOM_CODE_LENGTH = 4;
+import { ROOM_CODE_ALPHABET, ROOM_CODE_LENGTH } from '../../shared/roomCode.js';
 
 /** How often to run periodic cleanup (ms) */
 const CLEANUP_INTERVAL_MS = 60_000;

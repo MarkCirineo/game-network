@@ -8,6 +8,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BookOpen, Clock, Users } from "lucide-react";
 import { CreateRoomButton } from "@/components/game/CreateRoomButton";
+import { JoinRoomForm } from "@/components/game/JoinRoomForm";
 import { gameCatalog, getCatalogGame } from "@/lib/gameCatalog";
 
 type Props = {
@@ -78,9 +79,10 @@ export default async function GameDetailPage({ params }: Props) {
           </div>
         </div>
 
-        {/* Create Room CTA */}
-        <div className="mt-8 flex justify-center">
+        {/* Create / Join Room CTAs */}
+        <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:items-start">
           <CreateRoomButton gameId={game.id} accentColor={game.accentColor} />
+          <JoinRoomForm gameId={game.id} accentColor={game.accentColor} />
         </div>
 
         {/* Rules */}

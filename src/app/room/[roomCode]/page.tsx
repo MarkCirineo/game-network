@@ -10,38 +10,13 @@ import { use } from "react";
 import { useEffect, useState } from "react";
 import { GameShell } from "@/components/game/GameShell";
 import { gameRegistry } from "@/games/registry";
+import { fetchRoomInfo } from "@/lib/rooms";
 import { Loader2 } from "lucide-react";
 import Link from "next/link";
 
 type Props = {
   params: Promise<{ roomCode: string }>;
 };
-
-/**
- * Fetch room info with fallback.
- * Tries the Next.js API proxy first, then the game server directly.
- */
-async function fetchRoomInfoWithFallback(roomCode: string) {
-  // Try Next.js API first
-  try {
-    const res = await fetch(`/api/rooms/${roomCode}`);
-    if (res.ok) {
-      return await res.json();
-    }
-  } catch {
-    // API proxy failed, try direct
-  }
-
-  // Fallback: call game server directly via WS_URL
-  const wsUrl = process.env.NEXT_PUBLIC_WS_URL || "ws://localhost:3001";
-  const httpUrl = wsUrl.replace(/^ws/, "http");
-  
-  const res = await fetch(`${httpUrl}/room-info/${roomCode.toUpperCase()}`);
-  if (!res.ok) {
-    throw new Error(res.status === 404 ? "Room not found" : "Server error");
-  }
-  return await res.json();
-}
 
 export default function RoomPage({ params }: Props) {
   const { roomCode } = use(params);
@@ -54,9 +29,9 @@ export default function RoomPage({ params }: Props) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    async function fetchRoomInfo() {
+    async function loadRoomInfo() {
       try {
-        const data = await fetchRoomInfoWithFallback(roomCode);
+        const data = await fetchRoomInfo(roomCode);
         setRoomInfo(data);
       } catch (err) {
         const msg = err instanceof Error ? err.message : "Unknown error";
@@ -70,7 +45,7 @@ export default function RoomPage({ params }: Props) {
       }
     }
 
-    fetchRoomInfo();
+    loadRoomInfo();
   }, [roomCode]);
 
   // Loading state
