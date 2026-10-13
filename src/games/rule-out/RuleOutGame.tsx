@@ -43,10 +43,12 @@ function FaceCard({
       className={cn(
         'group relative flex flex-col overflow-hidden rounded-xl border bg-elevated text-left transition-all',
         disabled ? 'cursor-default' : 'cursor-pointer active:scale-95',
+        // Picked for a final guess: amber, matching the guess button.
+        // Revealed at the end: teal.
         selected
-          ? 'border-teal-400 ring-2 ring-teal-400'
+          ? 'z-10 scale-105 border-amber ring-4 ring-amber'
           : highlight
-            ? 'border-amber ring-2 ring-amber'
+            ? 'border-teal-400 ring-4 ring-teal-400'
             : 'border-white/10 hover:border-white/25',
       )}
     >
@@ -61,6 +63,11 @@ function FaceCard({
             ruledOut && 'opacity-25 grayscale',
           )}
         />
+        {selected && (
+          <span className="absolute right-1 top-1 flex h-6 w-6 items-center justify-center rounded-full bg-amber text-midnight shadow">
+            <Target className="h-4 w-4" aria-hidden />
+          </span>
+        )}
         {ruledOut && (
           <X
             className="absolute inset-0 m-auto h-3/5 w-3/5 text-white/70"
@@ -166,21 +173,23 @@ export default function RuleOutGame({
   } else if (pending) {
     status = `Waiting for ${opponentName} to answer…`;
   } else if (myTurnToAsk) {
-    status = 'Your turn: ask a question or make your final guess';
+    status = 'Your turn: ask a question';
   } else {
     status = `${opponentName}'s turn`;
   }
 
   return (
-    <div className="flex w-full flex-col gap-3 pb-4">
+    // On desktop, stay clear of the fixed player rail on the left
+    // (GameShell: left-6 w-56 at lg, left-8 w-64 at xl)
+    <div className="mx-auto flex w-full flex-col gap-3 pb-4 lg:max-w-[min(48rem,calc(100vw_-_33rem))] xl:max-w-[min(48rem,calc(100vw_-_38rem))]">
       {/* ── Sticky status bar ── */}
       <div className="sticky top-14 z-20 -mx-4 border-b border-white/5 bg-midnight/90 px-4 py-3 backdrop-blur-lg sm:mx-0 sm:rounded-2xl sm:border sm:border-white/10">
         <div className="flex items-center gap-3">
           {/* Your card */}
           {myCard ? (
             <div className="flex items-center gap-2">
-              <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-lg border border-teal-400/40">
-                <Image src={myCard.image} alt="" fill sizes="48px" className="object-cover" />
+              <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-lg border border-teal-400/40">
+                <Image src={myCard.image} alt="" fill sizes="40px" className="object-cover" />
               </div>
               <div className="leading-tight">
                 <p className="text-[10px] font-semibold uppercase tracking-wider text-text-secondary">
@@ -209,9 +218,30 @@ export default function RuleOutGame({
           </div>
         </div>
 
-        <p className="mt-2 text-sm font-medium" aria-live="polite">
-          {status}
-        </p>
+        <div className="mt-2 flex items-center gap-2">
+          <p className="min-w-0 flex-1 text-sm font-medium" aria-live="polite">
+            {status}
+          </p>
+          {guessAllowed && !finished && !inGuessMode && (
+            <button
+              type="button"
+              onClick={() => setGuessing(true)}
+              className="inline-flex h-9 shrink-0 cursor-pointer items-center gap-1.5 rounded-lg border border-amber/40 px-3 text-sm font-semibold text-amber transition-colors hover:bg-amber/10"
+            >
+              <Target className="h-4 w-4" />
+              Final guess
+            </button>
+          )}
+          {inGuessMode && !guessCard && (
+            <button
+              type="button"
+              onClick={cancelGuess}
+              className="h-9 shrink-0 cursor-pointer rounded-lg bg-white/5 px-3 text-sm font-medium text-text-secondary hover:bg-white/10"
+            >
+              Cancel
+            </button>
+          )}
+        </div>
 
         {/* Answer a question */}
         {iMustAnswer && pending && !finished && (
@@ -268,13 +298,13 @@ export default function RuleOutGame({
               </button>
             </form>
             {suggestions.length > 0 && (
-              <div className="mt-2 flex flex-wrap gap-1.5">
+              <div className="-mx-4 mt-2 flex gap-1.5 overflow-x-auto px-4 [scrollbar-width:none] sm:mx-0 sm:px-0">
                 {suggestions.map((q) => (
                   <button
                     key={q.tag}
                     type="button"
                     onClick={() => ask(q.text)}
-                    className="cursor-pointer rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-text-primary transition-colors hover:border-teal-400/50"
+                    className="shrink-0 cursor-pointer whitespace-nowrap rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-text-primary transition-colors hover:border-teal-400/50"
                   >
                     {q.text}
                   </button>
@@ -299,63 +329,35 @@ export default function RuleOutGame({
           </p>
         )}
 
-        {/* Final guess */}
-        {guessAllowed && !finished && (
-          <div className="mt-3">
-            {!inGuessMode ? (
+        {/* Confirm a final guess */}
+        {guessCard && (
+          <div className="mt-2 rounded-lg bg-amber/10 p-3">
+            <p className="text-sm">
+              Guess <strong>{guessCard.name}</strong>? If you&apos;re wrong, you lose.
+            </p>
+            <div className="mt-2 grid grid-cols-2 gap-2">
               <button
                 type="button"
-                onClick={() => setGuessing(true)}
-                className="inline-flex h-10 w-full cursor-pointer items-center justify-center gap-2 rounded-lg border border-amber/40 text-sm font-semibold text-amber transition-colors hover:bg-amber/10 sm:w-auto sm:px-4"
+                onClick={confirmGuess}
+                className="inline-flex h-10 cursor-pointer items-center justify-center gap-1.5 rounded-lg bg-amber text-sm font-semibold text-midnight hover:bg-amber/90"
               >
-                <Target className="h-4 w-4" />
-                Make final guess
+                <Check className="h-4 w-4" />
+                Guess {guessCard.name}
               </button>
-            ) : (
-              <div className="rounded-lg bg-amber/10 p-3">
-                {guessCard ? (
-                  <>
-                    <p className="text-sm">
-                      Guess <strong>{guessCard.name}</strong>? If you&apos;re wrong, you lose.
-                    </p>
-                    <div className="mt-2 grid grid-cols-2 gap-2">
-                      <button
-                        type="button"
-                        onClick={confirmGuess}
-                        className="inline-flex h-10 cursor-pointer items-center justify-center gap-1.5 rounded-lg bg-amber text-sm font-semibold text-midnight hover:bg-amber/90"
-                      >
-                        <Check className="h-4 w-4" />
-                        Guess {guessCard.name}
-                      </button>
-                      <button
-                        type="button"
-                        onClick={cancelGuess}
-                        className="h-10 cursor-pointer rounded-lg bg-white/5 text-sm font-medium text-text-secondary hover:bg-white/10"
-                      >
-                        Cancel
-                      </button>
-                    </div>
-                  </>
-                ) : (
-                  <div className="flex items-center justify-between gap-2">
-                    <p className="text-sm text-amber">Pick a face below.</p>
-                    <button
-                      type="button"
-                      onClick={cancelGuess}
-                      className="h-9 cursor-pointer rounded-lg bg-white/5 px-3 text-sm font-medium text-text-secondary hover:bg-white/10"
-                    >
-                      Cancel
-                    </button>
-                  </div>
-                )}
-              </div>
-            )}
+              <button
+                type="button"
+                onClick={cancelGuess}
+                className="h-10 cursor-pointer rounded-lg bg-white/5 text-sm font-medium text-text-secondary hover:bg-white/10"
+              >
+                Cancel
+              </button>
+            </div>
           </div>
         )}
       </div>
 
       {/* ── Board ── */}
-      <div className="grid grid-cols-4 gap-2 sm:grid-cols-6 lg:grid-cols-8">
+      <div className="grid grid-cols-4 gap-2 sm:grid-cols-6 xl:grid-cols-8">
         {s.board.cards.map((card) => (
           <FaceCard
             key={card.id}
