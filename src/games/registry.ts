@@ -13,6 +13,7 @@ import battleship from './battleship';
 import wordScramble from './word-scramble';
 import reactionRace from './reaction-race';
 import hangman from './hangman';
+import ruleOut from './rule-out';
 
 // ------------------------------------------------------------
 // Internal registry map (id → definition)
@@ -26,6 +27,7 @@ const games: Record<string, GameDefinition> = {
   [wordScramble.id]: wordScramble,
   [reactionRace.id]: reactionRace,
   [hangman.id]: hangman,
+  [ruleOut.id]: ruleOut,
 };
 
 // ------------------------------------------------------------

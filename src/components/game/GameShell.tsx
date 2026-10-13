@@ -24,7 +24,7 @@ import { ReconnectOverlay } from "./ReconnectOverlay";
 import { GameLobby } from "./GameLobby";
 import { GameOver } from "./GameOver";
 
-import type { GameComponentProps, GameOptionSchema } from "@/games/types";
+import type { GameComponentProps, GameOptionSchema, GameResultProps } from "@/games/types";
 import type { ComponentType } from "react";
 
 interface GameShellProps {
@@ -36,6 +36,9 @@ interface GameShellProps {
   minPlayers: number;
   maxPlayers: number;
   GameComponent: ComponentType<GameComponentProps>;
+  ResultComponent?: ComponentType<GameResultProps>;
+  /** Drop the max-w-4xl cap from xl up (the game sizes itself) */
+  wideLayout?: boolean;
   optionsSchema?: GameOptionSchema[];
 }
 
@@ -77,6 +80,8 @@ export function GameShell({
   minPlayers,
   maxPlayers,
   GameComponent,
+  ResultComponent,
+  wideLayout,
   optionsSchema,
 }: GameShellProps) {
   const router = useRouter();
@@ -298,7 +303,9 @@ export function GameShell({
       </aside>
 
       {/* Main content area — game is always centered */}
-      <div className="mx-auto flex w-full max-w-4xl flex-1 px-4 py-4">
+      <div
+        className={`mx-auto flex w-full max-w-4xl flex-1 px-4 py-4 ${wideLayout ? "xl:max-w-none" : ""}`}
+      >
         {/* Game area — always centered */}
         <div className="mx-auto flex w-full flex-col items-center lg:mt-[12vh] xl:mt-[15vh]">
           <AnimatePresence mode="wait">
@@ -370,6 +377,16 @@ export function GameShell({
                     router.push("/games");
                   }}
                   rematchRequests={rematchRequests}
+                  details={
+                    ResultComponent ? (
+                      <ResultComponent
+                        gameState={gameState}
+                        myPlayerId={myPlayerId || ""}
+                        players={players}
+                        isSpectator={isSpectator}
+                      />
+                    ) : undefined
+                  }
                 />
               </motion.div>
             )}

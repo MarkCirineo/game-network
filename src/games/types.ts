@@ -47,6 +47,25 @@ export interface GameDefinition<TState = any, TAction = any> {
   rules: string[];
   /** Optional schema for configurable game options (shown in lobby) */
   optionsSchema?: GameOptionSchema[];
+  /** Optional extra content for the game-over screen (e.g. a reveal) */
+  ResultComponent?: ComponentType<GameResultProps<TState>>;
+  /** Let the game area grow past the default width on large screens */
+  wideLayout?: boolean;
+}
+
+// ------------------------------------------------------------
+// Game Result Props — passed to an optional game-over section
+// ------------------------------------------------------------
+
+export interface GameResultProps<TState = unknown> {
+  /** The final game state (the viewer's sanitized view) */
+  gameState: TState;
+  /** The local player's ID */
+  myPlayerId: string;
+  /** All players in the room */
+  players: PlayerInfo[];
+  /** Whether the local user is a spectator */
+  isSpectator: boolean;
 }
 
 // ------------------------------------------------------------
