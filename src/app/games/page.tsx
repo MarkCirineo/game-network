@@ -5,6 +5,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { gameCatalog } from "@/lib/gameCatalog";
 
 export const metadata: Metadata = {
   title: "Games",
@@ -12,86 +13,6 @@ export const metadata: Metadata = {
     "Browse all available multiplayer games on ArcadeKit. Pick a game, create a room, and play with friends instantly.",
 };
 
-// Game data (will be replaced by registry import once games are built)
-const games = [
-  {
-    id: "tic-tac-toe",
-    emoji: "❌",
-    name: "Tic Tac Toe",
-    shortDescription: "Classic strategy — get three in a row to win",
-    category: "strategy",
-    players: "2 players",
-    duration: "~2 min",
-    accentColor: "#3B82F6",
-    tags: ["classic", "strategy", "two-player"],
-  },
-  {
-    id: "rock-paper-scissors",
-    emoji: "✊",
-    name: "Rock Paper Scissors",
-    shortDescription: "Best of 3 showdown — outsmart your opponent",
-    category: "quick",
-    players: "2 players",
-    duration: "~2 min",
-    accentColor: "#F97316",
-    tags: ["classic", "quick", "two-player"],
-  },
-  {
-    id: "connect-four",
-    emoji: "🔴",
-    name: "Connect Four",
-    shortDescription: "Drop discs, connect four to win",
-    category: "strategy",
-    players: "2 players",
-    duration: "2–5 min",
-    accentColor: "#EF4444",
-    tags: ["classic", "strategy", "two-player", "grid"],
-  },
-  {
-    id: "battleship",
-    emoji: "🚢",
-    name: "Battleship",
-    shortDescription: "Sink the enemy fleet",
-    category: "strategy",
-    players: "2 players",
-    duration: "5–15 min",
-    accentColor: "#0EA5E9",
-    tags: ["classic", "strategy", "two-player", "hidden-info", "naval"],
-  },
-  {
-    id: "word-scramble",
-    emoji: "🔤",
-    name: "Word Scramble",
-    shortDescription: "Unscramble words faster than your friends",
-    category: "party",
-    players: "2–8 players",
-    duration: "3–5 min",
-    accentColor: "#8B5CF6",
-    tags: ["party", "word", "multiplayer", "fast-paced"],
-  },
-  {
-    id: "reaction-race",
-    emoji: "⚡",
-    name: "Reaction Race",
-    shortDescription: "Test your reflexes against your friends",
-    category: "party",
-    players: "2–8 players",
-    duration: "2–3 min",
-    accentColor: "#22C55E",
-    tags: ["party", "reflex", "multiplayer", "fast-paced"],
-  },
-  {
-    id: "hangman",
-    emoji: "🪢",
-    name: "Hangman",
-    shortDescription: "Guess letters, dodge the gallows, solve the word",
-    category: "word",
-    players: "2–8 players",
-    duration: "5–10 min",
-    accentColor: "#F59E0B",
-    tags: ["classic", "word", "multiplayer", "turn-based"],
-  },
-];
 
 export default function GamesPage() {
   return (
@@ -109,7 +30,7 @@ export default function GamesPage() {
 
         {/* Games Grid */}
         <div className="grid gap-4 sm:grid-cols-2">
-          {games.map((game) => (
+          {gameCatalog.map((game) => (
             <Link
               key={game.id}
               href={`/games/${game.id}`}

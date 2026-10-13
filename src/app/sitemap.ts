@@ -4,20 +4,13 @@
 // ============================================================
 
 import type { MetadataRoute } from "next";
+import { gameCatalog } from "@/lib/gameCatalog";
 
 const BASE_URL =
   process.env.NEXT_PUBLIC_SITE_URL || "https://arcadekit.games";
 
 // All registered game IDs
-const gameIds = [
-  "tic-tac-toe",
-  "rock-paper-scissors",
-  "connect-four",
-  "battleship",
-  "word-scramble",
-  "reaction-race",
-  "hangman",
-];
+const gameIds = gameCatalog.map((game) => game.id);
 
 // All tool slugs
 const toolSlugs = [

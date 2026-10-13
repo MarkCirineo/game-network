@@ -9,81 +9,8 @@ import {
   Clock,
   Sparkles,
 } from "lucide-react";
+import { gameCatalog } from "@/lib/gameCatalog";
 
-// Game data — mirrors registry.ts (server component can't import
-// the registry directly because it contains React component refs).
-const games = [
-  {
-    id: "tic-tac-toe",
-    emoji: "❌",
-    name: "Tic-Tac-Toe",
-    shortDescription: "Classic 3-in-a-row strategy",
-    players: "2 players",
-    duration: "1–2 min",
-    accentColor: "#3B82F6",
-    category: "Strategy",
-  },
-  {
-    id: "rock-paper-scissors",
-    emoji: "✊",
-    name: "Rock Paper Scissors",
-    shortDescription: "Best of 3 — outsmart your opponent",
-    players: "2 players",
-    duration: "~2 min",
-    accentColor: "#F97316",
-    category: "Quick",
-  },
-  {
-    id: "connect-four",
-    emoji: "🔴",
-    name: "Connect Four",
-    shortDescription: "Drop discs, connect four to win",
-    players: "2 players",
-    duration: "2–5 min",
-    accentColor: "#EF4444",
-    category: "Strategy",
-  },
-  {
-    id: "battleship",
-    emoji: "🚢",
-    name: "Battleship",
-    shortDescription: "Sink the enemy fleet",
-    players: "2 players",
-    duration: "5–15 min",
-    accentColor: "#0EA5E9",
-    category: "Strategy",
-  },
-  {
-    id: "word-scramble",
-    emoji: "🔤",
-    name: "Word Scramble",
-    shortDescription: "Unscramble words faster than your friends",
-    players: "2–8 players",
-    duration: "3–5 min",
-    accentColor: "#8B5CF6",
-    category: "Party",
-  },
-  {
-    id: "reaction-race",
-    emoji: "⚡",
-    name: "Reaction Race",
-    shortDescription: "Test your reflexes against your friends",
-    players: "2–8 players",
-    duration: "2–3 min",
-    accentColor: "#22C55E",
-    category: "Party",
-  },
-  {
-    id: "hangman",
-    emoji: "🪢",
-    name: "Hangman",
-    shortDescription: "Guess letters, dodge the gallows, solve the word",
-    players: "2–8 players",
-    duration: "5–10 min",
-    accentColor: "#F59E0B",
-    category: "Word",
-  },
-];
 
 export default function HomePage() {
   return (
@@ -119,7 +46,7 @@ export default function HomePage() {
           </div>
 
           <div className="stagger-children grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {games.map((game) => (
+            {gameCatalog.map((game) => (
               <Link
                 key={game.id}
                 href={`/games/${game.id}`}

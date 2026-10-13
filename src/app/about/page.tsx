@@ -14,6 +14,7 @@ import {
   ArrowRight,
   Sparkles,
 } from "lucide-react";
+import { gameCatalog } from "@/lib/gameCatalog";
 
 export const metadata: Metadata = {
   title: "About",
@@ -26,14 +27,6 @@ export const metadata: Metadata = {
   },
 };
 
-const games = [
-  { emoji: "❌", name: "Tic-Tac-Toe", players: "2 players", href: "/games/tic-tac-toe" },
-  { emoji: "✊", name: "Rock Paper Scissors", players: "2 players", href: "/games/rock-paper-scissors" },
-  { emoji: "🔴", name: "Connect Four", players: "2 players", href: "/games/connect-four" },
-  { emoji: "🚢", name: "Battleship", players: "2 players", href: "/games/battleship" },
-  { emoji: "🔤", name: "Word Scramble", players: "2–8 players", href: "/games/word-scramble" },
-  { emoji: "⚡", name: "Reaction Race", players: "2–8 players", href: "/games/reaction-race" },
-];
 
 const steps = [
   {
@@ -206,10 +199,10 @@ export default function AboutPage() {
             what&apos;s available right now:
           </p>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {games.map((game) => (
+            {gameCatalog.map((game) => (
               <Link
                 key={game.name}
-                href={game.href}
+                href={`/games/${game.id}`}
                 className="group flex items-center gap-4 rounded-2xl border border-white/5 bg-surface p-4 transition-all hover:border-white/10 hover:bg-elevated"
               >
                 <span className="text-3xl">{game.emoji}</span>
