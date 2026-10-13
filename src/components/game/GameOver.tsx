@@ -6,7 +6,7 @@
 
 "use client";
 
-import { useMemo } from "react";
+import { useMemo, type ReactNode } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
@@ -21,6 +21,8 @@ interface GameOverProps {
   onRematch: () => void;
   onBackToGames: () => void;
   rematchRequests: Set<string>;
+  /** Optional game-specific content shown under the announcement */
+  details?: ReactNode;
 }
 
 // Confetti colors matching the ArcadeKit palette
@@ -75,6 +77,7 @@ export function GameOver({
   onRematch,
   onBackToGames,
   rematchRequests,
+  details,
 }: GameOverProps) {
   const isDraw = result.winnerId === null;
   const winner = result.winnerId
@@ -144,6 +147,18 @@ export function GameOver({
           <p className="mt-1 text-sm text-text-secondary">{result.reason}</p>
         )}
       </motion.div>
+
+      {/* Game-specific details (e.g. a reveal) */}
+      {details && (
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.35, duration: 0.4 }}
+          className="w-full"
+        >
+          {details}
+        </motion.div>
+      )}
 
       {/* Scores leaderboard */}
       {sortedScores && sortedScores.length > 0 && (

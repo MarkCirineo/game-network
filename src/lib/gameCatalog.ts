@@ -28,6 +28,29 @@ export interface CatalogGame {
 
 export const gameCatalog: CatalogGame[] = [
   {
+    id: "rule-out",
+    emoji: "🕵️",
+    name: "Rule Out",
+    shortDescription: "Find the hidden face with yes-or-no questions",
+    description:
+      "A face-guessing game for two. You each get a secret card from the same board of 24 faces. Ask yes-or-no questions, rule out the faces that don't fit, and make one final guess. Guess right and you win; guess wrong and you lose.",
+    category: "strategy",
+    minPlayers: 2,
+    maxPlayers: 2,
+    players: "2 players",
+    duration: "~10 min",
+    accentColor: "#14B8A6",
+    tags: ["two-player", "deduction", "hidden-info", "faces"],
+    rules: [
+      "Each player gets a secret card from the same board of 24 faces",
+      "Ask yes-or-no questions about your opponent's card, either out loud or by taking turns in the app",
+      "Tap the faces that don't fit the answers to rule them out",
+      "When you think you know their card, make your final guess",
+      "Guess right and you win. Guess wrong and you lose",
+      "In turn mode, asking a question uses your turn, and you can only guess on your turn",
+    ],
+  },
+  {
     id: "tic-tac-toe",
     emoji: "❌",
     name: "Tic Tac Toe",

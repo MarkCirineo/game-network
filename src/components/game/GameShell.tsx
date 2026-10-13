@@ -24,7 +24,7 @@ import { ReconnectOverlay } from "./ReconnectOverlay";
 import { GameLobby } from "./GameLobby";
 import { GameOver } from "./GameOver";
 
-import type { GameComponentProps, GameOptionSchema } from "@/games/types";
+import type { GameComponentProps, GameOptionSchema, GameResultProps } from "@/games/types";
 import type { ComponentType } from "react";
 
 interface GameShellProps {
@@ -36,6 +36,7 @@ interface GameShellProps {
   minPlayers: number;
   maxPlayers: number;
   GameComponent: ComponentType<GameComponentProps>;
+  ResultComponent?: ComponentType<GameResultProps>;
   optionsSchema?: GameOptionSchema[];
 }
 
@@ -77,6 +78,7 @@ export function GameShell({
   minPlayers,
   maxPlayers,
   GameComponent,
+  ResultComponent,
   optionsSchema,
 }: GameShellProps) {
   const router = useRouter();
@@ -370,6 +372,16 @@ export function GameShell({
                     router.push("/games");
                   }}
                   rematchRequests={rematchRequests}
+                  details={
+                    ResultComponent ? (
+                      <ResultComponent
+                        gameState={gameState}
+                        myPlayerId={myPlayerId || ""}
+                        players={players}
+                        isSpectator={isSpectator}
+                      />
+                    ) : undefined
+                  }
                 />
               </motion.div>
             )}
