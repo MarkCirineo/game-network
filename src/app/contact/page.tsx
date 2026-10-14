@@ -17,11 +17,11 @@ import {
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get in touch with the ArcadeKit team. Questions, feedback, bug reports — we'd love to hear from you. Email us at support@arcadekit.games.",
+    "Get in touch with ArcadeKit. Questions, feedback, bug reports — we'd love to hear from you. Use the Feedback link at the bottom of any page or email support@arcadekit.games.",
   openGraph: {
     title: "Contact Us | ArcadeKit",
     description:
-      "Questions or feedback? Reach out to the ArcadeKit team at support@arcadekit.games.",
+      "Questions or feedback? Use the Feedback link at the bottom of any page or email support@arcadekit.games.",
   },
 };
 
@@ -49,12 +49,12 @@ const faqs = [
   {
     question: "I found a bug. How do I report it?",
     answer:
-      "Send us an email at support@arcadekit.games with a description of what happened, what device/browser you're using, and any screenshots if possible. We'll look into it!",
+      "Click Feedback at the bottom of any page, pick Bug, and describe what happened. It automatically includes the page, game, browser, and screen size, so you don't have to. If it happened during a game, sending it from the game room helps the most.",
   },
   {
     question: "Can I suggest a new game?",
     answer:
-      "Absolutely! We love hearing game ideas. Drop us an email and let us know what you'd like to see on ArcadeKit.",
+      "Absolutely! We love hearing game ideas. Click Feedback at the bottom of any page, pick Idea, and tell us what you'd like to see on ArcadeKit.",
   },
 ];
 

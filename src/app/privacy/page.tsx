@@ -69,7 +69,7 @@ export default function PrivacyPage() {
             Privacy Policy
           </h1>
           <p className="mt-2 text-text-muted text-sm">
-            Last updated: July 1, 2026
+            Last updated: October 13, 2026
           </p>
         </div>
 
@@ -141,6 +141,16 @@ export default function PrivacyPage() {
                 This data is not stored permanently and is deleted when the game
                 room closes.
               </li>
+              <li>
+                <strong className="text-text-primary">Feedback you choose to send</strong>{" "}
+                — If you use the Feedback form, we receive your message, the
+                type you picked (bug, idea, or other), the page you sent it
+                from, the game and room code if you were in a game, your
+                browser type, and your screen size. The form doesn&apos;t ask
+                for your name, email, or an account, and it isn&apos;t linked
+                to you. Please don&apos;t include personal information in your
+                message.
+              </li>
             </ul>
           </SectionCard>
 
@@ -200,6 +210,11 @@ export default function PrivacyPage() {
                     <td className="py-2.5 pr-4">Advertising</td>
                     <td className="py-2.5">Cookies for ad personalization</td>
                   </tr>
+                  <tr className="border-b border-white/5">
+                    <td className="py-2.5 pr-4">Discord</td>
+                    <td className="py-2.5 pr-4">Delivers Feedback form messages to a private channel</td>
+                    <td className="py-2.5">Only what you send in the Feedback form</td>
+                  </tr>
                   <tr>
                     <td className="py-2.5 pr-4">Amazon Associates</td>
                     <td className="py-2.5 pr-4">Affiliate product links</td>
@@ -252,6 +267,12 @@ export default function PrivacyPage() {
               Temporary game session data (moves, scores, room state) exists
               only in server memory during active game sessions and is
               automatically discarded when the session ends.
+            </p>
+            <p>
+              Feedback form messages are kept in a private Discord channel so
+              we can follow up on bugs and ideas. If you&apos;d like a message
+              you sent removed, email us with roughly when you sent it and
+              what it said.
             </p>
             <p>
               Aggregate analytics data from Umami is retained for the purpose of
