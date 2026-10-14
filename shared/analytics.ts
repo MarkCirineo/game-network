@@ -13,17 +13,9 @@
 // Never send names, room codes, or anything a player typed.
 // ============================================================
 
-/** Umami server; the site loads it through UMAMI_PROXY_PATH */
+/** Umami server; the site loads its tracker script from here */
 export const UMAMI_ORIGIN = 'https://analytics.markcirineo.com';
 export const UMAMI_WEBSITE_ID = '0a833a1c-b423-449c-bcc8-347bf484e0b8';
-
-/**
- * Same-site path the tracker loads from and posts to (rewritten to
- * UMAMI_ORIGIN in next.config.ts). A neutral name keeps ad blockers
- * from matching it against known analytics hosts and paths.
- */
-export const UMAMI_PROXY_PATH = '/k';
-export const UMAMI_SCRIPT_FILE = 's.js';
 
 export type EventData = Record<string, string | number | boolean | undefined>;
 
