@@ -13,18 +13,26 @@ import { fetchRoomInfo } from "@/lib/rooms";
 import { ROOM_CODE_LENGTH, normalizeRoomCode } from "../../../shared/roomCode";
 
 interface JoinRoomFormProps {
-  gameId: string;
-  accentColor: string;
+  /** The game page this form sits on; omit on non-game pages */
+  gameId?: string;
+  accentColor?: string;
+  /** Show the code field right away, with no open/close toggle */
+  alwaysOpen?: boolean;
 }
 
-export function JoinRoomForm({ gameId, accentColor }: JoinRoomFormProps) {
+export function JoinRoomForm({
+  gameId,
+  accentColor = "var(--color-ember)",
+  alwaysOpen = false,
+}: JoinRoomFormProps) {
   const router = useRouter();
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(alwaysOpen);
   const [code, setCode] = useState("");
   const [isJoining, setIsJoining] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const isComplete = code.length === ROOM_CODE_LENGTH;
+  const location = gameId ? "game-page" : "home";
 
   const close = () => {
     setIsOpen(false);
@@ -43,11 +51,12 @@ export function JoinRoomForm({ gameId, accentColor }: JoinRoomFormProps) {
       // Check the room exists so a typo gets an inline error
       // instead of a dead room page
       await fetchRoomInfo(code);
-      trackEvent("join-room-by-code", { game: gameId, result: "found" });
+      trackEvent("join-room-by-code", { location, game: gameId, result: "found" });
       router.push(`/room/${code}`);
     } catch (err) {
       const notFound = err instanceof Error && err.message === "Room not found";
       trackEvent("join-room-by-code", {
+        location,
         game: gameId,
         result: notFound ? "not-found" : "error",
       });
@@ -81,10 +90,12 @@ export function JoinRoomForm({ gameId, accentColor }: JoinRoomFormProps) {
             setCode(normalizeRoomCode(e.target.value));
             setError(null);
           }}
-          onKeyDown={(e) => e.key === "Escape" && close()}
+          onKeyDown={(e) => !alwaysOpen && e.key === "Escape" && close()}
           placeholder="CODE"
           aria-label="Room code"
-          autoFocus
+          // Only focus when the player asked to join; on the homepage it
+          // would steal focus and pop up the phone keyboard on load
+          autoFocus={!alwaysOpen}
           autoComplete="off"
           autoCapitalize="characters"
           spellCheck={false}
@@ -105,14 +116,16 @@ export function JoinRoomForm({ gameId, accentColor }: JoinRoomFormProps) {
             </>
           )}
         </button>
-        <button
-          type="button"
-          onClick={close}
-          aria-label="Cancel joining"
-          className="inline-flex w-12 cursor-pointer items-center justify-center rounded-xl bg-white/5 text-text-secondary transition-all hover:bg-white/10 hover:text-foreground"
-        >
-          <X className="h-4 w-4" />
-        </button>
+        {!alwaysOpen && (
+          <button
+            type="button"
+            onClick={close}
+            aria-label="Cancel joining"
+            className="inline-flex w-12 cursor-pointer items-center justify-center rounded-xl bg-white/5 text-text-secondary transition-all hover:bg-white/10 hover:text-foreground"
+          >
+            <X className="h-4 w-4" />
+          </button>
+        )}
       </form>
       {error && <p className="text-sm text-red-400">{error}</p>}
     </div>
