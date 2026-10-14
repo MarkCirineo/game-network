@@ -7,6 +7,7 @@
 
 import Link from "next/link";
 import { Coffee, Gamepad2 } from "lucide-react";
+import { FeedbackDialog } from "./FeedbackDialog";
 
 export function Footer() {
   return (
@@ -56,6 +57,8 @@ export function Footer() {
             >
               Contact
             </Link>
+            <span className="text-white/10">·</span>
+            <FeedbackDialog />
             <span className="text-white/10">·</span>
             <a
               href="https://buymeacoffee.com/arcadekit"

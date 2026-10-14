@@ -8,6 +8,8 @@ services:
     environment:
       - NODE_ENV=production
       - GAME_SERVER_INTERNAL_URL=http://gameserver:3001
+      # Secret: set it in docker/.env on the server (gitignored), not .env.production (committed)
+      - DISCORD_FEEDBACK_WEBHOOK_URL=${DISCORD_FEEDBACK_WEBHOOK_URL:-}
     healthcheck:
       test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3000/api/health"]
       interval: 30s
