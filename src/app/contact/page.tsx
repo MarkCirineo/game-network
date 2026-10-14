@@ -1,6 +1,6 @@
 // ============================================================
 // ArcadeKit — Contact Page
-// Clean contact page with email, FAQ, and links.
+// Clean contact page with the feedback form, email, FAQ, and links.
 // ============================================================
 
 import type { Metadata } from "next";
@@ -8,11 +8,12 @@ import Link from "next/link";
 import {
   Mail,
   MessageCircle,
+  MessageSquarePlus,
   ArrowRight,
   Gamepad2,
-  Clock,
   HelpCircle,
 } from "lucide-react";
+import { FeedbackDialog } from "@/components/layout/FeedbackDialog";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -81,28 +82,34 @@ export default function ContactPage() {
         <div className="mb-8 rounded-2xl border border-white/5 bg-surface p-6 md:p-8">
           <div className="flex flex-col items-center text-center">
             <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-ember/10">
-              <Mail className="h-7 w-7 text-ember" />
+              <MessageSquarePlus className="h-7 w-7 text-ember" />
             </div>
             <h2 className="font-heading text-xl font-bold md:text-2xl">
-              Email Us
+              Send Feedback
             </h2>
-            <a
-              href="mailto:support@arcadekit.games"
-              className="mt-2 text-lg font-medium text-ember transition-colors hover:text-ember/80"
-            >
-              support@arcadekit.games
-            </a>
-            <div className="mt-4 flex items-center gap-2 text-sm text-text-muted">
-              <Clock className="h-4 w-4" />
-              <span>We typically respond within 24–48 hours</span>
-            </div>
+            <p className="mt-2 mb-5 max-w-md text-sm text-text-secondary">
+              Bug reports, game ideas, and feature requests are best sent
+              through the feedback form. It only takes a minute, and no email
+              or account is needed.
+            </p>
+            <FeedbackDialog variant="button" />
           </div>
 
           <div className="mt-6 rounded-xl bg-elevated p-4 text-center text-sm text-text-secondary">
-            <p>
-              Whether it&apos;s a bug report, a game suggestion, a partnership
-              inquiry, or just a friendly message — don&apos;t hesitate to reach
-              out. We read every email.
+            <p className="flex items-center justify-center gap-2 font-medium text-text-primary">
+              <Mail className="h-4 w-4 text-ember" />
+              Need a reply?
+            </p>
+            <p className="mt-1">
+              For partnership inquiries or anything that needs a response,
+              email{" "}
+              <a
+                href="mailto:support@arcadekit.games"
+                className="font-medium text-ember transition-colors hover:text-ember/80"
+              >
+                support@arcadekit.games
+              </a>
+              . Email replies can take a while.
             </p>
           </div>
         </div>

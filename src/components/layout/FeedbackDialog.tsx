@@ -34,7 +34,12 @@ const PLACEHOLDERS: Record<FeedbackType, string> = {
   other: "What's on your mind?",
 };
 
-export function FeedbackDialog() {
+interface FeedbackDialogProps {
+  /** "link" for the footer, "button" for a prominent call to action */
+  variant?: "link" | "button";
+}
+
+export function FeedbackDialog({ variant = "link" }: FeedbackDialogProps) {
   const pathname = usePathname();
   const storeGameId = useGameStore((s) => s.gameId);
   const storeRoomCode = useGameStore((s) => s.roomCode);
@@ -106,10 +111,14 @@ export function FeedbackDialog() {
       <button
         type="button"
         onClick={() => handleOpenChange(true)}
-        className="inline-flex cursor-pointer items-center gap-1 text-text-secondary transition-colors hover:text-ember"
+        className={
+          variant === "button"
+            ? "inline-flex h-11 cursor-pointer items-center gap-2 rounded-lg bg-ember px-6 text-sm font-medium text-white transition-all hover:bg-ember/90 hover:shadow-lg hover:shadow-ember/25"
+            : "inline-flex cursor-pointer items-center gap-1 text-text-secondary transition-colors hover:text-ember"
+        }
       >
-        <MessageSquarePlus className="h-3 w-3" />
-        Feedback
+        <MessageSquarePlus className={variant === "button" ? "h-4 w-4" : "h-3 w-3"} />
+        {variant === "button" ? "Send feedback" : "Feedback"}
       </button>
 
       <Dialog open={open} onOpenChange={handleOpenChange}>
