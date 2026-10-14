@@ -5,6 +5,7 @@
 
 import type { Metadata } from "next";
 import { TeamGenerator } from "./TeamGenerator";
+import { TrackToolUse } from "../TrackToolUse";
 
 export const metadata: Metadata = {
   title: "Free Random Team Generator",
@@ -86,7 +87,7 @@ export default function TeamGeneratorPage() {
 
       {/* ── Interactive Tool ─────────────────────────────── */}
       <section className="px-4 pb-12 md:pb-16">
-        <TeamGenerator />
+        <TrackToolUse tool="team-generator"><TeamGenerator /></TrackToolUse>
       </section>
     </>
   );

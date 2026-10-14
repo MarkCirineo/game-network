@@ -5,6 +5,7 @@
 
 import type { Metadata } from "next";
 import { CoinFlip } from "./CoinFlip";
+import { TrackToolUse } from "../TrackToolUse";
 
 const BASE_URL =
   process.env.NEXT_PUBLIC_SITE_URL || "https://arcadekit.games";
@@ -62,7 +63,7 @@ export default function CoinFlipPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      <CoinFlip />
+      <TrackToolUse tool="coin-flip"><CoinFlip /></TrackToolUse>
     </>
   );
 }

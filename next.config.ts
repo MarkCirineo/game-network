@@ -1,4 +1,9 @@
 import type { NextConfig } from "next";
+import {
+  UMAMI_ORIGIN,
+  UMAMI_PROXY_PATH,
+  UMAMI_SCRIPT_FILE,
+} from "./shared/analytics";
 
 const nextConfig: NextConfig = {
   output: "standalone",
@@ -10,6 +15,16 @@ const nextConfig: NextConfig = {
       {
         source: "/ws",
         destination: "http://localhost:3001",
+      },
+      // Serve the Umami tracker and its event endpoint from our own
+      // domain so ad blockers don't drop them (see shared/analytics.ts)
+      {
+        source: `${UMAMI_PROXY_PATH}/${UMAMI_SCRIPT_FILE}`,
+        destination: `${UMAMI_ORIGIN}/script.js`,
+      },
+      {
+        source: `${UMAMI_PROXY_PATH}/api/send`,
+        destination: `${UMAMI_ORIGIN}/api/send`,
       },
     ];
   },

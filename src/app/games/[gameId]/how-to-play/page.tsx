@@ -164,6 +164,9 @@ export default async function HowToPlayPage({ params }: Props) {
           <div className="mt-5 flex flex-wrap items-center gap-4">
             <Link
               href={`/games/${guide.gameId}`}
+              data-umami-event="guide-play"
+              data-umami-event-game={guide.gameId}
+              data-umami-event-placement="top"
               className="flex h-11 items-center gap-2 rounded-xl bg-ember px-6 text-sm font-semibold text-white transition-all hover:bg-ember/90 hover:shadow-lg hover:shadow-ember/25"
             >
               <Play className="h-4 w-4" />
@@ -300,6 +303,9 @@ export default async function HowToPlayPage({ params }: Props) {
                     </p>
                     <Link
                       href={`/tools/${guide.relatedTool.slug}`}
+                      data-umami-event="guide-tool"
+                      data-umami-event-game={guide.gameId}
+                      data-umami-event-tool={guide.relatedTool.slug}
                       className="mt-2 inline-block text-sm font-medium text-ember hover:text-ember/80"
                     >
                       Open {guide.relatedTool.name} →
@@ -381,6 +387,9 @@ export default async function HowToPlayPage({ params }: Props) {
               <div className="mt-5 flex justify-center">
                 <Link
                   href={`/games/${guide.gameId}`}
+                  data-umami-event="guide-play"
+                  data-umami-event-game={guide.gameId}
+                  data-umami-event-placement="bottom"
                   className="flex h-11 items-center gap-2 rounded-xl bg-ember px-6 text-sm font-semibold text-white transition-all hover:bg-ember/90 hover:shadow-lg hover:shadow-ember/25"
                 >
                   <Play className="h-4 w-4" />

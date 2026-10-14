@@ -106,7 +106,7 @@ export function GameLobby({
 
       {/* Invite panel */}
       <motion.div variants={item}>
-        <InvitePanel roomCode={roomCode} />
+        <InvitePanel roomCode={roomCode} gameId={gameId} />
       </motion.div>
 
       {/* Player list */}

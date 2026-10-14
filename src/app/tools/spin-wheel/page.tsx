@@ -5,6 +5,7 @@
 
 import type { Metadata } from "next";
 import SpinWheel from "./SpinWheel";
+import { TrackToolUse } from "../TrackToolUse";
 
 export const metadata: Metadata = {
   title: "Spin Wheel — Free Online Random Spinner",
@@ -32,5 +33,5 @@ export const metadata: Metadata = {
 };
 
 export default function SpinWheelPage() {
-  return <SpinWheel />;
+  return <TrackToolUse tool="spin-wheel"><SpinWheel /></TrackToolUse>;
 }

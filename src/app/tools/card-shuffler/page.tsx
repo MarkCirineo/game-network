@@ -5,6 +5,7 @@
 
 import type { Metadata } from "next";
 import { CardShuffler } from "./CardShuffler";
+import { TrackToolUse } from "../TrackToolUse";
 
 export const metadata: Metadata = {
   title: "Free Online Card Shuffler & Deck",
@@ -85,7 +86,7 @@ export default function CardShufflerPage() {
 
       {/* ── Interactive Tool ─────────────────────────────── */}
       <section className="px-4 pb-12 md:pb-16">
-        <CardShuffler />
+        <TrackToolUse tool="card-shuffler"><CardShuffler /></TrackToolUse>
       </section>
     </>
   );

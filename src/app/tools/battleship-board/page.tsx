@@ -5,6 +5,7 @@
 
 import type { Metadata } from "next";
 import { BattleshipBoard } from "./BattleshipBoard";
+import { TrackToolUse } from "../TrackToolUse";
 
 export const metadata: Metadata = {
   title: "Free Online Battleship Board Generator",
@@ -86,7 +87,7 @@ export default function BattleshipBoardPage() {
 
       {/* ── Interactive Tool ─────────────────────────────── */}
       <section className="px-4 pb-12 md:pb-16">
-        <BattleshipBoard />
+        <TrackToolUse tool="battleship-board"><BattleshipBoard /></TrackToolUse>
       </section>
     </>
   );

@@ -6,6 +6,11 @@ import { Toaster } from "@/components/ui/sonner";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CookieConsent } from "@/components/ads/CookieConsent";
+import {
+  UMAMI_PROXY_PATH,
+  UMAMI_SCRIPT_FILE,
+  UMAMI_WEBSITE_ID,
+} from "../../shared/analytics";
 import "./globals.css";
 
 const inter = Inter({
@@ -89,8 +94,10 @@ export default function RootLayout({
         )}
         {process.env.NODE_ENV === "production" && (
           <Script
-            src="https://analytics.markcirineo.com/script.js"
-            data-website-id="0a833a1c-b423-449c-bcc8-347bf484e0b8"
+            // Proxied to Umami by next.config.ts; the tracker posts
+            // events next to wherever it was loaded from
+            src={`${UMAMI_PROXY_PATH}/${UMAMI_SCRIPT_FILE}`}
+            data-website-id={UMAMI_WEBSITE_ID}
             strategy="afterInteractive"
           />
         )}

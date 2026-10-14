@@ -9,6 +9,7 @@ import type { WebSocket } from 'ws';
 import { Player } from './Player.js';
 import type { PlayerSnapshot } from './Player.js';
 import { GameEngine } from './GameEngine.js';
+import { trackServerEvent } from './analytics.js';
 import type {
   ClientMessage,
   ServerMessage,
@@ -45,6 +46,10 @@ export interface RoomSnapshot {
   createdAt: number;
   lastActivity: number;
   rematchVotes: string[];
+  gamesPlayed?: number;
+  peakPlayers?: number;
+  gameStartedAt?: number | null;
+  gamePlayerCount?: number | null;
 }
 
 // ------------------------------------------------------------
@@ -101,6 +106,18 @@ export class Room {
 
   /** Order of player joins (for host migration) */
   private joinOrder: string[];
+
+  /** Games started in this room, including rematches (analytics) */
+  private gamesPlayed = 0;
+
+  /** Most players in the room at once (analytics) */
+  private peakPlayers = 0;
+
+  /** When the current game started, for its duration (analytics) */
+  private gameStartedAt: number | null = null;
+
+  /** Players when the current game started; some may leave mid-game (analytics) */
+  private gamePlayerCount: number | null = null;
 
   /** Timers for disconnect grace windows (keyed by player ID) */
   private disconnectTimers: Map<string, ReturnType<typeof setTimeout>> = new Map();
@@ -386,6 +403,7 @@ export class Room {
     this.players.set(id, player);
     this.joinOrder.push(id);
     this.lastActivity = Date.now();
+    this.peakPlayers = Math.max(this.peakPlayers, this.players.size);
 
     // First player becomes host
     if (this.hostId === null) {
@@ -490,8 +508,7 @@ export class Room {
         winnerId: remainingPlayer?.id ?? null,
         reason: 'Opponent disconnected',
       };
-      this.phase = 'finished';
-      this.broadcast({ type: 'game_over', result: status });
+      this.finishGame(status, 'opponent-left');
       this.log('Game ended: opponent disconnected');
     }
 
@@ -660,6 +677,7 @@ export class Room {
     const playerInfos = Array.from(this.players.values()).map((p) => this.toPlayerInfo(p));
     this.gameState = this.gameEngine.createInitialState(playerInfos, this.gameOptions);
     this.phase = 'playing';
+    this.recordGameStarted(false);
 
     this.log('Game started');
 
@@ -693,8 +711,7 @@ export class Room {
     // Check if the game is over
     const status = this.gameEngine.getGameStatus(this.gameState);
     if (status.isOver) {
-      this.phase = 'finished';
-      this.broadcast({ type: 'game_over', result: status });
+      this.finishGame(status, status.winnerId === null ? 'draw' : 'win');
       this.log(`Game over: ${status.reason ?? 'finished'}`);
     }
 
@@ -707,8 +724,17 @@ export class Room {
       return;
     }
 
+    const isNewVote = !this.rematchVotes.has(playerId);
     this.rematchVotes.add(playerId);
     this.broadcast({ type: 'rematch_requested', playerId });
+
+    if (isNewVote) {
+      trackServerEvent('rematch-vote', {
+        game: this.gameId,
+        votes: this.rematchVotes.size,
+        players: this.players.size,
+      });
+    }
 
     this.log(`Rematch vote from ${playerId} [${this.rematchVotes.size}/${this.players.size}]`);
 
@@ -735,11 +761,78 @@ export class Room {
     const playerInfos = Array.from(this.players.values()).map((p) => this.toPlayerInfo(p));
     this.gameState = this.gameEngine.createInitialState(playerInfos, this.gameOptions);
     this.phase = 'playing';
+    this.recordGameStarted(true);
 
     this.broadcastGameStarted();
     this.broadcastGameState();
 
     this.markDirty();
+  }
+
+  // ----------------------------------------------------------
+  // Game lifecycle + analytics
+  // ----------------------------------------------------------
+
+  /** End the current game and tell everyone */
+  private finishGame(status: GameStatus, result: 'win' | 'draw' | 'opponent-left'): void {
+    this.phase = 'finished';
+    this.broadcast({ type: 'game_over', result: status });
+
+    trackServerEvent('game-finished', {
+      game: this.gameId,
+      players: this.gamePlayerCount ?? this.players.size,
+      game_number: this.gamesPlayed,
+      duration_s: this.gameStartedAt ? Math.round((Date.now() - this.gameStartedAt) / 1000) : 0,
+      result,
+    });
+    this.gameStartedAt = null;
+    this.gamePlayerCount = null;
+  }
+
+  private recordGameStarted(rematch: boolean): void {
+    this.gamesPlayed += 1;
+    this.gameStartedAt = Date.now();
+    this.gamePlayerCount = this.players.size;
+
+    const base = {
+      game: this.gameId,
+      players: this.players.size,
+      game_number: this.gamesPlayed,
+    };
+    trackServerEvent('game-started', { ...base, rematch, ...this.optionsForAnalytics() });
+    if (rematch) trackServerEvent('rematch-started', base);
+  }
+
+  /**
+   * The chosen game options as option_<key> properties. Only keys and
+   * values the game's options schema defines are reported, since the
+   * options arrive from the client.
+   */
+  private optionsForAnalytics(): Record<string, string | number> {
+    const props: Record<string, string | number> = {};
+    for (const schema of this.gameEngine.getOptionsSchema()) {
+      const value = this.gameOptions[schema.key];
+      if (schema.type === 'select') {
+        const known = schema.options?.some((o) => o.value === value);
+        if (known && (typeof value === 'string' || typeof value === 'number')) {
+          props[`option_${schema.key}`] = value;
+        }
+      } else if (typeof value === 'number' && Number.isFinite(value)) {
+        props[`option_${schema.key}`] = value;
+      }
+    }
+    return props;
+  }
+
+  /** Report the room's lifetime totals; call once, when it's removed */
+  reportClosed(): void {
+    trackServerEvent('room-closed', {
+      game: this.gameId,
+      games_played: this.gamesPlayed,
+      peak_players: this.peakPlayers,
+      closed_during: this.phase,
+      minutes_open: Math.round((Date.now() - this.createdAt) / 60_000),
+    });
   }
 
   // ----------------------------------------------------------
@@ -760,6 +853,10 @@ export class Room {
       createdAt: this.createdAt,
       lastActivity: this.lastActivity,
       rematchVotes: Array.from(this.rematchVotes),
+      gamesPlayed: this.gamesPlayed,
+      peakPlayers: this.peakPlayers,
+      gameStartedAt: this.gameStartedAt,
+      gamePlayerCount: this.gamePlayerCount,
     };
   }
 
@@ -782,6 +879,10 @@ export class Room {
     });
     room.lastActivity = snapshot.lastActivity;
     room.rematchVotes = new Set(snapshot.rematchVotes);
+    room.gamesPlayed = snapshot.gamesPlayed ?? 0;
+    room.peakPlayers = snapshot.peakPlayers ?? snapshot.players.length;
+    room.gameStartedAt = snapshot.gameStartedAt ?? null;
+    room.gamePlayerCount = snapshot.gamePlayerCount ?? null;
 
     // Restore players (all start disconnected)
     for (const ps of snapshot.players) {
