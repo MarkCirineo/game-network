@@ -6,11 +6,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CookieConsent } from "@/components/ads/CookieConsent";
-import {
-  UMAMI_PROXY_PATH,
-  UMAMI_SCRIPT_FILE,
-  UMAMI_WEBSITE_ID,
-} from "../../shared/analytics";
+import { UMAMI_ORIGIN, UMAMI_WEBSITE_ID } from "../../shared/analytics";
 import "./globals.css";
 
 const inter = Inter({
@@ -94,9 +90,10 @@ export default function RootLayout({
         )}
         {process.env.NODE_ENV === "production" && (
           <Script
-            // Proxied to Umami by next.config.ts; the tracker posts
-            // events next to wherever it was loaded from
-            src={`${UMAMI_PROXY_PATH}/${UMAMI_SCRIPT_FILE}`}
+            // Loaded straight from Umami, not proxied through our domain:
+            // proxying made Umami see our server's IP, so every visitor
+            // showed up in the server's country
+            src={`${UMAMI_ORIGIN}/script.js`}
             data-website-id={UMAMI_WEBSITE_ID}
             strategy="afterInteractive"
           />
