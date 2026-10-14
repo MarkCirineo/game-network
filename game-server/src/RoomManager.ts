@@ -10,6 +10,7 @@ import { getEngine, hasEngine } from './engines/registry.js';
 import { RoomStore } from './RoomStore.js';
 import type { CreateRoomRequest, CreateRoomResponse, RoomInfoResponse } from '../../shared/messages.js';
 import { ROOM_CODE_ALPHABET, ROOM_CODE_LENGTH } from '../../shared/roomCode.js';
+import { trackServerEvent } from './analytics.js';
 
 /** How often to run periodic cleanup (ms) */
 const CLEANUP_INTERVAL_MS = 60_000;
@@ -103,6 +104,7 @@ export class RoomManager {
     this.rooms.set(roomCode, room);
 
     this.log(`Room ${roomCode} created for game "${gameId}" [${this.rooms.size} total rooms]`);
+    trackServerEvent('room-created', { game: gameId });
 
     // Persist the new room
     this.store?.save(room).catch(() => {});
@@ -120,6 +122,7 @@ export class RoomManager {
     const room = this.rooms.get(roomCode);
     if (room) {
       room.clearAllTimers();
+      room.reportClosed();
       this.rooms.delete(roomCode);
       this.store?.delete(roomCode).catch(() => {});
       this.log(`Room ${roomCode} removed [${this.rooms.size} total rooms]`);
@@ -230,6 +233,7 @@ export class RoomManager {
       const room = this.rooms.get(code);
       if (room) {
         room.clearAllTimers();
+        room.reportClosed();
       }
       this.rooms.delete(code);
       this.store?.delete(code).catch(() => {});

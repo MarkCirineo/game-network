@@ -61,7 +61,7 @@ export function FeedbackDialog({ variant = "link" }: FeedbackDialogProps) {
     setOpen(next);
     if (next) {
       setError(null);
-      trackEvent("feedback-open");
+      trackEvent("feedback-open", { game: gameId });
     }
   };
 
@@ -94,7 +94,7 @@ export function FeedbackDialog({ variant = "link" }: FeedbackDialogProps) {
         setError(data?.error ?? "Couldn't send feedback. Please try again.");
         return;
       }
-      trackEvent(`feedback-submit-${type}`);
+      trackEvent("feedback-submit", { type, game: gameId });
       toast.success("Thanks! Your feedback was sent.");
       setMessage("");
       setType("bug");

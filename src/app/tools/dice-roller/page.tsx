@@ -5,6 +5,7 @@
 
 import type { Metadata } from "next";
 import { DiceRoller } from "./DiceRoller";
+import { TrackToolUse } from "../TrackToolUse";
 
 const BASE_URL =
   process.env.NEXT_PUBLIC_SITE_URL || "https://arcadekit.games";
@@ -63,7 +64,7 @@ export default function DiceRollerPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      <DiceRoller />
+      <TrackToolUse tool="dice-roller"><DiceRoller /></TrackToolUse>
     </>
   );
 }

@@ -130,7 +130,11 @@ export default function PrivacyPage() {
                 <strong className="text-text-primary">Anonymous analytics</strong>{" "}
                 — We use Umami Analytics, a privacy-friendly, cookieless
                 analytics tool. Umami collects aggregate data like page views,
-                referrer sources, browser type, and country-level location. No
+                referrer sources, browser type, and country-level location,
+                plus anonymous usage counts such as which games are started
+                and finished, how many players took part, the game settings
+                chosen, and which buttons and tools are used. Player names,
+                room codes, and anything you type are never sent. No
                 personally identifiable information (PII) is ever collected or
                 stored.
               </li>
@@ -203,7 +207,7 @@ export default function PrivacyPage() {
                   <tr className="border-b border-white/5">
                     <td className="py-2.5 pr-4">Umami Analytics</td>
                     <td className="py-2.5 pr-4">Privacy-friendly website analytics</td>
-                    <td className="py-2.5">Anonymous page views, no PII</td>
+                    <td className="py-2.5">Anonymous page views and usage counts, no PII</td>
                   </tr>
                   <tr className="border-b border-white/5">
                     <td className="py-2.5 pr-4">Google AdSense</td>

@@ -5,6 +5,7 @@
 
 import type { Metadata } from "next";
 import ScoreKeeper from "./ScoreKeeper";
+import { TrackToolUse } from "../TrackToolUse";
 
 export const metadata: Metadata = {
   title: "Score Keeper — Free Online Score Tracker",
@@ -32,5 +33,5 @@ export const metadata: Metadata = {
 };
 
 export default function ScoreKeeperPage() {
-  return <ScoreKeeper />;
+  return <TrackToolUse tool="score-keeper"><ScoreKeeper /></TrackToolUse>;
 }

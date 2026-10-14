@@ -12,6 +12,7 @@ import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { useGameSocket } from "@/lib/ws/client";
 import { useGameStore } from "@/lib/stores/gameStore";
+import { trackEvent } from "@/lib/analytics";
 import {
   getSessionToken,
   getSavedPlayerName,
@@ -299,7 +300,7 @@ export function GameShell({
           hostId={hostId}
           phase={phase}
         />
-        {phase !== "finished" && <InvitePanel roomCode={roomCode} />}
+        {phase !== "finished" && <InvitePanel roomCode={roomCode} gameId={gameId} />}
       </aside>
 
       {/* Main content area — game is always centered */}
@@ -369,10 +370,12 @@ export function GameShell({
                   players={players}
                   myPlayerId={myPlayerId}
                   isSpectator={isSpectator}
-                  onRematch={() =>
-                    sendMessage({ type: "rematch_request" })
-                  }
+                  onRematch={() => {
+                    trackEvent("after-game", { game: gameId, choice: "rematch" });
+                    sendMessage({ type: "rematch_request" });
+                  }}
                   onBackToGames={() => {
+                    trackEvent("after-game", { game: gameId, choice: "back-to-games" });
                     clearPersistedJoin(roomCode);
                     router.push("/games");
                   }}
@@ -414,7 +417,7 @@ export function GameShell({
             />
             {phase !== "finished" && (
               <div className="mt-3">
-                <InvitePanel roomCode={roomCode} />
+                <InvitePanel roomCode={roomCode} gameId={gameId} />
               </div>
             )}
           </div>

@@ -13,10 +13,11 @@ import { trackEvent } from "@/lib/analytics";
 
 interface InvitePanelProps {
   roomCode: string;
+  gameId: string;
   className?: string;
 }
 
-export function InvitePanel({ roomCode, className }: InvitePanelProps) {
+export function InvitePanel({ roomCode, gameId, className }: InvitePanelProps) {
   const [copied, setCopied] = useState<"code" | "link" | null>(null);
   const [canShare, setCanShare] = useState(false);
 
@@ -32,13 +33,13 @@ export function InvitePanel({ roomCode, className }: InvitePanelProps) {
         );
         setCopied(target);
         toast.success(target === "code" ? "Code copied!" : "Link copied!");
-        trackEvent("invite-copy", { target });
+        trackEvent("invite-copy", { game: gameId, target });
         setTimeout(() => setCopied(null), 2000);
       } catch {
         toast.error(target === "code" ? "Failed to copy code" : "Failed to copy link");
       }
     },
-    [roomCode]
+    [roomCode, gameId]
   );
 
   const handleShare = useCallback(async () => {
@@ -48,13 +49,14 @@ export function InvitePanel({ roomCode, className }: InvitePanelProps) {
         text: `Join my game! Room code: ${roomCode}`,
         url: window.location.href,
       });
+      trackEvent("invite-share", { game: gameId });
     } catch (err) {
       // User cancelled or share failed — silently ignore AbortError
       if (err instanceof Error && err.name !== "AbortError") {
         toast.error("Sharing failed");
       }
     }
-  }, [roomCode]);
+  }, [roomCode, gameId]);
 
   const codeChars = roomCode.split("");
 

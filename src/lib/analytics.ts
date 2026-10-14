@@ -3,7 +3,10 @@
 // Thin wrapper around Umami's custom events. The Umami script only
 // loads in production (see layout.tsx) and loads after hydration,
 // so events fired on mount wait briefly for it to appear.
+// Event names and properties are defined in shared/analytics.ts.
 // ============================================================
+
+import type { ClientEvents } from "../../shared/analytics";
 
 declare global {
   interface Window {
@@ -20,7 +23,10 @@ const MAX_ATTEMPTS = 50; // ~10 seconds
  * Send a Umami custom event. If the script hasn't loaded yet, retry
  * for a few seconds, then give up silently (dev, ad blockers).
  */
-export function trackEvent(event: string, data?: Record<string, unknown>): void {
+export function trackEvent<E extends keyof ClientEvents>(
+  event: E,
+  data: ClientEvents[E]
+): void {
   if (typeof window === "undefined") return;
 
   let attempts = 0;
