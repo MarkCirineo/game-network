@@ -9,6 +9,7 @@ import {
   Clock,
   Sparkles,
 } from "lucide-react";
+import { JoinRoomForm } from "@/components/game/JoinRoomForm";
 import { gameCatalog } from "@/lib/gameCatalog";
 
 
@@ -31,6 +32,14 @@ export default function HomePage() {
             No downloads, no sign-ups. Pick a game, share the link, play
             instantly.
           </p>
+
+          {/* Join a friend's room by code */}
+          <div className="mt-5 flex flex-col items-center gap-2">
+            <p className="text-xs font-semibold uppercase tracking-wider text-text-muted">
+              Have a room code?
+            </p>
+            <JoinRoomForm alwaysOpen />
+          </div>
         </div>
       </section>
 

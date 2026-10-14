@@ -1,6 +1,6 @@
 // ============================================================
 // ArcadeKit — Invite Panel
-// Room code display + copy link + native share for inviting players.
+// Room code display + copy code/link + native share for inviting players.
 // ============================================================
 
 "use client";
@@ -9,6 +9,7 @@ import { useState, useCallback, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Copy, Check, Share2, Link } from "lucide-react";
 import { toast } from "sonner";
+import { trackEvent } from "@/lib/analytics";
 
 interface InvitePanelProps {
   roomCode: string;
@@ -16,23 +17,29 @@ interface InvitePanelProps {
 }
 
 export function InvitePanel({ roomCode, className }: InvitePanelProps) {
-  const [copied, setCopied] = useState(false);
+  const [copied, setCopied] = useState<"code" | "link" | null>(null);
   const [canShare, setCanShare] = useState(false);
 
   useEffect(() => {
     setCanShare(typeof navigator !== "undefined" && !!navigator.share);
   }, []);
 
-  const handleCopy = useCallback(async () => {
-    try {
-      await navigator.clipboard.writeText(window.location.href);
-      setCopied(true);
-      toast.success("Link copied!");
-      setTimeout(() => setCopied(false), 2000);
-    } catch {
-      toast.error("Failed to copy link");
-    }
-  }, []);
+  const handleCopy = useCallback(
+    async (target: "code" | "link") => {
+      try {
+        await navigator.clipboard.writeText(
+          target === "code" ? roomCode : window.location.href
+        );
+        setCopied(target);
+        toast.success(target === "code" ? "Code copied!" : "Link copied!");
+        trackEvent("invite-copy", { target });
+        setTimeout(() => setCopied(null), 2000);
+      } catch {
+        toast.error(target === "code" ? "Failed to copy code" : "Failed to copy link");
+      }
+    },
+    [roomCode]
+  );
 
   const handleShare = useCallback(async () => {
     try {
@@ -58,31 +65,57 @@ export function InvitePanel({ roomCode, className }: InvitePanelProps) {
         className
       )}
     >
-      {/* Room code label */}
-      <div className="mb-2 flex items-center gap-1.5 text-xs text-text-muted">
-        <Link className="h-3 w-3" />
-        Room Code
+      {/* Room code label + copy code */}
+      <div className="mb-2 flex items-center justify-between gap-2 text-xs text-text-muted">
+        <span className="inline-flex items-center gap-1.5">
+          <Link className="h-3 w-3" />
+          Room Code
+        </span>
+        <button
+          onClick={() => handleCopy("code")}
+          className={cn(
+            "inline-flex cursor-pointer items-center gap-1 rounded-md px-1.5 py-0.5 font-medium transition-colors",
+            copied === "code"
+              ? "text-cyan"
+              : "text-text-secondary hover:bg-white/5 hover:text-foreground"
+          )}
+        >
+          {copied === "code" ? (
+            <Check className="h-3 w-3" />
+          ) : (
+            <Copy className="h-3 w-3" />
+          )}
+          {copied === "code" ? "Copied!" : "Copy Code"}
+        </button>
       </div>
 
-      {/* Room code display — each character in its own box */}
-      <div className="mb-4 flex justify-center gap-1.5">
+      {/* Room code display — each character in its own box; click to copy */}
+      <button
+        onClick={() => handleCopy("code")}
+        aria-label={`Copy room code ${roomCode}`}
+        title="Copy code"
+        className="mb-4 flex w-full cursor-pointer justify-center gap-1.5"
+      >
         {codeChars.map((char, i) => (
-          <div
+          <span
             key={i}
-            className="flex h-11 w-10 items-center justify-center rounded-lg border border-white/10 bg-elevated font-mono text-xl font-bold tracking-widest text-foreground"
+            className={cn(
+              "flex h-11 w-10 items-center justify-center rounded-lg border bg-elevated font-mono text-xl font-bold tracking-widest text-foreground transition-colors",
+              copied === "code" ? "border-cyan/40" : "border-white/10"
+            )}
           >
             {char}
-          </div>
+          </span>
         ))}
-      </div>
+      </button>
 
       {/* Actions */}
       <div className="flex gap-2">
         <button
-          onClick={handleCopy}
+          onClick={() => handleCopy("link")}
           className={cn(
             "inline-flex flex-1 items-center justify-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-all active:translate-y-px",
-            copied
+            copied === "link"
               ? "bg-cyan/10 text-cyan"
               : "bg-white/5 text-text-secondary hover:bg-white/10 hover:text-foreground"
           )}
@@ -90,16 +123,16 @@ export function InvitePanel({ roomCode, className }: InvitePanelProps) {
           <span
             className={cn(
               "transition-transform duration-200",
-              copied && "scale-110"
+              copied === "link" && "scale-110"
             )}
           >
-            {copied ? (
+            {copied === "link" ? (
               <Check className="h-4 w-4" />
             ) : (
               <Copy className="h-4 w-4" />
             )}
           </span>
-          {copied ? "Copied!" : "Copy Link"}
+          {copied === "link" ? "Copied!" : "Copy Link"}
         </button>
 
         {canShare && (
