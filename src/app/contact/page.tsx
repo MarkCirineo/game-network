@@ -109,7 +109,7 @@ export default function ContactPage() {
               >
                 support@arcadekit.games
               </a>
-              . Email replies can take a while.
+              .
             </p>
           </div>
         </div>
