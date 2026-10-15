@@ -112,3 +112,15 @@ go in the deploy notes. Nothing runs automatically.
 
 Claude copies `.env.local` into the worktree and generates the local-only
 `BETTER_AUTH_SECRET`.
+
+## Multiplayer rooms (added 2026-10-14)
+
+- Signed-in players join rooms as their username automatically (no name
+  step). If the room refuses the name (a guest already took it), the normal
+  name form shows with the room's message. Guests are unchanged.
+- **Later — verified account badge.** Show a small badge next to account
+  players' names in lobbies, so other players can tell a real username from
+  a guest typing the same name. It must be verified by the game server, not
+  claimed by the browser: the site gives the game server a short-lived
+  signed pass for the account when joining. Build it together with stats /
+  daily-game results, which need the same "server knows the account" link.
