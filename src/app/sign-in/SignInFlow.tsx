@@ -12,6 +12,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ArrowLeft, Loader2, Mail } from "lucide-react";
 import { authClient } from "@/lib/auth-client";
+import { PasswordInput } from "@/components/account/PasswordInput";
 import { trackEvent } from "@/lib/analytics";
 import {
   AGE_COOKIE,
@@ -469,9 +470,8 @@ export function SignInFlow({
           <BackButton onClick={() => go("start")} />
           <h1 className="font-heading text-2xl font-bold">Sign in with a password</h1>
           {emailField}
-          <input
-            type="password"
-            autoComplete="current-password"
+          <PasswordInput
+                        autoComplete="current-password"
             required
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -503,9 +503,8 @@ export function SignInFlow({
             </p>
           </div>
           {emailField}
-          <input
-            type="password"
-            autoComplete="new-password"
+          <PasswordInput
+                        autoComplete="new-password"
             required
             minLength={MIN_PASSWORD_LENGTH}
             value={password}
@@ -568,9 +567,8 @@ export function SignInFlow({
             </p>
           </div>
           <CodeInput value={code} onChange={setCode} />
-          <input
-            type="password"
-            autoComplete="new-password"
+          <PasswordInput
+                        autoComplete="new-password"
             required
             minLength={MIN_PASSWORD_LENGTH}
             value={password}

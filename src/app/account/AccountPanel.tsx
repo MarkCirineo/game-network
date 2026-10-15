@@ -10,6 +10,7 @@ import { useState, type FormEvent, type ReactNode } from "react";
 import { useRouter } from "next/navigation";
 import { Check, KeyRound, Loader2, LogOut, Mail, Trash2 } from "lucide-react";
 import { authClient } from "@/lib/auth-client";
+import { PasswordInput } from "@/components/account/PasswordInput";
 import { trackEvent } from "@/lib/analytics";
 import { MIN_PASSWORD_LENGTH } from "@/lib/accounts";
 import { USERNAME_CHANGE_DAYS } from "@/lib/usernames";
@@ -119,9 +120,8 @@ function PasswordSection({ hasPassword }: { hasPassword: boolean }) {
       {open && (
         <form onSubmit={onSubmit} className="flex flex-col gap-2">
           {saved && (
-            <input
-              type="password"
-              autoComplete="current-password"
+            <PasswordInput
+                            autoComplete="current-password"
               required
               value={current}
               onChange={(e) => setCurrent(e.target.value)}
@@ -130,9 +130,8 @@ function PasswordSection({ hasPassword }: { hasPassword: boolean }) {
               className={inputClass}
             />
           )}
-          <input
-            type="password"
-            autoComplete="new-password"
+          <PasswordInput
+                        autoComplete="new-password"
             required
             minLength={MIN_PASSWORD_LENGTH}
             value={next}
