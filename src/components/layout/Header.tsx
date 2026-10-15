@@ -1,12 +1,25 @@
 "use client";
 
 import Link from "next/link";
-import { Gamepad2, Menu, X } from "lucide-react";
+import { Gamepad2, Menu, UserRound, X } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import { authClient } from "@/lib/auth-client";
+
+/** "Sign in", or the signed-in player's username (links to /account) */
+function useAccountLink(): { href: string; label: string; signedIn: boolean } | null {
+  const { data, isPending } = authClient.useSession();
+  if (isPending) return null;
+  if (!data) return { href: "/sign-in", label: "Sign in", signedIn: false };
+  const name = data.user.displayUsername || data.user.username;
+  return name
+    ? { href: "/account", label: name, signedIn: true }
+    : { href: "/welcome?next=/account", label: "Pick a username", signedIn: true };
+}
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const account = useAccountLink();
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-white/5 bg-midnight/80 backdrop-blur-xl">
@@ -34,6 +47,15 @@ export function Header() {
           >
             Tools
           </Link>
+          {account && (
+            <Link
+              href={account.href}
+              className="inline-flex max-w-40 items-center gap-1.5 text-sm font-medium text-text-secondary transition-colors hover:text-foreground"
+            >
+              {account.signedIn && <UserRound className="h-4 w-4 shrink-0" />}
+              <span className="truncate">{account.label}</span>
+            </Link>
+          )}
           <Link
             href="/games"
             className="inline-flex h-9 items-center rounded-lg bg-ember px-4 text-sm font-medium text-white transition-all hover:bg-ember/90 hover:shadow-lg hover:shadow-ember/25"
@@ -60,7 +82,7 @@ export function Header() {
       <div
         className={cn(
           "overflow-hidden border-t border-white/5 transition-all duration-200 md:hidden",
-          mobileMenuOpen ? "max-h-48" : "max-h-0"
+          mobileMenuOpen ? "max-h-64" : "max-h-0"
         )}
       >
         <nav className="flex flex-col gap-1 px-4 py-3">
@@ -78,6 +100,16 @@ export function Header() {
           >
             Tools
           </Link>
+          {account && (
+            <Link
+              href={account.href}
+              onClick={() => setMobileMenuOpen(false)}
+              className="inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-text-secondary transition-colors hover:bg-white/5 hover:text-foreground"
+            >
+              {account.signedIn && <UserRound className="h-4 w-4 shrink-0" />}
+              <span className="truncate">{account.label}</span>
+            </Link>
+          )}
           <Link
             href="/games"
             onClick={() => setMobileMenuOpen(false)}

@@ -4,6 +4,17 @@ WORKDIR /app
 COPY package.json yarn.lock* ./
 RUN yarn install --frozen-lockfile --production=false
 
+# Stage: Migrator (one-off, not part of the web image)
+# Applies database migrations, then exits. Built and run on demand:
+#   docker compose -f docker/docker-compose.yml run --rm migrate
+FROM node:20-alpine AS migrator
+WORKDIR /app
+COPY --from=deps /app/node_modules ./node_modules
+COPY package.json ./
+COPY drizzle/ ./drizzle/
+COPY scripts/migrate.mjs ./scripts/migrate.mjs
+CMD ["node", "scripts/migrate.mjs"]
+
 # Stage 2: Builder
 FROM node:20-alpine AS builder
 WORKDIR /app

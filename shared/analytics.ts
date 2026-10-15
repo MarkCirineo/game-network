@@ -48,6 +48,20 @@ export interface ClientEvents {
   'feedback-open': { game?: string };
   /** Sent feedback successfully */
   'feedback-submit': { type: string; game?: string };
+  /** Started a sign-in on /sign-in (Google redirect, code requested, or password submitted) */
+  'sign-in-start': { method: 'google' | 'code' | 'password' };
+  /**
+   * Finished signing in with a code or password (Google finishes on
+   * Google's side, so it only has sign-in-start). new_account is true
+   * when this created the account.
+   */
+  'sign-in-complete': { method: 'code' | 'password'; new_account: boolean };
+  /** A sign-in step failed; reason is a short fixed code, never user input */
+  'sign-in-error': { method: 'google' | 'code' | 'password'; reason: string };
+  /** Signed out from the account page */
+  'sign-out': Record<string, never>;
+  /** Asked for the delete-account email */
+  'account-delete-request': Record<string, never>;
 }
 
 /**
