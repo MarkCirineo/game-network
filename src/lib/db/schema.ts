@@ -104,3 +104,17 @@ export const sessionRelations = relations(session, ({ one }) => ({
 export const accountRelations = relations(account, ({ one }) => ({
   user: one(user, { fields: [account.userId], references: [user.id] }),
 }));
+
+/**
+ * Usernames given up by a rename or a deleted account. Held for
+ * USERNAME_HOLD_DAYS so nobody can grab a known player's old name right
+ * away; only the original owner (releasedBy) can take it back meanwhile.
+ * releasedBy is null when the account was deleted.
+ */
+export const releasedUsername = pgTable("released_username", {
+  /** Lowercase username */
+  username: text("username").primaryKey(),
+  releasedBy: text("released_by").references(() => user.id, { onDelete: "set null" }),
+  releasedAt: timestamp("released_at").defaultNow().notNull(),
+  availableAt: timestamp("available_at").notNull(),
+});

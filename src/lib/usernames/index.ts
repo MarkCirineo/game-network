@@ -12,6 +12,8 @@ export const USERNAME_MAX_LENGTH = 20;
 export const USERNAME_PATTERN = /^[A-Za-z0-9_]+$/;
 /** How long before a username can be changed again */
 export const USERNAME_CHANGE_DAYS = 30;
+/** How long a released username stays reserved for its previous owner */
+export const USERNAME_HOLD_DAYS = 30;
 
 /** Format only (length, characters). Cheap enough for every keystroke. */
 export function usernameFormatError(value: string): string | null {

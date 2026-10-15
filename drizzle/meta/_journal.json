@@ -8,6 +8,13 @@
       "when": 1792024367525,
       "tag": "0000_init_accounts",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1792029238389,
+      "tag": "0001_released_usernames",
+      "breakpoints": true
     }
   ]
 }

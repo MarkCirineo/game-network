@@ -39,6 +39,7 @@ import {
   USERNAME_MIN_LENGTH,
   usernameError,
 } from "@/lib/usernames";
+import { clearUsernameHold, holdReleasedUsername, isUsernameHeld } from "@/lib/usernames/holds";
 
 const DAY_SECONDS = 60 * 60 * 24;
 
@@ -130,6 +131,15 @@ export const auth = betterAuth({
       sendDeleteAccountVerification: async ({ user, url }) => {
         await sendEmail(deleteAccountEmail(user.email, url));
       },
+      // Hold the username so nobody can take it right away. The hold's
+      // owner link is cleared when the account row is deleted.
+      beforeDelete: async (user) => {
+        const [row] = await db
+          .select({ username: schema.user.username })
+          .from(schema.user)
+          .where(eq(schema.user.id, user.id));
+        if (row?.username) await holdReleasedUsername(row.username, user.id);
+      },
     },
   },
 
@@ -166,13 +176,27 @@ export const auth = betterAuth({
 
           const userId = ctx?.context.session?.user.id;
           if (!userId) return { data: rest };
+          const wanted = rest.username.toLowerCase();
           const [current] = await db
             .select({ username: schema.user.username, changedAt: schema.user.usernameChangedAt })
             .from(schema.user)
             .where(eq(schema.user.id, userId));
 
+          // Only capitals changed: same name, nothing to check
+          if (current?.username === wanted) return { data: rest };
+
+          // Recently released by someone else (renamed or deleted account)
+          if (await isUsernameHeld(wanted, userId)) {
+            throw new APIError("BAD_REQUEST", {
+              message: "That username isn't available yet. Try another.",
+            });
+          }
+
           // First pick is free; after that, one change per USERNAME_CHANGE_DAYS
-          if (!current?.username || current.username === rest.username.toLowerCase()) return { data: rest };
+          if (!current?.username) {
+            await clearUsernameHold(wanted);
+            return { data: rest };
+          }
           const waitMs = USERNAME_CHANGE_DAYS * DAY_SECONDS * 1000;
           if (current.changedAt && Date.now() - current.changedAt.getTime() < waitMs) {
             const nextChange = new Date(current.changedAt.getTime() + waitMs);
@@ -180,6 +204,10 @@ export const auth = betterAuth({
               message: `You can change your username again on ${nextChange.toLocaleDateString("en-US", { month: "long", day: "numeric" })}.`,
             });
           }
+          // Taking back your own held name ends its hold; the name being
+          // given up is held for everyone else
+          await clearUsernameHold(wanted);
+          await holdReleasedUsername(current.username, userId);
           return { data: { ...rest, usernameChangedAt: new Date() } };
         },
       },
