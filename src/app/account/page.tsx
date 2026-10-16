@@ -7,6 +7,7 @@ import type { Metadata } from "next";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { auth } from "@/lib/auth";
+import { describeAuthError } from "@/lib/authErrors";
 import { AccountPanel } from "./AccountPanel";
 
 export const metadata: Metadata = {
@@ -14,7 +15,13 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-export default async function AccountPage() {
+type Props = {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+};
+
+export default async function AccountPage({ searchParams }: Props) {
+  const rawError = (await searchParams).error;
+  const linkError = rawError ? describeAuthError(Array.isArray(rawError) ? rawError[0] : rawError) : null;
   const requestHeaders = await headers();
   const session = await auth.api.getSession({ headers: requestHeaders });
   if (!session) redirect("/sign-in?next=/account");
@@ -32,6 +39,7 @@ export default async function AccountPage() {
           hasPassword={providers.has("credential")}
           hasGoogle={providers.has("google")}
           googleEnabled={Boolean(process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET)}
+          linkError={linkError}
         />
       </div>
     </div>

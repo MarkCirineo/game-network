@@ -161,10 +161,10 @@ export function deleteAccountEmail(to: string, url: string): Email {
   return {
     to,
     subject: "Confirm deleting your ArcadeKit account",
-    text: `Open this link to permanently delete your ArcadeKit account:\n\n${url}\n\nThis can't be undone. If you didn't ask for this, ignore this email and your account stays as it is.`,
+    text: `Open this link to confirm deleting your ArcadeKit account:\n\n${url}\n\nYou'll be asked to confirm, and it can't be undone. If you didn't ask for this, ignore this email and your account stays as it is.`,
     html: layout(
       "Delete your account?",
-      `<p style="margin:0 0 16px;color:#c9cbd6;">Open the link below to permanently delete your ArcadeKit account. This can't be undone.</p>
+      `<p style="margin:0 0 16px;color:#c9cbd6;">Open the link below to confirm deleting your ArcadeKit account. You'll be asked to confirm, and it can't be undone.</p>
       <p style="margin:0 0 16px;"><a href="${escapeHtml(url)}" style="display:inline-block;background:#ef4444;color:#fff;text-decoration:none;font-weight:600;padding:10px 16px;border-radius:8px;">Delete my account</a></p>
       <p style="margin:0;font-size:13px;color:#8b8fa3;">If you didn't ask for this, your account stays as it is.</p>`,
     ),

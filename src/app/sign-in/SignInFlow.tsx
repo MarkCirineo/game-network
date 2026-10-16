@@ -139,7 +139,8 @@ export function SignInFlow({
 }: {
   next: string;
   googleEnabled: boolean;
-  googleError: boolean;
+  /** Message for a failed Google sign-in (Better Auth's ?error=<code>) */
+  googleError: string | null;
 }) {
   const router = useRouter();
   const [step, setStep] = useState<Step>("start");
@@ -148,11 +149,7 @@ export function SignInFlow({
   const [password, setPassword] = useState("");
   const [code, setCode] = useState("");
   const [busy, setBusy] = useState(false);
-  const [error, setError] = useState<string | null>(
-    googleError
-      ? "Couldn't sign in with Google. Make sure the 13 or older box is ticked, then try again."
-      : null,
-  );
+  const [error, setError] = useState<string | null>(googleError);
   const [resendIn, setResendIn] = useState(0);
 
   // Remember the age box between steps and visits (the cookie lasts an hour)
@@ -196,7 +193,8 @@ export function SignInFlow({
     const { error } = await authClient.signIn.social({
       provider: "google",
       callbackURL: afterSignIn,
-      errorCallbackURL: `/sign-in?error=google&next=${encodeURIComponent(next)}`,
+      // Better Auth adds ?error=<code>
+      errorCallbackURL: `/sign-in?next=${encodeURIComponent(next)}`,
     });
     if (error) {
       setBusy(false);

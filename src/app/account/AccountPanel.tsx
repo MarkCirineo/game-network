@@ -23,6 +23,8 @@ interface AccountPanelProps {
   hasPassword: boolean;
   hasGoogle: boolean;
   googleEnabled: boolean;
+  /** Message for a failed "Connect Google" (Better Auth's ?error=<code>) */
+  linkError: string | null;
 }
 
 const inputClass =
@@ -55,8 +57,8 @@ function SmallButton({
       disabled={disabled}
       className={
         tone === "danger"
-          ? "inline-flex h-10 cursor-pointer items-center gap-2 rounded-lg bg-red-500/15 px-4 text-sm font-semibold text-red-300 transition-colors hover:bg-red-500/25 disabled:cursor-default disabled:opacity-50"
-          : "inline-flex h-10 cursor-pointer items-center gap-2 rounded-lg border border-white/10 px-4 text-sm font-medium text-text-primary transition-colors hover:bg-white/5 disabled:cursor-default disabled:opacity-50"
+          ? "inline-flex h-10 shrink-0 cursor-pointer items-center gap-2 whitespace-nowrap rounded-lg bg-red-500/15 px-4 text-sm font-semibold text-red-300 transition-colors hover:bg-red-500/25 disabled:cursor-default disabled:opacity-50"
+          : "inline-flex h-10 shrink-0 cursor-pointer items-center gap-2 whitespace-nowrap rounded-lg border border-white/10 px-4 text-sm font-medium text-text-primary transition-colors hover:bg-white/5 disabled:cursor-default disabled:opacity-50"
       }
     >
       {children}
@@ -111,11 +113,11 @@ function PasswordSection({ hasPassword }: { hasPassword: boolean }) {
   return (
     <div className="flex flex-col gap-3">
       <div className="flex items-center justify-between gap-3">
-        <span className="inline-flex items-center gap-2 text-sm">
+        <span className="inline-flex items-center gap-2 whitespace-nowrap text-sm">
           <KeyRound className="h-4 w-4 text-text-secondary" />
           Password {saved ? <span className="text-text-secondary">· set</span> : <span className="text-text-secondary">· not set</span>}
         </span>
-        {!open && <SmallButton onClick={() => setOpen(true)}>{saved ? "Change" : "Add a password"}</SmallButton>}
+        {!open && <SmallButton onClick={() => setOpen(true)}>{saved ? "Change" : "Add password"}</SmallButton>}
       </div>
       {open && (
         <form onSubmit={onSubmit} className="flex flex-col gap-2">
@@ -160,7 +162,14 @@ function PasswordSection({ hasPassword }: { hasPassword: boolean }) {
 
 // ── Panel ───────────────────────────────────────────────────
 
-export function AccountPanel({ username, email, hasPassword, hasGoogle, googleEnabled }: AccountPanelProps) {
+export function AccountPanel({
+  username,
+  email,
+  hasPassword,
+  hasGoogle,
+  googleEnabled,
+  linkError,
+}: AccountPanelProps) {
   const router = useRouter();
   const [name, setName] = useState(username);
   const [editingName, setEditingName] = useState(false);
@@ -178,7 +187,12 @@ export function AccountPanel({ username, email, hasPassword, hasGoogle, googleEn
 
   async function connectGoogle() {
     setError(null);
-    const { error } = await authClient.linkSocial({ provider: "google", callbackURL: "/account" });
+    // Better Auth adds ?error=<code> when linking fails
+    const { error } = await authClient.linkSocial({
+      provider: "google",
+      callbackURL: "/account",
+      errorCallbackURL: "/account",
+    });
     if (error) setError(error.message || "Couldn't connect Google. Please try again.");
   }
 
@@ -258,6 +272,11 @@ export function AccountPanel({ username, email, hasPassword, hasGoogle, googleEn
               {!hasGoogle && <SmallButton onClick={connectGoogle}>Connect</SmallButton>}
             </div>
           )}
+          {linkError && !hasGoogle && (
+            <p role="alert" className="-mt-2 rounded-lg bg-red-500/10 px-3 py-2 text-sm text-red-300">
+              {linkError}
+            </p>
+          )}
 
           <PasswordSection hasPassword={hasPassword} />
         </div>
@@ -286,8 +305,8 @@ export function AccountPanel({ username, email, hasPassword, hasGoogle, googleEn
         {deleteStep === "confirm" && (
           <div className="flex flex-col gap-3">
             <p className="text-sm">
-              We&apos;ll email <strong>{email}</strong> a link. Your account is deleted only when you
-              open it. This can&apos;t be undone.
+              We&apos;ll email <strong>{email}</strong> a link. Your account is deleted only after you
+              open it and confirm. This can&apos;t be undone.
             </p>
             <div className="flex flex-wrap gap-2">
               <SmallButton tone="danger" onClick={requestDelete} disabled={busy}>
@@ -300,7 +319,7 @@ export function AccountPanel({ username, email, hasPassword, hasGoogle, googleEn
         )}
         {deleteStep === "sent" && (
           <p className="text-sm text-cyan" role="status">
-            Check your email for the link. Nothing is deleted until you open it.
+            Check your email for the link. Nothing is deleted until you open it and confirm.
           </p>
         )}
       </Section>

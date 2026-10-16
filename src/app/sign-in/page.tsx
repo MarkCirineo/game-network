@@ -10,6 +10,7 @@ import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { auth } from "@/lib/auth";
 import { safeNextPath } from "@/lib/accounts";
+import { describeAuthError } from "@/lib/authErrors";
 import { SignInFlow } from "./SignInFlow";
 
 export const metadata: Metadata = {
@@ -39,7 +40,11 @@ export default async function SignInPage({ searchParams }: Props) {
   return (
     <div className="px-4 py-8 md:py-14">
       <div className="mx-auto max-w-sm">
-        <SignInFlow next={next} googleEnabled={googleEnabled} googleError={Boolean(first(params.error))} />
+        <SignInFlow
+          next={next}
+          googleEnabled={googleEnabled}
+          googleError={params.error ? describeAuthError(first(params.error)) : null}
+        />
       </div>
     </div>
   );

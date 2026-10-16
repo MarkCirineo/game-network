@@ -128,7 +128,12 @@ export const auth = betterAuth({
     },
     deleteUser: {
       enabled: true,
-      sendDeleteAccountVerification: async ({ user, url }) => {
+      // The email links to our own confirm page rather than Better Auth's
+      // callback, which only answers with raw JSON when the link is opened
+      // somewhere you're not signed in (e.g. the email app on your phone)
+      sendDeleteAccountVerification: async ({ user, token }) => {
+        const base = process.env.BETTER_AUTH_URL ?? "http://localhost:3000";
+        const url = `${base}/account/delete?token=${encodeURIComponent(token)}`;
         await sendEmail(deleteAccountEmail(user.email, url));
       },
       // Hold the username so nobody can take it right away. The hold's
@@ -243,6 +248,10 @@ export const auth = betterAuth({
 
   // Sign-in is by email only; usernames are just public names
   disabledPaths: ["/sign-in/username"],
+
+  // Errors without their own page (e.g. an old delete link) land on an
+  // ArcadeKit page instead of Better Auth's built-in one
+  onAPIError: { errorURL: "/auth/error" },
 
   hooks: {
     before: createAuthMiddleware(async (ctx) => {
