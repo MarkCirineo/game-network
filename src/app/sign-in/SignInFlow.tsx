@@ -383,9 +383,10 @@ export function SignInFlow({
       {step === "start" && (
         <div className="flex flex-col gap-5">
           <div>
-            <h1 className="font-heading text-2xl font-bold">Sign in</h1>
+            <h1 className="font-heading text-2xl font-bold">Sign in or create an account</h1>
             <p className="mt-1 text-sm text-text-secondary">
-              Optional. Every game works without an account.
+              New here? Use your email or Google and we&apos;ll set up your account. It&apos;s
+              optional, and every game works without one.
             </p>
           </div>
 

@@ -14,8 +14,9 @@ import { describeAuthError } from "@/lib/authErrors";
 import { SignInFlow } from "./SignInFlow";
 
 export const metadata: Metadata = {
-  title: "Sign In",
-  description: "Sign in to ArcadeKit. Accounts are optional: every game works without one.",
+  title: "Sign In or Create an Account",
+  description:
+    "Sign in to ArcadeKit or create a free account with your email or Google. Accounts are optional: every game works without one.",
   robots: { index: false, follow: false },
 };
 
