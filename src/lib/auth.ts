@@ -12,6 +12,7 @@
 
 import { betterAuth } from "better-auth";
 import { APIError, createAuthMiddleware } from "better-auth/api";
+import { deleteSessionCookie } from "better-auth/cookies";
 import { nextCookies } from "better-auth/next-js";
 import { emailOTP, username } from "better-auth/plugins";
 import { eq } from "drizzle-orm";
@@ -258,6 +259,14 @@ export const auth = betterAuth({
       if (!CODE_EMAIL_PATHS.has(ctx.path)) return;
       const email = typeof ctx.body?.email === "string" ? ctx.body.email.trim().toLowerCase() : "";
       if (email) checkCodeRequest(email);
+    }),
+    // Deleting with the emailed token removes the account and its sessions,
+    // but Better Auth doesn't clear the browser's session cookies on that
+    // path, so the cached cookie kept showing the deleted account
+    after: createAuthMiddleware(async (ctx) => {
+      if (ctx.path !== "/delete-user" || !ctx.body?.token) return;
+      if (ctx.context.returned instanceof APIError) return;
+      deleteSessionCookie(ctx);
     }),
   },
 
