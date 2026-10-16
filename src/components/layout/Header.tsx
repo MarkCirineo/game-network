@@ -17,6 +17,33 @@ function useAccountLink(): { href: string; label: string; signedIn: boolean } | 
     : { href: "/welcome?next=/account", label: "Pick a username", signedIn: true };
 }
 
+/** Far-right account control: "Sign in", or a circle with the username's initial */
+function AccountButton({ account }: { account: ReturnType<typeof useAccountLink> }) {
+  // Keep the space while the session loads so the header doesn't jump
+  if (!account) return <span className="h-8 w-8" aria-hidden />;
+  if (!account.signedIn) {
+    return (
+      <Link
+        href={account.href}
+        className="text-sm font-medium text-foreground transition-colors hover:text-ember"
+      >
+        {account.label}
+      </Link>
+    );
+  }
+  const hasName = account.href === "/account";
+  return (
+    <Link
+      href={account.href}
+      title={account.label}
+      aria-label={hasName ? `Your account (${account.label})` : account.label}
+      className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-ember/40 bg-ember/15 text-sm font-semibold uppercase text-ember transition-colors hover:bg-ember/25"
+    >
+      {hasName ? account.label[0] : <UserRound className="h-4 w-4" />}
+    </Link>
+  );
+}
+
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const account = useAccountLink();
@@ -47,35 +74,30 @@ export function Header() {
           >
             Tools
           </Link>
-          {account && (
-            <Link
-              href={account.href}
-              className="inline-flex max-w-40 items-center gap-1.5 text-sm font-medium text-text-secondary transition-colors hover:text-foreground"
-            >
-              {account.signedIn && <UserRound className="h-4 w-4 shrink-0" />}
-              <span className="truncate">{account.label}</span>
-            </Link>
-          )}
           <Link
             href="/games"
             className="inline-flex h-9 items-center rounded-lg bg-ember px-4 text-sm font-medium text-white transition-all hover:bg-ember/90 hover:shadow-lg hover:shadow-ember/25"
           >
             Play Now
           </Link>
+          <AccountButton account={account} />
         </nav>
 
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="inline-flex h-9 w-9 items-center justify-center rounded-lg text-text-secondary transition-colors hover:bg-white/5 hover:text-foreground md:hidden"
-          aria-label="Toggle menu"
-        >
-          {mobileMenuOpen ? (
-            <X className="h-5 w-5" />
-          ) : (
-            <Menu className="h-5 w-5" />
-          )}
-        </button>
+        {/* Mobile: account + menu button */}
+        <div className="flex items-center gap-3 md:hidden">
+          <AccountButton account={account} />
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="inline-flex h-9 w-9 items-center justify-center rounded-lg text-text-secondary transition-colors hover:bg-white/5 hover:text-foreground md:hidden"
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? (
+              <X className="h-5 w-5" />
+            ) : (
+              <Menu className="h-5 w-5" />
+            )}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -100,16 +122,6 @@ export function Header() {
           >
             Tools
           </Link>
-          {account && (
-            <Link
-              href={account.href}
-              onClick={() => setMobileMenuOpen(false)}
-              className="inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-text-secondary transition-colors hover:bg-white/5 hover:text-foreground"
-            >
-              {account.signedIn && <UserRound className="h-4 w-4 shrink-0" />}
-              <span className="truncate">{account.label}</span>
-            </Link>
-          )}
           <Link
             href="/games"
             onClick={() => setMobileMenuOpen(false)}
