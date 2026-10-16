@@ -22,6 +22,9 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
+      # The site only starts once the database is up to date
+      migrate:
+        condition: service_completed_successfully
     healthcheck:
       test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3000/api/health"]
       interval: 30s
@@ -81,20 +84,38 @@ services:
       start_period: 10s
     restart: unless-stopped
 
-  # One-off: applies database migrations, then exits. Run it before
-  # restarting web whenever a deploy changes the database:
-  #   docker compose -f docker/docker-compose.yml run --rm migrate
+  # Applies any new database migrations, then exits. Runs on every
+  # `up`; web waits for it, so deploys need no extra step.
   migrate:
     build:
       context: ..
       dockerfile: docker/Dockerfile.web
       target: migrator
-    profiles: ["migrate"]
     environment:
       - DATABASE_URL=postgres://arcadekit:${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in docker/.env}@postgres:5432/arcadekit
     depends_on:
       postgres:
         condition: service_healthy
+
+  # Nightly database dumps into docker/backups/ on the server (kept 14
+  # days). Restore steps are in README.md.
+  backup:
+    image: postgres:17-alpine
+    entrypoint: ["sh", "/backup-db.sh"]
+    environment:
+      - PGHOST=postgres
+      - PGUSER=arcadekit
+      - PGDATABASE=arcadekit
+      - PGPASSWORD=${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in docker/.env}
+      - BACKUP_KEEP_DAYS=14
+      - BACKUP_HOUR=3
+    volumes:
+      - ./backups:/backups
+      - ../scripts/backup-db.sh:/backup-db.sh:ro
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
 
 volumes:
   redis_data:
