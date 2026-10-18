@@ -15,6 +15,13 @@
       "when": 1792029238389,
       "tag": "0001_released_usernames",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1792199219694,
+      "tag": "0002_daily_rank",
+      "breakpoints": true
     }
   ]
 }
