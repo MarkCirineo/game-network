@@ -8,11 +8,9 @@
 // puzzle someone has already seen.
 //
 // Day by day:
-//   1. Themes: 3 different ones, mostly not the ones from yesterday.
-//   2. Category: each theme works through its categories in a
-//      shuffled order, so a category doesn't come back until the
-//      theme's other categories have had a turn.
-//   3. Items: 5 well-known items, all far enough apart (the
+//   1. Categories: 3, from 3 different themes. Every category is
+//      equally likely, and one used in the last few days sits out.
+//   2. Items: 5 well-known items, all far enough apart (the
 //      category's gap rule), shown in a shuffled order.
 // ============================================================
 
@@ -95,55 +93,46 @@ function shuffle<T>(list: readonly T[], rand: Random): T[] {
   return result;
 }
 
-// ---------------- Themes and categories ----------------
+// ---------------- Categories ----------------
 
-const CATEGORIES_BY_THEME = new Map<ThemeId, DailyCategory[]>();
-for (const category of DAILY_CATEGORIES) {
-  const list = CATEGORIES_BY_THEME.get(category.theme) ?? [];
-  list.push(category);
-  CATEGORIES_BY_THEME.set(category.theme, list);
-}
-const THEME_IDS = [...CATEGORIES_BY_THEME.keys()];
+/** A category used on any of the last few days sits out */
+const REST_DAYS = 4;
 
 interface DayPlan {
-  themes: ThemeId[];
   categories: DailyCategory[];
 }
 
 /**
  * Plans are worked out from puzzle #1 forward (each day depends on
- * the day before), then kept in memory. A few thousand days is
+ * the days before), then kept in memory. A few thousand days is
  * nothing, so this never needs a database.
  */
 const plans: DayPlan[] = [];
-const themeUses = new Map<ThemeId, number>();
 
-function pickThemes(day: number, yesterday: ThemeId[]): ThemeId[] {
-  const rand = random(`themes:${day}`);
-  const fresh = shuffle(THEME_IDS.filter((t) => !yesterday.includes(t)), rand);
-  // Two themes that weren't on yesterday, then one from anything left,
-  // so the same pairs don't keep turning up together
-  const picked = fresh.slice(0, ROUNDS_PER_DAY - 1);
-  const rest = shuffle(THEME_IDS.filter((t) => !picked.includes(t)), rand);
-  picked.push(...rest.slice(0, ROUNDS_PER_DAY - picked.length));
-  return shuffle(picked, rand);
-}
+/**
+ * Every category is equally likely, so each one gets about the same
+ * airtime (and a theme with more categories turns up more often).
+ * The day's three must be from different themes, and categories from
+ * the last REST_DAYS days are skipped while there are others to use.
+ */
+function pickCategories(day: number): DailyCategory[] {
+  const rand = random(`categories:${day}`);
+  const recent = new Set(plans.slice(Math.max(0, day - 1 - REST_DAYS), day - 1).flatMap((p) => p.categories));
+  const rested = shuffle(DAILY_CATEGORIES.filter((c) => !recent.has(c)), rand);
+  const tired = shuffle(DAILY_CATEGORIES.filter((c) => recent.has(c)), rand);
 
-function pickCategory(theme: ThemeId): DailyCategory {
-  const list = CATEGORIES_BY_THEME.get(theme)!;
-  const uses = themeUses.get(theme) ?? 0;
-  themeUses.set(theme, uses + 1);
-  const cycle = Math.floor(uses / list.length);
-  const order = shuffle(list, random(`categories:${theme}:${cycle}`));
-  return order[uses % list.length];
+  const picked: DailyCategory[] = [];
+  for (const category of [...rested, ...tired]) {
+    if (picked.some((p) => p.theme === category.theme)) continue;
+    picked.push(category);
+    if (picked.length === ROUNDS_PER_DAY) break;
+  }
+  return picked;
 }
 
 function planFor(day: number): DayPlan {
   while (plans.length < day) {
-    const current = plans.length + 1;
-    const yesterday = plans[current - 2]?.themes ?? [];
-    const themes = pickThemes(current, yesterday);
-    plans.push({ themes, categories: themes.map(pickCategory) });
+    plans.push({ categories: pickCategories(plans.length + 1) });
   }
   return plans[day - 1];
 }
