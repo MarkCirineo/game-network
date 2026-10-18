@@ -5,12 +5,14 @@
 import Link from "next/link";
 import {
   ArrowRight,
+  CalendarDays,
   Users,
   Clock,
   Sparkles,
 } from "lucide-react";
 import { JoinRoomForm } from "@/components/game/JoinRoomForm";
 import { gameCatalog } from "@/lib/gameCatalog";
+import { DAILY_GAME_NAME, DAILY_PATH, DAILY_TAGLINE } from "@/lib/daily/config";
 
 
 export default function HomePage() {
@@ -40,6 +42,28 @@ export default function HomePage() {
             </p>
             <JoinRoomForm alwaysOpen />
           </div>
+        </div>
+      </section>
+
+      {/* ── Today's daily puzzle (single player) ──────────── */}
+      <section className="px-4 pt-4 md:pt-6">
+        <div className="mx-auto max-w-4xl">
+          <Link
+            href={DAILY_PATH}
+            className="group flex items-center gap-4 rounded-2xl border border-ember/25 bg-gradient-to-r from-ember/10 to-surface p-5 transition-all duration-200 hover:border-ember/50 hover:-translate-y-0.5"
+          >
+            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-ember/15 text-ember">
+              <CalendarDays className="h-6 w-6" />
+            </span>
+            <span className="min-w-0 flex-1">
+              <span className="block text-xs font-semibold uppercase tracking-wider text-ember">
+                Today&apos;s daily puzzle · 1 player
+              </span>
+              <span className="mt-0.5 block font-heading text-lg font-bold">{DAILY_GAME_NAME}</span>
+              <span className="block text-sm text-text-secondary">{DAILY_TAGLINE}</span>
+            </span>
+            <ArrowRight className="h-5 w-5 shrink-0 text-ember transition-transform duration-200 group-hover:translate-x-0.5" />
+          </Link>
         </div>
       </section>
 
