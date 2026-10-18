@@ -1,0 +1,197 @@
+{
+ "source": "Wikipedia",
+ "items": [
+  {
+   "id": "elephant",
+   "name": "African elephant",
+   "emoji": "🐘",
+   "value": 6000,
+   "fame": 100,
+   "source": "https://en.wikipedia.org/wiki/African_bush_elephant"
+  },
+  {
+   "id": "cat",
+   "name": "House cat",
+   "emoji": "🐈",
+   "value": 4.5,
+   "fame": 100,
+   "source": "https://en.wikipedia.org/wiki/Cat"
+  },
+  {
+   "id": "lion",
+   "name": "Lion",
+   "emoji": "🦁",
+   "value": 190,
+   "fame": 100,
+   "source": "https://en.wikipedia.org/wiki/Lion"
+  },
+  {
+   "id": "horse",
+   "name": "Horse",
+   "emoji": "🐎",
+   "value": 500,
+   "fame": 95,
+   "source": "https://en.wikipedia.org/wiki/Horse"
+  },
+  {
+   "id": "tiger",
+   "name": "Tiger",
+   "emoji": "🐅",
+   "value": 220,
+   "fame": 95,
+   "source": "https://en.wikipedia.org/wiki/Tiger"
+  },
+  {
+   "id": "blue-whale",
+   "name": "Blue whale",
+   "emoji": "🐋",
+   "value": 150000,
+   "fame": 90,
+   "source": "https://en.wikipedia.org/wiki/Blue_whale"
+  },
+  {
+   "id": "cheetah",
+   "name": "Cheetah",
+   "emoji": "🐆",
+   "value": 50,
+   "fame": 90,
+   "source": "https://en.wikipedia.org/wiki/Cheetah"
+  },
+  {
+   "id": "chicken",
+   "name": "Chicken",
+   "emoji": "🐔",
+   "value": 2.5,
+   "fame": 90,
+   "source": "https://en.wikipedia.org/wiki/Chicken"
+  },
+  {
+   "id": "panda",
+   "name": "Giant panda",
+   "emoji": "🐼",
+   "value": 100,
+   "fame": 90,
+   "source": "https://en.wikipedia.org/wiki/Giant_panda"
+  },
+  {
+   "id": "giraffe",
+   "name": "Giraffe",
+   "emoji": "🦒",
+   "value": 1200,
+   "fame": 90,
+   "source": "https://en.wikipedia.org/wiki/Giraffe"
+  },
+  {
+   "id": "polar-bear",
+   "name": "Polar bear",
+   "emoji": "🐻‍❄️",
+   "value": 450,
+   "fame": 90,
+   "source": "https://en.wikipedia.org/wiki/Polar_bear"
+  },
+  {
+   "id": "penguin",
+   "name": "Emperor penguin",
+   "emoji": "🐧",
+   "value": 30,
+   "fame": 85,
+   "source": "https://en.wikipedia.org/wiki/Emperor_penguin"
+  },
+  {
+   "id": "gorilla",
+   "name": "Gorilla",
+   "emoji": "🦍",
+   "value": 160,
+   "fame": 85,
+   "source": "https://en.wikipedia.org/wiki/Gorilla"
+  },
+  {
+   "id": "wolf",
+   "name": "Gray wolf",
+   "emoji": "🐺",
+   "value": 40,
+   "fame": 85,
+   "source": "https://en.wikipedia.org/wiki/Wolf"
+  },
+  {
+   "id": "white-shark",
+   "name": "Great white shark",
+   "emoji": "🦈",
+   "value": 1100,
+   "fame": 85,
+   "source": "https://en.wikipedia.org/wiki/Great_white_shark"
+  },
+  {
+   "id": "hippo",
+   "name": "Hippopotamus",
+   "emoji": "🦛",
+   "value": 1500,
+   "fame": 85,
+   "source": "https://en.wikipedia.org/wiki/Hippopotamus"
+  },
+  {
+   "id": "mouse",
+   "name": "House mouse",
+   "emoji": "🐁",
+   "value": 0.02,
+   "fame": 85,
+   "source": "https://en.wikipedia.org/wiki/House_mouse"
+  },
+  {
+   "id": "kangaroo",
+   "name": "Red kangaroo",
+   "emoji": "🦘",
+   "value": 66,
+   "fame": 85,
+   "source": "https://en.wikipedia.org/wiki/Red_kangaroo"
+  },
+  {
+   "id": "koala",
+   "name": "Koala",
+   "emoji": "🐨",
+   "value": 9,
+   "fame": 80,
+   "source": "https://en.wikipedia.org/wiki/Koala"
+  },
+  {
+   "id": "squirrel",
+   "name": "Gray squirrel",
+   "emoji": "🐿️",
+   "value": 0.5,
+   "fame": 75,
+   "source": "https://en.wikipedia.org/wiki/Eastern_gray_squirrel"
+  },
+  {
+   "id": "hummingbird",
+   "name": "Hummingbird",
+   "emoji": "🐦",
+   "value": 0.0035,
+   "fame": 75,
+   "source": "https://en.wikipedia.org/wiki/Ruby-throated_hummingbird"
+  },
+  {
+   "id": "ostrich",
+   "name": "Ostrich",
+   "emoji": "🪶",
+   "value": 110,
+   "fame": 75,
+   "source": "https://en.wikipedia.org/wiki/Common_ostrich"
+  },
+  {
+   "id": "rhino",
+   "name": "White rhinoceros",
+   "emoji": "🦏",
+   "value": 2300,
+   "fame": 75,
+   "source": "https://en.wikipedia.org/wiki/White_rhinoceros"
+  },
+  {
+   "id": "bison",
+   "name": "American bison",
+   "emoji": "🦬",
+   "value": 700,
+   "fame": 70,
+   "source": "https://en.wikipedia.org/wiki/American_bison"
+  }
+ ]
+}

@@ -1,0 +1,653 @@
+{
+ "source": "Wikidata (CC0)",
+ "items": [
+  {
+   "id": "Q95",
+   "name": "Google",
+   "detail": "United States",
+   "value": 1998,
+   "fame": 211,
+   "source": "https://www.wikidata.org/wiki/Q95"
+  },
+  {
+   "id": "Q312",
+   "name": "Apple",
+   "detail": "United States",
+   "value": 1976,
+   "fame": 183,
+   "source": "https://www.wikidata.org/wiki/Q312"
+  },
+  {
+   "id": "Q2283",
+   "name": "Microsoft",
+   "detail": "United States",
+   "value": 1975,
+   "fame": 178,
+   "source": "https://www.wikidata.org/wiki/Q2283"
+  },
+  {
+   "id": "Q53268",
+   "name": "Toyota",
+   "detail": "Japan",
+   "value": 1937,
+   "fame": 149,
+   "source": "https://www.wikidata.org/wiki/Q53268"
+  },
+  {
+   "id": "Q907311",
+   "name": "Netflix",
+   "detail": "United States",
+   "value": 1997,
+   "fame": 144,
+   "source": "https://www.wikidata.org/wiki/Q907311"
+  },
+  {
+   "id": "Q7414",
+   "name": "Disney",
+   "detail": "United States",
+   "value": 1923,
+   "fame": 142,
+   "source": "https://www.wikidata.org/wiki/Q7414"
+  },
+  {
+   "id": "Q38076",
+   "name": "McDonald's",
+   "detail": "United States",
+   "value": 1940,
+   "fame": 137,
+   "source": "https://www.wikidata.org/wiki/Q38076"
+  },
+  {
+   "id": "Q8093",
+   "name": "Nintendo",
+   "detail": "Japan",
+   "value": 1889,
+   "fame": 131,
+   "source": "https://www.wikidata.org/wiki/Q8093"
+  },
+  {
+   "id": "Q3884",
+   "name": "Amazon",
+   "detail": "United States",
+   "value": 1994,
+   "fame": 124,
+   "source": "https://www.wikidata.org/wiki/Q3884"
+  },
+  {
+   "id": "Q36008",
+   "name": "Mercedes-Benz",
+   "detail": "Germany",
+   "value": 1926,
+   "fame": 121,
+   "source": "https://www.wikidata.org/wiki/Q36008"
+  },
+  {
+   "id": "Q26678",
+   "name": "BMW",
+   "detail": "Germany",
+   "value": 1916,
+   "fame": 118,
+   "source": "https://www.wikidata.org/wiki/Q26678"
+  },
+  {
+   "id": "Q193701",
+   "name": "SpaceX",
+   "detail": "United States",
+   "value": 2002,
+   "fame": 117,
+   "source": "https://www.wikidata.org/wiki/Q193701"
+  },
+  {
+   "id": "Q584601",
+   "name": "Baskin-Robbins",
+   "detail": "United States",
+   "value": 1945,
+   "fame": 116,
+   "source": "https://www.wikidata.org/wiki/Q584601"
+  },
+  {
+   "id": "Q23317",
+   "name": "Audi",
+   "detail": "Germany",
+   "value": 1909,
+   "fame": 115,
+   "source": "https://www.wikidata.org/wiki/Q23317"
+  },
+  {
+   "id": "Q44294",
+   "name": "Ford",
+   "detail": "United States",
+   "value": 1903,
+   "fame": 114,
+   "source": "https://www.wikidata.org/wiki/Q44294"
+  },
+  {
+   "id": "Q41187",
+   "name": "Sony",
+   "detail": "Japan",
+   "value": 1946,
+   "fame": 114,
+   "source": "https://www.wikidata.org/wiki/Q41187"
+  },
+  {
+   "id": "Q37156",
+   "name": "IBM",
+   "detail": "United States",
+   "value": 1911,
+   "fame": 113,
+   "source": "https://www.wikidata.org/wiki/Q37156"
+  },
+  {
+   "id": "Q1418",
+   "name": "Nokia",
+   "detail": "Finland",
+   "value": 1865,
+   "fame": 112,
+   "source": "https://www.wikidata.org/wiki/Q1418"
+  },
+  {
+   "id": "Q478214",
+   "name": "Tesla",
+   "detail": "United States",
+   "value": 2003,
+   "fame": 109,
+   "source": "https://www.wikidata.org/wiki/Q478214"
+  },
+  {
+   "id": "Q3895",
+   "name": "Adidas",
+   "detail": "Germany",
+   "value": 1924,
+   "fame": 107,
+   "source": "https://www.wikidata.org/wiki/Q3895"
+  },
+  {
+   "id": "Q66",
+   "name": "Boeing",
+   "detail": "United States",
+   "value": 1916,
+   "fame": 106,
+   "source": "https://www.wikidata.org/wiki/Q66"
+  },
+  {
+   "id": "Q9584",
+   "name": "Honda",
+   "detail": "Japan",
+   "value": 1948,
+   "fame": 105,
+   "source": "https://www.wikidata.org/wiki/Q9584"
+  },
+  {
+   "id": "Q248",
+   "name": "Intel",
+   "detail": "United States",
+   "value": 1968,
+   "fame": 101,
+   "source": "https://www.wikidata.org/wiki/Q248"
+  },
+  {
+   "id": "Q9325",
+   "name": "Lufthansa",
+   "detail": "Germany",
+   "value": 1926,
+   "fame": 101,
+   "source": "https://www.wikidata.org/wiki/Q9325"
+  },
+  {
+   "id": "Q524757",
+   "name": "KFC",
+   "detail": "United States",
+   "value": 1930,
+   "fame": 98,
+   "source": "https://www.wikidata.org/wiki/Q524757"
+  },
+  {
+   "id": "Q27586",
+   "name": "Ferrari",
+   "detail": "Italy",
+   "value": 1947,
+   "fame": 97,
+   "source": "https://www.wikidata.org/wiki/Q27586"
+  },
+  {
+   "id": "Q160120",
+   "name": "Huawei",
+   "detail": "China",
+   "value": 1987,
+   "fame": 95,
+   "source": "https://www.wikidata.org/wiki/Q160120"
+  },
+  {
+   "id": "Q127552",
+   "name": "Pixar",
+   "detail": "United States",
+   "value": 1986,
+   "fame": 94,
+   "source": "https://www.wikidata.org/wiki/Q127552"
+  },
+  {
+   "id": "Q160746",
+   "name": "Nestlé",
+   "detail": "Switzerland",
+   "value": 1866,
+   "fame": 91,
+   "source": "https://www.wikidata.org/wiki/Q160746"
+  },
+  {
+   "id": "Q40993",
+   "name": "Porsche",
+   "detail": "Germany",
+   "value": 1931,
+   "fame": 91,
+   "source": "https://www.wikidata.org/wiki/Q40993"
+  },
+  {
+   "id": "Q35339",
+   "name": "WWE",
+   "detail": "United States",
+   "value": 1952,
+   "fame": 91,
+   "source": "https://www.wikidata.org/wiki/Q35339"
+  },
+  {
+   "id": "Q81965",
+   "name": "General Motors",
+   "detail": "United States",
+   "value": 1908,
+   "fame": 90,
+   "source": "https://www.wikidata.org/wiki/Q81965"
+  },
+  {
+   "id": "Q20165",
+   "name": "Nissan",
+   "detail": "Japan",
+   "value": 1933,
+   "fame": 90,
+   "source": "https://www.wikidata.org/wiki/Q20165"
+  },
+  {
+   "id": "Q130879",
+   "name": "Reuters",
+   "detail": "United Kingdom",
+   "value": 1851,
+   "fame": 90,
+   "source": "https://www.wikidata.org/wiki/Q130879"
+  },
+  {
+   "id": "Q483915",
+   "name": "Nike",
+   "detail": "United States",
+   "value": 1964,
+   "fame": 89,
+   "source": "https://www.wikidata.org/wiki/Q483915"
+  },
+  {
+   "id": "Q4548",
+   "name": "Turkish Airlines",
+   "detail": "Turkey",
+   "value": 1933,
+   "fame": 89,
+   "source": "https://www.wikidata.org/wiki/Q4548"
+  },
+  {
+   "id": "Q1636958",
+   "name": "Xiaomi",
+   "detail": "China",
+   "value": 2010,
+   "fame": 88,
+   "source": "https://www.wikidata.org/wiki/Q1636958"
+  },
+  {
+   "id": "Q11463",
+   "name": "Adobe",
+   "detail": "United States",
+   "value": 1982,
+   "fame": 87,
+   "source": "https://www.wikidata.org/wiki/Q11463"
+  },
+  {
+   "id": "Q27597",
+   "name": "Fiat",
+   "detail": "Italy",
+   "value": 1899,
+   "fame": 87,
+   "source": "https://www.wikidata.org/wiki/Q27597"
+  },
+  {
+   "id": "Q380",
+   "name": "Meta (Facebook)",
+   "detail": "United States",
+   "value": 2004,
+   "fame": 87,
+   "source": "https://www.wikidata.org/wiki/Q380"
+  },
+  {
+   "id": "Q35886",
+   "name": "Lamborghini",
+   "detail": "Italy",
+   "value": 1948,
+   "fame": 86,
+   "source": "https://www.wikidata.org/wiki/Q35886"
+  },
+  {
+   "id": "Q80978",
+   "name": "Hewlett-Packard",
+   "detail": "United States",
+   "value": 1939,
+   "fame": 85,
+   "source": "https://www.wikidata.org/wiki/Q80978"
+  },
+  {
+   "id": "Q8766",
+   "name": "British Airways",
+   "detail": "United Kingdom",
+   "value": 1919,
+   "fame": 83,
+   "source": "https://www.wikidata.org/wiki/Q8766"
+  },
+  {
+   "id": "Q14799",
+   "name": "Lenovo",
+   "detail": "China",
+   "value": 1984,
+   "fame": 83,
+   "source": "https://www.wikidata.org/wiki/Q14799"
+  },
+  {
+   "id": "Q181642",
+   "name": "Suzuki",
+   "detail": "Japan",
+   "value": 1909,
+   "fame": 83,
+   "source": "https://www.wikidata.org/wiki/Q181642"
+  },
+  {
+   "id": "Q35996",
+   "name": "Mazda",
+   "detail": "Japan",
+   "value": 1920,
+   "fame": 82,
+   "source": "https://www.wikidata.org/wiki/Q35996"
+  },
+  {
+   "id": "Q30873",
+   "name": "Dell",
+   "detail": "United States",
+   "value": 1989,
+   "fame": 81,
+   "source": "https://www.wikidata.org/wiki/Q30873"
+  },
+  {
+   "id": "Q182477",
+   "name": "Nvidia",
+   "detail": "United States",
+   "value": 1993,
+   "fame": 81,
+   "source": "https://www.wikidata.org/wiki/Q182477"
+  },
+  {
+   "id": "Q35349",
+   "name": "Kia",
+   "detail": "South Korea",
+   "value": 1944,
+   "fame": 80,
+   "source": "https://www.wikidata.org/wiki/Q35349"
+  },
+  {
+   "id": "Q29637",
+   "name": "Škoda Auto",
+   "detail": "Czech Republic",
+   "value": 1895,
+   "fame": 80,
+   "source": "https://www.wikidata.org/wiki/Q29637"
+  },
+  {
+   "id": "Q53247",
+   "name": "Panasonic",
+   "detail": "Japan",
+   "value": 1918,
+   "fame": 79,
+   "source": "https://www.wikidata.org/wiki/Q53247"
+  },
+  {
+   "id": "Q81230",
+   "name": "Siemens",
+   "detail": "Germany",
+   "value": 1847,
+   "fame": 79,
+   "source": "https://www.wikidata.org/wiki/Q81230"
+  },
+  {
+   "id": "Q174769",
+   "name": "United Airlines",
+   "detail": "United States",
+   "value": 1926,
+   "fame": 79,
+   "source": "https://www.wikidata.org/wiki/Q174769"
+  },
+  {
+   "id": "Q128896",
+   "name": "AMD",
+   "detail": "United States",
+   "value": 1969,
+   "fame": 78,
+   "source": "https://www.wikidata.org/wiki/Q128896"
+  },
+  {
+   "id": "Q102673",
+   "name": "Gazprom",
+   "detail": "Russia",
+   "value": 1989,
+   "fame": 78,
+   "source": "https://www.wikidata.org/wiki/Q102673"
+  },
+  {
+   "id": "Q19900",
+   "name": "Oracle",
+   "detail": "United States",
+   "value": 1977,
+   "fame": 78,
+   "source": "https://www.wikidata.org/wiki/Q19900"
+  },
+  {
+   "id": "Q179200",
+   "name": "Metro-Goldwyn-Mayer",
+   "detail": "United States",
+   "value": 1924,
+   "fame": 77,
+   "source": "https://www.wikidata.org/wiki/Q179200"
+  },
+  {
+   "id": "Q170416",
+   "name": "Philips",
+   "detail": "Netherlands",
+   "value": 1891,
+   "fame": 77,
+   "source": "https://www.wikidata.org/wiki/Q170416"
+  },
+  {
+   "id": "Q26921",
+   "name": "Alfa Romeo",
+   "detail": "Italy",
+   "value": 1910,
+   "fame": 76,
+   "source": "https://www.wikidata.org/wiki/Q26921"
+  },
+  {
+   "id": "Q55931",
+   "name": "Hyundai",
+   "detail": "South Korea",
+   "value": 1967,
+   "fame": 76,
+   "source": "https://www.wikidata.org/wiki/Q55931"
+  },
+  {
+   "id": "Q206921",
+   "name": "Pfizer",
+   "detail": "United States",
+   "value": 1849,
+   "fame": 76,
+   "source": "https://www.wikidata.org/wiki/Q206921"
+  },
+  {
+   "id": "Q58707",
+   "name": "Aeroflot",
+   "detail": "Russia",
+   "value": 1923,
+   "fame": 75,
+   "source": "https://www.wikidata.org/wiki/Q58707"
+  },
+  {
+   "id": "Q178516",
+   "name": "Gucci",
+   "detail": "Italy",
+   "value": 1921,
+   "fame": 75,
+   "source": "https://www.wikidata.org/wiki/Q178516"
+  },
+  {
+   "id": "Q170614",
+   "name": "Ryanair",
+   "detail": "Ireland",
+   "value": 1985,
+   "fame": 75,
+   "source": "https://www.wikidata.org/wiki/Q170614"
+  },
+  {
+   "id": "Q49125",
+   "name": "Toshiba",
+   "detail": "Japan",
+   "value": 1875,
+   "fame": 75,
+   "source": "https://www.wikidata.org/wiki/Q49125"
+  },
+  {
+   "id": "Q188920",
+   "name": "Delta Air Lines",
+   "detail": "United States",
+   "value": 1925,
+   "fame": 74,
+   "source": "https://www.wikidata.org/wiki/Q188920"
+  },
+  {
+   "id": "Q5281",
+   "name": "Yandex",
+   "detail": "Russia",
+   "value": 2000,
+   "fame": 74,
+   "source": "https://www.wikidata.org/wiki/Q5281"
+  },
+  {
+   "id": "Q3295867",
+   "name": "Coca-Cola",
+   "detail": "United States",
+   "value": 1886,
+   "fame": 73,
+   "source": "https://www.wikidata.org/wiki/Q3295867"
+  },
+  {
+   "id": "Q780442",
+   "name": "Uber",
+   "detail": "United States",
+   "value": 2009,
+   "fame": 73,
+   "source": "https://www.wikidata.org/wiki/Q780442"
+  },
+  {
+   "id": "Q163810",
+   "name": "Volvo",
+   "detail": "Sweden",
+   "value": 1927,
+   "fame": 72,
+   "source": "https://www.wikidata.org/wiki/Q163810"
+  },
+  {
+   "id": "Q32396",
+   "name": "American Airlines",
+   "detail": "United States",
+   "value": 1926,
+   "fame": 71,
+   "source": "https://www.wikidata.org/wiki/Q32396"
+  },
+  {
+   "id": "Q14772",
+   "name": "Baidu",
+   "detail": "China",
+   "value": 2000,
+   "fame": 71,
+   "source": "https://www.wikidata.org/wiki/Q14772"
+  },
+  {
+   "id": "Q62621",
+   "name": "Canon",
+   "detail": "Japan",
+   "value": 1937,
+   "fame": 71,
+   "source": "https://www.wikidata.org/wiki/Q62621"
+  },
+  {
+   "id": "Q173941",
+   "name": "Electronic Arts",
+   "detail": "United States",
+   "value": 1982,
+   "fame": 71,
+   "source": "https://www.wikidata.org/wiki/Q173941"
+  },
+  {
+   "id": "Q1359568",
+   "name": "Alibaba Group",
+   "detail": "China",
+   "value": 1999,
+   "fame": 70,
+   "source": "https://www.wikidata.org/wiki/Q1359568"
+  },
+  {
+   "id": "Q152864",
+   "name": "ASUS",
+   "detail": "Taiwan",
+   "value": 1989,
+   "fame": 70,
+   "source": "https://www.wikidata.org/wiki/Q152864"
+  },
+  {
+   "id": "Q66048",
+   "name": "Deutsche Bank",
+   "detail": "Germany",
+   "value": 1870,
+   "fame": 70,
+   "source": "https://www.wikidata.org/wiki/Q66048"
+  },
+  {
+   "id": "Q188326",
+   "name": "H&M",
+   "detail": "Sweden",
+   "value": 1947,
+   "fame": 70,
+   "source": "https://www.wikidata.org/wiki/Q188326"
+  },
+  {
+   "id": "Q183275",
+   "name": "Mitsubishi",
+   "detail": "Japan",
+   "value": 1870,
+   "fame": 70,
+   "source": "https://www.wikidata.org/wiki/Q183275"
+  },
+  {
+   "id": "Q157064",
+   "name": "Puma",
+   "detail": "Germany",
+   "value": 1948,
+   "fame": 70,
+   "source": "https://www.wikidata.org/wiki/Q157064"
+  },
+  {
+   "id": "Q32491",
+   "name": "Qantas",
+   "detail": "Australia",
+   "value": 1920,
+   "fame": 70,
+   "source": "https://www.wikidata.org/wiki/Q32491"
+  }
+ ]
+}

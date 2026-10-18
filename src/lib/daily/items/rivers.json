@@ -1,0 +1,2213 @@
+{
+ "source": "Wikidata (CC0)",
+ "items": [
+  {
+   "id": "Q3392",
+   "name": "Nile",
+   "detail": "Burundi, Egypt and others",
+   "value": 6650,
+   "fame": 247,
+   "source": "https://www.wikidata.org/wiki/Q3392"
+  },
+  {
+   "id": "Q3783",
+   "name": "Amazon River",
+   "detail": "Brazil, Colombia and others",
+   "value": 6400,
+   "fame": 217,
+   "source": "https://www.wikidata.org/wiki/Q3783"
+  },
+  {
+   "id": "Q1653",
+   "name": "Danube",
+   "detail": "Austria, Bulgaria and others",
+   "value": 2850,
+   "fame": 200,
+   "source": "https://www.wikidata.org/wiki/Q1653"
+  },
+  {
+   "id": "Q584",
+   "name": "Rhine",
+   "detail": "Austria, France and others",
+   "value": 1233,
+   "fame": 190,
+   "source": "https://www.wikidata.org/wiki/Q584"
+  },
+  {
+   "id": "Q626",
+   "name": "Volga",
+   "detail": "Russia",
+   "value": 3530,
+   "fame": 188,
+   "source": "https://www.wikidata.org/wiki/Q626"
+  },
+  {
+   "id": "Q5089",
+   "name": "Ganges",
+   "detail": "India",
+   "value": 2525,
+   "fame": 180,
+   "source": "https://www.wikidata.org/wiki/Q5089"
+  },
+  {
+   "id": "Q1497",
+   "name": "Mississippi River",
+   "detail": "United States",
+   "value": 3766,
+   "fame": 180,
+   "source": "https://www.wikidata.org/wiki/Q1497"
+  },
+  {
+   "id": "Q3503",
+   "name": "River Congo",
+   "detail": "Angola, Democratic Republic of the Congo and others",
+   "value": 4700,
+   "fame": 168,
+   "source": "https://www.wikidata.org/wiki/Q3503"
+  },
+  {
+   "id": "Q5413",
+   "name": "Yangtze River",
+   "detail": "People's Republic of China",
+   "value": 6300,
+   "fame": 166,
+   "source": "https://www.wikidata.org/wiki/Q5413"
+  },
+  {
+   "id": "Q7348",
+   "name": "Indus River",
+   "detail": "India, Pakistan and others",
+   "value": 3180,
+   "fame": 159,
+   "source": "https://www.wikidata.org/wiki/Q7348"
+  },
+  {
+   "id": "Q3542",
+   "name": "Niger River",
+   "detail": "Benin, Guinea and others",
+   "value": 4180,
+   "fame": 156,
+   "source": "https://www.wikidata.org/wiki/Q3542"
+  },
+  {
+   "id": "Q7355",
+   "name": "Yellow River",
+   "detail": "People's Republic of China",
+   "value": 5464,
+   "fame": 155,
+   "source": "https://www.wikidata.org/wiki/Q7355"
+  },
+  {
+   "id": "Q34589",
+   "name": "Euphrates",
+   "detail": "Iraq, Syria and others",
+   "value": 2800,
+   "fame": 142,
+   "source": "https://www.wikidata.org/wiki/Q34589"
+  },
+  {
+   "id": "Q19686",
+   "name": "River Thames",
+   "detail": "United Kingdom",
+   "value": 334,
+   "fame": 131,
+   "source": "https://www.wikidata.org/wiki/Q19686"
+  },
+  {
+   "id": "Q1471",
+   "name": "Seine",
+   "detail": "France",
+   "value": 776.7,
+   "fame": 131,
+   "source": "https://www.wikidata.org/wiki/Q1471"
+  },
+  {
+   "id": "Q35591",
+   "name": "Tigris",
+   "detail": "Iraq, Syria and others",
+   "value": 1850,
+   "fame": 130,
+   "source": "https://www.wikidata.org/wiki/Q35591"
+  },
+  {
+   "id": "Q40855",
+   "name": "Dnieper",
+   "detail": "Belarus, Russia and others",
+   "value": 2285,
+   "fame": 126,
+   "source": "https://www.wikidata.org/wiki/Q40855"
+  },
+  {
+   "id": "Q40059",
+   "name": "Jordan River",
+   "detail": "Israel, Jordan and others",
+   "value": 252,
+   "fame": 124,
+   "source": "https://www.wikidata.org/wiki/Q40059"
+  },
+  {
+   "id": "Q1644",
+   "name": "Elbe",
+   "detail": "Czech Republic / Germany",
+   "value": 1094,
+   "fame": 122,
+   "source": "https://www.wikidata.org/wiki/Q1644"
+  },
+  {
+   "id": "Q41179",
+   "name": "Mekong River",
+   "detail": "Cambodia, Laos and others",
+   "value": 4350,
+   "fame": 118,
+   "source": "https://www.wikidata.org/wiki/Q41179"
+  },
+  {
+   "id": "Q548",
+   "name": "Vistula",
+   "detail": "Poland",
+   "value": 1047,
+   "fame": 118,
+   "source": "https://www.wikidata.org/wiki/Q548"
+  },
+  {
+   "id": "Q6862",
+   "name": "Amur River",
+   "detail": "People's Republic of China / Russia",
+   "value": 2824,
+   "fame": 114,
+   "source": "https://www.wikidata.org/wiki/Q6862"
+  },
+  {
+   "id": "Q45403",
+   "name": "Brahmaputra River",
+   "detail": "Bangladesh, India and others",
+   "value": 2900,
+   "fame": 113,
+   "source": "https://www.wikidata.org/wiki/Q45403"
+  },
+  {
+   "id": "Q46841",
+   "name": "Lena River",
+   "detail": "Russia",
+   "value": 4294,
+   "fame": 112,
+   "source": "https://www.wikidata.org/wiki/Q46841"
+  },
+  {
+   "id": "Q973",
+   "name": "Ob",
+   "detail": "Russia",
+   "value": 3650,
+   "fame": 112,
+   "source": "https://www.wikidata.org/wiki/Q973"
+  },
+  {
+   "id": "Q80240",
+   "name": "Ural River",
+   "detail": "Kazakhstan / Russia",
+   "value": 2428,
+   "fame": 112,
+   "source": "https://www.wikidata.org/wiki/Q80240"
+  },
+  {
+   "id": "Q1229",
+   "name": "Don",
+   "detail": "Russia",
+   "value": 1870,
+   "fame": 109,
+   "source": "https://www.wikidata.org/wiki/Q1229"
+  },
+  {
+   "id": "Q5419",
+   "name": "Missouri River",
+   "detail": "United States",
+   "value": 3726,
+   "fame": 109,
+   "source": "https://www.wikidata.org/wiki/Q5419"
+  },
+  {
+   "id": "Q1469",
+   "name": "Loire",
+   "detail": "France",
+   "value": 1006,
+   "fame": 108,
+   "source": "https://www.wikidata.org/wiki/Q1469"
+  },
+  {
+   "id": "Q643",
+   "name": "Po",
+   "detail": "Italy",
+   "value": 652,
+   "fame": 108,
+   "source": "https://www.wikidata.org/wiki/Q643"
+  },
+  {
+   "id": "Q552",
+   "name": "Oder",
+   "detail": "Czech Republic, Germany and others",
+   "value": 854,
+   "fame": 107,
+   "source": "https://www.wikidata.org/wiki/Q552"
+  },
+  {
+   "id": "Q602",
+   "name": "Rhône",
+   "detail": "France / Switzerland",
+   "value": 812,
+   "fame": 107,
+   "source": "https://www.wikidata.org/wiki/Q602"
+  },
+  {
+   "id": "Q131210",
+   "name": "Dniester",
+   "detail": "Moldova, Transnistria and others",
+   "value": 1352,
+   "fame": 105,
+   "source": "https://www.wikidata.org/wiki/Q131210"
+  },
+  {
+   "id": "Q134750",
+   "name": "St. Lawrence River",
+   "detail": "Canada / United States",
+   "value": 3058,
+   "fame": 104,
+   "source": "https://www.wikidata.org/wiki/Q134750"
+  },
+  {
+   "id": "Q13712",
+   "name": "Tiber",
+   "detail": "Italy",
+   "value": 405,
+   "fame": 104,
+   "source": "https://www.wikidata.org/wiki/Q13712"
+  },
+  {
+   "id": "Q78707",
+   "name": "Yenisei",
+   "detail": "Russia",
+   "value": 3487,
+   "fame": 104,
+   "source": "https://www.wikidata.org/wiki/Q78707"
+  },
+  {
+   "id": "Q8493",
+   "name": "Amu Darya",
+   "detail": "Afghanistan, Tajikistan and others",
+   "value": 2620,
+   "fame": 103,
+   "source": "https://www.wikidata.org/wiki/Q8493"
+  },
+  {
+   "id": "Q14294",
+   "name": "Tagus River",
+   "detail": "Portugal / Spain",
+   "value": 1007,
+   "fame": 102,
+   "source": "https://www.wikidata.org/wiki/Q14294"
+  },
+  {
+   "id": "Q131792",
+   "name": "Orinoco River",
+   "detail": "Colombia / Venezuela",
+   "value": 2140,
+   "fame": 101,
+   "source": "https://www.wikidata.org/wiki/Q131792"
+  },
+  {
+   "id": "Q1265",
+   "name": "Colorado River",
+   "detail": "Mexico / United States",
+   "value": 2334,
+   "fame": 100,
+   "source": "https://www.wikidata.org/wiki/Q1265"
+  },
+  {
+   "id": "Q132726",
+   "name": "Yamuna",
+   "detail": "India",
+   "value": 1376,
+   "fame": 100,
+   "source": "https://www.wikidata.org/wiki/Q132726"
+  },
+  {
+   "id": "Q645",
+   "name": "Neva",
+   "detail": "Russia",
+   "value": 74,
+   "fame": 97,
+   "source": "https://www.wikidata.org/wiki/Q645"
+  },
+  {
+   "id": "Q128102",
+   "name": "Irtysh",
+   "detail": "Kazakhstan, People's Republic of China and others",
+   "value": 4248,
+   "fame": 96,
+   "source": "https://www.wikidata.org/wiki/Q128102"
+  },
+  {
+   "id": "Q882739",
+   "name": "Blue Nile",
+   "detail": "Ethiopia / Sudan",
+   "value": 1783,
+   "fame": 95,
+   "source": "https://www.wikidata.org/wiki/Q882739"
+  },
+  {
+   "id": "Q8197",
+   "name": "Daugava",
+   "detail": "Belarus, Latvia and others",
+   "value": 1020,
+   "fame": 94,
+   "source": "https://www.wikidata.org/wiki/Q8197"
+  },
+  {
+   "id": "Q41986",
+   "name": "Meuse",
+   "detail": "Belgium, France and others",
+   "value": 950,
+   "fame": 94,
+   "source": "https://www.wikidata.org/wiki/Q41986"
+  },
+  {
+   "id": "Q483159",
+   "name": "Syr Darya",
+   "detail": "Kazakhstan, Kyrgyzstan and others",
+   "value": 2212,
+   "fame": 94,
+   "source": "https://www.wikidata.org/wiki/Q483159"
+  },
+  {
+   "id": "Q104437",
+   "name": "Yukon River",
+   "detail": "Canada / United States",
+   "value": 3190,
+   "fame": 94,
+   "source": "https://www.wikidata.org/wiki/Q104437"
+  },
+  {
+   "id": "Q2251",
+   "name": "Columbia River",
+   "detail": "Canada / United States",
+   "value": 2000,
+   "fame": 91,
+   "source": "https://www.wikidata.org/wiki/Q2251"
+  },
+  {
+   "id": "Q10965",
+   "name": "Ebro",
+   "detail": "Spain",
+   "value": 910,
+   "fame": 91,
+   "source": "https://www.wikidata.org/wiki/Q10965"
+  },
+  {
+   "id": "Q3140",
+   "name": "Hudson River",
+   "detail": "United States",
+   "value": 492,
+   "fame": 91,
+   "source": "https://www.wikidata.org/wiki/Q3140"
+  },
+  {
+   "id": "Q160636",
+   "name": "Rio Grande",
+   "detail": "Mexico / United States",
+   "value": 3051,
+   "fame": 91,
+   "source": "https://www.wikidata.org/wiki/Q160636"
+  },
+  {
+   "id": "Q173017",
+   "name": "Limpopo River",
+   "detail": "Botswana, Mozambique and others",
+   "value": 1750,
+   "fame": 90,
+   "source": "https://www.wikidata.org/wiki/Q173017"
+  },
+  {
+   "id": "Q1670",
+   "name": "Main",
+   "detail": "Germany",
+   "value": 524,
+   "fame": 90,
+   "source": "https://www.wikidata.org/wiki/Q1670"
+  },
+  {
+   "id": "Q14299",
+   "name": "Douro River",
+   "detail": "Portugal / Spain",
+   "value": 897,
+   "fame": 89,
+   "source": "https://www.wikidata.org/wiki/Q14299"
+  },
+  {
+   "id": "Q4915",
+   "name": "Ohio River",
+   "detail": "United States",
+   "value": 1579,
+   "fame": 89,
+   "source": "https://www.wikidata.org/wiki/Q4915"
+  },
+  {
+   "id": "Q127892",
+   "name": "Paraná River",
+   "detail": "Argentina, Brazil and others",
+   "value": 4880,
+   "fame": 89,
+   "source": "https://www.wikidata.org/wiki/Q127892"
+  },
+  {
+   "id": "Q4814791",
+   "name": "White Nile",
+   "detail": "Democratic Republic of the Congo, Rwanda and others",
+   "value": 2620,
+   "fame": 89,
+   "source": "https://www.wikidata.org/wiki/Q4814791"
+  },
+  {
+   "id": "Q1667",
+   "name": "Moselle",
+   "detail": "France, Germany and others",
+   "value": 544,
+   "fame": 88,
+   "source": "https://www.wikidata.org/wiki/Q1667"
+  },
+  {
+   "id": "Q183078",
+   "name": "Murray River",
+   "detail": "Australia",
+   "value": 2508,
+   "fame": 88,
+   "source": "https://www.wikidata.org/wiki/Q183078"
+  },
+  {
+   "id": "Q181475",
+   "name": "Orange River",
+   "detail": "Lesotho, Namibia and others",
+   "value": 2200,
+   "fame": 88,
+   "source": "https://www.wikidata.org/wiki/Q181475"
+  },
+  {
+   "id": "Q35827",
+   "name": "Río de la Plata",
+   "detail": "Argentina / Uruguay",
+   "value": 290,
+   "fame": 88,
+   "source": "https://www.wikidata.org/wiki/Q35827"
+  },
+  {
+   "id": "Q134350",
+   "name": "Tisza",
+   "detail": "Hungary, Romania and others",
+   "value": 966,
+   "fame": 88,
+   "source": "https://www.wikidata.org/wiki/Q134350"
+  },
+  {
+   "id": "Q191314",
+   "name": "Godavari River",
+   "detail": "India",
+   "value": 1465,
+   "fame": 87,
+   "source": "https://www.wikidata.org/wiki/Q191314"
+  },
+  {
+   "id": "Q131574",
+   "name": "Vltava",
+   "detail": "Czech Republic",
+   "value": 430,
+   "fame": 87,
+   "source": "https://www.wikidata.org/wiki/Q131574"
+  },
+  {
+   "id": "Q26076",
+   "name": "Irrawaddy River",
+   "detail": "Myanmar",
+   "value": 2170,
+   "fame": 86,
+   "source": "https://www.wikidata.org/wiki/Q26076"
+  },
+  {
+   "id": "Q175117",
+   "name": "Moskva River",
+   "detail": "Russia",
+   "value": 473,
+   "fame": 86,
+   "source": "https://www.wikidata.org/wiki/Q175117"
+  },
+  {
+   "id": "Q3569",
+   "name": "Senegal River",
+   "detail": "Mali, Mauritania and others",
+   "value": 1050,
+   "fame": 85,
+   "source": "https://www.wikidata.org/wiki/Q3569"
+  },
+  {
+   "id": "Q162737",
+   "name": "Angara",
+   "detail": "Russia",
+   "value": 1779,
+   "fame": 84,
+   "source": "https://www.wikidata.org/wiki/Q162737"
+  },
+  {
+   "id": "Q18278",
+   "name": "Uruguay River",
+   "detail": "Argentina, Brazil and others",
+   "value": 1790,
+   "fame": 84,
+   "source": "https://www.wikidata.org/wiki/Q18278"
+  },
+  {
+   "id": "Q160819",
+   "name": "Gambia River",
+   "detail": "Guinea, Senegal and others",
+   "value": 1130,
+   "fame": 83,
+   "source": "https://www.wikidata.org/wiki/Q160819"
+  },
+  {
+   "id": "Q5077",
+   "name": "Garonne",
+   "detail": "France / Spain",
+   "value": 647,
+   "fame": 83,
+   "source": "https://www.wikidata.org/wiki/Q5077"
+  },
+  {
+   "id": "Q79082",
+   "name": "Kama",
+   "detail": "Russia",
+   "value": 1805,
+   "fame": 83,
+   "source": "https://www.wikidata.org/wiki/Q79082"
+  },
+  {
+   "id": "Q14383",
+   "name": "Sava",
+   "detail": "Bosnia and Herzegovina, Croatia and others",
+   "value": 945,
+   "fame": 83,
+   "source": "https://www.wikidata.org/wiki/Q14383"
+  },
+  {
+   "id": "Q193499",
+   "name": "Krishna River",
+   "detail": "India",
+   "value": 1400,
+   "fame": 82,
+   "source": "https://www.wikidata.org/wiki/Q193499"
+  },
+  {
+   "id": "Q172089",
+   "name": "Oka",
+   "detail": "Russia",
+   "value": 1500,
+   "fame": 82,
+   "source": "https://www.wikidata.org/wiki/Q172089"
+  },
+  {
+   "id": "Q179396",
+   "name": "Paraguay River",
+   "detail": "Argentina, Brazil and others",
+   "value": 2621,
+   "fame": 82,
+   "source": "https://www.wikidata.org/wiki/Q179396"
+  },
+  {
+   "id": "Q118771",
+   "name": "Rio Negro",
+   "detail": "Brazil, Colombia and others",
+   "value": 2250,
+   "fame": 82,
+   "source": "https://www.wikidata.org/wiki/Q118771"
+  },
+  {
+   "id": "Q179751",
+   "name": "Aras River",
+   "detail": "Armenia, Azerbaijan and others",
+   "value": 1072,
+   "fame": 81,
+   "source": "https://www.wikidata.org/wiki/Q179751"
+  },
+  {
+   "id": "Q156557",
+   "name": "Kura River",
+   "detail": "Azerbaijan, Georgia and others",
+   "value": 1360,
+   "fame": 81,
+   "source": "https://www.wikidata.org/wiki/Q156557"
+  },
+  {
+   "id": "Q3411",
+   "name": "Mackenzie River",
+   "detail": "Canada",
+   "value": 1738,
+   "fame": 81,
+   "source": "https://www.wikidata.org/wiki/Q3411"
+  },
+  {
+   "id": "Q118251",
+   "name": "Madeira River",
+   "detail": "Bolivia / Brazil",
+   "value": 1450,
+   "fame": 81,
+   "source": "https://www.wikidata.org/wiki/Q118251"
+  },
+  {
+   "id": "Q8168",
+   "name": "Pechora",
+   "detail": "Russia",
+   "value": 1809,
+   "fame": 81,
+   "source": "https://www.wikidata.org/wiki/Q8168"
+  },
+  {
+   "id": "Q14309",
+   "name": "Guadalquivir",
+   "detail": "Spain",
+   "value": 657,
+   "fame": 80,
+   "source": "https://www.wikidata.org/wiki/Q14309"
+  },
+  {
+   "id": "Q14369",
+   "name": "Inn",
+   "detail": "Austria, Germany and others",
+   "value": 517,
+   "fame": 80,
+   "source": "https://www.wikidata.org/wiki/Q14369"
+  },
+  {
+   "id": "Q5622",
+   "name": "Neman",
+   "detail": "Belarus, Lithuania and others",
+   "value": 937,
+   "fame": 80,
+   "source": "https://www.wikidata.org/wiki/Q5622"
+  },
+  {
+   "id": "Q78879",
+   "name": "Kolyma",
+   "detail": "Russia",
+   "value": 2129,
+   "fame": 79,
+   "source": "https://www.wikidata.org/wiki/Q78879"
+  },
+  {
+   "id": "Q191829",
+   "name": "Magdalena River",
+   "detail": "Colombia",
+   "value": 1528,
+   "fame": 79,
+   "source": "https://www.wikidata.org/wiki/Q191829"
+  },
+  {
+   "id": "Q188773",
+   "name": "Okavango River",
+   "detail": "Angola, Botswana and others",
+   "value": 1600,
+   "fame": 79,
+   "source": "https://www.wikidata.org/wiki/Q188773"
+  },
+  {
+   "id": "Q37620",
+   "name": "Scheldt",
+   "detail": "Belgium, France and others",
+   "value": 355,
+   "fame": 79,
+   "source": "https://www.wikidata.org/wiki/Q37620"
+  },
+  {
+   "id": "Q13696",
+   "name": "Adige",
+   "detail": "Italy",
+   "value": 410,
+   "fame": 78,
+   "source": "https://www.wikidata.org/wiki/Q13696"
+  },
+  {
+   "id": "Q1673",
+   "name": "Neckar",
+   "detail": "Germany",
+   "value": 362,
+   "fame": 78,
+   "source": "https://www.wikidata.org/wiki/Q1673"
+  },
+  {
+   "id": "Q166966",
+   "name": "Shatt al-Arab",
+   "detail": "Iran / Iraq",
+   "value": 200,
+   "fame": 78,
+   "source": "https://www.wikidata.org/wiki/Q166966"
+  },
+  {
+   "id": "Q192415",
+   "name": "Volta River",
+   "detail": "Burkina Faso / Ghana",
+   "value": 1500,
+   "fame": 78,
+   "source": "https://www.wikidata.org/wiki/Q192415"
+  },
+  {
+   "id": "Q8187",
+   "name": "Northern Dvina",
+   "detail": "Russia",
+   "value": 744,
+   "fame": 77,
+   "source": "https://www.wikidata.org/wiki/Q8187"
+  },
+  {
+   "id": "Q171649",
+   "name": "Ubangi River",
+   "detail": "Central African Republic, Democratic Republic of the Congo and others",
+   "value": 1060,
+   "fame": 77,
+   "source": "https://www.wikidata.org/wiki/Q171649"
+  },
+  {
+   "id": "Q118850",
+   "name": "Chao Phraya River",
+   "detail": "Thailand",
+   "value": 372,
+   "fame": 76,
+   "source": "https://www.wikidata.org/wiki/Q118850"
+  },
+  {
+   "id": "Q216875",
+   "name": "Chenab River",
+   "detail": "India / Pakistan",
+   "value": 1974,
+   "fame": 76,
+   "source": "https://www.wikidata.org/wiki/Q216875"
+  },
+  {
+   "id": "Q171009",
+   "name": "Drava",
+   "detail": "Austria, Croatia and others",
+   "value": 720,
+   "fame": 76,
+   "source": "https://www.wikidata.org/wiki/Q171009"
+  },
+  {
+   "id": "Q179444",
+   "name": "Potomac River",
+   "detail": "United States",
+   "value": 665,
+   "fame": 76,
+   "source": "https://www.wikidata.org/wiki/Q179444"
+  },
+  {
+   "id": "Q1675",
+   "name": "Aare",
+   "detail": "Switzerland",
+   "value": 295,
+   "fame": 75,
+   "source": "https://www.wikidata.org/wiki/Q1675"
+  },
+  {
+   "id": "Q93360",
+   "name": "Bío Bío River",
+   "detail": "Chile",
+   "value": 380,
+   "fame": 75,
+   "source": "https://www.wikidata.org/wiki/Q93360"
+  },
+  {
+   "id": "Q201463",
+   "name": "Pearl River",
+   "detail": "People's Republic of China",
+   "value": 2400,
+   "fame": 75,
+   "source": "https://www.wikidata.org/wiki/Q201463"
+  },
+  {
+   "id": "Q26422",
+   "name": "Salween River",
+   "detail": "Myanmar, People's Republic of China and others",
+   "value": 2815,
+   "fame": 75,
+   "source": "https://www.wikidata.org/wiki/Q26422"
+  },
+  {
+   "id": "Q142148",
+   "name": "São Francisco River",
+   "detail": "Brazil",
+   "value": 2814,
+   "fame": 75,
+   "source": "https://www.wikidata.org/wiki/Q142148"
+  },
+  {
+   "id": "Q1684",
+   "name": "Spree",
+   "detail": "Germany",
+   "value": 382,
+   "fame": 75,
+   "source": "https://www.wikidata.org/wiki/Q1684"
+  },
+  {
+   "id": "Q8319",
+   "name": "Arkansas River",
+   "detail": "United States",
+   "value": 2364,
+   "fame": 74,
+   "source": "https://www.wikidata.org/wiki/Q8319"
+  },
+  {
+   "id": "Q181482",
+   "name": "Darling River",
+   "detail": "Australia",
+   "value": 1472,
+   "fame": 74,
+   "source": "https://www.wikidata.org/wiki/Q181482"
+  },
+  {
+   "id": "Q82776",
+   "name": "Terek",
+   "detail": "Georgia / Russia",
+   "value": 623,
+   "fame": 74,
+   "source": "https://www.wikidata.org/wiki/Q82776"
+  },
+  {
+   "id": "Q106588",
+   "name": "Isar",
+   "detail": "Austria / Germany",
+   "value": 291.5,
+   "fame": 73,
+   "source": "https://www.wikidata.org/wiki/Q106588"
+  },
+  {
+   "id": "Q186541",
+   "name": "Kasai River",
+   "detail": "Angola / Democratic Republic of the Congo",
+   "value": 2272,
+   "fame": 73,
+   "source": "https://www.wikidata.org/wiki/Q186541"
+  },
+  {
+   "id": "Q182445",
+   "name": "Prut",
+   "detail": "Moldova, Romania and others",
+   "value": 953,
+   "fame": 73,
+   "source": "https://www.wikidata.org/wiki/Q182445"
+  },
+  {
+   "id": "Q1650",
+   "name": "Weser",
+   "detail": "Germany",
+   "value": 451,
+   "fame": 73,
+   "source": "https://www.wikidata.org/wiki/Q1650"
+  },
+  {
+   "id": "Q204806",
+   "name": "Benue River",
+   "detail": "Cameroon / Nigeria",
+   "value": 1370,
+   "fame": 72,
+   "source": "https://www.wikidata.org/wiki/Q204806"
+  },
+  {
+   "id": "Q82207",
+   "name": "Indigirka",
+   "detail": "Russia",
+   "value": 1726,
+   "fame": 72,
+   "source": "https://www.wikidata.org/wiki/Q82207"
+  },
+  {
+   "id": "Q19682",
+   "name": "River Severn",
+   "detail": "United Kingdom",
+   "value": 354,
+   "fame": 72,
+   "source": "https://www.wikidata.org/wiki/Q19682"
+  },
+  {
+   "id": "Q171675",
+   "name": "Sutlej",
+   "detail": "India, Pakistan and others",
+   "value": 1500,
+   "fame": 72,
+   "source": "https://www.wikidata.org/wiki/Q171675"
+  },
+  {
+   "id": "Q156054",
+   "name": "Tocantins River",
+   "detail": "Brazil",
+   "value": 2450,
+   "fame": 72,
+   "source": "https://www.wikidata.org/wiki/Q156054"
+  },
+  {
+   "id": "Q201823",
+   "name": "Warta",
+   "detail": "Poland",
+   "value": 808,
+   "fame": 72,
+   "source": "https://www.wikidata.org/wiki/Q201823"
+  },
+  {
+   "id": "Q191238",
+   "name": "Donets",
+   "detail": "Russia / Ukraine",
+   "value": 1053,
+   "fame": 71,
+   "source": "https://www.wikidata.org/wiki/Q191238"
+  },
+  {
+   "id": "Q82308",
+   "name": "Kuban",
+   "detail": "Russia",
+   "value": 870,
+   "fame": 71,
+   "source": "https://www.wikidata.org/wiki/Q82308"
+  },
+  {
+   "id": "Q257785",
+   "name": "Kızılırmak River",
+   "detail": "Turkey",
+   "value": 1355,
+   "fame": 70,
+   "source": "https://www.wikidata.org/wiki/Q257785"
+  },
+  {
+   "id": "Q172572",
+   "name": "Rubicon",
+   "detail": "Italy",
+   "value": 35,
+   "fame": 70,
+   "source": "https://www.wikidata.org/wiki/Q172572"
+  },
+  {
+   "id": "Q55498",
+   "name": "Yalu River",
+   "detail": "North Korea / People's Republic of China",
+   "value": 813,
+   "fame": 70,
+   "source": "https://www.wikidata.org/wiki/Q55498"
+  },
+  {
+   "id": "Q143762",
+   "name": "Delaware River",
+   "detail": "United States",
+   "value": 579,
+   "fame": 69,
+   "source": "https://www.wikidata.org/wiki/Q143762"
+  },
+  {
+   "id": "Q103148",
+   "name": "Lahn",
+   "detail": "Germany",
+   "value": 242,
+   "fame": 69,
+   "source": "https://www.wikidata.org/wiki/Q103148"
+  },
+  {
+   "id": "Q156237",
+   "name": "Western Bug",
+   "detail": "Belarus, Poland and others",
+   "value": 772,
+   "fame": 69,
+   "source": "https://www.wikidata.org/wiki/Q156237"
+  },
+  {
+   "id": "Q14305",
+   "name": "Guadiana",
+   "detail": "Portugal / Spain",
+   "value": 778,
+   "fame": 68,
+   "source": "https://www.wikidata.org/wiki/Q14305"
+  },
+  {
+   "id": "Q187834",
+   "name": "Saône",
+   "detail": "France",
+   "value": 480,
+   "fame": 68,
+   "source": "https://www.wikidata.org/wiki/Q187834"
+  },
+  {
+   "id": "Q193737",
+   "name": "Tennessee River",
+   "detail": "United States",
+   "value": 1049,
+   "fame": 68,
+   "source": "https://www.wikidata.org/wiki/Q193737"
+  },
+  {
+   "id": "Q1682",
+   "name": "Havel",
+   "detail": "Germany",
+   "value": 325,
+   "fame": 67,
+   "source": "https://www.wikidata.org/wiki/Q1682"
+  },
+  {
+   "id": "Q192567",
+   "name": "Ili River",
+   "detail": "Kazakhstan / People's Republic of China",
+   "value": 1439,
+   "fame": 67,
+   "source": "https://www.wikidata.org/wiki/Q192567"
+  },
+  {
+   "id": "Q191524",
+   "name": "Ishim",
+   "detail": "Kazakhstan / Russia",
+   "value": 2450,
+   "fame": 67,
+   "source": "https://www.wikidata.org/wiki/Q191524"
+  },
+  {
+   "id": "Q214874",
+   "name": "Jhelum River",
+   "detail": "India / Pakistan",
+   "value": 774,
+   "fame": 67,
+   "source": "https://www.wikidata.org/wiki/Q214874"
+  },
+  {
+   "id": "Q179251",
+   "name": "Morava",
+   "detail": "Austria, Czech Republic and others",
+   "value": 388,
+   "fame": 67,
+   "source": "https://www.wikidata.org/wiki/Q179251"
+  },
+  {
+   "id": "Q182343",
+   "name": "Niagara River",
+   "detail": "Canada / United States",
+   "value": 53,
+   "fame": 67,
+   "source": "https://www.wikidata.org/wiki/Q182343"
+  },
+  {
+   "id": "Q157042",
+   "name": "Pripyat River",
+   "detail": "Belarus / Ukraine",
+   "value": 775,
+   "fame": 67,
+   "source": "https://www.wikidata.org/wiki/Q157042"
+  },
+  {
+   "id": "Q203409",
+   "name": "Rioni",
+   "detail": "Georgia",
+   "value": 327,
+   "fame": 67,
+   "source": "https://www.wikidata.org/wiki/Q203409"
+  },
+  {
+   "id": "Q192820",
+   "name": "River Shannon",
+   "detail": "Ireland",
+   "value": 368,
+   "fame": 67,
+   "source": "https://www.wikidata.org/wiki/Q192820"
+  },
+  {
+   "id": "Q1664",
+   "name": "Ruhr",
+   "detail": "Germany",
+   "value": 217,
+   "fame": 67,
+   "source": "https://www.wikidata.org/wiki/Q1664"
+  },
+  {
+   "id": "Q188940",
+   "name": "Southern Bug",
+   "detail": "Ukraine",
+   "value": 806,
+   "fame": 67,
+   "source": "https://www.wikidata.org/wiki/Q188940"
+  },
+  {
+   "id": "Q26439",
+   "name": "Argun River",
+   "detail": "People's Republic of China / Russia",
+   "value": 1620,
+   "fame": 66,
+   "source": "https://www.wikidata.org/wiki/Q26439"
+  },
+  {
+   "id": "Q186901",
+   "name": "Drina",
+   "detail": "Bosnia and Herzegovina / Serbia",
+   "value": 346,
+   "fame": 66,
+   "source": "https://www.wikidata.org/wiki/Q186901"
+  },
+  {
+   "id": "Q55500",
+   "name": "Han River",
+   "detail": "North Korea / South Korea",
+   "value": 514,
+   "fame": 66,
+   "source": "https://www.wikidata.org/wiki/Q55500"
+  },
+  {
+   "id": "Q8510",
+   "name": "Helmand River",
+   "detail": "Afghanistan / Iran",
+   "value": 1150,
+   "fame": 66,
+   "source": "https://www.wikidata.org/wiki/Q8510"
+  },
+  {
+   "id": "Q234004",
+   "name": "Narmada",
+   "detail": "India",
+   "value": 1315,
+   "fame": 66,
+   "source": "https://www.wikidata.org/wiki/Q234004"
+  },
+  {
+   "id": "Q75745",
+   "name": "Selenga",
+   "detail": "Mongolia / Russia",
+   "value": 1024,
+   "fame": 66,
+   "source": "https://www.wikidata.org/wiki/Q75745"
+  },
+  {
+   "id": "Q202796",
+   "name": "Desna",
+   "detail": "Russia / Ukraine",
+   "value": 1130,
+   "fame": 65,
+   "source": "https://www.wikidata.org/wiki/Q202796"
+  },
+  {
+   "id": "Q2750140",
+   "name": "Kagera River",
+   "detail": "Burundi, Rwanda and others",
+   "value": 400,
+   "fame": 65,
+   "source": "https://www.wikidata.org/wiki/Q2750140"
+  },
+  {
+   "id": "Q189596",
+   "name": "Vardar",
+   "detail": "Greece / North Macedonia",
+   "value": 388,
+   "fame": 65,
+   "source": "https://www.wikidata.org/wiki/Q189596"
+  },
+  {
+   "id": "Q135477",
+   "name": "Chari River",
+   "detail": "Cameroon, Central African Republic and others",
+   "value": 1400,
+   "fame": 64,
+   "source": "https://www.wikidata.org/wiki/Q135477"
+  },
+  {
+   "id": "Q41983",
+   "name": "Marne",
+   "detail": "France",
+   "value": 514,
+   "fame": 64,
+   "source": "https://www.wikidata.org/wiki/Q41983"
+  },
+  {
+   "id": "Q192157",
+   "name": "Belaya",
+   "detail": "Russia",
+   "value": 1430,
+   "fame": 63,
+   "source": "https://www.wikidata.org/wiki/Q192157"
+  },
+  {
+   "id": "Q8515",
+   "name": "Kabul River",
+   "detail": "Afghanistan / Pakistan",
+   "value": 460,
+   "fame": 63,
+   "source": "https://www.wikidata.org/wiki/Q8515"
+  },
+  {
+   "id": "Q559661",
+   "name": "Liao River",
+   "detail": "People's Republic of China",
+   "value": 1345,
+   "fame": 63,
+   "source": "https://www.wikidata.org/wiki/Q559661"
+  },
+  {
+   "id": "Q204347",
+   "name": "Maritsa",
+   "detail": "Bulgaria, Greece and others",
+   "value": 490,
+   "fame": 63,
+   "source": "https://www.wikidata.org/wiki/Q204347"
+  },
+  {
+   "id": "Q209031",
+   "name": "Narva",
+   "detail": "Estonia / Russia",
+   "value": 74,
+   "fame": 63,
+   "source": "https://www.wikidata.org/wiki/Q209031"
+  },
+  {
+   "id": "Q317899",
+   "name": "Ravi River",
+   "detail": "India / Pakistan",
+   "value": 720,
+   "fame": 63,
+   "source": "https://www.wikidata.org/wiki/Q317899"
+  },
+  {
+   "id": "Q210326",
+   "name": "Songhua River",
+   "detail": "People's Republic of China",
+   "value": 1434,
+   "fame": 63,
+   "source": "https://www.wikidata.org/wiki/Q210326"
+  },
+  {
+   "id": "Q209891",
+   "name": "Sura",
+   "detail": "Russia",
+   "value": 841,
+   "fame": 63,
+   "source": "https://www.wikidata.org/wiki/Q209891"
+  },
+  {
+   "id": "Q14366",
+   "name": "Ticino",
+   "detail": "Italy / Switzerland",
+   "value": 248,
+   "fame": 63,
+   "source": "https://www.wikidata.org/wiki/Q14366"
+  },
+  {
+   "id": "Q208174",
+   "name": "Dordogne",
+   "detail": "France",
+   "value": 483,
+   "fame": 62,
+   "source": "https://www.wikidata.org/wiki/Q208174"
+  },
+  {
+   "id": "Q200174",
+   "name": "Marañón River",
+   "detail": "Peru",
+   "value": 1737,
+   "fame": 62,
+   "source": "https://www.wikidata.org/wiki/Q200174"
+  },
+  {
+   "id": "Q190777",
+   "name": "Neretva",
+   "detail": "Bosnia and Herzegovina / Croatia",
+   "value": 225,
+   "fame": 62,
+   "source": "https://www.wikidata.org/wiki/Q190777"
+  },
+  {
+   "id": "Q206850",
+   "name": "Red River",
+   "detail": "People's Republic of China / Vietnam",
+   "value": 1149,
+   "fame": 62,
+   "source": "https://www.wikidata.org/wiki/Q206850"
+  },
+  {
+   "id": "Q19721",
+   "name": "River Clyde",
+   "detail": "United Kingdom",
+   "value": 176,
+   "fame": 62,
+   "source": "https://www.wikidata.org/wiki/Q19721"
+  },
+  {
+   "id": "Q1678",
+   "name": "Saale",
+   "detail": "Germany",
+   "value": 413,
+   "fame": 62,
+   "source": "https://www.wikidata.org/wiki/Q1678"
+  },
+  {
+   "id": "Q192495",
+   "name": "Vyatka",
+   "detail": "Russia",
+   "value": 1314,
+   "fame": 62,
+   "source": "https://www.wikidata.org/wiki/Q192495"
+  },
+  {
+   "id": "Q200952",
+   "name": "Ucayali River",
+   "detail": "Peru",
+   "value": 1460,
+   "fame": 61,
+   "source": "https://www.wikidata.org/wiki/Q200952"
+  },
+  {
+   "id": "Q63109",
+   "name": "Adda",
+   "detail": "Italy",
+   "value": 313,
+   "fame": 60,
+   "source": "https://www.wikidata.org/wiki/Q63109"
+  },
+  {
+   "id": "Q185405",
+   "name": "Amstel",
+   "detail": "Netherlands",
+   "value": 31,
+   "fame": 60,
+   "source": "https://www.wikidata.org/wiki/Q185405"
+  },
+  {
+   "id": "Q1648",
+   "name": "Ems",
+   "detail": "Germany / Netherlands",
+   "value": 371,
+   "fame": 60,
+   "source": "https://www.wikidata.org/wiki/Q1648"
+  },
+  {
+   "id": "Q273456",
+   "name": "Omo River",
+   "detail": "Ethiopia",
+   "value": 760,
+   "fame": 60,
+   "source": "https://www.wikidata.org/wiki/Q273456"
+  },
+  {
+   "id": "Q188871",
+   "name": "Orontes River",
+   "detail": "Lebanon, Syria and others",
+   "value": 571,
+   "fame": 60,
+   "source": "https://www.wikidata.org/wiki/Q188871"
+  },
+  {
+   "id": "Q272074",
+   "name": "Snake River",
+   "detail": "United States",
+   "value": 1735,
+   "fame": 60,
+   "source": "https://www.wikidata.org/wiki/Q272074"
+  },
+  {
+   "id": "Q124653",
+   "name": "Tobol",
+   "detail": "Kazakhstan / Russia",
+   "value": 1591,
+   "fame": 60,
+   "source": "https://www.wikidata.org/wiki/Q124653"
+  },
+  {
+   "id": "Q8505",
+   "name": "Hari River",
+   "detail": "Afghanistan, Iran and others",
+   "value": 1150,
+   "fame": 59,
+   "source": "https://www.wikidata.org/wiki/Q8505"
+  },
+  {
+   "id": "Q461557",
+   "name": "Karun River",
+   "detail": "Iran",
+   "value": 950,
+   "fame": 59,
+   "source": "https://www.wikidata.org/wiki/Q461557"
+  },
+  {
+   "id": "Q19714",
+   "name": "River Trent",
+   "detail": "United Kingdom",
+   "value": 298,
+   "fame": 59,
+   "source": "https://www.wikidata.org/wiki/Q19714"
+  },
+  {
+   "id": "Q209530",
+   "name": "Vaal River",
+   "detail": "South Africa",
+   "value": 1120,
+   "fame": 59,
+   "source": "https://www.wikidata.org/wiki/Q209530"
+  },
+  {
+   "id": "Q191832",
+   "name": "Aldan",
+   "detail": "Russia",
+   "value": 2273,
+   "fame": 58,
+   "source": "https://www.wikidata.org/wiki/Q191832"
+  },
+  {
+   "id": "Q26390",
+   "name": "Anadyr",
+   "detail": "Russia",
+   "value": 1150,
+   "fame": 58,
+   "source": "https://www.wikidata.org/wiki/Q26390"
+  },
+  {
+   "id": "Q320649",
+   "name": "Cunene River",
+   "detail": "Angola / Namibia",
+   "value": 1207,
+   "fame": 58,
+   "source": "https://www.wikidata.org/wiki/Q320649"
+  },
+  {
+   "id": "Q5602",
+   "name": "Lusatian Nysa",
+   "detail": "Czech Republic, Germany and others",
+   "value": 254,
+   "fame": 58,
+   "source": "https://www.wikidata.org/wiki/Q5602"
+  },
+  {
+   "id": "Q26428",
+   "name": "Nizhnyaya Tunguska",
+   "detail": "Russia",
+   "value": 2989,
+   "fame": 58,
+   "source": "https://www.wikidata.org/wiki/Q26428"
+  },
+  {
+   "id": "Q206694",
+   "name": "Onon River",
+   "detail": "Mongolia / Russia",
+   "value": 1032,
+   "fame": 58,
+   "source": "https://www.wikidata.org/wiki/Q206694"
+  },
+  {
+   "id": "Q26433",
+   "name": "Vilyuy",
+   "detail": "Russia",
+   "value": 2650,
+   "fame": 58,
+   "source": "https://www.wikidata.org/wiki/Q26433"
+  },
+  {
+   "id": "Q319590",
+   "name": "Beas River",
+   "detail": "India",
+   "value": 470,
+   "fame": 57,
+   "source": "https://www.wikidata.org/wiki/Q319590"
+  },
+  {
+   "id": "Q849494",
+   "name": "Gandaki River",
+   "detail": "India / Nepal",
+   "value": 630,
+   "fame": 57,
+   "source": "https://www.wikidata.org/wiki/Q849494"
+  },
+  {
+   "id": "Q841359",
+   "name": "Kapuas River",
+   "detail": "Indonesia",
+   "value": 1143,
+   "fame": 57,
+   "source": "https://www.wikidata.org/wiki/Q841359"
+  },
+  {
+   "id": "Q204040",
+   "name": "Mur",
+   "detail": "Austria, Croatia and others",
+   "value": 434,
+   "fame": 57,
+   "source": "https://www.wikidata.org/wiki/Q204040"
+  },
+  {
+   "id": "Q207903",
+   "name": "Neris",
+   "detail": "Belarus / Lithuania",
+   "value": 510,
+   "fame": 57,
+   "source": "https://www.wikidata.org/wiki/Q207903"
+  },
+  {
+   "id": "Q200231",
+   "name": "Oise",
+   "detail": "Belgium / France",
+   "value": 341.1,
+   "fame": 57,
+   "source": "https://www.wikidata.org/wiki/Q200231"
+  },
+  {
+   "id": "Q8542",
+   "name": "Panj River",
+   "detail": "Afghanistan / Tajikistan",
+   "value": 921,
+   "fame": 57,
+   "source": "https://www.wikidata.org/wiki/Q8542"
+  },
+  {
+   "id": "Q207777",
+   "name": "Ussuri",
+   "detail": "People's Republic of China / Russia",
+   "value": 897,
+   "fame": 57,
+   "source": "https://www.wikidata.org/wiki/Q207777"
+  },
+  {
+   "id": "Q212795",
+   "name": "Alazani",
+   "detail": "Azerbaijan / Georgia",
+   "value": 351,
+   "fame": 56,
+   "source": "https://www.wikidata.org/wiki/Q212795"
+  },
+  {
+   "id": "Q4534",
+   "name": "Andalien River",
+   "detail": "Chile",
+   "value": 130,
+   "fame": 56,
+   "source": "https://www.wikidata.org/wiki/Q4534"
+  },
+  {
+   "id": "Q782845",
+   "name": "Awash River",
+   "detail": "Ethiopia",
+   "value": 1200,
+   "fame": 56,
+   "source": "https://www.wikidata.org/wiki/Q782845"
+  },
+  {
+   "id": "Q934455",
+   "name": "Ebola River",
+   "detail": "Democratic Republic of the Congo",
+   "value": 250,
+   "fame": 56,
+   "source": "https://www.wikidata.org/wiki/Q934455"
+  },
+  {
+   "id": "Q14554",
+   "name": "Minho River",
+   "detail": "Portugal / Spain",
+   "value": 315,
+   "fame": 56,
+   "source": "https://www.wikidata.org/wiki/Q14554"
+  },
+  {
+   "id": "Q126822",
+   "name": "Olt River",
+   "detail": "Romania",
+   "value": 615,
+   "fame": 56,
+   "source": "https://www.wikidata.org/wiki/Q126822"
+  },
+  {
+   "id": "Q26271",
+   "name": "Purus River",
+   "detail": "Brazil",
+   "value": 2960,
+   "fame": 56,
+   "source": "https://www.wikidata.org/wiki/Q26271"
+  },
+  {
+   "id": "Q210870",
+   "name": "Ufa",
+   "detail": "Russia",
+   "value": 918,
+   "fame": 56,
+   "source": "https://www.wikidata.org/wiki/Q210870"
+  },
+  {
+   "id": "Q191087",
+   "name": "Acheron",
+   "detail": "Greece",
+   "value": 58,
+   "fame": 55,
+   "source": "https://www.wikidata.org/wiki/Q191087"
+  },
+  {
+   "id": "Q207366",
+   "name": "Adour",
+   "detail": "France",
+   "value": 308,
+   "fame": 55,
+   "source": "https://www.wikidata.org/wiki/Q207366"
+  },
+  {
+   "id": "Q208367",
+   "name": "Bosna",
+   "detail": "Bosnia and Herzegovina",
+   "value": 281.6,
+   "fame": 55,
+   "source": "https://www.wikidata.org/wiki/Q208367"
+  },
+  {
+   "id": "Q318435",
+   "name": "Detroit River",
+   "detail": "Canada / United States",
+   "value": 45,
+   "fame": 55,
+   "source": "https://www.wikidata.org/wiki/Q318435"
+  },
+  {
+   "id": "Q171840",
+   "name": "Japurá River",
+   "detail": "Brazil / Colombia",
+   "value": 2820,
+   "fame": 55,
+   "source": "https://www.wikidata.org/wiki/Q171840"
+  },
+  {
+   "id": "Q208009",
+   "name": "Liffey",
+   "detail": "Ireland",
+   "value": 125,
+   "fame": 55,
+   "source": "https://www.wikidata.org/wiki/Q208009"
+  },
+  {
+   "id": "Q1125242",
+   "name": "Meghna River",
+   "detail": "Bangladesh",
+   "value": 240,
+   "fame": 55,
+   "source": "https://www.wikidata.org/wiki/Q1125242"
+  },
+  {
+   "id": "Q503262",
+   "name": "River Tweed",
+   "detail": "United Kingdom",
+   "value": 156,
+   "fame": 55,
+   "source": "https://www.wikidata.org/wiki/Q503262"
+  },
+  {
+   "id": "Q208302",
+   "name": "Siret River",
+   "detail": "Romania",
+   "value": 740,
+   "fame": 55,
+   "source": "https://www.wikidata.org/wiki/Q208302"
+  },
+  {
+   "id": "Q237901",
+   "name": "Tarim River",
+   "detail": "People's Republic of China",
+   "value": 2030,
+   "fame": 55,
+   "source": "https://www.wikidata.org/wiki/Q237901"
+  },
+  {
+   "id": "Q202598",
+   "name": "Váh",
+   "detail": "Slovakia",
+   "value": 433,
+   "fame": 55,
+   "source": "https://www.wikidata.org/wiki/Q202598"
+  },
+  {
+   "id": "Q216171",
+   "name": "Waal",
+   "detail": "Netherlands",
+   "value": 82,
+   "fame": 55,
+   "source": "https://www.wikidata.org/wiki/Q216171"
+  },
+  {
+   "id": "Q41962",
+   "name": "Aisne",
+   "detail": "France",
+   "value": 355.9,
+   "fame": 54,
+   "source": "https://www.wikidata.org/wiki/Q41962"
+  },
+  {
+   "id": "Q269710",
+   "name": "Fraser River",
+   "detail": "Canada",
+   "value": 2657,
+   "fame": 54,
+   "source": "https://www.wikidata.org/wiki/Q269710"
+  },
+  {
+   "id": "Q159467",
+   "name": "Iller",
+   "detail": "Germany",
+   "value": 147,
+   "fame": 54,
+   "source": "https://www.wikidata.org/wiki/Q159467"
+  },
+  {
+   "id": "Q201341",
+   "name": "Isère",
+   "detail": "France",
+   "value": 286.1,
+   "fame": 54,
+   "source": "https://www.wikidata.org/wiki/Q201341"
+  },
+  {
+   "id": "Q271044",
+   "name": "Mahanadi",
+   "detail": "India",
+   "value": 860,
+   "fame": 54,
+   "source": "https://www.wikidata.org/wiki/Q271044"
+  },
+  {
+   "id": "Q60055",
+   "name": "Narew",
+   "detail": "Belarus / Poland",
+   "value": 484,
+   "fame": 54,
+   "source": "https://www.wikidata.org/wiki/Q60055"
+  },
+  {
+   "id": "Q60974",
+   "name": "Ottawa River",
+   "detail": "Canada",
+   "value": 1271,
+   "fame": 54,
+   "source": "https://www.wikidata.org/wiki/Q60974"
+  },
+  {
+   "id": "Q335575",
+   "name": "Sacramento River",
+   "detail": "United States",
+   "value": 644,
+   "fame": 54,
+   "source": "https://www.wikidata.org/wiki/Q335575"
+  },
+  {
+   "id": "Q115456",
+   "name": "Shilka",
+   "detail": "Russia",
+   "value": 560,
+   "fame": 54,
+   "source": "https://www.wikidata.org/wiki/Q115456"
+  },
+  {
+   "id": "Q27538",
+   "name": "Susquehanna River",
+   "detail": "United States",
+   "value": 715,
+   "fame": 54,
+   "source": "https://www.wikidata.org/wiki/Q27538"
+  },
+  {
+   "id": "Q78861",
+   "name": "Yana",
+   "detail": "Russia",
+   "value": 872,
+   "fame": 54,
+   "source": "https://www.wikidata.org/wiki/Q78861"
+  },
+  {
+   "id": "Q486636",
+   "name": "Draa River",
+   "detail": "Morocco",
+   "value": 1100,
+   "fame": 53,
+   "source": "https://www.wikidata.org/wiki/Q486636"
+  },
+  {
+   "id": "Q390232",
+   "name": "Ghaghara River",
+   "detail": "India, Nepal and others",
+   "value": 1080,
+   "fame": 53,
+   "source": "https://www.wikidata.org/wiki/Q390232"
+  },
+  {
+   "id": "Q214535",
+   "name": "Glomma",
+   "detail": "Norway",
+   "value": 604,
+   "fame": 53,
+   "source": "https://www.wikidata.org/wiki/Q214535"
+  },
+  {
+   "id": "Q211089",
+   "name": "Great Menderes River",
+   "detail": "Turkey",
+   "value": 548,
+   "fame": 53,
+   "source": "https://www.wikidata.org/wiki/Q211089"
+  },
+  {
+   "id": "Q30548",
+   "name": "Hrazdan River",
+   "detail": "Armenia",
+   "value": 141,
+   "fame": 53,
+   "source": "https://www.wikidata.org/wiki/Q30548"
+  },
+  {
+   "id": "Q191635",
+   "name": "Iguazu River",
+   "detail": "Argentina / Brazil",
+   "value": 1320,
+   "fame": 53,
+   "source": "https://www.wikidata.org/wiki/Q191635"
+  },
+  {
+   "id": "Q750021",
+   "name": "Ogooué River",
+   "detail": "Gabon / Republic of the Congo",
+   "value": 850,
+   "fame": 53,
+   "source": "https://www.wikidata.org/wiki/Q750021"
+  },
+  {
+   "id": "Q655754",
+   "name": "Platte River",
+   "detail": "United States",
+   "value": 500,
+   "fame": 53,
+   "source": "https://www.wikidata.org/wiki/Q655754"
+  },
+  {
+   "id": "Q217466",
+   "name": "Sakarya River",
+   "detail": "Turkey",
+   "value": 824,
+   "fame": 53,
+   "source": "https://www.wikidata.org/wiki/Q217466"
+  },
+  {
+   "id": "Q55499",
+   "name": "Tumen River",
+   "detail": "North Korea, People's Republic of China and others",
+   "value": 549,
+   "fame": 53,
+   "source": "https://www.wikidata.org/wiki/Q55499"
+  },
+  {
+   "id": "Q15243",
+   "name": "Volkhov",
+   "detail": "Russia",
+   "value": 224,
+   "fame": 53,
+   "source": "https://www.wikidata.org/wiki/Q15243"
+  },
+  {
+   "id": "Q65383",
+   "name": "Vychegda",
+   "detail": "Russia",
+   "value": 1130,
+   "fame": 53,
+   "source": "https://www.wikidata.org/wiki/Q65383"
+  },
+  {
+   "id": "Q49544",
+   "name": "Xingu River",
+   "detail": "Brazil",
+   "value": 1640,
+   "fame": 53,
+   "source": "https://www.wikidata.org/wiki/Q49544"
+  },
+  {
+   "id": "Q171847",
+   "name": "Araguaia River",
+   "detail": "Brazil",
+   "value": 1910,
+   "fame": 52,
+   "source": "https://www.wikidata.org/wiki/Q171847"
+  },
+  {
+   "id": "Q214811",
+   "name": "Argeș River",
+   "detail": "Romania",
+   "value": 350,
+   "fame": 52,
+   "source": "https://www.wikidata.org/wiki/Q214811"
+  },
+  {
+   "id": "Q213975",
+   "name": "Drin",
+   "detail": "Albania",
+   "value": 280,
+   "fame": 52,
+   "source": "https://www.wikidata.org/wiki/Q213975"
+  },
+  {
+   "id": "Q217524",
+   "name": "Enns",
+   "detail": "Austria",
+   "value": 254,
+   "fame": 52,
+   "source": "https://www.wikidata.org/wiki/Q217524"
+  },
+  {
+   "id": "Q213576",
+   "name": "Huai River",
+   "detail": "People's Republic of China",
+   "value": 1110,
+   "fame": 52,
+   "source": "https://www.wikidata.org/wiki/Q213576"
+  },
+  {
+   "id": "Q138491",
+   "name": "Jubba River",
+   "detail": "Ethiopia / Somalia",
+   "value": 1658,
+   "fame": 52,
+   "source": "https://www.wikidata.org/wiki/Q138491"
+  },
+  {
+   "id": "Q207493",
+   "name": "Mureș River",
+   "detail": "Hungary / Romania",
+   "value": 803,
+   "fame": 52,
+   "source": "https://www.wikidata.org/wiki/Q207493"
+  },
+  {
+   "id": "Q270569",
+   "name": "Pilcomayo River",
+   "detail": "Argentina, Bolivia and others",
+   "value": 1100,
+   "fame": 52,
+   "source": "https://www.wikidata.org/wiki/Q270569"
+  },
+  {
+   "id": "Q153972",
+   "name": "Saar",
+   "detail": "France / Germany",
+   "value": 246,
+   "fame": 52,
+   "source": "https://www.wikidata.org/wiki/Q153972"
+  },
+  {
+   "id": "Q152661",
+   "name": "Salzach",
+   "detail": "Austria / Germany",
+   "value": 225,
+   "fame": 52,
+   "source": "https://www.wikidata.org/wiki/Q152661"
+  },
+  {
+   "id": "Q216488",
+   "name": "San",
+   "detail": "Poland / Ukraine",
+   "value": 444,
+   "fame": 52,
+   "source": "https://www.wikidata.org/wiki/Q216488"
+  },
+  {
+   "id": "Q14372",
+   "name": "Doubs",
+   "detail": "France / Switzerland",
+   "value": 453,
+   "fame": 51,
+   "source": "https://www.wikidata.org/wiki/Q14372"
+  },
+  {
+   "id": "Q207928",
+   "name": "Gauja",
+   "detail": "Estonia / Latvia",
+   "value": 453.4,
+   "fame": 51,
+   "source": "https://www.wikidata.org/wiki/Q207928"
+  },
+  {
+   "id": "Q213230",
+   "name": "Hron",
+   "detail": "Slovakia",
+   "value": 298,
+   "fame": 51,
+   "source": "https://www.wikidata.org/wiki/Q213230"
+  },
+  {
+   "id": "Q117526",
+   "name": "Juruá River",
+   "detail": "Brazil / Peru",
+   "value": 3100,
+   "fame": 51,
+   "source": "https://www.wikidata.org/wiki/Q117526"
+  },
+  {
+   "id": "Q685344",
+   "name": "Khabur River",
+   "detail": "Syria",
+   "value": 486,
+   "fame": 51,
+   "source": "https://www.wikidata.org/wiki/Q685344"
+  },
+  {
+   "id": "Q208493",
+   "name": "Lys",
+   "detail": "Belgium / France",
+   "value": 202,
+   "fame": 51,
+   "source": "https://www.wikidata.org/wiki/Q208493"
+  },
+  {
+   "id": "Q237099",
+   "name": "Orkhon River",
+   "detail": "Mongolia",
+   "value": 1124,
+   "fame": 51,
+   "source": "https://www.wikidata.org/wiki/Q237099"
+  },
+  {
+   "id": "Q216373",
+   "name": "River Tyne",
+   "detail": "United Kingdom",
+   "value": 100,
+   "fame": 51,
+   "source": "https://www.wikidata.org/wiki/Q216373"
+  },
+  {
+   "id": "Q649527",
+   "name": "Samara",
+   "detail": "Russia",
+   "value": 594,
+   "fame": 51,
+   "source": "https://www.wikidata.org/wiki/Q649527"
+  },
+  {
+   "id": "Q204127",
+   "name": "Struma",
+   "detail": "Bulgaria / Greece",
+   "value": 415,
+   "fame": 51,
+   "source": "https://www.wikidata.org/wiki/Q204127"
+  },
+  {
+   "id": "Q214894",
+   "name": "Timiș River",
+   "detail": "Romania / Serbia",
+   "value": 359,
+   "fame": 51,
+   "source": "https://www.wikidata.org/wiki/Q214894"
+  },
+  {
+   "id": "Q8526",
+   "name": "Vakhsh River",
+   "detail": "Kyrgyzstan / Tajikistan",
+   "value": 524,
+   "fame": 51,
+   "source": "https://www.wikidata.org/wiki/Q8526"
+  },
+  {
+   "id": "Q374772",
+   "name": "Yellowstone River",
+   "detail": "United States",
+   "value": 1114,
+   "fame": 51,
+   "source": "https://www.wikidata.org/wiki/Q374772"
+  },
+  {
+   "id": "Q210220",
+   "name": "Zeya",
+   "detail": "Russia",
+   "value": 1242,
+   "fame": 51,
+   "source": "https://www.wikidata.org/wiki/Q210220"
+  },
+  {
+   "id": "Q207927",
+   "name": "Berezina",
+   "detail": "Belarus",
+   "value": 613,
+   "fame": 50,
+   "source": "https://www.wikidata.org/wiki/Q207927"
+  },
+  {
+   "id": "Q3314",
+   "name": "Eider",
+   "detail": "Germany",
+   "value": 188,
+   "fame": 50,
+   "source": "https://www.wikidata.org/wiki/Q3314"
+  },
+  {
+   "id": "Q215378",
+   "name": "Emajõgi",
+   "detail": "Estonia",
+   "value": 99.6,
+   "fame": 50,
+   "source": "https://www.wikidata.org/wiki/Q215378"
+  },
+  {
+   "id": "Q6434",
+   "name": "Fulda",
+   "detail": "Germany",
+   "value": 218,
+   "fame": 50,
+   "source": "https://www.wikidata.org/wiki/Q6434"
+  },
+  {
+   "id": "Q211328",
+   "name": "Great Morava",
+   "detail": "Serbia",
+   "value": 185,
+   "fame": 50,
+   "source": "https://www.wikidata.org/wiki/Q211328"
+  },
+  {
+   "id": "Q217805",
+   "name": "Iskar",
+   "detail": "Bulgaria",
+   "value": 368,
+   "fame": 50,
+   "source": "https://www.wikidata.org/wiki/Q217805"
+  },
+  {
+   "id": "Q456415",
+   "name": "Litani River",
+   "detail": "Lebanon",
+   "value": 140,
+   "fame": 50,
+   "source": "https://www.wikidata.org/wiki/Q456415"
+  },
+  {
+   "id": "Q26799",
+   "name": "Olenyok",
+   "detail": "Russia",
+   "value": 2270,
+   "fame": 50,
+   "source": "https://www.wikidata.org/wiki/Q26799"
+  },
+  {
+   "id": "Q930773",
+   "name": "Padma River",
+   "detail": "Bangladesh / India",
+   "value": 120,
+   "fame": 50,
+   "source": "https://www.wikidata.org/wiki/Q930773"
+  },
+  {
+   "id": "Q26361",
+   "name": "Podkamennaya Tunguska",
+   "detail": "Russia",
+   "value": 1865,
+   "fame": 50,
+   "source": "https://www.wikidata.org/wiki/Q26361"
+  },
+  {
+   "id": "Q213782",
+   "name": "Putumayo River",
+   "detail": "Brazil, Colombia and others",
+   "value": 1610,
+   "fame": 50,
+   "source": "https://www.wikidata.org/wiki/Q213782"
+  },
+  {
+   "id": "Q707056",
+   "name": "Tapti River",
+   "detail": "India",
+   "value": 720,
+   "fame": 50,
+   "source": "https://www.wikidata.org/wiki/Q707056"
+  }
+ ]
+}

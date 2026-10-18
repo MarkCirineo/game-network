@@ -1,0 +1,693 @@
+{
+ "source": "Wikidata (CC0)",
+ "items": [
+  {
+   "id": "Q5484",
+   "name": "Caspian Sea",
+   "detail": "Azerbaijan, Iran and others",
+   "value": 386400,
+   "fame": 207,
+   "source": "https://www.wikidata.org/wiki/Q5484"
+  },
+  {
+   "id": "Q5513",
+   "name": "Lake Baikal",
+   "detail": "Russia",
+   "value": 31722,
+   "fame": 183,
+   "source": "https://www.wikidata.org/wiki/Q5513"
+  },
+  {
+   "id": "Q5505",
+   "name": "Lake Victoria",
+   "detail": "Kenya, Tanzania and others",
+   "value": 68100,
+   "fame": 162,
+   "source": "https://www.wikidata.org/wiki/Q5505"
+  },
+  {
+   "id": "Q5511",
+   "name": "Lake Tanganyika",
+   "detail": "Burundi, Democratic Republic of the Congo and others",
+   "value": 32900,
+   "fame": 151,
+   "source": "https://www.wikidata.org/wiki/Q5511"
+  },
+  {
+   "id": "Q35342",
+   "name": "Titicaca",
+   "detail": "Bolivia / Peru",
+   "value": 8372,
+   "fame": 132,
+   "source": "https://www.wikidata.org/wiki/Q35342"
+  },
+  {
+   "id": "Q1066",
+   "name": "Lake Superior",
+   "detail": "Canada / United States",
+   "value": 82350,
+   "fame": 112,
+   "source": "https://www.wikidata.org/wiki/Q1066"
+  },
+  {
+   "id": "Q1062",
+   "name": "Lake Ontario",
+   "detail": "Canada / United States",
+   "value": 18529,
+   "fame": 108,
+   "source": "https://www.wikidata.org/wiki/Q1062"
+  },
+  {
+   "id": "Q5532",
+   "name": "Lake Malawi",
+   "detail": "Malawi, Mozambique and others",
+   "value": 29600,
+   "fame": 107,
+   "source": "https://www.wikidata.org/wiki/Q5532"
+  },
+  {
+   "id": "Q1169",
+   "name": "Lake Michigan",
+   "detail": "United States",
+   "value": 57750,
+   "fame": 107,
+   "source": "https://www.wikidata.org/wiki/Q1169"
+  },
+  {
+   "id": "Q125309",
+   "name": "Lake Chad",
+   "detail": "Cameroon, Chad and others",
+   "value": 1540,
+   "fame": 105,
+   "source": "https://www.wikidata.org/wiki/Q125309"
+  },
+  {
+   "id": "Q5492",
+   "name": "Lake Erie",
+   "detail": "Canada / United States",
+   "value": 25744,
+   "fame": 102,
+   "source": "https://www.wikidata.org/wiki/Q5492"
+  },
+  {
+   "id": "Q6403",
+   "name": "Lake Geneva",
+   "detail": "France / Switzerland",
+   "value": 581.3,
+   "fame": 101,
+   "source": "https://www.wikidata.org/wiki/Q6403"
+  },
+  {
+   "id": "Q1383",
+   "name": "Lake Huron",
+   "detail": "Canada / United States",
+   "value": 59600,
+   "fame": 100,
+   "source": "https://www.wikidata.org/wiki/Q1383"
+  },
+  {
+   "id": "Q15288",
+   "name": "Lake Ladoga",
+   "detail": "Russia",
+   "value": 17700,
+   "fame": 98,
+   "source": "https://www.wikidata.org/wiki/Q15288"
+  },
+  {
+   "id": "Q6383",
+   "name": "Lake Balaton",
+   "detail": "Hungary",
+   "value": 592,
+   "fame": 97,
+   "source": "https://www.wikidata.org/wiki/Q6383"
+  },
+  {
+   "id": "Q134485",
+   "name": "Lake Balkhash",
+   "detail": "Kazakhstan",
+   "value": 18200,
+   "fame": 89,
+   "source": "https://www.wikidata.org/wiki/Q134485"
+  },
+  {
+   "id": "Q42191",
+   "name": "Issyk-Kul",
+   "detail": "Kyrgyzstan",
+   "value": 6236,
+   "fame": 88,
+   "source": "https://www.wikidata.org/wiki/Q42191"
+  },
+  {
+   "id": "Q125888",
+   "name": "Lake Albert",
+   "detail": "Democratic Republic of the Congo / Uganda",
+   "value": 5270,
+   "fame": 88,
+   "source": "https://www.wikidata.org/wiki/Q125888"
+  },
+  {
+   "id": "Q6414",
+   "name": "Lake Garda",
+   "detail": "Italy",
+   "value": 370,
+   "fame": 88,
+   "source": "https://www.wikidata.org/wiki/Q6414"
+  },
+  {
+   "id": "Q15523",
+   "name": "Lake Como",
+   "detail": "Italy",
+   "value": 145,
+   "fame": 86,
+   "source": "https://www.wikidata.org/wiki/Q15523"
+  },
+  {
+   "id": "Q166162",
+   "name": "Lake Onega",
+   "detail": "Russia",
+   "value": 9800,
+   "fame": 84,
+   "source": "https://www.wikidata.org/wiki/Q166162"
+  },
+  {
+   "id": "Q125912",
+   "name": "Lake Kivu",
+   "detail": "Democratic Republic of the Congo / Rwanda",
+   "value": 2700,
+   "fame": 82,
+   "source": "https://www.wikidata.org/wiki/Q125912"
+  },
+  {
+   "id": "Q14379",
+   "name": "Lake Maggiore",
+   "detail": "Italy / Switzerland",
+   "value": 212.5,
+   "fame": 81,
+   "source": "https://www.wikidata.org/wiki/Q14379"
+  },
+  {
+   "id": "Q49650",
+   "name": "Loch Ness",
+   "detail": "United Kingdom",
+   "value": 56.4,
+   "fame": 79,
+   "source": "https://www.wikidata.org/wiki/Q49650"
+  },
+  {
+   "id": "Q173596",
+   "name": "Vänern",
+   "detail": "Sweden",
+   "value": 5650,
+   "fame": 79,
+   "source": "https://www.wikidata.org/wiki/Q173596"
+  },
+  {
+   "id": "Q173862",
+   "name": "Lake Nicaragua",
+   "detail": "Nicaragua",
+   "value": 8264,
+   "fame": 78,
+   "source": "https://www.wikidata.org/wiki/Q173862"
+  },
+  {
+   "id": "Q116685",
+   "name": "Lake Tana",
+   "detail": "Ethiopia",
+   "value": 3600,
+   "fame": 77,
+   "source": "https://www.wikidata.org/wiki/Q116685"
+  },
+  {
+   "id": "Q192770",
+   "name": "Saimaa",
+   "detail": "Finland",
+   "value": 4400,
+   "fame": 77,
+   "source": "https://www.wikidata.org/wiki/Q192770"
+  },
+  {
+   "id": "Q181932",
+   "name": "Lake Sevan",
+   "detail": "Armenia",
+   "value": 1271,
+   "fame": 76,
+   "source": "https://www.wikidata.org/wiki/Q181932"
+  },
+  {
+   "id": "Q5539",
+   "name": "Great Slave Lake",
+   "detail": "Canada",
+   "value": 27209,
+   "fame": 75,
+   "source": "https://www.wikidata.org/wiki/Q5539"
+  },
+  {
+   "id": "Q125211",
+   "name": "Lake Edward",
+   "detail": "Democratic Republic of the Congo / Uganda",
+   "value": 2150,
+   "fame": 75,
+   "source": "https://www.wikidata.org/wiki/Q125211"
+  },
+  {
+   "id": "Q3272",
+   "name": "Lake Winnipeg",
+   "detail": "Canada",
+   "value": 24400,
+   "fame": 75,
+   "source": "https://www.wikidata.org/wiki/Q3272"
+  },
+  {
+   "id": "Q5525",
+   "name": "Great Bear Lake",
+   "detail": "Canada",
+   "value": 31153,
+   "fame": 74,
+   "source": "https://www.wikidata.org/wiki/Q5525"
+  },
+  {
+   "id": "Q182137",
+   "name": "Lake Maracaibo",
+   "detail": "Venezuela",
+   "value": 13210,
+   "fame": 72,
+   "source": "https://www.wikidata.org/wiki/Q182137"
+  },
+  {
+   "id": "Q201294",
+   "name": "Qinghai Lake",
+   "detail": "People's Republic of China",
+   "value": 4400,
+   "fame": 72,
+   "source": "https://www.wikidata.org/wiki/Q201294"
+  },
+  {
+   "id": "Q179970",
+   "name": "Kati Thanda–Lake Eyre",
+   "detail": "Australia",
+   "value": 9300,
+   "fame": 71,
+   "source": "https://www.wikidata.org/wiki/Q179970"
+  },
+  {
+   "id": "Q504433",
+   "name": "Lake Mweru",
+   "detail": "Democratic Republic of the Congo / Zambia",
+   "value": 4650,
+   "fame": 68,
+   "source": "https://www.wikidata.org/wiki/Q504433"
+  },
+  {
+   "id": "Q19253",
+   "name": "Lake Peipus",
+   "detail": "Estonia / Russia",
+   "value": 3543,
+   "fame": 67,
+   "source": "https://www.wikidata.org/wiki/Q19253"
+  },
+  {
+   "id": "Q207690",
+   "name": "Poyang Lake",
+   "detail": "People's Republic of China",
+   "value": 5100,
+   "fame": 66,
+   "source": "https://www.wikidata.org/wiki/Q207690"
+  },
+  {
+   "id": "Q188195",
+   "name": "Vättern",
+   "detail": "Sweden",
+   "value": 1893,
+   "fame": 65,
+   "source": "https://www.wikidata.org/wiki/Q188195"
+  },
+  {
+   "id": "Q14418",
+   "name": "Lake Lugano",
+   "detail": "Italy / Switzerland",
+   "value": 48.7,
+   "fame": 64,
+   "source": "https://www.wikidata.org/wiki/Q14418"
+  },
+  {
+   "id": "Q184492",
+   "name": "Mälaren",
+   "detail": "Sweden",
+   "value": 1072,
+   "fame": 64,
+   "source": "https://www.wikidata.org/wiki/Q184492"
+  },
+  {
+   "id": "Q156258",
+   "name": "Lake Ohrid",
+   "detail": "Albania / North Macedonia",
+   "value": 349,
+   "fame": 63,
+   "source": "https://www.wikidata.org/wiki/Q156258"
+  },
+  {
+   "id": "Q14407",
+   "name": "Lake Zurich",
+   "detail": "Switzerland",
+   "value": 88.66,
+   "fame": 63,
+   "source": "https://www.wikidata.org/wiki/Q14407"
+  },
+  {
+   "id": "Q199938",
+   "name": "Tonle Sap",
+   "detail": "Cambodia",
+   "value": 2700,
+   "fame": 63,
+   "source": "https://www.wikidata.org/wiki/Q199938"
+  },
+  {
+   "id": "Q233627",
+   "name": "Lake Manasarovar",
+   "detail": "People's Republic of China",
+   "value": 395,
+   "fame": 62,
+   "source": "https://www.wikidata.org/wiki/Q233627"
+  },
+  {
+   "id": "Q203137",
+   "name": "Lake Inari",
+   "detail": "Finland",
+   "value": 1082,
+   "fame": 61,
+   "source": "https://www.wikidata.org/wiki/Q203137"
+  },
+  {
+   "id": "Q182796",
+   "name": "Lake Nasser",
+   "detail": "Egypt / Sudan",
+   "value": 5250,
+   "fame": 61,
+   "source": "https://www.wikidata.org/wiki/Q182796"
+  },
+  {
+   "id": "Q14381",
+   "name": "Lake Lucerne",
+   "detail": "Switzerland",
+   "value": 113.6,
+   "fame": 60,
+   "source": "https://www.wikidata.org/wiki/Q14381"
+  },
+  {
+   "id": "Q204392",
+   "name": "Lake Prespa",
+   "detail": "Albania, Greece and others",
+   "value": 273,
+   "fame": 59,
+   "source": "https://www.wikidata.org/wiki/Q204392"
+  },
+  {
+   "id": "Q188487",
+   "name": "Lake Trasimeno",
+   "detail": "Italy",
+   "value": 128,
+   "fame": 59,
+   "source": "https://www.wikidata.org/wiki/Q188487"
+  },
+  {
+   "id": "Q502371",
+   "name": "West Lake",
+   "detail": "People's Republic of China",
+   "value": 6.5,
+   "fame": 59,
+   "source": "https://www.wikidata.org/wiki/Q502371"
+  },
+  {
+   "id": "Q201843",
+   "name": "Khanka",
+   "detail": "People's Republic of China / Russia",
+   "value": 4190,
+   "fame": 58,
+   "source": "https://www.wikidata.org/wiki/Q201843"
+  },
+  {
+   "id": "Q201679",
+   "name": "Lake Volta",
+   "detail": "Ghana",
+   "value": 8502,
+   "fame": 58,
+   "source": "https://www.wikidata.org/wiki/Q201679"
+  },
+  {
+   "id": "Q4138",
+   "name": "Chiemsee",
+   "detail": "Germany",
+   "value": 79.9,
+   "fame": 57,
+   "source": "https://www.wikidata.org/wiki/Q4138"
+  },
+  {
+   "id": "Q272463",
+   "name": "Lake Athabasca",
+   "detail": "Canada",
+   "value": 7850,
+   "fame": 57,
+   "source": "https://www.wikidata.org/wiki/Q272463"
+  },
+  {
+   "id": "Q14375",
+   "name": "Lake Neuchâtel",
+   "detail": "Switzerland",
+   "value": 217.9,
+   "fame": 56,
+   "source": "https://www.wikidata.org/wiki/Q14375"
+  },
+  {
+   "id": "Q648902",
+   "name": "Lake Bled",
+   "detail": "Slovenia",
+   "value": 1.45,
+   "fame": 55,
+   "source": "https://www.wikidata.org/wiki/Q648902"
+  },
+  {
+   "id": "Q203811",
+   "name": "Lake Skadar",
+   "detail": "Albania / Montenegro",
+   "value": 530,
+   "fame": 55,
+   "source": "https://www.wikidata.org/wiki/Q203811"
+  },
+  {
+   "id": "Q208926",
+   "name": "Loch Lomond",
+   "detail": "United Kingdom",
+   "value": 71,
+   "fame": 54,
+   "source": "https://www.wikidata.org/wiki/Q208926"
+  },
+  {
+   "id": "Q216083",
+   "name": "Dongting Lake",
+   "detail": "People's Republic of China",
+   "value": 4350,
+   "fame": 53,
+   "source": "https://www.wikidata.org/wiki/Q216083"
+  },
+  {
+   "id": "Q464945",
+   "name": "Poopó Lake",
+   "detail": "Bolivia",
+   "value": 1340,
+   "fame": 53,
+   "source": "https://www.wikidata.org/wiki/Q464945"
+  },
+  {
+   "id": "Q329266",
+   "name": "Crater Lake",
+   "detail": "United States",
+   "value": 53.2,
+   "fame": 52,
+   "source": "https://www.wikidata.org/wiki/Q329266"
+  },
+  {
+   "id": "Q203462",
+   "name": "Ilmen",
+   "detail": "Russia",
+   "value": 982,
+   "fame": 52,
+   "source": "https://www.wikidata.org/wiki/Q203462"
+  },
+  {
+   "id": "Q206942",
+   "name": "Lough Neagh",
+   "detail": "United Kingdom",
+   "value": 392,
+   "fame": 52,
+   "source": "https://www.wikidata.org/wiki/Q206942"
+  },
+  {
+   "id": "Q15648",
+   "name": "Lake Iseo",
+   "detail": "Italy",
+   "value": 65.3,
+   "fame": 51,
+   "source": "https://www.wikidata.org/wiki/Q15648"
+  },
+  {
+   "id": "Q140712",
+   "name": "Lake Tai",
+   "detail": "People's Republic of China",
+   "value": 2250,
+   "fame": 51,
+   "source": "https://www.wikidata.org/wiki/Q140712"
+  },
+  {
+   "id": "Q272380",
+   "name": "Lake Managua",
+   "detail": "Nicaragua",
+   "value": 1042,
+   "fame": 50,
+   "source": "https://www.wikidata.org/wiki/Q272380"
+  },
+  {
+   "id": "Q211516",
+   "name": "Võrtsjärv",
+   "detail": "Estonia",
+   "value": 269.2,
+   "fame": 50,
+   "source": "https://www.wikidata.org/wiki/Q211516"
+  },
+  {
+   "id": "Q332628",
+   "name": "Lake Nyos",
+   "detail": "Cameroon",
+   "value": 1.58,
+   "fame": 49,
+   "source": "https://www.wikidata.org/wiki/Q332628"
+  },
+  {
+   "id": "Q651294",
+   "name": "Namtso",
+   "detail": "People's Republic of China",
+   "value": 1920,
+   "fame": 49,
+   "source": "https://www.wikidata.org/wiki/Q651294"
+  },
+  {
+   "id": "Q156715",
+   "name": "Königssee",
+   "detail": "Germany",
+   "value": 5.22,
+   "fame": 48,
+   "source": "https://www.wikidata.org/wiki/Q156715"
+  },
+  {
+   "id": "Q131615",
+   "name": "Lake Starnberg",
+   "detail": "Germany",
+   "value": 56.36,
+   "fame": 48,
+   "source": "https://www.wikidata.org/wiki/Q131615"
+  },
+  {
+   "id": "Q68467",
+   "name": "Lake Champlain",
+   "detail": "Canada / United States",
+   "value": 1269,
+   "fame": 47,
+   "source": "https://www.wikidata.org/wiki/Q68467"
+  },
+  {
+   "id": "Q334761",
+   "name": "Lake Ülemiste",
+   "detail": "Estonia",
+   "value": 9.444,
+   "fame": 47,
+   "source": "https://www.wikidata.org/wiki/Q334761"
+  },
+  {
+   "id": "Q216621",
+   "name": "Lake Zaysan",
+   "detail": "Kazakhstan",
+   "value": 1860,
+   "fame": 47,
+   "source": "https://www.wikidata.org/wiki/Q216621"
+  },
+  {
+   "id": "Q1032254",
+   "name": "Pangong Tso",
+   "detail": "India / People's Republic of China",
+   "value": 690,
+   "fame": 47,
+   "source": "https://www.wikidata.org/wiki/Q1032254"
+  },
+  {
+   "id": "Q946194",
+   "name": "Ritsa",
+   "detail": "Georgia / Republic of Abkhazia",
+   "value": 1.5,
+   "fame": 47,
+   "source": "https://www.wikidata.org/wiki/Q946194"
+  },
+  {
+   "id": "Q845868",
+   "name": "Taymyr",
+   "detail": "Russia",
+   "value": 4560,
+   "fame": 47,
+   "source": "https://www.wikidata.org/wiki/Q845868"
+  },
+  {
+   "id": "Q212051",
+   "name": "Mývatn",
+   "detail": "Iceland",
+   "value": 37,
+   "fame": 46,
+   "source": "https://www.wikidata.org/wiki/Q212051"
+  },
+  {
+   "id": "Q257416",
+   "name": "Sarygamysh Lake",
+   "detail": "Turkmenistan / Uzbekistan",
+   "value": 3955,
+   "fame": 46,
+   "source": "https://www.wikidata.org/wiki/Q257416"
+  },
+  {
+   "id": "Q217109",
+   "name": "Teletskoe",
+   "detail": "Russia",
+   "value": 233,
+   "fame": 46,
+   "source": "https://www.wikidata.org/wiki/Q217109"
+  },
+  {
+   "id": "Q14429",
+   "name": "Lake Biel",
+   "detail": "Switzerland",
+   "value": 39.3,
+   "fame": 45,
+   "source": "https://www.wikidata.org/wiki/Q14429"
+  },
+  {
+   "id": "Q337",
+   "name": "Lake Chaubunagungamaug",
+   "detail": "United States",
+   "value": 5.836,
+   "fame": 45,
+   "source": "https://www.wikidata.org/wiki/Q337"
+  },
+  {
+   "id": "Q212209",
+   "name": "Mjøsa",
+   "detail": "Norway",
+   "value": 369.3,
+   "fame": 45,
+   "source": "https://www.wikidata.org/wiki/Q212209"
+  },
+  {
+   "id": "Q387256",
+   "name": "Śniardwy",
+   "detail": "Poland",
+   "value": 113.8,
+   "fame": 45,
+   "source": "https://www.wikidata.org/wiki/Q387256"
+  }
+ ]
+}

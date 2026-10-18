@@ -1,0 +1,734 @@
+{
+ "source": "GeoNames (CC BY 4.0)",
+ "items": [
+  {
+   "id": "CN",
+   "name": "China",
+   "emoji": "🇨🇳",
+   "detail": "Asia",
+   "value": 1411778724,
+   "fame": 1411778724,
+   "source": "https://www.geonames.org/1814991"
+  },
+  {
+   "id": "IN",
+   "name": "India",
+   "emoji": "🇮🇳",
+   "detail": "Asia",
+   "value": 1352617328,
+   "fame": 1352617328,
+   "source": "https://www.geonames.org/1269750"
+  },
+  {
+   "id": "US",
+   "name": "United States",
+   "emoji": "🇺🇸",
+   "detail": "North America",
+   "value": 327167434,
+   "fame": 327167434,
+   "source": "https://www.geonames.org/6252001"
+  },
+  {
+   "id": "ID",
+   "name": "Indonesia",
+   "emoji": "🇮🇩",
+   "detail": "Asia",
+   "value": 267663435,
+   "fame": 267663435,
+   "source": "https://www.geonames.org/1643084"
+  },
+  {
+   "id": "PK",
+   "name": "Pakistan",
+   "emoji": "🇵🇰",
+   "detail": "Asia",
+   "value": 212215030,
+   "fame": 212215030,
+   "source": "https://www.geonames.org/1168579"
+  },
+  {
+   "id": "BR",
+   "name": "Brazil",
+   "emoji": "🇧🇷",
+   "detail": "South America",
+   "value": 209469333,
+   "fame": 209469333,
+   "source": "https://www.geonames.org/3469034"
+  },
+  {
+   "id": "NG",
+   "name": "Nigeria",
+   "emoji": "🇳🇬",
+   "detail": "Africa",
+   "value": 195874740,
+   "fame": 195874740,
+   "source": "https://www.geonames.org/2328926"
+  },
+  {
+   "id": "BD",
+   "name": "Bangladesh",
+   "emoji": "🇧🇩",
+   "detail": "Asia",
+   "value": 161356039,
+   "fame": 161356039,
+   "source": "https://www.geonames.org/1210997"
+  },
+  {
+   "id": "RU",
+   "name": "Russia",
+   "emoji": "🇷🇺",
+   "detail": "Europe",
+   "value": 144478050,
+   "fame": 144478050,
+   "source": "https://www.geonames.org/2017370"
+  },
+  {
+   "id": "JP",
+   "name": "Japan",
+   "emoji": "🇯🇵",
+   "detail": "Asia",
+   "value": 126529100,
+   "fame": 126529100,
+   "source": "https://www.geonames.org/1861060"
+  },
+  {
+   "id": "MX",
+   "name": "Mexico",
+   "emoji": "🇲🇽",
+   "detail": "North America",
+   "value": 126190788,
+   "fame": 126190788,
+   "source": "https://www.geonames.org/3996063"
+  },
+  {
+   "id": "ET",
+   "name": "Ethiopia",
+   "emoji": "🇪🇹",
+   "detail": "Africa",
+   "value": 109224559,
+   "fame": 109224559,
+   "source": "https://www.geonames.org/337996"
+  },
+  {
+   "id": "PH",
+   "name": "Philippines",
+   "emoji": "🇵🇭",
+   "detail": "Asia",
+   "value": 106651922,
+   "fame": 106651922,
+   "source": "https://www.geonames.org/1694008"
+  },
+  {
+   "id": "EG",
+   "name": "Egypt",
+   "emoji": "🇪🇬",
+   "detail": "Africa",
+   "value": 98423595,
+   "fame": 98423595,
+   "source": "https://www.geonames.org/357994"
+  },
+  {
+   "id": "VN",
+   "name": "Vietnam",
+   "emoji": "🇻🇳",
+   "detail": "Asia",
+   "value": 95540395,
+   "fame": 95540395,
+   "source": "https://www.geonames.org/1562822"
+  },
+  {
+   "id": "CD",
+   "name": "DR Congo",
+   "emoji": "🇨🇩",
+   "detail": "Africa",
+   "value": 84068091,
+   "fame": 84068091,
+   "source": "https://www.geonames.org/203312"
+  },
+  {
+   "id": "DE",
+   "name": "Germany",
+   "emoji": "🇩🇪",
+   "detail": "Europe",
+   "value": 82927922,
+   "fame": 82927922,
+   "source": "https://www.geonames.org/2921044"
+  },
+  {
+   "id": "TR",
+   "name": "Turkey",
+   "emoji": "🇹🇷",
+   "detail": "Asia",
+   "value": 82319724,
+   "fame": 82319724,
+   "source": "https://www.geonames.org/298795"
+  },
+  {
+   "id": "IR",
+   "name": "Iran",
+   "emoji": "🇮🇷",
+   "detail": "Asia",
+   "value": 81800269,
+   "fame": 81800269,
+   "source": "https://www.geonames.org/130758"
+  },
+  {
+   "id": "TH",
+   "name": "Thailand",
+   "emoji": "🇹🇭",
+   "detail": "Asia",
+   "value": 69428524,
+   "fame": 69428524,
+   "source": "https://www.geonames.org/1605651"
+  },
+  {
+   "id": "FR",
+   "name": "France",
+   "emoji": "🇫🇷",
+   "detail": "Europe",
+   "value": 66987244,
+   "fame": 66987244,
+   "source": "https://www.geonames.org/3017382"
+  },
+  {
+   "id": "GB",
+   "name": "United Kingdom",
+   "emoji": "🇬🇧",
+   "detail": "Europe",
+   "value": 66488991,
+   "fame": 66488991,
+   "source": "https://www.geonames.org/2635167"
+  },
+  {
+   "id": "IT",
+   "name": "Italy",
+   "emoji": "🇮🇹",
+   "detail": "Europe",
+   "value": 60431283,
+   "fame": 60431283,
+   "source": "https://www.geonames.org/3175395"
+  },
+  {
+   "id": "ZA",
+   "name": "South Africa",
+   "emoji": "🇿🇦",
+   "detail": "Africa",
+   "value": 57779622,
+   "fame": 57779622,
+   "source": "https://www.geonames.org/953987"
+  },
+  {
+   "id": "MM",
+   "name": "Myanmar",
+   "emoji": "🇲🇲",
+   "detail": "Asia",
+   "value": 53708395,
+   "fame": 53708395,
+   "source": "https://www.geonames.org/1327865"
+  },
+  {
+   "id": "KR",
+   "name": "South Korea",
+   "emoji": "🇰🇷",
+   "detail": "Asia",
+   "value": 51635256,
+   "fame": 51635256,
+   "source": "https://www.geonames.org/1835841"
+  },
+  {
+   "id": "KE",
+   "name": "Kenya",
+   "emoji": "🇰🇪",
+   "detail": "Africa",
+   "value": 51393010,
+   "fame": 51393010,
+   "source": "https://www.geonames.org/192950"
+  },
+  {
+   "id": "CO",
+   "name": "Colombia",
+   "emoji": "🇨🇴",
+   "detail": "South America",
+   "value": 49648685,
+   "fame": 49648685,
+   "source": "https://www.geonames.org/3686110"
+  },
+  {
+   "id": "ES",
+   "name": "Spain",
+   "emoji": "🇪🇸",
+   "detail": "Europe",
+   "value": 46723749,
+   "fame": 46723749,
+   "source": "https://www.geonames.org/2510769"
+  },
+  {
+   "id": "UA",
+   "name": "Ukraine",
+   "emoji": "🇺🇦",
+   "detail": "Europe",
+   "value": 44622516,
+   "fame": 44622516,
+   "source": "https://www.geonames.org/690791"
+  },
+  {
+   "id": "AR",
+   "name": "Argentina",
+   "emoji": "🇦🇷",
+   "detail": "South America",
+   "value": 44494502,
+   "fame": 44494502,
+   "source": "https://www.geonames.org/3865483"
+  },
+  {
+   "id": "DZ",
+   "name": "Algeria",
+   "emoji": "🇩🇿",
+   "detail": "Africa",
+   "value": 42228429,
+   "fame": 42228429,
+   "source": "https://www.geonames.org/2589581"
+  },
+  {
+   "id": "IQ",
+   "name": "Iraq",
+   "emoji": "🇮🇶",
+   "detail": "Asia",
+   "value": 38433600,
+   "fame": 38433600,
+   "source": "https://www.geonames.org/99237"
+  },
+  {
+   "id": "PL",
+   "name": "Poland",
+   "emoji": "🇵🇱",
+   "detail": "Europe",
+   "value": 37978548,
+   "fame": 37978548,
+   "source": "https://www.geonames.org/798544"
+  },
+  {
+   "id": "AF",
+   "name": "Afghanistan",
+   "emoji": "🇦🇫",
+   "detail": "Asia",
+   "value": 37172386,
+   "fame": 37172386,
+   "source": "https://www.geonames.org/1149361"
+  },
+  {
+   "id": "CA",
+   "name": "Canada",
+   "emoji": "🇨🇦",
+   "detail": "North America",
+   "value": 37058856,
+   "fame": 37058856,
+   "source": "https://www.geonames.org/6251999"
+  },
+  {
+   "id": "MA",
+   "name": "Morocco",
+   "emoji": "🇲🇦",
+   "detail": "Africa",
+   "value": 36029138,
+   "fame": 36029138,
+   "source": "https://www.geonames.org/2542007"
+  },
+  {
+   "id": "SA",
+   "name": "Saudi Arabia",
+   "emoji": "🇸🇦",
+   "detail": "Asia",
+   "value": 33699947,
+   "fame": 33699947,
+   "source": "https://www.geonames.org/102358"
+  },
+  {
+   "id": "PE",
+   "name": "Peru",
+   "emoji": "🇵🇪",
+   "detail": "South America",
+   "value": 31989256,
+   "fame": 31989256,
+   "source": "https://www.geonames.org/3932488"
+  },
+  {
+   "id": "MY",
+   "name": "Malaysia",
+   "emoji": "🇲🇾",
+   "detail": "Asia",
+   "value": 31528585,
+   "fame": 31528585,
+   "source": "https://www.geonames.org/1733045"
+  },
+  {
+   "id": "GH",
+   "name": "Ghana",
+   "emoji": "🇬🇭",
+   "detail": "Africa",
+   "value": 29767108,
+   "fame": 29767108,
+   "source": "https://www.geonames.org/2300660"
+  },
+  {
+   "id": "VE",
+   "name": "Venezuela",
+   "emoji": "🇻🇪",
+   "detail": "South America",
+   "value": 28870195,
+   "fame": 28870195,
+   "source": "https://www.geonames.org/3625428"
+  },
+  {
+   "id": "NP",
+   "name": "Nepal",
+   "emoji": "🇳🇵",
+   "detail": "Asia",
+   "value": 28087871,
+   "fame": 28087871,
+   "source": "https://www.geonames.org/1282988"
+  },
+  {
+   "id": "KP",
+   "name": "North Korea",
+   "emoji": "🇰🇵",
+   "detail": "Asia",
+   "value": 25549819,
+   "fame": 25549819,
+   "source": "https://www.geonames.org/1873107"
+  },
+  {
+   "id": "AU",
+   "name": "Australia",
+   "emoji": "🇦🇺",
+   "detail": "Oceania",
+   "value": 24992369,
+   "fame": 24992369,
+   "source": "https://www.geonames.org/2077456"
+  },
+  {
+   "id": "TW",
+   "name": "Taiwan",
+   "emoji": "🇹🇼",
+   "detail": "Asia",
+   "value": 23451837,
+   "fame": 23451837,
+   "source": "https://www.geonames.org/1668284"
+  },
+  {
+   "id": "LK",
+   "name": "Sri Lanka",
+   "emoji": "🇱🇰",
+   "detail": "Asia",
+   "value": 21670000,
+   "fame": 21670000,
+   "source": "https://www.geonames.org/1227603"
+  },
+  {
+   "id": "RO",
+   "name": "Romania",
+   "emoji": "🇷🇴",
+   "detail": "Europe",
+   "value": 19473936,
+   "fame": 19473936,
+   "source": "https://www.geonames.org/798549"
+  },
+  {
+   "id": "CL",
+   "name": "Chile",
+   "emoji": "🇨🇱",
+   "detail": "South America",
+   "value": 18729160,
+   "fame": 18729160,
+   "source": "https://www.geonames.org/3895114"
+  },
+  {
+   "id": "KZ",
+   "name": "Kazakhstan",
+   "emoji": "🇰🇿",
+   "detail": "Asia",
+   "value": 18276499,
+   "fame": 18276499,
+   "source": "https://www.geonames.org/1522867"
+  },
+  {
+   "id": "NL",
+   "name": "Netherlands",
+   "emoji": "🇳🇱",
+   "detail": "Europe",
+   "value": 17231017,
+   "fame": 17231017,
+   "source": "https://www.geonames.org/2750405"
+  },
+  {
+   "id": "EC",
+   "name": "Ecuador",
+   "emoji": "🇪🇨",
+   "detail": "South America",
+   "value": 17084357,
+   "fame": 17084357,
+   "source": "https://www.geonames.org/3658394"
+  },
+  {
+   "id": "SY",
+   "name": "Syria",
+   "emoji": "🇸🇾",
+   "detail": "Asia",
+   "value": 16906283,
+   "fame": 16906283,
+   "source": "https://www.geonames.org/163843"
+  },
+  {
+   "id": "ZW",
+   "name": "Zimbabwe",
+   "emoji": "🇿🇼",
+   "detail": "Africa",
+   "value": 16868409,
+   "fame": 16868409,
+   "source": "https://www.geonames.org/878675"
+  },
+  {
+   "id": "KH",
+   "name": "Cambodia",
+   "emoji": "🇰🇭",
+   "detail": "Asia",
+   "value": 16249798,
+   "fame": 16249798,
+   "source": "https://www.geonames.org/1831722"
+  },
+  {
+   "id": "BE",
+   "name": "Belgium",
+   "emoji": "🇧🇪",
+   "detail": "Europe",
+   "value": 11422068,
+   "fame": 11422068,
+   "source": "https://www.geonames.org/2802361"
+  },
+  {
+   "id": "CU",
+   "name": "Cuba",
+   "emoji": "🇨🇺",
+   "detail": "North America",
+   "value": 11338138,
+   "fame": 11338138,
+   "source": "https://www.geonames.org/3562981"
+  },
+  {
+   "id": "GR",
+   "name": "Greece",
+   "emoji": "🇬🇷",
+   "detail": "Europe",
+   "value": 10727668,
+   "fame": 10727668,
+   "source": "https://www.geonames.org/390903"
+  },
+  {
+   "id": "CZ",
+   "name": "Czechia",
+   "emoji": "🇨🇿",
+   "detail": "Europe",
+   "value": 10625695,
+   "fame": 10625695,
+   "source": "https://www.geonames.org/3077311"
+  },
+  {
+   "id": "PT",
+   "name": "Portugal",
+   "emoji": "🇵🇹",
+   "detail": "Europe",
+   "value": 10281762,
+   "fame": 10281762,
+   "source": "https://www.geonames.org/2264397"
+  },
+  {
+   "id": "SE",
+   "name": "Sweden",
+   "emoji": "🇸🇪",
+   "detail": "Europe",
+   "value": 10183175,
+   "fame": 10183175,
+   "source": "https://www.geonames.org/2661886"
+  },
+  {
+   "id": "JO",
+   "name": "Jordan",
+   "emoji": "🇯🇴",
+   "detail": "Asia",
+   "value": 9956011,
+   "fame": 9956011,
+   "source": "https://www.geonames.org/248816"
+  },
+  {
+   "id": "HU",
+   "name": "Hungary",
+   "emoji": "🇭🇺",
+   "detail": "Europe",
+   "value": 9768785,
+   "fame": 9768785,
+   "source": "https://www.geonames.org/719819"
+  },
+  {
+   "id": "AE",
+   "name": "United Arab Emirates",
+   "emoji": "🇦🇪",
+   "detail": "Asia",
+   "value": 9630959,
+   "fame": 9630959,
+   "source": "https://www.geonames.org/290557"
+  },
+  {
+   "id": "IL",
+   "name": "Israel",
+   "emoji": "🇮🇱",
+   "detail": "Asia",
+   "value": 8883800,
+   "fame": 8883800,
+   "source": "https://www.geonames.org/294640"
+  },
+  {
+   "id": "AT",
+   "name": "Austria",
+   "emoji": "🇦🇹",
+   "detail": "Europe",
+   "value": 8847037,
+   "fame": 8847037,
+   "source": "https://www.geonames.org/2782113"
+  },
+  {
+   "id": "CH",
+   "name": "Switzerland",
+   "emoji": "🇨🇭",
+   "detail": "Europe",
+   "value": 8516543,
+   "fame": 8516543,
+   "source": "https://www.geonames.org/2658434"
+  },
+  {
+   "id": "LB",
+   "name": "Lebanon",
+   "emoji": "🇱🇧",
+   "detail": "Asia",
+   "value": 6848925,
+   "fame": 6848925,
+   "source": "https://www.geonames.org/272103"
+  },
+  {
+   "id": "DK",
+   "name": "Denmark",
+   "emoji": "🇩🇰",
+   "detail": "Europe",
+   "value": 5797446,
+   "fame": 5797446,
+   "source": "https://www.geonames.org/2623032"
+  },
+  {
+   "id": "SG",
+   "name": "Singapore",
+   "emoji": "🇸🇬",
+   "detail": "Asia",
+   "value": 5638676,
+   "fame": 5638676,
+   "source": "https://www.geonames.org/1880251"
+  },
+  {
+   "id": "FI",
+   "name": "Finland",
+   "emoji": "🇫🇮",
+   "detail": "Europe",
+   "value": 5518050,
+   "fame": 5518050,
+   "source": "https://www.geonames.org/660013"
+  },
+  {
+   "id": "NO",
+   "name": "Norway",
+   "emoji": "🇳🇴",
+   "detail": "Europe",
+   "value": 5314336,
+   "fame": 5314336,
+   "source": "https://www.geonames.org/3144096"
+  },
+  {
+   "id": "CR",
+   "name": "Costa Rica",
+   "emoji": "🇨🇷",
+   "detail": "North America",
+   "value": 4999441,
+   "fame": 4999441,
+   "source": "https://www.geonames.org/3624060"
+  },
+  {
+   "id": "NZ",
+   "name": "New Zealand",
+   "emoji": "🇳🇿",
+   "detail": "Oceania",
+   "value": 4885500,
+   "fame": 4885500,
+   "source": "https://www.geonames.org/2186224"
+  },
+  {
+   "id": "IE",
+   "name": "Ireland",
+   "emoji": "🇮🇪",
+   "detail": "Europe",
+   "value": 4853506,
+   "fame": 4853506,
+   "source": "https://www.geonames.org/2963597"
+  },
+  {
+   "id": "PA",
+   "name": "Panama",
+   "emoji": "🇵🇦",
+   "detail": "North America",
+   "value": 4176873,
+   "fame": 4176873,
+   "source": "https://www.geonames.org/3703430"
+  },
+  {
+   "id": "KW",
+   "name": "Kuwait",
+   "emoji": "🇰🇼",
+   "detail": "Asia",
+   "value": 4137309,
+   "fame": 4137309,
+   "source": "https://www.geonames.org/285570"
+  },
+  {
+   "id": "HR",
+   "name": "Croatia",
+   "emoji": "🇭🇷",
+   "detail": "Europe",
+   "value": 3871833,
+   "fame": 3871833,
+   "source": "https://www.geonames.org/3202326"
+  },
+  {
+   "id": "UY",
+   "name": "Uruguay",
+   "emoji": "🇺🇾",
+   "detail": "South America",
+   "value": 3449299,
+   "fame": 3449299,
+   "source": "https://www.geonames.org/3439705"
+  },
+  {
+   "id": "JM",
+   "name": "Jamaica",
+   "emoji": "🇯🇲",
+   "detail": "North America",
+   "value": 2934855,
+   "fame": 2934855,
+   "source": "https://www.geonames.org/3489940"
+  },
+  {
+   "id": "QA",
+   "name": "Qatar",
+   "emoji": "🇶🇦",
+   "detail": "Asia",
+   "value": 2781677,
+   "fame": 2781677,
+   "source": "https://www.geonames.org/289688"
+  }
+ ]
+}

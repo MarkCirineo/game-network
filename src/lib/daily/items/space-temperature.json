@@ -1,0 +1,95 @@
+{
+ "source": "NASA (public domain)",
+ "items": [
+  {
+   "id": "earth",
+   "name": "Earth",
+   "emoji": "🌍",
+   "detail": "Planet",
+   "fame": 100,
+   "source": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/",
+   "value": 15
+  },
+  {
+   "id": "jupiter",
+   "name": "Jupiter",
+   "emoji": "🪐",
+   "detail": "Planet",
+   "fame": 95,
+   "source": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/",
+   "value": -110
+  },
+  {
+   "id": "mars",
+   "name": "Mars",
+   "emoji": "🪐",
+   "detail": "Planet",
+   "fame": 95,
+   "source": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/",
+   "value": -65
+  },
+  {
+   "id": "saturn",
+   "name": "Saturn",
+   "emoji": "🪐",
+   "detail": "Planet",
+   "fame": 95,
+   "source": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/",
+   "value": -140
+  },
+  {
+   "id": "moon",
+   "name": "The Moon",
+   "emoji": "🌕",
+   "detail": "Earth's moon",
+   "fame": 95,
+   "source": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/",
+   "value": -20
+  },
+  {
+   "id": "mercury",
+   "name": "Mercury",
+   "emoji": "🪐",
+   "detail": "Planet",
+   "fame": 90,
+   "source": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/",
+   "value": 167
+  },
+  {
+   "id": "venus",
+   "name": "Venus",
+   "emoji": "🪐",
+   "detail": "Planet",
+   "fame": 90,
+   "source": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/",
+   "value": 464
+  },
+  {
+   "id": "neptune",
+   "name": "Neptune",
+   "emoji": "🪐",
+   "detail": "Planet",
+   "fame": 85,
+   "source": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/",
+   "value": -200
+  },
+  {
+   "id": "pluto",
+   "name": "Pluto",
+   "emoji": "🪐",
+   "detail": "Dwarf planet",
+   "fame": 85,
+   "source": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/",
+   "value": -225
+  },
+  {
+   "id": "uranus",
+   "name": "Uranus",
+   "emoji": "🪐",
+   "detail": "Planet",
+   "fame": 85,
+   "source": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/",
+   "value": -195
+  }
+ ]
+}

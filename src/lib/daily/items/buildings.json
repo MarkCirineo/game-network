@@ -1,0 +1,1197 @@
+{
+ "source": "Wikidata (CC0)",
+ "items": [
+  {
+   "id": "Q12495",
+   "name": "Burj Khalifa",
+   "detail": "United Arab Emirates",
+   "value": 828,
+   "fame": 140,
+   "source": "https://www.wikidata.org/wiki/Q12495"
+  },
+  {
+   "id": "Q9188",
+   "name": "Empire State Building",
+   "detail": "United States",
+   "value": 457.2,
+   "fame": 125,
+   "source": "https://www.wikidata.org/wiki/Q9188"
+  },
+  {
+   "id": "Q29294",
+   "name": "Willis Tower",
+   "detail": "United States",
+   "value": 442.1,
+   "fame": 97,
+   "source": "https://www.wikidata.org/wiki/Q29294"
+  },
+  {
+   "id": "Q83063",
+   "name": "Petronas Towers",
+   "detail": "Malaysia",
+   "value": 452,
+   "fame": 89,
+   "source": "https://www.wikidata.org/wiki/Q83063"
+  },
+  {
+   "id": "Q83101",
+   "name": "Taipei 101",
+   "detail": "Taiwan",
+   "value": 508,
+   "fame": 85,
+   "source": "https://www.wikidata.org/wiki/Q83101"
+  },
+  {
+   "id": "Q1030463",
+   "name": "Mode Gakuen Cocoon Tower",
+   "detail": "Japan",
+   "value": 204,
+   "fame": 83,
+   "source": "https://www.wikidata.org/wiki/Q1030463"
+  },
+  {
+   "id": "Q11274",
+   "name": "Chrysler Building",
+   "detail": "United States",
+   "value": 318.9,
+   "fame": 75,
+   "source": "https://www.wikidata.org/wiki/Q11274"
+  },
+  {
+   "id": "Q11245",
+   "name": "One World Trade Center",
+   "detail": "United States",
+   "value": 541.3,
+   "fame": 74,
+   "source": "https://www.wikidata.org/wiki/Q11245"
+  },
+  {
+   "id": "Q42258",
+   "name": "Mirante do Vale",
+   "detail": "Brazil",
+   "value": 170,
+   "fame": 71,
+   "source": "https://www.wikidata.org/wiki/Q42258"
+  },
+  {
+   "id": "Q16318627",
+   "name": "Abeno Harukas",
+   "detail": "Japan",
+   "value": 300,
+   "fame": 67,
+   "source": "https://www.wikidata.org/wiki/Q16318627"
+  },
+  {
+   "id": "Q80852",
+   "name": "Shanghai World Financial Center",
+   "detail": "China",
+   "value": 492,
+   "fame": 61,
+   "source": "https://www.wikidata.org/wiki/Q80852"
+  },
+  {
+   "id": "Q18536",
+   "name": "The Shard",
+   "detail": "United Kingdom",
+   "value": 306,
+   "fame": 60,
+   "source": "https://www.wikidata.org/wiki/Q18536"
+  },
+  {
+   "id": "Q189476",
+   "name": "Abraj Al Bait",
+   "detail": "Saudi Arabia",
+   "value": 607,
+   "fame": 59,
+   "source": "https://www.wikidata.org/wiki/Q189476"
+  },
+  {
+   "id": "Q18547",
+   "name": "Shanghai Tower",
+   "detail": "China",
+   "value": 632,
+   "fame": 58,
+   "source": "https://www.wikidata.org/wiki/Q18547"
+  },
+  {
+   "id": "Q29272",
+   "name": "Ryugyong Hotel",
+   "detail": "North Korea",
+   "value": 335,
+   "fame": 57,
+   "source": "https://www.wikidata.org/wiki/Q29272"
+  },
+  {
+   "id": "Q80813",
+   "name": "Jin Mao Tower",
+   "detail": "China",
+   "value": 421,
+   "fame": 52,
+   "source": "https://www.wikidata.org/wiki/Q80813"
+  },
+  {
+   "id": "Q223207",
+   "name": "Oriental Pearl Tower",
+   "detail": "China",
+   "value": 468,
+   "fame": 52,
+   "source": "https://www.wikidata.org/wiki/Q223207"
+  },
+  {
+   "id": "Q216357",
+   "name": "Grande Arche",
+   "detail": "France",
+   "value": 110.9,
+   "fame": 51,
+   "source": "https://www.wikidata.org/wiki/Q216357"
+  },
+  {
+   "id": "Q167566",
+   "name": "Palace of Culture and Science",
+   "detail": "Poland",
+   "value": 230,
+   "fame": 51,
+   "source": "https://www.wikidata.org/wiki/Q167566"
+  },
+  {
+   "id": "Q169420",
+   "name": "Edifício Altino Arantes",
+   "detail": "Brazil",
+   "value": 161.2,
+   "fame": 50,
+   "source": "https://www.wikidata.org/wiki/Q169420"
+  },
+  {
+   "id": "Q11297",
+   "name": "Headquarters of the United Nations",
+   "detail": "United States",
+   "value": 154.3,
+   "fame": 50,
+   "source": "https://www.wikidata.org/wiki/Q11297"
+  },
+  {
+   "id": "Q191161",
+   "name": "30 St Mary Axe",
+   "detail": "United Kingdom",
+   "value": 180,
+   "fame": 49,
+   "source": "https://www.wikidata.org/wiki/Q191161"
+  },
+  {
+   "id": "Q170610",
+   "name": "Edifício Itália",
+   "detail": "Brazil",
+   "value": 165,
+   "fame": 48,
+   "source": "https://www.wikidata.org/wiki/Q170610"
+  },
+  {
+   "id": "Q323767",
+   "name": "Montparnasse Tower",
+   "detail": "France",
+   "value": 209,
+   "fame": 48,
+   "source": "https://www.wikidata.org/wiki/Q323767"
+  },
+  {
+   "id": "Q868772",
+   "name": "Trump Tower",
+   "detail": "United States",
+   "value": 202.4,
+   "fame": 47,
+   "source": "https://www.wikidata.org/wiki/Q868772"
+  },
+  {
+   "id": "Q270066",
+   "name": "7 World Trade Center",
+   "detail": "United States",
+   "value": 225,
+   "fame": 46,
+   "source": "https://www.wikidata.org/wiki/Q270066"
+  },
+  {
+   "id": "Q317034",
+   "name": "International Commerce Centre",
+   "detail": "China",
+   "value": 484,
+   "fame": 46,
+   "source": "https://www.wikidata.org/wiki/Q317034"
+  },
+  {
+   "id": "Q214855",
+   "name": "Bank of China Tower",
+   "detail": "China",
+   "value": 367.4,
+   "fame": 45,
+   "source": "https://www.wikidata.org/wiki/Q214855"
+  },
+  {
+   "id": "Q192680",
+   "name": "New York Times Building",
+   "detail": "United States",
+   "value": 318.8,
+   "fame": 45,
+   "source": "https://www.wikidata.org/wiki/Q192680"
+  },
+  {
+   "id": "Q217652",
+   "name": "Woolworth Building",
+   "detail": "United States",
+   "value": 241,
+   "fame": 45,
+   "source": "https://www.wikidata.org/wiki/Q217652"
+  },
+  {
+   "id": "Q206435",
+   "name": "Turning Torso",
+   "detail": "Sweden",
+   "value": 190,
+   "fame": 44,
+   "source": "https://www.wikidata.org/wiki/Q206435"
+  },
+  {
+   "id": "Q151765",
+   "name": "Commerzbank Tower",
+   "detail": "Germany",
+   "value": 300.1,
+   "fame": 43,
+   "source": "https://www.wikidata.org/wiki/Q151765"
+  },
+  {
+   "id": "Q745016",
+   "name": "Kuala Lumpur Tower",
+   "detail": "Malaysia",
+   "value": 421,
+   "fame": 43,
+   "source": "https://www.wikidata.org/wiki/Q745016"
+  },
+  {
+   "id": "Q4255374",
+   "name": "Lakhta Centre",
+   "detail": "Russia",
+   "value": 462,
+   "fame": 43,
+   "source": "https://www.wikidata.org/wiki/Q4255374"
+  },
+  {
+   "id": "Q328505",
+   "name": "Bank of America Tower",
+   "detail": "United States",
+   "value": 365.8,
+   "fame": 42,
+   "source": "https://www.wikidata.org/wiki/Q328505"
+  },
+  {
+   "id": "Q245246",
+   "name": "CITIC Plaza",
+   "detail": "China",
+   "value": 390.2,
+   "fame": 42,
+   "source": "https://www.wikidata.org/wiki/Q245246"
+  },
+  {
+   "id": "Q656743",
+   "name": "Kingdom Centre",
+   "detail": "Saudi Arabia",
+   "value": 302,
+   "fame": 42,
+   "source": "https://www.wikidata.org/wiki/Q656743"
+  },
+  {
+   "id": "Q18640924",
+   "name": "Landmark 81",
+   "detail": "Vietnam",
+   "value": 461.5,
+   "fame": 42,
+   "source": "https://www.wikidata.org/wiki/Q18640924"
+  },
+  {
+   "id": "Q125846",
+   "name": "Q1 Tower",
+   "detail": "Australia",
+   "value": 322,
+   "fame": 42,
+   "source": "https://www.wikidata.org/wiki/Q125846"
+  },
+  {
+   "id": "Q59483",
+   "name": "Mercury City Tower",
+   "detail": "Russia",
+   "value": 338.8,
+   "fame": 41,
+   "source": "https://www.wikidata.org/wiki/Q59483"
+  },
+  {
+   "id": "Q236201",
+   "name": "Shun Hing Square",
+   "detail": "China",
+   "value": 384,
+   "fame": 41,
+   "source": "https://www.wikidata.org/wiki/Q236201"
+  },
+  {
+   "id": "Q382121",
+   "name": "Zifeng Tower",
+   "detail": "China",
+   "value": 450,
+   "fame": 41,
+   "source": "https://www.wikidata.org/wiki/Q382121"
+  },
+  {
+   "id": "Q217727",
+   "name": "875 North Michigan Avenue",
+   "detail": "United States",
+   "value": 344,
+   "fame": 40,
+   "source": "https://www.wikidata.org/wiki/Q217727"
+  },
+  {
+   "id": "Q838780",
+   "name": "Almas Tower",
+   "detail": "United Arab Emirates",
+   "value": 363,
+   "fame": 40,
+   "source": "https://www.wikidata.org/wiki/Q838780"
+  },
+  {
+   "id": "Q271695",
+   "name": "Aon Center",
+   "detail": "United States",
+   "value": 346.3,
+   "fame": 40,
+   "source": "https://www.wikidata.org/wiki/Q271695"
+  },
+  {
+   "id": "Q7969454",
+   "name": "Merdeka 118",
+   "detail": "Malaysia",
+   "value": 678.9,
+   "fame": 40,
+   "source": "https://www.wikidata.org/wiki/Q7969454"
+  },
+  {
+   "id": "Q156198",
+   "name": "Messeturm",
+   "detail": "Germany",
+   "value": 256.5,
+   "fame": 40,
+   "source": "https://www.wikidata.org/wiki/Q156198"
+  },
+  {
+   "id": "Q336246",
+   "name": "Torre Glòries",
+   "detail": "Spain",
+   "value": 144,
+   "fame": 40,
+   "source": "https://www.wikidata.org/wiki/Q336246"
+  },
+  {
+   "id": "Q546221",
+   "name": "Trump International Hotel and Tower",
+   "detail": "United States",
+   "value": 423.2,
+   "fame": 40,
+   "source": "https://www.wikidata.org/wiki/Q546221"
+  },
+  {
+   "id": "Q57900",
+   "name": "U.S. Bank Tower",
+   "detail": "United States",
+   "value": 310.3,
+   "fame": 40,
+   "source": "https://www.wikidata.org/wiki/Q57900"
+  },
+  {
+   "id": "Q218305",
+   "name": "40 Wall Street",
+   "detail": "United States",
+   "value": 284,
+   "fame": 39,
+   "source": "https://www.wikidata.org/wiki/Q218305"
+  },
+  {
+   "id": "Q216865",
+   "name": "Transamerica Pyramid",
+   "detail": "United States",
+   "value": 260,
+   "fame": 39,
+   "source": "https://www.wikidata.org/wiki/Q216865"
+  },
+  {
+   "id": "Q557933",
+   "name": "Al Hamra Tower",
+   "detail": "Kuwait",
+   "value": 412,
+   "fame": 38,
+   "source": "https://www.wikidata.org/wiki/Q557933"
+  },
+  {
+   "id": "Q337631",
+   "name": "Tuntex Sky Tower",
+   "detail": "Taiwan",
+   "value": 323,
+   "fame": 38,
+   "source": "https://www.wikidata.org/wiki/Q337631"
+  },
+  {
+   "id": "Q216264",
+   "name": "23 Marina",
+   "detail": "United Arab Emirates",
+   "value": 392.4,
+   "fame": 37,
+   "source": "https://www.wikidata.org/wiki/Q216264"
+  },
+  {
+   "id": "Q112640",
+   "name": "Central Plaza",
+   "detail": "China",
+   "value": 374,
+   "fame": 37,
+   "source": "https://www.wikidata.org/wiki/Q112640"
+  },
+  {
+   "id": "Q754321",
+   "name": "China Media Group Guanghua Road Office Area",
+   "detail": "China",
+   "value": 234,
+   "fame": 37,
+   "source": "https://www.wikidata.org/wiki/Q754321"
+  },
+  {
+   "id": "Q494895",
+   "name": "Lotte World Tower",
+   "detail": "South Korea",
+   "value": 555.7,
+   "fame": 37,
+   "source": "https://www.wikidata.org/wiki/Q494895"
+  },
+  {
+   "id": "Q648338",
+   "name": "Rose Tower",
+   "detail": "United Arab Emirates",
+   "value": 333,
+   "fame": 37,
+   "source": "https://www.wikidata.org/wiki/Q648338"
+  },
+  {
+   "id": "Q680614",
+   "name": "30 Rockefeller Plaza",
+   "detail": "United States",
+   "value": 259,
+   "fame": 36,
+   "source": "https://www.wikidata.org/wiki/Q680614"
+  },
+  {
+   "id": "Q262041",
+   "name": "70 Pine Street",
+   "detail": "United States",
+   "value": 290.2,
+   "fame": 36,
+   "source": "https://www.wikidata.org/wiki/Q262041"
+  },
+  {
+   "id": "Q1043438",
+   "name": "Guangzhou International Finance Center",
+   "detail": "China",
+   "value": 440,
+   "fame": 36,
+   "source": "https://www.wikidata.org/wiki/Q1043438"
+  },
+  {
+   "id": "Q1077308",
+   "name": "Ping An Finance Centre",
+   "detail": "China",
+   "value": 599,
+   "fame": 36,
+   "source": "https://www.wikidata.org/wiki/Q1077308"
+  },
+  {
+   "id": "Q587108",
+   "name": "Yokohama Landmark Tower",
+   "detail": "Japan",
+   "value": 295.8,
+   "fame": 36,
+   "source": "https://www.wikidata.org/wiki/Q587108"
+  },
+  {
+   "id": "Q941908",
+   "name": "3 World Trade Center",
+   "detail": "United States",
+   "value": 328.9,
+   "fame": 35,
+   "source": "https://www.wikidata.org/wiki/Q941908"
+  },
+  {
+   "id": "Q845182",
+   "name": "Emirates Office Tower",
+   "detail": "United Arab Emirates",
+   "value": 355,
+   "fame": 35,
+   "source": "https://www.wikidata.org/wiki/Q845182"
+  },
+  {
+   "id": "Q464482",
+   "name": "MetLife Building",
+   "detail": "United States",
+   "value": 246,
+   "fame": 35,
+   "source": "https://www.wikidata.org/wiki/Q464482"
+  },
+  {
+   "id": "Q652452",
+   "name": "Metropolitan Life Insurance Company Tower",
+   "detail": "United States",
+   "value": 213,
+   "fame": 35,
+   "source": "https://www.wikidata.org/wiki/Q652452"
+  },
+  {
+   "id": "Q201902",
+   "name": "Mole Antonelliana",
+   "detail": "Italy",
+   "value": 168,
+   "fame": 35,
+   "source": "https://www.wikidata.org/wiki/Q201902"
+  },
+  {
+   "id": "Q19492",
+   "name": "Princess Tower",
+   "detail": "United Arab Emirates",
+   "value": 414,
+   "fame": 35,
+   "source": "https://www.wikidata.org/wiki/Q19492"
+  },
+  {
+   "id": "Q233940",
+   "name": "432 Park Avenue",
+   "detail": "United States",
+   "value": 425.5,
+   "fame": 34,
+   "source": "https://www.wikidata.org/wiki/Q233940"
+  },
+  {
+   "id": "Q391243",
+   "name": "Citigroup Center",
+   "detail": "United States",
+   "value": 279,
+   "fame": 34,
+   "source": "https://www.wikidata.org/wiki/Q391243"
+  },
+  {
+   "id": "Q391648",
+   "name": "Cayan Tower",
+   "detail": "United Arab Emirates",
+   "value": 306.4,
+   "fame": 33,
+   "source": "https://www.wikidata.org/wiki/Q391648"
+  },
+  {
+   "id": "Q1165269",
+   "name": "Marina 101",
+   "detail": "United Arab Emirates",
+   "value": 425,
+   "fame": 33,
+   "source": "https://www.wikidata.org/wiki/Q1165269"
+  },
+  {
+   "id": "Q737484",
+   "name": "Seagram Building",
+   "detail": "United States",
+   "value": 157,
+   "fame": 33,
+   "source": "https://www.wikidata.org/wiki/Q737484"
+  },
+  {
+   "id": "Q118214",
+   "name": "Telekom Tower",
+   "detail": "Malaysia",
+   "value": 310,
+   "fame": 33,
+   "source": "https://www.wikidata.org/wiki/Q118214"
+  },
+  {
+   "id": "Q519568",
+   "name": "Torre Moeve",
+   "detail": "Spain",
+   "value": 248.3,
+   "fame": 33,
+   "source": "https://www.wikidata.org/wiki/Q519568"
+  },
+  {
+   "id": "Q499486",
+   "name": "Bank of America Plaza",
+   "detail": "United States",
+   "value": 311.8,
+   "fame": 32,
+   "source": "https://www.wikidata.org/wiki/Q499486"
+  },
+  {
+   "id": "Q638512",
+   "name": "Bitexco Financial Tower",
+   "detail": "Vietnam",
+   "value": 265.5,
+   "fame": 32,
+   "source": "https://www.wikidata.org/wiki/Q638512"
+  },
+  {
+   "id": "Q651362",
+   "name": "Singer Building",
+   "detail": "United States",
+   "value": 187,
+   "fame": 32,
+   "source": "https://www.wikidata.org/wiki/Q651362"
+  },
+  {
+   "id": "Q130478",
+   "name": "The Center",
+   "detail": "China",
+   "value": 346,
+   "fame": 32,
+   "source": "https://www.wikidata.org/wiki/Q130478"
+  },
+  {
+   "id": "Q80367",
+   "name": "Triumph Palace",
+   "detail": "Russia",
+   "value": 264,
+   "fame": 32,
+   "source": "https://www.wikidata.org/wiki/Q80367"
+  },
+  {
+   "id": "Q844324",
+   "name": "Trump World Tower",
+   "detail": "United States",
+   "value": 262,
+   "fame": 32,
+   "source": "https://www.wikidata.org/wiki/Q844324"
+  },
+  {
+   "id": "Q1127212",
+   "name": "2 World Trade Center",
+   "detail": "United States",
+   "value": 374,
+   "fame": 31,
+   "source": "https://www.wikidata.org/wiki/Q1127212"
+  },
+  {
+   "id": "Q687413",
+   "name": "4 Times Square",
+   "detail": "United States",
+   "value": 246.5,
+   "fame": 31,
+   "source": "https://www.wikidata.org/wiki/Q687413"
+  },
+  {
+   "id": "Q1351208",
+   "name": "4 World Trade Center",
+   "detail": "United States",
+   "value": 297.7,
+   "fame": 31,
+   "source": "https://www.wikidata.org/wiki/Q1351208"
+  },
+  {
+   "id": "Q790278",
+   "name": "Avaz Twist Tower",
+   "detail": "Bosnia and Herzegovina",
+   "value": 172,
+   "fame": 31,
+   "source": "https://www.wikidata.org/wiki/Q790278"
+  },
+  {
+   "id": "Q632566",
+   "name": "Edifício Copan",
+   "detail": "Brazil",
+   "value": 118.4,
+   "fame": 31,
+   "source": "https://www.wikidata.org/wiki/Q632566"
+  },
+  {
+   "id": "Q1033099",
+   "name": "Grand Lisboa",
+   "detail": "China",
+   "value": 261,
+   "fame": 31,
+   "source": "https://www.wikidata.org/wiki/Q1033099"
+  },
+  {
+   "id": "Q3142395",
+   "name": "Hyatt Regency Paris Etoile",
+   "detail": "France",
+   "value": 190,
+   "fame": 31,
+   "source": "https://www.wikidata.org/wiki/Q3142395"
+  },
+  {
+   "id": "Q1470046",
+   "name": "Kingkey 100",
+   "detail": "China",
+   "value": 442,
+   "fame": 31,
+   "source": "https://www.wikidata.org/wiki/Q1470046"
+  },
+  {
+   "id": "Q503477",
+   "name": "One Canada Square",
+   "detail": "United Kingdom",
+   "value": 235,
+   "fame": 31,
+   "source": "https://www.wikidata.org/wiki/Q503477"
+  },
+  {
+   "id": "Q1161278",
+   "name": "Shimao International Plaza",
+   "detail": "China",
+   "value": 333.3,
+   "fame": 31,
+   "source": "https://www.wikidata.org/wiki/Q1161278"
+  },
+  {
+   "id": "Q1509747",
+   "name": "Tour First",
+   "detail": "France",
+   "value": 231,
+   "fame": 31,
+   "source": "https://www.wikidata.org/wiki/Q1509747"
+  },
+  {
+   "id": "Q908703",
+   "name": "Columbia Center",
+   "detail": "United States",
+   "value": 294.8,
+   "fame": 30,
+   "source": "https://www.wikidata.org/wiki/Q908703"
+  },
+  {
+   "id": "Q1052475",
+   "name": "First Canadian Place",
+   "detail": "Canada",
+   "value": 298,
+   "fame": 30,
+   "source": "https://www.wikidata.org/wiki/Q1052475"
+  },
+  {
+   "id": "Q166882",
+   "name": "Istanbul Sapphire",
+   "detail": "Turkey",
+   "value": 261,
+   "fame": 30,
+   "source": "https://www.wikidata.org/wiki/Q166882"
+  },
+  {
+   "id": "Q1121971",
+   "name": "Two Prudential Plaza",
+   "detail": "United States",
+   "value": 303.3,
+   "fame": 30,
+   "source": "https://www.wikidata.org/wiki/Q1121971"
+  },
+  {
+   "id": "Q1121720",
+   "name": "Warsaw radio mast",
+   "detail": "Poland / Polish People's Republic",
+   "value": 646.4,
+   "fame": 30,
+   "source": "https://www.wikidata.org/wiki/Q1121720"
+  },
+  {
+   "id": "Q875078",
+   "name": "731 Lexington Avenue",
+   "detail": "United States",
+   "value": 245.7,
+   "fame": 29,
+   "source": "https://www.wikidata.org/wiki/Q875078"
+  },
+  {
+   "id": "Q571763",
+   "name": "Barolo Palace",
+   "detail": "Argentina",
+   "value": 100,
+   "fame": 29,
+   "source": "https://www.wikidata.org/wiki/Q571763"
+  },
+  {
+   "id": "Q197833",
+   "name": "China Zun",
+   "detail": "China",
+   "value": 528,
+   "fame": 29,
+   "source": "https://www.wikidata.org/wiki/Q197833"
+  },
+  {
+   "id": "Q1364354",
+   "name": "Emperador Castellana Tower",
+   "detail": "Spain",
+   "value": 230,
+   "fame": 29,
+   "source": "https://www.wikidata.org/wiki/Q1364354"
+  },
+  {
+   "id": "Q1542408",
+   "name": "Gran Torre Costanera",
+   "detail": "Chile",
+   "value": 300,
+   "fame": 29,
+   "source": "https://www.wikidata.org/wiki/Q1542408"
+  },
+  {
+   "id": "Q80495",
+   "name": "Millennium Tower",
+   "detail": "Austria",
+   "value": 202,
+   "fame": 29,
+   "source": "https://www.wikidata.org/wiki/Q80495"
+  },
+  {
+   "id": "Q1138183",
+   "name": "Philadelphia City Hall",
+   "detail": "United States",
+   "value": 167,
+   "fame": 29,
+   "source": "https://www.wikidata.org/wiki/Q1138183"
+  },
+  {
+   "id": "Q953610",
+   "name": "Torre de Cristal",
+   "detail": "Spain",
+   "value": 249,
+   "fame": 29,
+   "source": "https://www.wikidata.org/wiki/Q953610"
+  },
+  {
+   "id": "Q901058",
+   "name": "Vehicle Assembly Building",
+   "detail": "United States",
+   "value": 160.3,
+   "fame": 29,
+   "source": "https://www.wikidata.org/wiki/Q901058"
+  },
+  {
+   "id": "Q576952",
+   "name": "Antilia",
+   "detail": "India",
+   "value": 173,
+   "fame": 28,
+   "source": "https://www.wikidata.org/wiki/Q576952"
+  },
+  {
+   "id": "Q737602",
+   "name": "Aspire Tower",
+   "detail": "Qatar",
+   "value": 300,
+   "fame": 28,
+   "source": "https://www.wikidata.org/wiki/Q737602"
+  },
+  {
+   "id": "Q910101",
+   "name": "CitySpire",
+   "detail": "United States",
+   "value": 248.1,
+   "fame": 28,
+   "source": "https://www.wikidata.org/wiki/Q910101"
+  },
+  {
+   "id": "Q168575",
+   "name": "CTF Finance Centre",
+   "detail": "China",
+   "value": 530,
+   "fame": 28,
+   "source": "https://www.wikidata.org/wiki/Q168575"
+  },
+  {
+   "id": "Q1330847",
+   "name": "Elite Residence",
+   "detail": "United Arab Emirates",
+   "value": 381,
+   "fame": 28,
+   "source": "https://www.wikidata.org/wiki/Q1330847"
+  },
+  {
+   "id": "Q859452",
+   "name": "Hearst Tower",
+   "detail": "United States",
+   "value": 182,
+   "fame": 28,
+   "source": "https://www.wikidata.org/wiki/Q859452"
+  },
+  {
+   "id": "Q935919",
+   "name": "JPMorgan Chase Tower",
+   "detail": "United States",
+   "value": 305.4,
+   "fame": 28,
+   "source": "https://www.wikidata.org/wiki/Q935919"
+  },
+  {
+   "id": "Q134124",
+   "name": "Ocean Heights",
+   "detail": "United Arab Emirates",
+   "value": 310,
+   "fame": 28,
+   "source": "https://www.wikidata.org/wiki/Q134124"
+  },
+  {
+   "id": "Q2631268",
+   "name": "111 West 57th Street",
+   "detail": "United States",
+   "value": 435.3,
+   "fame": 27,
+   "source": "https://www.wikidata.org/wiki/Q2631268"
+  },
+  {
+   "id": "Q1050074",
+   "name": "28 Liberty Street",
+   "detail": "United States",
+   "value": 247.8,
+   "fame": 27,
+   "source": "https://www.wikidata.org/wiki/Q1050074"
+  },
+  {
+   "id": "Q572887",
+   "name": "8 Canada Square",
+   "detail": "United Kingdom",
+   "value": 199.5,
+   "fame": 27,
+   "source": "https://www.wikidata.org/wiki/Q572887"
+  },
+  {
+   "id": "Q2349903",
+   "name": "Cœur Défense",
+   "detail": "France",
+   "value": 161,
+   "fame": 27,
+   "source": "https://www.wikidata.org/wiki/Q2349903"
+  },
+  {
+   "id": "Q701538",
+   "name": "Deutsche Bank Twin Towers",
+   "detail": "Germany",
+   "value": 155,
+   "fame": 27,
+   "source": "https://www.wikidata.org/wiki/Q701538"
+  },
+  {
+   "id": "Q1374287",
+   "name": "Eurasia",
+   "detail": "Russia",
+   "value": 308.9,
+   "fame": 27,
+   "source": "https://www.wikidata.org/wiki/Q1374287"
+  },
+  {
+   "id": "Q1640197",
+   "name": "King Power Mahanakhon",
+   "detail": "Thailand",
+   "value": 314,
+   "fame": 27,
+   "source": "https://www.wikidata.org/wiki/Q1640197"
+  },
+  {
+   "id": "Q321291",
+   "name": "Main Tower",
+   "detail": "Germany",
+   "value": 240,
+   "fame": 27,
+   "source": "https://www.wikidata.org/wiki/Q321291"
+  },
+  {
+   "id": "Q2023928",
+   "name": "One57",
+   "detail": "United States",
+   "value": 306.3,
+   "fame": 27,
+   "source": "https://www.wikidata.org/wiki/Q2023928"
+  },
+  {
+   "id": "Q167195",
+   "name": "Post Tower",
+   "detail": "Germany",
+   "value": 162.5,
+   "fame": 27,
+   "source": "https://www.wikidata.org/wiki/Q167195"
+  },
+  {
+   "id": "Q1368798",
+   "name": "SEG Plaza",
+   "detail": "China",
+   "value": 291.6,
+   "fame": 27,
+   "source": "https://www.wikidata.org/wiki/Q1368798"
+  },
+  {
+   "id": "Q1331574",
+   "name": "Tower 42",
+   "detail": "United Kingdom",
+   "value": 182.9,
+   "fame": 27,
+   "source": "https://www.wikidata.org/wiki/Q1331574"
+  },
+  {
+   "id": "Q274916",
+   "name": "8 Spruce Street",
+   "detail": "United States",
+   "value": 300,
+   "fame": 26,
+   "source": "https://www.wikidata.org/wiki/Q274916"
+  },
+  {
+   "id": "Q1808295",
+   "name": "Al Yaqoub Tower",
+   "detail": "United Arab Emirates",
+   "value": 330.1,
+   "fame": 26,
+   "source": "https://www.wikidata.org/wiki/Q1808295"
+  },
+  {
+   "id": "Q609140",
+   "name": "AON Hanoi Landmark Tower",
+   "detail": "Vietnam",
+   "value": 346,
+   "fame": 26,
+   "source": "https://www.wikidata.org/wiki/Q609140"
+  },
+  {
+   "id": "Q511612",
+   "name": "Bahrain World Trade Center",
+   "detail": "Bahrain",
+   "value": 240,
+   "fame": 26,
+   "source": "https://www.wikidata.org/wiki/Q511612"
+  },
+  {
+   "id": "Q1141262",
+   "name": "Gate of Europe",
+   "detail": "Spain",
+   "value": 114,
+   "fame": 26,
+   "source": "https://www.wikidata.org/wiki/Q1141262"
+  },
+  {
+   "id": "Q1470076",
+   "name": "HHHR Tower",
+   "detail": "United Arab Emirates",
+   "value": 317,
+   "fame": 26,
+   "source": "https://www.wikidata.org/wiki/Q1470076"
+  },
+  {
+   "id": "Q671484",
+   "name": "Khan Shatyr Entertainment Center",
+   "detail": "Kazakhstan",
+   "value": 150,
+   "fame": 26,
+   "source": "https://www.wikidata.org/wiki/Q671484"
+  },
+  {
+   "id": "Q333305",
+   "name": "One Raffles Place",
+   "detail": "Singapore",
+   "value": 280,
+   "fame": 26,
+   "source": "https://www.wikidata.org/wiki/Q333305"
+  },
+  {
+   "id": "Q920809",
+   "name": "Pirelli Tower",
+   "detail": "Italy",
+   "value": 110,
+   "fame": 26,
+   "source": "https://www.wikidata.org/wiki/Q920809"
+  },
+  {
+   "id": "Q1364394",
+   "name": "Torre Picasso",
+   "detail": "Spain",
+   "value": 157,
+   "fame": 26,
+   "source": "https://www.wikidata.org/wiki/Q1364394"
+  },
+  {
+   "id": "Q57767",
+   "name": "Wells Fargo Plaza",
+   "detail": "United States",
+   "value": 302.4,
+   "fame": 26,
+   "source": "https://www.wikidata.org/wiki/Q57767"
+  },
+  {
+   "id": "Q212831",
+   "name": "20 Exchange Place",
+   "detail": "United States",
+   "value": 226,
+   "fame": 25,
+   "source": "https://www.wikidata.org/wiki/Q212831"
+  },
+  {
+   "id": "Q526963",
+   "name": "BMW Headquarters",
+   "detail": "Germany",
+   "value": 101,
+   "fame": 25,
+   "source": "https://www.wikidata.org/wiki/Q526963"
+  },
+  {
+   "id": "Q1113808",
+   "name": "Comcast Center",
+   "detail": "United States",
+   "value": 297,
+   "fame": 25,
+   "source": "https://www.wikidata.org/wiki/Q1113808"
+  },
+  {
+   "id": "Q1985903",
+   "name": "Evolution Tower",
+   "detail": "Russia",
+   "value": 255,
+   "fame": 25,
+   "source": "https://www.wikidata.org/wiki/Q1985903"
+  },
+  {
+   "id": "Q702322",
+   "name": "Koryo Hotel",
+   "detail": "North Korea",
+   "value": 148,
+   "fame": 25,
+   "source": "https://www.wikidata.org/wiki/Q702322"
+  },
+  {
+   "id": "Q956198",
+   "name": "New York World Building",
+   "detail": "United States",
+   "value": 106.6,
+   "fame": 25,
+   "source": "https://www.wikidata.org/wiki/Q956198"
+  },
+  {
+   "id": "Q1808317",
+   "name": "The Marina Torch",
+   "detail": "United Arab Emirates",
+   "value": 352,
+   "fame": 25,
+   "source": "https://www.wikidata.org/wiki/Q1808317"
+  },
+  {
+   "id": "Q651643",
+   "name": "Torre PwC",
+   "detail": "Spain",
+   "value": 236,
+   "fame": 25,
+   "source": "https://www.wikidata.org/wiki/Q651643"
+  },
+  {
+   "id": "Q143235",
+   "name": "Wuhan Greenland Center",
+   "detail": "China",
+   "value": 475.6,
+   "fame": 25,
+   "source": "https://www.wikidata.org/wiki/Q143235"
+  },
+  {
+   "id": "Q119942",
+   "name": "X-Seed 4000",
+   "detail": "Japan",
+   "value": 4000,
+   "fame": 25,
+   "source": "https://www.wikidata.org/wiki/Q119942"
+  }
+ ]
+}

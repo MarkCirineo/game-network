@@ -1,0 +1,1236 @@
+{
+ "source": "Wikidata (CC0)",
+ "items": [
+  {
+   "id": "Q513",
+   "name": "Mount Everest",
+   "detail": "China / Nepal",
+   "value": 8849,
+   "fame": 237,
+   "source": "https://www.wikidata.org/wiki/Q513"
+  },
+  {
+   "id": "Q39231",
+   "name": "Mount Fuji",
+   "detail": "Japan",
+   "value": 3777,
+   "fame": 146,
+   "source": "https://www.wikidata.org/wiki/Q39231"
+  },
+  {
+   "id": "Q524",
+   "name": "Mount Vesuvius",
+   "detail": "Italy",
+   "value": 1281,
+   "fame": 136,
+   "source": "https://www.wikidata.org/wiki/Q524"
+  },
+  {
+   "id": "Q583",
+   "name": "Mont Blanc",
+   "detail": "France / Italy",
+   "value": 4806,
+   "fame": 127,
+   "source": "https://www.wikidata.org/wiki/Q583"
+  },
+  {
+   "id": "Q16990",
+   "name": "Mount Etna",
+   "detail": "Italy",
+   "value": 3357,
+   "fame": 125,
+   "source": "https://www.wikidata.org/wiki/Q16990"
+  },
+  {
+   "id": "Q39739",
+   "name": "Aconcagua",
+   "detail": "Argentina",
+   "value": 6962,
+   "fame": 113,
+   "source": "https://www.wikidata.org/wiki/Q39739"
+  },
+  {
+   "id": "Q43105",
+   "name": "Mount Elbrus",
+   "detail": "Russia",
+   "value": 5642,
+   "fame": 113,
+   "source": "https://www.wikidata.org/wiki/Q43105"
+  },
+  {
+   "id": "Q43512",
+   "name": "K2",
+   "detail": "Pakistan",
+   "value": 8611,
+   "fame": 112,
+   "source": "https://www.wikidata.org/wiki/Q43512"
+  },
+  {
+   "id": "Q72303",
+   "name": "Mount Ararat",
+   "detail": "Turkey",
+   "value": 5137,
+   "fame": 112,
+   "source": "https://www.wikidata.org/wiki/Q72303"
+  },
+  {
+   "id": "Q80344",
+   "name": "Mount Olympus",
+   "detail": "Greece",
+   "value": 2918,
+   "fame": 109,
+   "source": "https://www.wikidata.org/wiki/Q80344"
+  },
+  {
+   "id": "Q725591",
+   "name": "Mount Bazardüzü",
+   "detail": "Azerbaijan / Russia",
+   "value": 4466,
+   "fame": 107,
+   "source": "https://www.wikidata.org/wiki/Q725591"
+  },
+  {
+   "id": "Q38954",
+   "name": "Teide",
+   "detail": "Spain",
+   "value": 3715,
+   "fame": 105,
+   "source": "https://www.wikidata.org/wiki/Q38954"
+  },
+  {
+   "id": "Q82019",
+   "name": "Kanchenjunga",
+   "detail": "India / Nepal",
+   "value": 8586,
+   "fame": 102,
+   "source": "https://www.wikidata.org/wiki/Q82019"
+  },
+  {
+   "id": "Q1374",
+   "name": "Matterhorn",
+   "detail": "Italy / Switzerland",
+   "value": 4478,
+   "fame": 92,
+   "source": "https://www.wikidata.org/wiki/Q1374"
+  },
+  {
+   "id": "Q229107",
+   "name": "Mount Kailash",
+   "detail": "China",
+   "value": 6638,
+   "fame": 91,
+   "source": "https://www.wikidata.org/wiki/Q229107"
+  },
+  {
+   "id": "Q165440",
+   "name": "Dhaulagiri",
+   "detail": "Nepal",
+   "value": 8167,
+   "fame": 90,
+   "source": "https://www.wikidata.org/wiki/Q165440"
+  },
+  {
+   "id": "Q130736",
+   "name": "Nanga Parbat",
+   "detail": "Pakistan",
+   "value": 8126,
+   "fame": 90,
+   "source": "https://www.wikidata.org/wiki/Q130736"
+  },
+  {
+   "id": "Q169986",
+   "name": "Makalu",
+   "detail": "China / Nepal",
+   "value": 8485,
+   "fame": 89,
+   "source": "https://www.wikidata.org/wiki/Q169986"
+  },
+  {
+   "id": "Q172070",
+   "name": "Mount Kenya",
+   "detail": "Kenya",
+   "value": 5199,
+   "fame": 89,
+   "source": "https://www.wikidata.org/wiki/Q172070"
+  },
+  {
+   "id": "Q131230",
+   "name": "Mauna Kea",
+   "detail": "United States",
+   "value": 4207,
+   "fame": 87,
+   "source": "https://www.wikidata.org/wiki/Q131230"
+  },
+  {
+   "id": "Q377485",
+   "name": "Mount Sinai",
+   "detail": "Egypt",
+   "value": 2287,
+   "fame": 87,
+   "source": "https://www.wikidata.org/wiki/Q377485"
+  },
+  {
+   "id": "Q168702",
+   "name": "Lhotse",
+   "detail": "China / Nepal",
+   "value": 8516,
+   "fame": 86,
+   "source": "https://www.wikidata.org/wiki/Q168702"
+  },
+  {
+   "id": "Q178167",
+   "name": "Mount Kosciuszko",
+   "detail": "Australia",
+   "value": 2228,
+   "fame": 86,
+   "source": "https://www.wikidata.org/wiki/Q178167"
+  },
+  {
+   "id": "Q14081",
+   "name": "Chimborazo",
+   "detail": "Ecuador",
+   "value": 6263,
+   "fame": 84,
+   "source": "https://www.wikidata.org/wiki/Q14081"
+  },
+  {
+   "id": "Q170089",
+   "name": "Cho Oyu",
+   "detail": "China / Nepal",
+   "value": 8188,
+   "fame": 84,
+   "source": "https://www.wikidata.org/wiki/Q170089"
+  },
+  {
+   "id": "Q170070",
+   "name": "Manaslu",
+   "detail": "Nepal",
+   "value": 8163,
+   "fame": 82,
+   "source": "https://www.wikidata.org/wiki/Q170070"
+  },
+  {
+   "id": "Q40758",
+   "name": "Damavand",
+   "detail": "Iran",
+   "value": 5628,
+   "fame": 79,
+   "source": "https://www.wikidata.org/wiki/Q40758"
+  },
+  {
+   "id": "Q134108",
+   "name": "Merapi",
+   "detail": "Indonesia",
+   "value": 2910,
+   "fame": 79,
+   "source": "https://www.wikidata.org/wiki/Q134108"
+  },
+  {
+   "id": "Q104674",
+   "name": "Ben Nevis",
+   "detail": "United Kingdom",
+   "value": 1345,
+   "fame": 78,
+   "source": "https://www.wikidata.org/wiki/Q104674"
+  },
+  {
+   "id": "Q105124",
+   "name": "Shishapangma",
+   "detail": "China",
+   "value": 8027,
+   "fame": 78,
+   "source": "https://www.wikidata.org/wiki/Q105124"
+  },
+  {
+   "id": "Q107635",
+   "name": "Baekdu Mountain",
+   "detail": "China / North Korea",
+   "value": 2744,
+   "fame": 77,
+   "source": "https://www.wikidata.org/wiki/Q107635"
+  },
+  {
+   "id": "Q180996",
+   "name": "Broad Peak",
+   "detail": "China / Pakistan",
+   "value": 8051,
+   "fame": 77,
+   "source": "https://www.wikidata.org/wiki/Q180996"
+  },
+  {
+   "id": "Q1045888",
+   "name": "Puncak Jaya",
+   "detail": "Indonesia",
+   "value": 4884,
+   "fame": 77,
+   "source": "https://www.wikidata.org/wiki/Q1045888"
+  },
+  {
+   "id": "Q193163",
+   "name": "Temple Mount",
+   "detail": "Israel / Palestine",
+   "value": 743,
+   "fame": 76,
+   "source": "https://www.wikidata.org/wiki/Q193163"
+  },
+  {
+   "id": "Q120306",
+   "name": "Mount Logan",
+   "detail": "Canada",
+   "value": 5959,
+   "fame": 75,
+   "source": "https://www.wikidata.org/wiki/Q120306"
+  },
+  {
+   "id": "Q3375",
+   "name": "Zugspitze",
+   "detail": "Austria / Germany",
+   "value": 2962,
+   "fame": 75,
+   "source": "https://www.wikidata.org/wiki/Q3375"
+  },
+  {
+   "id": "Q168714",
+   "name": "Tambora",
+   "detail": "Indonesia",
+   "value": 2850,
+   "fame": 73,
+   "source": "https://www.wikidata.org/wiki/Q168714"
+  },
+  {
+   "id": "Q233836",
+   "name": "Ojos del Salado",
+   "detail": "Argentina / Chile",
+   "value": 6893,
+   "fame": 72,
+   "source": "https://www.wikidata.org/wiki/Q233836"
+  },
+  {
+   "id": "Q181157",
+   "name": "Popocatépetl",
+   "detail": "Mexico",
+   "value": 5454,
+   "fame": 72,
+   "source": "https://www.wikidata.org/wiki/Q181157"
+  },
+  {
+   "id": "Q213360",
+   "name": "Table Mountain",
+   "detail": "South Africa",
+   "value": 1085,
+   "fame": 72,
+   "source": "https://www.wikidata.org/wiki/Q213360"
+  },
+  {
+   "id": "Q187138",
+   "name": "Gasherbrum",
+   "detail": "China / Pakistan",
+   "value": 8080,
+   "fame": 71,
+   "source": "https://www.wikidata.org/wiki/Q187138"
+  },
+  {
+   "id": "Q216059",
+   "name": "Mount Tai",
+   "detail": "China",
+   "value": 1545,
+   "fame": 71,
+   "source": "https://www.wikidata.org/wiki/Q216059"
+  },
+  {
+   "id": "Q186853",
+   "name": "Gasherbrum II",
+   "detail": "China / Pakistan",
+   "value": 8034,
+   "fame": 70,
+   "source": "https://www.wikidata.org/wiki/Q186853"
+  },
+  {
+   "id": "Q1484",
+   "name": "Mayon Volcano",
+   "detail": "Philippines",
+   "value": 2462,
+   "fame": 70,
+   "source": "https://www.wikidata.org/wiki/Q1484"
+  },
+  {
+   "id": "Q60967",
+   "name": "Mount Kinabalu",
+   "detail": "Malaysia",
+   "value": 4095,
+   "fame": 70,
+   "source": "https://www.wikidata.org/wiki/Q60967"
+  },
+  {
+   "id": "Q1451",
+   "name": "Pinatubo",
+   "detail": "Philippines",
+   "value": 1486,
+   "fame": 70,
+   "source": "https://www.wikidata.org/wiki/Q1451"
+  },
+  {
+   "id": "Q5059",
+   "name": "Aoraki / Mount Cook",
+   "detail": "New Zealand",
+   "value": 3724,
+   "fame": 69,
+   "source": "https://www.wikidata.org/wiki/Q5059"
+  },
+  {
+   "id": "Q203568",
+   "name": "Mount Aragats",
+   "detail": "Armenia",
+   "value": 4090,
+   "fame": 69,
+   "source": "https://www.wikidata.org/wiki/Q203568"
+  },
+  {
+   "id": "Q188982",
+   "name": "Mount Erebus",
+   "value": 3794,
+   "fame": 69,
+   "source": "https://www.wikidata.org/wiki/Q188982"
+  },
+  {
+   "id": "Q194057",
+   "name": "Mount Rainier",
+   "detail": "United States",
+   "value": 4389,
+   "fame": 69,
+   "source": "https://www.wikidata.org/wiki/Q194057"
+  },
+  {
+   "id": "Q205976",
+   "name": "Mount of Olives",
+   "detail": "Israel",
+   "value": 826,
+   "fame": 67,
+   "source": "https://www.wikidata.org/wiki/Q205976"
+  },
+  {
+   "id": "Q105261",
+   "name": "Mount Parnassus",
+   "detail": "Greece",
+   "value": 2455,
+   "fame": 66,
+   "source": "https://www.wikidata.org/wiki/Q105261"
+  },
+  {
+   "id": "Q238147",
+   "name": "Citlaltepetl",
+   "detail": "Mexico",
+   "value": 5636,
+   "fame": 65,
+   "source": "https://www.wikidata.org/wiki/Q238147"
+  },
+  {
+   "id": "Q181476",
+   "name": "Cotopaxi volcano",
+   "detail": "Ecuador",
+   "value": 5897,
+   "fame": 65,
+   "source": "https://www.wikidata.org/wiki/Q181476"
+  },
+  {
+   "id": "Q215471",
+   "name": "Mount Hermon",
+   "detail": "Israeli-occupied territories",
+   "value": 2814,
+   "fame": 65,
+   "source": "https://www.wikidata.org/wiki/Q215471"
+  },
+  {
+   "id": "Q1024",
+   "name": "Triglav",
+   "detail": "Slovenia",
+   "value": 2864,
+   "fame": 65,
+   "source": "https://www.wikidata.org/wiki/Q1024"
+  },
+  {
+   "id": "Q219986",
+   "name": "Gangkhar Puensum",
+   "detail": "Bhutan",
+   "value": 7570,
+   "fame": 64,
+   "source": "https://www.wikidata.org/wiki/Q219986"
+  },
+  {
+   "id": "Q211529",
+   "name": "Khan Tengri",
+   "detail": "China, Kazakhstan and others",
+   "value": 7010,
+   "fame": 64,
+   "source": "https://www.wikidata.org/wiki/Q211529"
+  },
+  {
+   "id": "Q3388",
+   "name": "Grossglockner",
+   "detail": "Austria",
+   "value": 3798,
+   "fame": 63,
+   "source": "https://www.wikidata.org/wiki/Q3388"
+  },
+  {
+   "id": "Q194215",
+   "name": "Île Amsterdam",
+   "detail": "France",
+   "value": 867,
+   "fame": 63,
+   "source": "https://www.wikidata.org/wiki/Q194215"
+  },
+  {
+   "id": "Q207680",
+   "name": "Mount Kazbek",
+   "detail": "Russia",
+   "value": 5033,
+   "fame": 63,
+   "source": "https://www.wikidata.org/wiki/Q207680"
+  },
+  {
+   "id": "Q184975",
+   "name": "Hekla",
+   "detail": "Iceland",
+   "value": 1491,
+   "fame": 62,
+   "source": "https://www.wikidata.org/wiki/Q184975"
+  },
+  {
+   "id": "Q210252",
+   "name": "Klyuchevskaya Sopka",
+   "detail": "Russia",
+   "value": 4800,
+   "fame": 62,
+   "source": "https://www.wikidata.org/wiki/Q210252"
+  },
+  {
+   "id": "Q76309",
+   "name": "Mount Pelée",
+   "detail": "France",
+   "value": 1397,
+   "fame": 62,
+   "source": "https://www.wikidata.org/wiki/Q76309"
+  },
+  {
+   "id": "Q216894",
+   "name": "Mount Arafat",
+   "detail": "Saudi Arabia",
+   "value": 454,
+   "fame": 61,
+   "source": "https://www.wikidata.org/wiki/Q216894"
+  },
+  {
+   "id": "Q207917",
+   "name": "Mount Nemrut",
+   "detail": "Turkey",
+   "value": 2150,
+   "fame": 61,
+   "source": "https://www.wikidata.org/wiki/Q207917"
+  },
+  {
+   "id": "Q235539",
+   "name": "Mount Whitney",
+   "detail": "United States",
+   "value": 4421,
+   "fame": 61,
+   "source": "https://www.wikidata.org/wiki/Q235539"
+  },
+  {
+   "id": "Q190562",
+   "name": "Mount Cameroon",
+   "detail": "Cameroon",
+   "value": 4095,
+   "fame": 60,
+   "source": "https://www.wikidata.org/wiki/Q190562"
+  },
+  {
+   "id": "Q213262",
+   "name": "Nanda Devi",
+   "detail": "India",
+   "value": 7816,
+   "fame": 60,
+   "source": "https://www.wikidata.org/wiki/Q213262"
+  },
+  {
+   "id": "Q627508",
+   "name": "Hoverla",
+   "detail": "Ukraine",
+   "value": 2061,
+   "fame": 59,
+   "source": "https://www.wikidata.org/wiki/Q627508"
+  },
+  {
+   "id": "Q4777",
+   "name": "Mount Roraima",
+   "detail": "Brazil, Guyana and others",
+   "value": 2810,
+   "fame": 59,
+   "source": "https://www.wikidata.org/wiki/Q4777"
+  },
+  {
+   "id": "Q207132",
+   "name": "Terich Mir",
+   "detail": "Pakistan",
+   "value": 7708,
+   "fame": 59,
+   "source": "https://www.wikidata.org/wiki/Q207132"
+  },
+  {
+   "id": "Q207323",
+   "name": "Vulcano",
+   "detail": "Italy",
+   "value": 500,
+   "fame": 59,
+   "source": "https://www.wikidata.org/wiki/Q207323"
+  },
+  {
+   "id": "Q4425",
+   "name": "Eiger",
+   "detail": "Switzerland",
+   "value": 3967,
+   "fame": 58,
+   "source": "https://www.wikidata.org/wiki/Q4425"
+  },
+  {
+   "id": "Q158470",
+   "name": "Mount Agung",
+   "detail": "Indonesia",
+   "value": 3142,
+   "fame": 58,
+   "source": "https://www.wikidata.org/wiki/Q158470"
+  },
+  {
+   "id": "Q193785",
+   "name": "Mount Tabor",
+   "detail": "Israel",
+   "value": 530,
+   "fame": 58,
+   "source": "https://www.wikidata.org/wiki/Q193785"
+  },
+  {
+   "id": "Q270158",
+   "name": "Semeru",
+   "detail": "Indonesia",
+   "value": 3676,
+   "fame": 58,
+   "source": "https://www.wikidata.org/wiki/Q270158"
+  },
+  {
+   "id": "Q617511",
+   "name": "Sněžka",
+   "detail": "Czech Republic / Poland",
+   "value": 1603,
+   "fame": 58,
+   "source": "https://www.wikidata.org/wiki/Q617511"
+  },
+  {
+   "id": "Q214696",
+   "name": "Mount Nyiragongo",
+   "detail": "DR Congo / Nyiragongo Territory",
+   "value": 3470,
+   "fame": 57,
+   "source": "https://www.wikidata.org/wiki/Q214696"
+  },
+  {
+   "id": "Q271700",
+   "name": "Noshaq",
+   "detail": "Afghanistan / Pakistan",
+   "value": 7492,
+   "fame": 57,
+   "source": "https://www.wikidata.org/wiki/Q271700"
+  },
+  {
+   "id": "Q231620",
+   "name": "Parícutin",
+   "detail": "Mexico",
+   "value": 2800,
+   "fame": 57,
+   "source": "https://www.wikidata.org/wiki/Q231620"
+  },
+  {
+   "id": "Q672936",
+   "name": "Rysy",
+   "detail": "Poland / Slovakia",
+   "value": 2501,
+   "fame": 57,
+   "source": "https://www.wikidata.org/wiki/Q672936"
+  },
+  {
+   "id": "Q210722",
+   "name": "Sugarloaf Mountain",
+   "detail": "Brazil",
+   "value": 395,
+   "fame": 57,
+   "source": "https://www.wikidata.org/wiki/Q210722"
+  },
+  {
+   "id": "Q81213",
+   "name": "Gerlachovský štít",
+   "detail": "Slovakia",
+   "value": 2655,
+   "fame": 56,
+   "source": "https://www.wikidata.org/wiki/Q81213"
+  },
+  {
+   "id": "Q15312",
+   "name": "Jungfrau",
+   "detail": "Switzerland",
+   "value": 4158,
+   "fame": 56,
+   "source": "https://www.wikidata.org/wiki/Q15312"
+  },
+  {
+   "id": "Q214011",
+   "name": "Kebnekaise",
+   "detail": "Sweden",
+   "value": 2097,
+   "fame": 56,
+   "source": "https://www.wikidata.org/wiki/Q214011"
+  },
+  {
+   "id": "Q214916",
+   "name": "Llullaillaco",
+   "detail": "Argentina / Chile",
+   "value": 6723,
+   "fame": 56,
+   "source": "https://www.wikidata.org/wiki/Q214916"
+  },
+  {
+   "id": "Q455963",
+   "name": "Mount Apo",
+   "detail": "Philippines",
+   "value": 2954,
+   "fame": 56,
+   "source": "https://www.wikidata.org/wiki/Q455963"
+  },
+  {
+   "id": "Q204821",
+   "name": "Île Saint-Paul",
+   "detail": "France",
+   "value": 270,
+   "fame": 55,
+   "source": "https://www.wikidata.org/wiki/Q204821"
+  },
+  {
+   "id": "Q41413",
+   "name": "Ismoil Somoni Peak",
+   "detail": "Tajikistan",
+   "value": 7495,
+   "fame": 55,
+   "source": "https://www.wikidata.org/wiki/Q41413"
+  },
+  {
+   "id": "Q332762",
+   "name": "Jengish Chokusu",
+   "detail": "China / Kyrgyzstan",
+   "value": 7439,
+   "fame": 55,
+   "source": "https://www.wikidata.org/wiki/Q332762"
+  },
+  {
+   "id": "Q134927",
+   "name": "Mount Emei",
+   "detail": "China",
+   "value": 3099,
+   "fame": 55,
+   "source": "https://www.wikidata.org/wiki/Q134927"
+  },
+  {
+   "id": "Q209341",
+   "name": "Musala",
+   "detail": "Bulgaria",
+   "value": 2925,
+   "fame": 55,
+   "source": "https://www.wikidata.org/wiki/Q209341"
+  },
+  {
+   "id": "Q695221",
+   "name": "Aburaj",
+   "detail": "India",
+   "value": 1220,
+   "fame": 54,
+   "source": "https://www.wikidata.org/wiki/Q695221"
+  },
+  {
+   "id": "Q60789",
+   "name": "Adam's Peak",
+   "detail": "Sri Lanka",
+   "value": 2243,
+   "fame": 54,
+   "source": "https://www.wikidata.org/wiki/Q60789"
+  },
+  {
+   "id": "Q217457",
+   "name": "Shkhara",
+   "detail": "Georgia, Russia and others",
+   "value": 5193,
+   "fame": 54,
+   "source": "https://www.wikidata.org/wiki/Q217457"
+  },
+  {
+   "id": "Q503433",
+   "name": "Jbel Toubkal",
+   "detail": "Morocco",
+   "value": 4167,
+   "fame": 53,
+   "source": "https://www.wikidata.org/wiki/Q503433"
+  },
+  {
+   "id": "Q158526",
+   "name": "Monte Titano",
+   "detail": "San Marino",
+   "value": 756,
+   "fame": 53,
+   "source": "https://www.wikidata.org/wiki/Q158526"
+  },
+  {
+   "id": "Q233351",
+   "name": "Nevado del Ruiz",
+   "detail": "Colombia",
+   "value": 5389,
+   "fame": 53,
+   "source": "https://www.wikidata.org/wiki/Q233351"
+  },
+  {
+   "id": "Q208081",
+   "name": "Aneto",
+   "detail": "Spain",
+   "value": 3404,
+   "fame": 52,
+   "source": "https://www.wikidata.org/wiki/Q208081"
+  },
+  {
+   "id": "Q724367",
+   "name": "Belukha Mountain",
+   "detail": "Russia",
+   "value": 4506,
+   "fame": 52,
+   "source": "https://www.wikidata.org/wiki/Q724367"
+  },
+  {
+   "id": "Q203942",
+   "name": "Galdhøpiggen",
+   "detail": "Norway",
+   "value": 2469,
+   "fame": 52,
+   "source": "https://www.wikidata.org/wiki/Q203942"
+  },
+  {
+   "id": "Q242730",
+   "name": "Mount Asama",
+   "detail": "Japan",
+   "value": 2568,
+   "fame": 52,
+   "source": "https://www.wikidata.org/wiki/Q242730"
+  },
+  {
+   "id": "Q207284",
+   "name": "Mount Ruapehu",
+   "detail": "New Zealand",
+   "value": 2797,
+   "fame": 52,
+   "source": "https://www.wikidata.org/wiki/Q207284"
+  },
+  {
+   "id": "Q209528",
+   "name": "Mulhacén",
+   "detail": "Spain",
+   "value": 3479,
+   "fame": 52,
+   "source": "https://www.wikidata.org/wiki/Q209528"
+  },
+  {
+   "id": "Q818475",
+   "name": "Taal Volcano",
+   "detail": "Philippines",
+   "value": 311,
+   "fame": 52,
+   "source": "https://www.wikidata.org/wiki/Q818475"
+  },
+  {
+   "id": "Q500275",
+   "name": "Yushan Main Peak",
+   "detail": "Taiwan",
+   "value": 3952,
+   "fame": 52,
+   "source": "https://www.wikidata.org/wiki/Q500275"
+  },
+  {
+   "id": "Q306201",
+   "name": "Devils Tower",
+   "detail": "United States",
+   "value": 1558,
+   "fame": 51,
+   "source": "https://www.wikidata.org/wiki/Q306201"
+  },
+  {
+   "id": "Q207678",
+   "name": "Mount Sinabung",
+   "detail": "Indonesia",
+   "value": 2460,
+   "fame": 51,
+   "source": "https://www.wikidata.org/wiki/Q207678"
+  },
+  {
+   "id": "Q3403",
+   "name": "Dufourspitze",
+   "detail": "Switzerland",
+   "value": 4634,
+   "fame": 50,
+   "source": "https://www.wikidata.org/wiki/Q3403"
+  },
+  {
+   "id": "Q182913",
+   "name": "Grímsvötn",
+   "detail": "Iceland",
+   "value": 1725,
+   "fame": 50,
+   "source": "https://www.wikidata.org/wiki/Q182913"
+  },
+  {
+   "id": "Q209064",
+   "name": "Mont Ventoux",
+   "detail": "France",
+   "value": 1910,
+   "fame": 50,
+   "source": "https://www.wikidata.org/wiki/Q209064"
+  },
+  {
+   "id": "Q128841",
+   "name": "Sakurajima",
+   "detail": "Japan",
+   "value": 1117,
+   "fame": 50,
+   "source": "https://www.wikidata.org/wiki/Q128841"
+  },
+  {
+   "id": "Q217142",
+   "name": "Snowdon",
+   "detail": "United Kingdom",
+   "value": 1085,
+   "fame": 50,
+   "source": "https://www.wikidata.org/wiki/Q217142"
+  },
+  {
+   "id": "Q476313",
+   "name": "Dykh-Tau",
+   "detail": "Russia",
+   "value": 5204,
+   "fame": 49,
+   "source": "https://www.wikidata.org/wiki/Q476313"
+  },
+  {
+   "id": "Q200935",
+   "name": "Huascarán",
+   "detail": "Peru",
+   "value": 6768,
+   "fame": 49,
+   "source": "https://www.wikidata.org/wiki/Q200935"
+  },
+  {
+   "id": "Q126804",
+   "name": "Mount Erciyes",
+   "detail": "Turkey",
+   "value": 3916,
+   "fame": 49,
+   "source": "https://www.wikidata.org/wiki/Q126804"
+  },
+  {
+   "id": "Q206161",
+   "name": "Mount Herzl",
+   "detail": "Israel",
+   "value": 834,
+   "fame": 49,
+   "source": "https://www.wikidata.org/wiki/Q206161"
+  },
+  {
+   "id": "Q312818",
+   "name": "Mount Scopus",
+   "detail": "Israel / Palestine",
+   "value": 826,
+   "fame": 49,
+   "source": "https://www.wikidata.org/wiki/Q312818"
+  },
+  {
+   "id": "Q120314",
+   "name": "Mount Wutai",
+   "detail": "China",
+   "value": 3061,
+   "fame": 49,
+   "source": "https://www.wikidata.org/wiki/Q120314"
+  },
+  {
+   "id": "Q272593",
+   "name": "Nevado Sajama",
+   "detail": "Bolivia",
+   "value": 6542,
+   "fame": 49,
+   "source": "https://www.wikidata.org/wiki/Q272593"
+  },
+  {
+   "id": "Q859376",
+   "name": "Volcán de Fuego",
+   "detail": "Guatemala",
+   "value": 3765,
+   "fame": 49,
+   "source": "https://www.wikidata.org/wiki/Q859376"
+  },
+  {
+   "id": "Q201914",
+   "name": "Katla",
+   "detail": "Iceland",
+   "value": 1450,
+   "fame": 48,
+   "source": "https://www.wikidata.org/wiki/Q201914"
+  },
+  {
+   "id": "Q912579",
+   "name": "Korab",
+   "detail": "Albania / North Macedonia",
+   "value": 2764,
+   "fame": 48,
+   "source": "https://www.wikidata.org/wiki/Q912579"
+  },
+  {
+   "id": "Q746524",
+   "name": "Moldoveanu Peak",
+   "detail": "Romania",
+   "value": 2544,
+   "fame": 48,
+   "source": "https://www.wikidata.org/wiki/Q746524"
+  },
+  {
+   "id": "Q16525",
+   "name": "Mönch",
+   "detail": "Switzerland",
+   "value": 4110,
+   "fame": 48,
+   "source": "https://www.wikidata.org/wiki/Q16525"
+  },
+  {
+   "id": "Q622616",
+   "name": "Mount Lu",
+   "detail": "China",
+   "value": 1474,
+   "fame": 48,
+   "source": "https://www.wikidata.org/wiki/Q622616"
+  },
+  {
+   "id": "Q503368",
+   "name": "Carrauntoohil",
+   "detail": "Ireland",
+   "value": 1039,
+   "fame": 47,
+   "source": "https://www.wikidata.org/wiki/Q503368"
+  },
+  {
+   "id": "Q506938",
+   "name": "Corcovado",
+   "detail": "Brazil",
+   "value": 710,
+   "fame": 47,
+   "source": "https://www.wikidata.org/wiki/Q506938"
+  },
+  {
+   "id": "Q499019",
+   "name": "Jebel Barkal",
+   "detail": "Sudan",
+   "value": 287,
+   "fame": 47,
+   "source": "https://www.wikidata.org/wiki/Q499019"
+  },
+  {
+   "id": "Q4168",
+   "name": "Loreley",
+   "detail": "Germany",
+   "value": 109,
+   "fame": 47,
+   "source": "https://www.wikidata.org/wiki/Q4168"
+  },
+  {
+   "id": "Q16648",
+   "name": "Monte San Giorgio",
+   "detail": "Switzerland",
+   "value": 1097,
+   "fame": 47,
+   "source": "https://www.wikidata.org/wiki/Q16648"
+  },
+  {
+   "id": "Q827728",
+   "name": "Mount Kerinci",
+   "detail": "Indonesia",
+   "value": 3805,
+   "fame": 47,
+   "source": "https://www.wikidata.org/wiki/Q827728"
+  },
+  {
+   "id": "Q873358",
+   "name": "Mount Sanqing",
+   "detail": "China",
+   "value": 1817,
+   "fame": 47,
+   "source": "https://www.wikidata.org/wiki/Q873358"
+  },
+  {
+   "id": "Q1514176",
+   "name": "Mount Yamantau",
+   "detail": "Russia",
+   "value": 1640,
+   "fame": 47,
+   "source": "https://www.wikidata.org/wiki/Q1514176"
+  },
+  {
+   "id": "Q746787",
+   "name": "Ol Doinyo Lengai",
+   "detail": "Tanzania",
+   "value": 2960,
+   "fame": 47,
+   "source": "https://www.wikidata.org/wiki/Q746787"
+  },
+  {
+   "id": "Q275435",
+   "name": "Ras Dashen",
+   "detail": "Ethiopia",
+   "value": 4533,
+   "fame": 47,
+   "source": "https://www.wikidata.org/wiki/Q275435"
+  },
+  {
+   "id": "Q1315012",
+   "name": "Snæfellsjökull",
+   "detail": "Iceland",
+   "value": 1446,
+   "fame": 47,
+   "source": "https://www.wikidata.org/wiki/Q1315012"
+  },
+  {
+   "id": "Q207421",
+   "name": "Tungurahua volcano",
+   "detail": "Ecuador",
+   "value": 5016,
+   "fame": 47,
+   "source": "https://www.wikidata.org/wiki/Q207421"
+  },
+  {
+   "id": "Q791652",
+   "name": "Avachinsky",
+   "detail": "Russia",
+   "value": 2741,
+   "fame": 46,
+   "source": "https://www.wikidata.org/wiki/Q791652"
+  },
+  {
+   "id": "Q664059",
+   "name": "Iztaccihuatl",
+   "detail": "Mexico",
+   "value": 5230,
+   "fame": 46,
+   "source": "https://www.wikidata.org/wiki/Q664059"
+  },
+  {
+   "id": "Q838587",
+   "name": "Lenin Peak",
+   "detail": "Kyrgyzstan, Soviet Union and others",
+   "value": 7134,
+   "fame": 46,
+   "source": "https://www.wikidata.org/wiki/Q838587"
+  },
+  {
+   "id": "Q732115",
+   "name": "Montserrat",
+   "detail": "Spain",
+   "value": 1236,
+   "fame": 46,
+   "source": "https://www.wikidata.org/wiki/Q732115"
+  },
+  {
+   "id": "Q679590",
+   "name": "Mount Bromo",
+   "detail": "Indonesia",
+   "value": 2329,
+   "fame": 46,
+   "source": "https://www.wikidata.org/wiki/Q679590"
+  },
+  {
+   "id": "Q213704",
+   "name": "Pico Bolívar",
+   "detail": "Venezuela",
+   "value": 4978,
+   "fame": 46,
+   "source": "https://www.wikidata.org/wiki/Q213704"
+  },
+  {
+   "id": "Q847323",
+   "name": "Rinjani",
+   "detail": "Indonesia",
+   "value": 3726,
+   "fame": 46,
+   "source": "https://www.wikidata.org/wiki/Q847323"
+  },
+  {
+   "id": "Q814113",
+   "name": "Beerenberg",
+   "detail": "Norway",
+   "value": 2277,
+   "fame": 45,
+   "source": "https://www.wikidata.org/wiki/Q814113"
+  },
+  {
+   "id": "Q1010335",
+   "name": "Burkhan Khaldun",
+   "detail": "Mongolia",
+   "value": 2450,
+   "fame": 45,
+   "source": "https://www.wikidata.org/wiki/Q1010335"
+  },
+  {
+   "id": "Q825347",
+   "name": "Colima",
+   "detail": "Mexico",
+   "value": 3850,
+   "fame": 45,
+   "source": "https://www.wikidata.org/wiki/Q825347"
+  },
+  {
+   "id": "Q123782",
+   "name": "Fansipan",
+   "detail": "Vietnam",
+   "value": 3147,
+   "fame": 45,
+   "source": "https://www.wikidata.org/wiki/Q123782"
+  },
+  {
+   "id": "Q235062",
+   "name": "Galeras",
+   "detail": "Colombia",
+   "value": 4276,
+   "fame": 45,
+   "source": "https://www.wikidata.org/wiki/Q235062"
+  },
+  {
+   "id": "Q15265",
+   "name": "Mount Pilatus",
+   "detail": "Switzerland",
+   "value": 2128,
+   "fame": 45,
+   "source": "https://www.wikidata.org/wiki/Q15265"
+  },
+  {
+   "id": "Q499108",
+   "name": "Pico do Fogo",
+   "detail": "Cape Verde",
+   "value": 2829,
+   "fame": 45,
+   "source": "https://www.wikidata.org/wiki/Q499108"
+  },
+  {
+   "id": "Q750190",
+   "name": "Sulaiman-Too",
+   "detail": "Kyrgyzstan",
+   "value": 1110,
+   "fame": 45,
+   "source": "https://www.wikidata.org/wiki/Q750190"
+  }
+ ]
+}
