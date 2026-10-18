@@ -277,8 +277,8 @@ On a new branch off `feat/accounts`.
 
 Updated 2026-10-16. Built, typecheck + lint clean, and tested in the
 browser as a guest (play, reload mid-game, results, phone width, server
-rejects replays/bad orders/future dates). **Not yet tested: sign-in
-carrying a guest streak over** (needs Mark, since dev email is live).
+rejects replays/bad orders/future dates). Mark tested signing in from
+the results screen on 2026-10-17: the guest streak carried over.
 
 ### Changes from the plan while building
 
@@ -342,10 +342,9 @@ Preview upcoming puzzles (WSL):
 
 ### Next
 
-1. Mark tests signing in from the results screen: the guest play and
-   streak should move to the account.
-2. Food theme once Mark has an api.data.gov key (USDA FoodData Central).
-3. Review the item lists once more by hand (companies, islands,
+1. Food theme once Mark has an api.data.gov key (USDA FoodData Central),
+   read from `USDA_API_KEY` in `.env.local`.
+2. Review the item lists once more by hand (companies, islands,
    stadiums, buildings are the noisiest).
-4. Before launch: set `DAILY_FIRST_DATE`, add `DAILY_SEED_SECRET` to
+3. Before launch: set `DAILY_FIRST_DATE`, add `DAILY_SEED_SECRET` to
    `docker/.env` on the server, how-to-play guide page.
