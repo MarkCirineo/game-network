@@ -74,8 +74,8 @@ export default function DailyPage() {
           <h2 className="pt-4 font-heading text-lg font-semibold text-foreground">Where the numbers come from</h2>
           <p>
             Countries and capitals: GeoNames (geonames.org), CC BY 4.0. Inventions and companies: Wikidata. Planets
-            and moons: NASA. Animals, landmarks, famous structures, and famous people: Wikipedia. Every answer links
-            to its source.
+            and moons: NASA. Food: USDA FoodData Central. Animals, landmarks, famous structures, and famous people:
+            Wikipedia. Every answer links to its source.
           </p>
         </section>
       </div>

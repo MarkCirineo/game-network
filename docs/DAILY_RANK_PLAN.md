@@ -300,7 +300,7 @@ the results screen on 2026-10-17: the guest streak carried over.
 - Puzzle #1 date: `DAILY_FIRST_DATE` in `src/lib/daily/config.ts`, set to
   2026-10-01 for dev. **Change it to launch day before launch.**
 
-### Categories (17 in the daily, 7 held back for packs)
+### Categories (20 in the daily, 7 held back for packs)
 
 Rule (Mark, 2026-10-16): the daily only uses things nearly everyone has
 heard of. Niche categories keep their data with a `pack` tag for a
@@ -317,6 +317,11 @@ future pick-your-pack mode.
   with exclusions), famous people by birth year (hand list).
 - Space (NASA): diameter, distance from the Sun, day length, gravity,
   temperature.
+- Food (USDA FoodData Central, SR Legacy, public domain): calories,
+  protein, and sugar per 100 g for 44 everyday foods. Script:
+  `node --env-file=.env.local scripts/daily/fetch-usda.mjs` (needs
+  `USDA_API_KEY` in `.env.local`; stops if a food's exact USDA entry
+  isn't found).
 - Held back: `geography` pack (mountains, rivers, lakes, islands, city
   elevation), `sports` (stadiums), `architecture` (Wikidata buildings).
 
@@ -342,9 +347,7 @@ Preview upcoming puzzles (WSL):
 
 ### Next
 
-1. Food theme once Mark has an api.data.gov key (USDA FoodData Central),
-   read from `USDA_API_KEY` in `.env.local`.
-2. Review the item lists once more by hand (companies, islands,
+1. Review the item lists once more by hand (companies, islands,
    stadiums, buildings are the noisiest).
-3. Before launch: set `DAILY_FIRST_DATE`, add `DAILY_SEED_SECRET` to
+2. Before launch: set `DAILY_FIRST_DATE`, add `DAILY_SEED_SECRET` to
    `docker/.env` on the server, how-to-play guide page.

@@ -18,6 +18,9 @@ import companies from "./items/companies.json";
 import countryArea from "./items/country-area.json";
 import countryDensity from "./items/country-density.json";
 import countryPopulation from "./items/country-population.json";
+import foodCalories from "./items/food-calories.json";
+import foodProtein from "./items/food-protein.json";
+import foodSugar from "./items/food-sugar.json";
 import inventions from "./items/inventions.json";
 import islands from "./items/islands.json";
 import lakes from "./items/lakes.json";
@@ -321,6 +324,41 @@ export const CATEGORIES: DailyCategory[] = [
     gap: { ratio: 1.3 },
     pool: 40,
     format: days,
+  }),
+
+  // Food (USDA FoodData Central). Always per 100 g, so the prompt says so
+  category(foodCalories, {
+    id: "food-calories",
+    theme: "food",
+    title: "Calories in 100 g",
+    top: "Most calories",
+    bottom: "Fewest calories",
+    order: "desc",
+    gap: { ratio: 1.3, diff: 15 },
+    pool: 50,
+    format: withUnit("kcal per 100 g"),
+  }),
+  category(foodProtein, {
+    id: "food-protein",
+    theme: "food",
+    title: "Protein in 100 g",
+    top: "Most protein",
+    bottom: "Least protein",
+    order: "desc",
+    gap: { ratio: 1.5, diff: 2 },
+    pool: 50,
+    format: withUnit("g per 100 g", oneDecimal),
+  }),
+  category(foodSugar, {
+    id: "food-sugar",
+    theme: "food",
+    title: "Sugar in 100 g",
+    top: "Most sugar",
+    bottom: "Least sugar",
+    order: "desc",
+    gap: { ratio: 1.5, diff: 2 },
+    pool: 50,
+    format: withUnit("g per 100 g", oneDecimal),
   }),
 
   // History (Wikidata)
