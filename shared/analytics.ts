@@ -62,6 +62,18 @@ export interface ClientEvents {
   'sign-out': Record<string, never>;
   /** Asked for the delete-account email */
   'account-delete-request': Record<string, never>;
+
+  // ---- Daily Rank (single-player daily puzzle) ----
+  /** Opened today's daily puzzle with rounds still to play */
+  'daily-start': { puzzle: number; signed_in: boolean };
+  /** Locked in a round; score is 0–10 */
+  'daily-round': { puzzle: number; round: number; theme: string; category: string; score: number };
+  /** Finished all three rounds; score is 0–30 */
+  'daily-complete': { puzzle: number; score: number; streak: number; signed_in: boolean };
+  /** Shared or copied the result */
+  'daily-share': { puzzle: number; method: 'share-sheet' | 'copy' };
+  /** The "save your streak" sign-in prompt on the results screen */
+  'daily-signin-prompt': { action: 'shown' | 'sign-in' | 'not-now'; streak: number };
 }
 
 /**
