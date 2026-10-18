@@ -11,6 +11,7 @@ export const dailyRankGuide: GameGuide = {
   gameId: "daily-rank",
   gameName: DAILY_GAME_NAME,
   playHref: DAILY_PATH,
+  ctaText: "Today's puzzle takes about three minutes. No download, and no account needed.",
   emoji: "📅",
   accentColor: "#F97316",
 

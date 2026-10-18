@@ -55,6 +55,11 @@ export interface GameGuide {
    * catalog (e.g. the daily puzzle at /daily).
    */
   playHref?: string;
+  /**
+   * Line under "Ready to play …?" at the end of the guide. Defaults
+   * to the create-a-room pitch used by the multiplayer games.
+   */
+  ctaText?: string;
   emoji: string;
   accentColor: string;
 

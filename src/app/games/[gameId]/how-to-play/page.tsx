@@ -382,8 +382,8 @@ export default async function HowToPlayPage({ params }: Props) {
                 Ready to play {guide.gameName}?
               </h2>
               <p className="mx-auto mt-2 max-w-md text-sm text-text-secondary">
-                No downloads, no accounts. Create a room, share the link with a
-                friend, and start playing in seconds.
+                {guide.ctaText ??
+                  "No downloads, no accounts. Create a room, share the link with a friend, and start playing in seconds."}
               </p>
               <div className="mt-5 flex justify-center">
                 <Link
