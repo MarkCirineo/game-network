@@ -49,6 +49,12 @@ export interface RelatedTool {
 export interface GameGuide {
   gameId: string;
   gameName: string;
+  /**
+   * Where "Play" and the breadcrumb link to. Defaults to the game's
+   * page, /games/<gameId>; set it for games outside the multiplayer
+   * catalog (e.g. the daily puzzle at /daily).
+   */
+  playHref?: string;
   emoji: string;
   accentColor: string;
 

@@ -12,6 +12,7 @@ import { wordScrambleGuide } from "./word-scramble";
 import { reactionRaceGuide } from "./reaction-race";
 import { hangmanGuide } from "./hangman";
 import { ruleOutGuide } from "./rule-out";
+import { dailyRankGuide } from "./daily-rank";
 
 export type { GameGuide, HowToStep, StrategyTip, Variation, FaqItem, GearItem, RelatedTool } from "./types";
 
@@ -24,6 +25,7 @@ const guides: Record<string, GameGuide> = {
   [reactionRaceGuide.gameId]: reactionRaceGuide,
   [hangmanGuide.gameId]: hangmanGuide,
   [ruleOutGuide.gameId]: ruleOutGuide,
+  [dailyRankGuide.gameId]: dailyRankGuide,
 };
 
 /** Look up a guide by game ID. Returns undefined if none exists. */

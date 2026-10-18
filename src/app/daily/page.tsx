@@ -6,6 +6,7 @@
 // ============================================================
 
 import type { Metadata } from "next";
+import Link from "next/link";
 import { DAILY_CATEGORIES } from "@/lib/daily/categories";
 import { DAILY_GAME_NAME, DAILY_PATH, DAILY_TAGLINE, MAX_DAY_SCORE, THEMES } from "@/lib/daily/config";
 import { DailyGame } from "./DailyGame";
@@ -70,6 +71,11 @@ export default function DailyPage() {
           <p>
             Rounds come from different themes each day:{" "}
             {THEME_LIST.map((theme) => `${theme.emoji} ${theme.name}`).join(", ")}.
+          </p>
+          <p>
+            <Link href="/games/daily-rank/how-to-play" className="font-medium text-ember hover:underline">
+              Read the full guide, with tips →
+            </Link>
           </p>
           <h2 className="pt-4 font-heading text-lg font-semibold text-foreground">Where the numbers come from</h2>
           <p>
