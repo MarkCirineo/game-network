@@ -1,0 +1,119 @@
+{
+ "source": "Wikipedia",
+ "items": [
+  {
+   "id": "elephant",
+   "name": "African elephant",
+   "emoji": "🐘",
+   "value": 40,
+   "fame": 100,
+   "source": "https://en.wikipedia.org/wiki/African_bush_elephant"
+  },
+  {
+   "id": "cat",
+   "name": "House cat",
+   "emoji": "🐈",
+   "value": 48,
+   "fame": 100,
+   "source": "https://en.wikipedia.org/wiki/Cat"
+  },
+  {
+   "id": "lion",
+   "name": "Lion",
+   "emoji": "🦁",
+   "value": 80,
+   "fame": 100,
+   "source": "https://en.wikipedia.org/wiki/Lion"
+  },
+  {
+   "id": "horse",
+   "name": "Horse",
+   "emoji": "🐎",
+   "value": 70,
+   "fame": 95,
+   "source": "https://en.wikipedia.org/wiki/Horse"
+  },
+  {
+   "id": "cheetah",
+   "name": "Cheetah",
+   "emoji": "🐆",
+   "value": 100,
+   "fame": 90,
+   "source": "https://en.wikipedia.org/wiki/Cheetah"
+  },
+  {
+   "id": "chicken",
+   "name": "Chicken",
+   "emoji": "🐔",
+   "value": 14,
+   "fame": 90,
+   "source": "https://en.wikipedia.org/wiki/Chicken"
+  },
+  {
+   "id": "giraffe",
+   "name": "Giraffe",
+   "emoji": "🦒",
+   "value": 60,
+   "fame": 90,
+   "source": "https://en.wikipedia.org/wiki/Giraffe"
+  },
+  {
+   "id": "bolt",
+   "name": "Usain Bolt",
+   "emoji": "🏃",
+   "detail": "Fastest human ever timed",
+   "value": 45,
+   "fame": 90,
+   "source": "https://en.wikipedia.org/wiki/Usain_Bolt"
+  },
+  {
+   "id": "hippo",
+   "name": "Hippopotamus",
+   "emoji": "🦛",
+   "value": 30,
+   "fame": 85,
+   "source": "https://en.wikipedia.org/wiki/Hippopotamus"
+  },
+  {
+   "id": "grizzly",
+   "name": "Grizzly bear",
+   "emoji": "🐻",
+   "value": 56,
+   "fame": 80,
+   "source": "https://en.wikipedia.org/wiki/Grizzly_bear"
+  },
+  {
+   "id": "sloth",
+   "name": "Three-toed sloth",
+   "emoji": "🦥",
+   "value": 0.27,
+   "fame": 80,
+   "source": "https://en.wikipedia.org/wiki/Three-toed_sloth"
+  },
+  {
+   "id": "snail",
+   "name": "Garden snail",
+   "emoji": "🐌",
+   "value": 0.05,
+   "fame": 70,
+   "source": "https://en.wikipedia.org/wiki/Cornu_aspersum"
+  },
+  {
+   "id": "falcon",
+   "name": "Peregrine falcon",
+   "emoji": "🦅",
+   "detail": "In a dive",
+   "value": 320,
+   "fame": 70,
+   "source": "https://en.wikipedia.org/wiki/Peregrine_falcon"
+  },
+  {
+   "id": "pronghorn",
+   "name": "Pronghorn",
+   "emoji": "🦌",
+   "value": 88,
+   "fame": 55,
+   "source": "https://en.wikipedia.org/wiki/Pronghorn"
+  }
+ ]
+}

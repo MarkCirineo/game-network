@@ -69,6 +69,7 @@ export default async function HowToPlayPage({ params }: Props) {
 
   const showGear = Boolean(AMAZON_TAG) && guide.gear.items.length > 0;
   const guideUrl = `${SITE_URL}/games/${guide.gameId}/how-to-play`;
+  const playHref = guide.playHref ?? `/games/${guide.gameId}`;
 
   const tocItems: TocItem[] = [
     { id: "history", title: "History & Origins" },
@@ -91,7 +92,7 @@ export default async function HowToPlayPage({ params }: Props) {
           "@type": "ListItem",
           position: 3,
           name: guide.gameName,
-          item: `${SITE_URL}/games/${guide.gameId}`,
+          item: `${SITE_URL}${playHref}`,
         },
         { "@type": "ListItem", position: 4, name: "How to Play", item: guideUrl },
       ],
@@ -137,7 +138,7 @@ export default async function HowToPlayPage({ params }: Props) {
           items={[
             { label: "Home", href: "/" },
             { label: "Games", href: "/games" },
-            { label: guide.gameName, href: `/games/${guide.gameId}` },
+            { label: guide.gameName, href: playHref },
             { label: "How to Play" },
           ]}
         />
@@ -163,7 +164,7 @@ export default async function HowToPlayPage({ params }: Props) {
 
           <div className="mt-5 flex flex-wrap items-center gap-4">
             <Link
-              href={`/games/${guide.gameId}`}
+              href={playHref}
               data-umami-event="guide-play"
               data-umami-event-game={guide.gameId}
               data-umami-event-placement="top"
@@ -381,12 +382,12 @@ export default async function HowToPlayPage({ params }: Props) {
                 Ready to play {guide.gameName}?
               </h2>
               <p className="mx-auto mt-2 max-w-md text-sm text-text-secondary">
-                No downloads, no accounts. Create a room, share the link with a
-                friend, and start playing in seconds.
+                {guide.ctaText ??
+                  "No downloads, no accounts. Create a room, share the link with a friend, and start playing in seconds."}
               </p>
               <div className="mt-5 flex justify-center">
                 <Link
-                  href={`/games/${guide.gameId}`}
+                  href={playHref}
                   data-umami-event="guide-play"
                   data-umami-event-game={guide.gameId}
                   data-umami-event-placement="bottom"

@@ -1,0 +1,325 @@
+{
+ "source": "Wikipedia",
+ "items": [
+  {
+   "id": "colosseum",
+   "name": "Colosseum",
+   "detail": "Italy",
+   "value": 80,
+   "fame": 100,
+   "source": "https://en.wikipedia.org/wiki/Colosseum"
+  },
+  {
+   "id": "eiffel-tower",
+   "name": "Eiffel Tower",
+   "detail": "France",
+   "value": 1889,
+   "fame": 100,
+   "source": "https://en.wikipedia.org/wiki/Eiffel_Tower"
+  },
+  {
+   "id": "great-pyramid-of-giza",
+   "name": "Great Pyramid of Giza",
+   "detail": "Egypt",
+   "value": -2560,
+   "fame": 100,
+   "source": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza"
+  },
+  {
+   "id": "statue-of-liberty",
+   "name": "Statue of Liberty",
+   "detail": "United States",
+   "value": 1886,
+   "fame": 100,
+   "source": "https://en.wikipedia.org/wiki/Statue_of_Liberty"
+  },
+  {
+   "id": "taj-mahal",
+   "name": "Taj Mahal",
+   "detail": "India",
+   "value": 1653,
+   "fame": 100,
+   "source": "https://en.wikipedia.org/wiki/Taj_Mahal"
+  },
+  {
+   "id": "big-ben",
+   "name": "Big Ben",
+   "detail": "United Kingdom",
+   "value": 1859,
+   "fame": 95,
+   "source": "https://en.wikipedia.org/wiki/Big_Ben"
+  },
+  {
+   "id": "burj-khalifa",
+   "name": "Burj Khalifa",
+   "detail": "United Arab Emirates",
+   "value": 2010,
+   "fame": 95,
+   "source": "https://en.wikipedia.org/wiki/Burj_Khalifa"
+  },
+  {
+   "id": "empire-state-building",
+   "name": "Empire State Building",
+   "detail": "United States",
+   "value": 1931,
+   "fame": 95,
+   "source": "https://en.wikipedia.org/wiki/Empire_State_Building"
+  },
+  {
+   "id": "golden-gate-bridge",
+   "name": "Golden Gate Bridge",
+   "detail": "United States",
+   "value": 1937,
+   "fame": 95,
+   "source": "https://en.wikipedia.org/wiki/Golden_Gate_Bridge"
+  },
+  {
+   "id": "sydney-opera-house",
+   "name": "Sydney Opera House",
+   "detail": "Australia",
+   "value": 1973,
+   "fame": 95,
+   "source": "https://en.wikipedia.org/wiki/Sydney_Opera_House"
+  },
+  {
+   "id": "christ-the-redeemer-statue-",
+   "name": "Christ the Redeemer",
+   "detail": "Brazil",
+   "value": 1931,
+   "fame": 90,
+   "source": "https://en.wikipedia.org/wiki/Christ_the_Redeemer_(statue)"
+  },
+  {
+   "id": "leaning-tower-of-pisa",
+   "name": "Leaning Tower of Pisa",
+   "detail": "Italy",
+   "value": 1372,
+   "fame": 90,
+   "source": "https://en.wikipedia.org/wiki/Leaning_Tower_of_Pisa"
+  },
+  {
+   "id": "machu-picchu",
+   "name": "Machu Picchu",
+   "detail": "Peru",
+   "value": 1450,
+   "fame": 90,
+   "source": "https://en.wikipedia.org/wiki/Machu_Picchu"
+  },
+  {
+   "id": "notre-dame-de-paris",
+   "name": "Notre-Dame de Paris",
+   "detail": "France",
+   "value": 1345,
+   "fame": 90,
+   "source": "https://en.wikipedia.org/wiki/Notre-Dame_de_Paris"
+  },
+  {
+   "id": "white-house",
+   "name": "White House",
+   "detail": "United States",
+   "value": 1800,
+   "fame": 90,
+   "source": "https://en.wikipedia.org/wiki/White_House"
+  },
+  {
+   "id": "buckingham-palace",
+   "name": "Buckingham Palace",
+   "detail": "United Kingdom",
+   "value": 1703,
+   "fame": 85,
+   "source": "https://en.wikipedia.org/wiki/Buckingham_Palace"
+  },
+  {
+   "id": "mount-rushmore",
+   "name": "Mount Rushmore",
+   "detail": "United States",
+   "value": 1941,
+   "fame": 85,
+   "source": "https://en.wikipedia.org/wiki/Mount_Rushmore"
+  },
+  {
+   "id": "parthenon",
+   "name": "Parthenon",
+   "detail": "Greece",
+   "value": -432,
+   "fame": 85,
+   "source": "https://en.wikipedia.org/wiki/Parthenon"
+  },
+  {
+   "id": "arc-de-triomphe",
+   "name": "Arc de Triomphe",
+   "detail": "France",
+   "value": 1836,
+   "fame": 80,
+   "source": "https://en.wikipedia.org/wiki/Arc_de_Triomphe"
+  },
+  {
+   "id": "forbidden-city",
+   "name": "Forbidden City",
+   "detail": "China",
+   "value": 1420,
+   "fame": 80,
+   "source": "https://en.wikipedia.org/wiki/Forbidden_City"
+  },
+  {
+   "id": "hagia-sophia",
+   "name": "Hagia Sophia",
+   "detail": "Turkey",
+   "value": 537,
+   "fame": 80,
+   "source": "https://en.wikipedia.org/wiki/Hagia_Sophia"
+  },
+  {
+   "id": "london-eye",
+   "name": "London Eye",
+   "detail": "United Kingdom",
+   "value": 2000,
+   "fame": 80,
+   "source": "https://en.wikipedia.org/wiki/London_Eye"
+  },
+  {
+   "id": "st-peter-s-basilica",
+   "name": "St. Peter's Basilica",
+   "detail": "Vatican City",
+   "value": 1626,
+   "fame": 80,
+   "source": "https://en.wikipedia.org/wiki/St._Peter's_Basilica"
+  },
+  {
+   "id": "tower-bridge",
+   "name": "Tower Bridge",
+   "detail": "United Kingdom",
+   "value": 1894,
+   "fame": 80,
+   "source": "https://en.wikipedia.org/wiki/Tower_Bridge"
+  },
+  {
+   "id": "angkor-wat",
+   "name": "Angkor Wat",
+   "detail": "Cambodia",
+   "value": 1150,
+   "fame": 75,
+   "source": "https://en.wikipedia.org/wiki/Angkor_Wat"
+  },
+  {
+   "id": "brandenburg-gate",
+   "name": "Brandenburg Gate",
+   "detail": "Germany",
+   "value": 1791,
+   "fame": 75,
+   "source": "https://en.wikipedia.org/wiki/Brandenburg_Gate"
+  },
+  {
+   "id": "cn-tower",
+   "name": "CN Tower",
+   "detail": "Canada",
+   "value": 1976,
+   "fame": 75,
+   "source": "https://en.wikipedia.org/wiki/CN_Tower"
+  },
+  {
+   "id": "hoover-dam",
+   "name": "Hoover Dam",
+   "detail": "United States",
+   "value": 1936,
+   "fame": 75,
+   "source": "https://en.wikipedia.org/wiki/Hoover_Dam"
+  },
+  {
+   "id": "louvre-pyramid",
+   "name": "Louvre Pyramid",
+   "detail": "France",
+   "value": 1989,
+   "fame": 75,
+   "source": "https://en.wikipedia.org/wiki/Louvre_Pyramid"
+  },
+  {
+   "id": "panama-canal",
+   "name": "Panama Canal",
+   "detail": "Panama",
+   "value": 1914,
+   "fame": 75,
+   "source": "https://en.wikipedia.org/wiki/Panama_Canal"
+  },
+  {
+   "id": "pantheon-rome",
+   "name": "Pantheon",
+   "detail": "Italy",
+   "value": 125,
+   "fame": 75,
+   "source": "https://en.wikipedia.org/wiki/Pantheon%2C_Rome"
+  },
+  {
+   "id": "saint-basil-s-cathedral",
+   "name": "Saint Basil's Cathedral",
+   "detail": "Russia",
+   "value": 1561,
+   "fame": 75,
+   "source": "https://en.wikipedia.org/wiki/Saint_Basil's_Cathedral"
+  },
+  {
+   "id": "suez-canal",
+   "name": "Suez Canal",
+   "detail": "Egypt",
+   "value": 1869,
+   "fame": 75,
+   "source": "https://en.wikipedia.org/wiki/Suez_Canal"
+  },
+  {
+   "id": "washington-monument",
+   "name": "Washington Monument",
+   "detail": "United States",
+   "value": 1884,
+   "fame": 75,
+   "source": "https://en.wikipedia.org/wiki/Washington_Monument"
+  },
+  {
+   "id": "lincoln-memorial",
+   "name": "Lincoln Memorial",
+   "detail": "United States",
+   "value": 1922,
+   "fame": 70,
+   "source": "https://en.wikipedia.org/wiki/Lincoln_Memorial"
+  },
+  {
+   "id": "space-needle",
+   "name": "Space Needle",
+   "detail": "United States",
+   "value": 1962,
+   "fame": 70,
+   "source": "https://en.wikipedia.org/wiki/Space_Needle"
+  },
+  {
+   "id": "gateway-arch",
+   "name": "Gateway Arch",
+   "detail": "United States",
+   "value": 1965,
+   "fame": 65,
+   "source": "https://en.wikipedia.org/wiki/Gateway_Arch"
+  },
+  {
+   "id": "taipei-101",
+   "name": "Taipei 101",
+   "detail": "Taiwan",
+   "value": 2004,
+   "fame": 65,
+   "source": "https://en.wikipedia.org/wiki/Taipei_101"
+  },
+  {
+   "id": "the-shard",
+   "name": "The Shard",
+   "detail": "United Kingdom",
+   "value": 2012,
+   "fame": 65,
+   "source": "https://en.wikipedia.org/wiki/The_Shard"
+  },
+  {
+   "id": "atomium",
+   "name": "Atomium",
+   "detail": "Belgium",
+   "value": 1958,
+   "fame": 60,
+   "source": "https://en.wikipedia.org/wiki/Atomium"
+  }
+ ]
+}

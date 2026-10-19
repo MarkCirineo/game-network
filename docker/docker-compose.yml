@@ -19,6 +19,8 @@ services:
       - RESEND_API_KEY=${RESEND_API_KEY:-}
       - EMAIL_FROM=${EMAIL_FROM:-ArcadeKit <no-reply@arcadekit.games>}
       - DISCORD_ALERTS_WEBHOOK_URL=${DISCORD_ALERTS_WEBHOOK_URL:-}
+      # Daily Rank puzzle generator key
+      - DAILY_SEED_SECRET=${DAILY_SEED_SECRET:?set DAILY_SEED_SECRET in docker/.env}
     depends_on:
       postgres:
         condition: service_healthy

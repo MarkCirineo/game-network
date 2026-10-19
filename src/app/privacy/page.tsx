@@ -70,7 +70,7 @@ export default function PrivacyPage() {
             Privacy Policy
           </h1>
           <p className="mt-2 text-text-muted text-sm">
-            Last updated: October 13, 2026
+            Last updated: October 16, 2026
           </p>
         </div>
 
@@ -152,6 +152,15 @@ export default function PrivacyPage() {
                 room closes.
               </li>
               <li>
+                <strong className="text-text-primary">Daily puzzle plays</strong>{" "}
+                — When you play the daily puzzle, we store your answers and
+                score for that day with a random ID, so a reload picks up where
+                you left off and so we can show how your score compares with
+                everyone else&apos;s. Without an account this isn&apos;t linked
+                to you. Your streak and past scores are kept in your own
+                browser&apos;s storage, not on our servers.
+              </li>
+              <li>
                 <strong className="text-text-primary">Feedback you choose to send</strong>{" "}
                 — If you use the Feedback form, we receive your message, the
                 type you picked (bug, idea, or other), the page you sent it
@@ -203,6 +212,13 @@ export default function PrivacyPage() {
                 <strong className="text-text-primary">When you confirmed you&apos;re 13 or older</strong>,
                 and when your account was created and last changed.
               </li>
+              <li>
+                <strong className="text-text-primary">Your daily puzzle results</strong>{" "}
+                — your answers and score for each day you play, so your streak
+                and stats follow you to any device. When you sign in, daily
+                puzzles you played in that browser as a guest are added to your
+                account.
+              </li>
             </ul>
             <p>
               We don&apos;t sell this information or use it for advertising.
@@ -222,6 +238,11 @@ export default function PrivacyPage() {
               the &quot;13 or older&quot; box sets a short cookie (one hour)
               that records it. These are needed for accounts to work, and
               they&apos;re not used for tracking.
+            </p>
+            <p>
+              Playing the daily puzzle sets a cookie (two days) holding a
+              random ID for today&apos;s play, so reloading the page doesn&apos;t
+              start the puzzle over. It&apos;s not used for tracking.
             </p>
             <p>
               Third-party services on our platform may use cookies to serve

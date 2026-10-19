@@ -1,0 +1,334 @@
+{
+ "source": "Wikidata (CC0)",
+ "items": [
+  {
+   "id": "Q68",
+   "name": "Computer",
+   "value": 1945,
+   "fame": 298,
+   "source": "https://www.wikidata.org/wiki/Q68"
+  },
+  {
+   "id": "Q11035",
+   "name": "Telephone",
+   "value": 1876,
+   "fame": 218,
+   "source": "https://www.wikidata.org/wiki/Q11035"
+  },
+  {
+   "id": "Q5372",
+   "name": "Basketball",
+   "value": 1891,
+   "fame": 217,
+   "source": "https://www.wikidata.org/wiki/Q5372"
+  },
+  {
+   "id": "Q11633",
+   "name": "Photography",
+   "value": 1839,
+   "fame": 211,
+   "source": "https://www.wikidata.org/wiki/Q11633"
+  },
+  {
+   "id": "Q11032",
+   "name": "Newspaper",
+   "value": 1605,
+   "fame": 204,
+   "source": "https://www.wikidata.org/wiki/Q11032"
+  },
+  {
+   "id": "Q197",
+   "name": "Airplane",
+   "value": 1903,
+   "fame": 195,
+   "source": "https://www.wikidata.org/wiki/Q197"
+  },
+  {
+   "id": "Q872",
+   "name": "Radio",
+   "value": 1894,
+   "fame": 191,
+   "source": "https://www.wikidata.org/wiki/Q872"
+  },
+  {
+   "id": "Q17517",
+   "name": "Mobile phone",
+   "value": 1973,
+   "fame": 180,
+   "source": "https://www.wikidata.org/wiki/Q17517"
+  },
+  {
+   "id": "Q9158",
+   "name": "Email",
+   "value": 1971,
+   "fame": 172,
+   "source": "https://www.wikidata.org/wiki/Q9158"
+  },
+  {
+   "id": "Q5994",
+   "name": "Piano",
+   "value": 1700,
+   "fame": 172,
+   "source": "https://www.wikidata.org/wiki/Q5994"
+  },
+  {
+   "id": "Q1734",
+   "name": "Volleyball",
+   "value": 1895,
+   "fame": 164,
+   "source": "https://www.wikidata.org/wiki/Q1734"
+  },
+  {
+   "id": "Q466",
+   "name": "World Wide Web",
+   "value": 1989,
+   "fame": 158,
+   "source": "https://www.wikidata.org/wiki/Q466"
+  },
+  {
+   "id": "Q12876",
+   "name": "Tank",
+   "value": 1915,
+   "fame": 157,
+   "source": "https://www.wikidata.org/wiki/Q12876"
+  },
+  {
+   "id": "Q6368",
+   "name": "Web browser",
+   "value": 1990,
+   "fame": 155,
+   "source": "https://www.wikidata.org/wiki/Q6368"
+  },
+  {
+   "id": "Q37501",
+   "name": "Glasses",
+   "value": 1270,
+   "fame": 146,
+   "source": "https://www.wikidata.org/wiki/Q37501"
+  },
+  {
+   "id": "Q37828",
+   "name": "Refrigerator",
+   "value": 1856,
+   "fame": 144,
+   "source": "https://www.wikidata.org/wiki/Q37828"
+  },
+  {
+   "id": "Q26540",
+   "name": "Artificial satellite",
+   "value": 1957,
+   "fame": 143,
+   "source": "https://www.wikidata.org/wiki/Q26540"
+  },
+  {
+   "id": "Q5339",
+   "name": "Transistor",
+   "value": 1947,
+   "fame": 137,
+   "source": "https://www.wikidata.org/wiki/Q5339"
+  },
+  {
+   "id": "Q4439",
+   "name": "Hard disk",
+   "value": 1956,
+   "fame": 132,
+   "source": "https://www.wikidata.org/wiki/Q4439"
+  },
+  {
+   "id": "Q11658",
+   "name": "Transformer",
+   "value": 1831,
+   "fame": 123,
+   "source": "https://www.wikidata.org/wiki/Q11658"
+  },
+  {
+   "id": "Q267298",
+   "name": "Battery",
+   "value": 1800,
+   "fame": 120,
+   "source": "https://www.wikidata.org/wiki/Q267298"
+  },
+  {
+   "id": "Q38867",
+   "name": "Laser",
+   "value": 1960,
+   "fame": 119,
+   "source": "https://www.wikidata.org/wiki/Q38867"
+  },
+  {
+   "id": "Q12190",
+   "name": "Penicillin",
+   "value": 1928,
+   "fame": 117,
+   "source": "https://www.wikidata.org/wiki/Q12190"
+  },
+  {
+   "id": "Q49013",
+   "name": "Sewing machine",
+   "value": 1790,
+   "fame": 111,
+   "source": "https://www.wikidata.org/wiki/Q49013"
+  },
+  {
+   "id": "Q81103",
+   "name": "Cannon",
+   "value": 1326,
+   "fame": 107,
+   "source": "https://www.wikidata.org/wiki/Q81103"
+  },
+  {
+   "id": "Q79897",
+   "name": "Morse code",
+   "value": 1836,
+   "fame": 106,
+   "source": "https://www.wikidata.org/wiki/Q79897"
+  },
+  {
+   "id": "Q47616",
+   "name": "Incandescent light bulb",
+   "value": 1879,
+   "fame": 105,
+   "source": "https://www.wikidata.org/wiki/Q47616"
+  },
+  {
+   "id": "Q47433",
+   "name": "Banknote",
+   "value": 618,
+   "fame": 102,
+   "source": "https://www.wikidata.org/wiki/Q47433"
+  },
+  {
+   "id": "Q80728",
+   "name": "Dynamite",
+   "value": 1867,
+   "fame": 102,
+   "source": "https://www.wikidata.org/wiki/Q80728"
+  },
+  {
+   "id": "Q72313",
+   "name": "Electric motor",
+   "value": 1834,
+   "fame": 101,
+   "source": "https://www.wikidata.org/wiki/Q72313"
+  },
+  {
+   "id": "Q128015",
+   "name": "Guillotine",
+   "value": 1792,
+   "fame": 99,
+   "source": "https://www.wikidata.org/wiki/Q128015"
+  },
+  {
+   "id": "Q80831",
+   "name": "Integrated circuit",
+   "value": 1958,
+   "fame": 99,
+   "source": "https://www.wikidata.org/wiki/Q80831"
+  },
+  {
+   "id": "Q101674",
+   "name": "Vacuum cleaner",
+   "value": 1901,
+   "fame": 97,
+   "source": "https://www.wikidata.org/wiki/Q101674"
+  },
+  {
+   "id": "Q79757",
+   "name": "Barometer",
+   "value": 1643,
+   "fame": 94,
+   "source": "https://www.wikidata.org/wiki/Q79757"
+  },
+  {
+   "id": "Q127956",
+   "name": "Microwave oven",
+   "value": 1945,
+   "fame": 91,
+   "source": "https://www.wikidata.org/wiki/Q127956"
+  },
+  {
+   "id": "Q133585",
+   "name": "Airship",
+   "value": 1852,
+   "fame": 89,
+   "source": "https://www.wikidata.org/wiki/Q133585"
+  },
+  {
+   "id": "Q58148",
+   "name": "Pasteurization",
+   "value": 1864,
+   "fame": 89,
+   "source": "https://www.wikidata.org/wiki/Q58148"
+  },
+  {
+   "id": "Q1049294",
+   "name": "Emoji",
+   "value": 1999,
+   "fame": 86,
+   "source": "https://www.wikidata.org/wiki/Q1049294"
+  },
+  {
+   "id": "Q160137",
+   "name": "Ballpoint pen",
+   "value": 1888,
+   "fame": 84,
+   "source": "https://www.wikidata.org/wiki/Q160137"
+  },
+  {
+   "id": "Q5297",
+   "name": "Microprocessor",
+   "value": 1971,
+   "fame": 84,
+   "source": "https://www.wikidata.org/wiki/Q5297"
+  },
+  {
+   "id": "Q49833",
+   "name": "Wind turbine",
+   "value": 1887,
+   "fame": 84,
+   "source": "https://www.wikidata.org/wiki/Q49833"
+  },
+  {
+   "id": "Q101761",
+   "name": "Zipper",
+   "value": 1893,
+   "fame": 84,
+   "source": "https://www.wikidata.org/wiki/Q101761"
+  },
+  {
+   "id": "Q133036",
+   "name": "Lithography",
+   "value": 1796,
+   "fame": 83,
+   "source": "https://www.wikidata.org/wiki/Q133036"
+  },
+  {
+   "id": "Q132560",
+   "name": "Electron microscope",
+   "value": 1931,
+   "fame": 82,
+   "source": "https://www.wikidata.org/wiki/Q132560"
+  },
+  {
+   "id": "Q8076",
+   "name": "Video game console",
+   "value": 1972,
+   "fame": 82,
+   "source": "https://www.wikidata.org/wiki/Q8076"
+  },
+  {
+   "id": "Q483400",
+   "name": "Gyroscope",
+   "value": 1852,
+   "fame": 80,
+   "source": "https://www.wikidata.org/wiki/Q483400"
+  },
+  {
+   "id": "Q144334",
+   "name": "Printing press",
+   "value": 1439,
+   "fame": 80,
+   "source": "https://www.wikidata.org/wiki/Q144334"
+  }
+ ]
+}

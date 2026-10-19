@@ -1,0 +1,1325 @@
+{
+ "source": "Wikidata (CC0)",
+ "items": [
+  {
+   "id": "Q155174",
+   "name": "Maracanã Stadium",
+   "detail": "Brazil",
+   "value": 78838,
+   "fame": 89,
+   "source": "https://www.wikidata.org/wiki/Q155174"
+  },
+  {
+   "id": "Q164027",
+   "name": "Bernabéu",
+   "detail": "Spain",
+   "value": 83186,
+   "fame": 81,
+   "source": "https://www.wikidata.org/wiki/Q164027"
+  },
+  {
+   "id": "Q127429",
+   "name": "Allianz Arena",
+   "detail": "Germany",
+   "value": 75024,
+   "fame": 80,
+   "source": "https://www.wikidata.org/wiki/Q127429"
+  },
+  {
+   "id": "Q128468",
+   "name": "Wembley Stadium",
+   "detail": "United Kingdom",
+   "value": 90000,
+   "fame": 78,
+   "source": "https://www.wikidata.org/wiki/Q128468"
+  },
+  {
+   "id": "Q13205",
+   "name": "Stade de France",
+   "detail": "France",
+   "value": 81338,
+   "fame": 72,
+   "source": "https://www.wikidata.org/wiki/Q13205"
+  },
+  {
+   "id": "Q133525",
+   "name": "Beijing National Stadium",
+   "detail": "China",
+   "value": 80000,
+   "fame": 64,
+   "source": "https://www.wikidata.org/wiki/Q133525"
+  },
+  {
+   "id": "Q163521",
+   "name": "FNB Stadium",
+   "detail": "South Africa",
+   "value": 94736,
+   "fame": 61,
+   "source": "https://www.wikidata.org/wiki/Q163521"
+  },
+  {
+   "id": "Q150961",
+   "name": "Arena AufSchalke",
+   "detail": "Germany",
+   "value": 62271,
+   "fame": 58,
+   "source": "https://www.wikidata.org/wiki/Q150961"
+  },
+  {
+   "id": "Q193651",
+   "name": "Hampden Park",
+   "detail": "United Kingdom",
+   "value": 51866,
+   "fame": 57,
+   "source": "https://www.wikidata.org/wiki/Q193651"
+  },
+  {
+   "id": "Q910370",
+   "name": "Mineirão",
+   "detail": "Brazil",
+   "value": 66658,
+   "fame": 57,
+   "source": "https://www.wikidata.org/wiki/Q910370"
+  },
+  {
+   "id": "Q1186333",
+   "name": "Lusail Stadium",
+   "detail": "Qatar",
+   "value": 88966,
+   "fame": 56,
+   "source": "https://www.wikidata.org/wiki/Q1186333"
+  },
+  {
+   "id": "Q131610",
+   "name": "Munich Olympic Stadium",
+   "detail": "Germany",
+   "value": 63118,
+   "fame": 56,
+   "source": "https://www.wikidata.org/wiki/Q131610"
+  },
+  {
+   "id": "Q4439101",
+   "name": "Rostov Arena",
+   "detail": "Russia",
+   "value": 45000,
+   "fame": 56,
+   "source": "https://www.wikidata.org/wiki/Q4439101"
+  },
+  {
+   "id": "Q202150",
+   "name": "Stade Vélodrome",
+   "detail": "France",
+   "value": 67394,
+   "fame": 56,
+   "source": "https://www.wikidata.org/wiki/Q202150"
+  },
+  {
+   "id": "Q4533552",
+   "name": "Mordovia Arena",
+   "detail": "Russia",
+   "value": 45015,
+   "fame": 55,
+   "source": "https://www.wikidata.org/wiki/Q4533552"
+  },
+  {
+   "id": "Q173559",
+   "name": "Cape Town Stadium",
+   "detail": "South Africa",
+   "value": 58309,
+   "fame": 54,
+   "source": "https://www.wikidata.org/wiki/Q173559"
+  },
+  {
+   "id": "Q207109",
+   "name": "Johan Cruyff Arena",
+   "detail": "Netherlands",
+   "value": 54990,
+   "fame": 54,
+   "source": "https://www.wikidata.org/wiki/Q207109"
+  },
+  {
+   "id": "Q152349",
+   "name": "MHPArena",
+   "detail": "Germany",
+   "value": 60058,
+   "fame": 54,
+   "source": "https://www.wikidata.org/wiki/Q152349"
+  },
+  {
+   "id": "Q4439098",
+   "name": "Rostec Arena",
+   "detail": "Russia",
+   "value": 45015,
+   "fame": 54,
+   "source": "https://www.wikidata.org/wiki/Q4439098"
+  },
+  {
+   "id": "Q4439099",
+   "name": "Samara Arena",
+   "detail": "Russia",
+   "value": 44918,
+   "fame": 54,
+   "source": "https://www.wikidata.org/wiki/Q4439099"
+  },
+  {
+   "id": "Q150933",
+   "name": "Volksparkstadion",
+   "detail": "Germany",
+   "value": 57000,
+   "fame": 54,
+   "source": "https://www.wikidata.org/wiki/Q150933"
+  },
+  {
+   "id": "Q612227",
+   "name": "BC Place",
+   "detail": "Canada",
+   "value": 54500,
+   "fame": 53,
+   "source": "https://www.wikidata.org/wiki/Q612227"
+  },
+  {
+   "id": "Q336088",
+   "name": "Estádio Nacional de Brasília",
+   "detail": "Brazil",
+   "value": 69910,
+   "fame": 53,
+   "source": "https://www.wikidata.org/wiki/Q336088"
+  },
+  {
+   "id": "Q179693",
+   "name": "Kazimierz Górski National Stadium",
+   "detail": "Poland",
+   "value": 58274,
+   "fame": 53,
+   "source": "https://www.wikidata.org/wiki/Q179693"
+  },
+  {
+   "id": "Q772988",
+   "name": "Khalifa International Stadium",
+   "detail": "Qatar",
+   "value": 50500,
+   "fame": 53,
+   "source": "https://www.wikidata.org/wiki/Q772988"
+  },
+  {
+   "id": "Q33003",
+   "name": "Parken Stadium",
+   "detail": "Denmark",
+   "value": 38065,
+   "fame": 53,
+   "source": "https://www.wikidata.org/wiki/Q33003"
+  },
+  {
+   "id": "Q4366184",
+   "name": "Volgograd Arena",
+   "detail": "Russia",
+   "value": 45568,
+   "fame": 53,
+   "source": "https://www.wikidata.org/wiki/Q4366184"
+  },
+  {
+   "id": "Q185741",
+   "name": "Ernst-Happel-Stadion",
+   "detail": "Austria",
+   "value": 50000,
+   "fame": 52,
+   "source": "https://www.wikidata.org/wiki/Q185741"
+  },
+  {
+   "id": "Q10862290",
+   "name": "MetLife Stadium",
+   "detail": "United States",
+   "value": 82500,
+   "fame": 52,
+   "source": "https://www.wikidata.org/wiki/Q10862290"
+  },
+  {
+   "id": "Q204496",
+   "name": "Millennium Stadium",
+   "detail": "United Kingdom",
+   "value": 73931,
+   "fame": 52,
+   "source": "https://www.wikidata.org/wiki/Q204496"
+  },
+  {
+   "id": "Q19520501",
+   "name": "SoFi Stadium",
+   "detail": "United States",
+   "value": 70240,
+   "fame": 52,
+   "source": "https://www.wikidata.org/wiki/Q19520501"
+  },
+  {
+   "id": "Q958185",
+   "name": "Castelão",
+   "detail": "Brazil",
+   "value": 57876,
+   "fame": 51,
+   "source": "https://www.wikidata.org/wiki/Q958185"
+  },
+  {
+   "id": "Q187042",
+   "name": "Peter Mokaba Stadium",
+   "detail": "South Africa",
+   "value": 41733,
+   "fame": 50,
+   "source": "https://www.wikidata.org/wiki/Q187042"
+  },
+  {
+   "id": "Q7875112",
+   "name": "Estádio da Luz",
+   "detail": "Portugal",
+   "value": 68100,
+   "fame": 49,
+   "source": "https://www.wikidata.org/wiki/Q7875112"
+  },
+  {
+   "id": "Q202762",
+   "name": "Mestalla Stadium",
+   "detail": "Spain",
+   "value": 49430,
+   "fame": 49,
+   "source": "https://www.wikidata.org/wiki/Q202762"
+  },
+  {
+   "id": "Q181445",
+   "name": "Nelson Mandela Bay Stadium",
+   "detail": "South Africa",
+   "value": 42486,
+   "fame": 49,
+   "source": "https://www.wikidata.org/wiki/Q181445"
+  },
+  {
+   "id": "Q4439075",
+   "name": "Nizhny Novgorod Stadium",
+   "detail": "Russia",
+   "value": 44899,
+   "fame": 49,
+   "source": "https://www.wikidata.org/wiki/Q4439075"
+  },
+  {
+   "id": "Q1134439",
+   "name": "Stadium 974",
+   "detail": "Qatar",
+   "value": 45000,
+   "fame": 49,
+   "source": "https://www.wikidata.org/wiki/Q1134439"
+  },
+  {
+   "id": "Q401643",
+   "name": "Ahmad bin Ali Stadium",
+   "detail": "Qatar",
+   "value": 44740,
+   "fame": 48,
+   "source": "https://www.wikidata.org/wiki/Q401643"
+  },
+  {
+   "id": "Q1050220",
+   "name": "Al Bayt Stadium",
+   "detail": "Qatar",
+   "value": 68895,
+   "fame": 48,
+   "source": "https://www.wikidata.org/wiki/Q1050220"
+  },
+  {
+   "id": "Q641527",
+   "name": "Arena Amazônia",
+   "detail": "Brazil",
+   "value": 42924,
+   "fame": 48,
+   "source": "https://www.wikidata.org/wiki/Q641527"
+  },
+  {
+   "id": "Q1048774",
+   "name": "Education City Stadium",
+   "detail": "Qatar",
+   "value": 90000,
+   "fame": 48,
+   "source": "https://www.wikidata.org/wiki/Q1048774"
+  },
+  {
+   "id": "Q1050224",
+   "name": "Estádio Beira-Rio",
+   "detail": "Brazil",
+   "value": 49055,
+   "fame": 48,
+   "source": "https://www.wikidata.org/wiki/Q1050224"
+  },
+  {
+   "id": "Q373355",
+   "name": "Gillette Stadium",
+   "detail": "United States",
+   "value": 68756,
+   "fame": 48,
+   "source": "https://www.wikidata.org/wiki/Q373355"
+  },
+  {
+   "id": "Q187087",
+   "name": "Mbombela Stadium",
+   "detail": "South Africa",
+   "value": 43500,
+   "fame": 48,
+   "source": "https://www.wikidata.org/wiki/Q187087"
+  },
+  {
+   "id": "Q330136",
+   "name": "Melbourne Cricket Ground",
+   "detail": "Australia",
+   "value": 100024,
+   "fame": 48,
+   "source": "https://www.wikidata.org/wiki/Q330136"
+  },
+  {
+   "id": "Q189337",
+   "name": "Royal Bafokeng Stadium",
+   "detail": "South Africa",
+   "value": 42000,
+   "fame": 48,
+   "source": "https://www.wikidata.org/wiki/Q189337"
+  },
+  {
+   "id": "Q180479",
+   "name": "Donbass Arena",
+   "detail": "Ukraine",
+   "value": 52518,
+   "fame": 47,
+   "source": "https://www.wikidata.org/wiki/Q180479"
+  },
+  {
+   "id": "Q1410402",
+   "name": "Pierre Mauroy Stadium",
+   "detail": "France",
+   "value": 50000,
+   "fame": 47,
+   "source": "https://www.wikidata.org/wiki/Q1410402"
+  },
+  {
+   "id": "Q55074091",
+   "name": "Tottenham Hotspur Stadium",
+   "detail": "United Kingdom",
+   "value": 62850,
+   "fame": 47,
+   "source": "https://www.wikidata.org/wiki/Q55074091"
+  },
+  {
+   "id": "Q6499360",
+   "name": "Arena Fonte Nova",
+   "detail": "Brazil",
+   "value": 47915,
+   "fame": 46,
+   "source": "https://www.wikidata.org/wiki/Q6499360"
+  },
+  {
+   "id": "Q544553",
+   "name": "Arrowhead Stadium",
+   "detail": "United States",
+   "value": 76416,
+   "fame": 46,
+   "source": "https://www.wikidata.org/wiki/Q544553"
+  },
+  {
+   "id": "Q796351",
+   "name": "BMO Field",
+   "detail": "Canada",
+   "value": 21566,
+   "fame": 46,
+   "source": "https://www.wikidata.org/wiki/Q796351"
+  },
+  {
+   "id": "Q498245",
+   "name": "Estadio Centenario",
+   "detail": "Uruguay",
+   "value": 60235,
+   "fame": 46,
+   "source": "https://www.wikidata.org/wiki/Q498245"
+  },
+  {
+   "id": "Q864339",
+   "name": "Hard Rock Stadium",
+   "detail": "United States",
+   "value": 65326,
+   "fame": 46,
+   "source": "https://www.wikidata.org/wiki/Q864339"
+  },
+  {
+   "id": "Q612736",
+   "name": "Lumen Field",
+   "detail": "United States",
+   "value": 67000,
+   "fame": 46,
+   "source": "https://www.wikidata.org/wiki/Q612736"
+  },
+  {
+   "id": "Q478000",
+   "name": "Rajko Mitić Stadium",
+   "detail": "Serbia",
+   "value": 55538,
+   "fame": 46,
+   "source": "https://www.wikidata.org/wiki/Q478000"
+  },
+  {
+   "id": "Q723603",
+   "name": "Stadion Maksimir",
+   "detail": "Croatia",
+   "value": 60000,
+   "fame": 46,
+   "source": "https://www.wikidata.org/wiki/Q723603"
+  },
+  {
+   "id": "Q194479",
+   "name": "Stadion Wankdorf",
+   "detail": "Switzerland",
+   "value": 32000,
+   "fame": 46,
+   "source": "https://www.wikidata.org/wiki/Q194479"
+  },
+  {
+   "id": "Q39049425",
+   "name": "Al Thumama Stadium",
+   "detail": "Qatar",
+   "value": 40000,
+   "fame": 45,
+   "source": "https://www.wikidata.org/wiki/Q39049425"
+  },
+  {
+   "id": "Q606803",
+   "name": "Arena da Baixada",
+   "detail": "Brazil",
+   "value": 42372,
+   "fame": 45,
+   "source": "https://www.wikidata.org/wiki/Q606803"
+  },
+  {
+   "id": "Q641448",
+   "name": "Arena Pantaloneta",
+   "detail": "Brazil",
+   "value": 42968,
+   "fame": 45,
+   "source": "https://www.wikidata.org/wiki/Q641448"
+  },
+  {
+   "id": "Q867902",
+   "name": "Cardiff City Stadium",
+   "detail": "United Kingdom",
+   "value": 33260,
+   "fame": 45,
+   "source": "https://www.wikidata.org/wiki/Q867902"
+  },
+  {
+   "id": "Q7007552",
+   "name": "Mercedes-Benz Stadium",
+   "detail": "United States",
+   "value": 71000,
+   "fame": 45,
+   "source": "https://www.wikidata.org/wiki/Q7007552"
+  },
+  {
+   "id": "Q1058864",
+   "name": "Reliant Stadium",
+   "detail": "United States",
+   "value": 71054,
+   "fame": 45,
+   "source": "https://www.wikidata.org/wiki/Q1058864"
+  },
+  {
+   "id": "Q854122",
+   "name": "Stade Bollaert-Delelis",
+   "detail": "France",
+   "value": 38223,
+   "fame": 45,
+   "source": "https://www.wikidata.org/wiki/Q854122"
+  },
+  {
+   "id": "Q127372",
+   "name": "Allianz Riviera",
+   "detail": "France",
+   "value": 36178,
+   "fame": 44,
+   "source": "https://www.wikidata.org/wiki/Q127372"
+  },
+  {
+   "id": "Q1362211",
+   "name": "Arena Cidade da Copa",
+   "detail": "Brazil",
+   "value": 45440,
+   "fame": 44,
+   "source": "https://www.wikidata.org/wiki/Q1362211"
+  },
+  {
+   "id": "Q1343986",
+   "name": "Arena das Dunas",
+   "detail": "Brazil",
+   "value": 45000,
+   "fame": 44,
+   "source": "https://www.wikidata.org/wiki/Q1343986"
+  },
+  {
+   "id": "Q215399",
+   "name": "Arena Lviv",
+   "detail": "Ukraine",
+   "value": 34915,
+   "fame": 44,
+   "source": "https://www.wikidata.org/wiki/Q215399"
+  },
+  {
+   "id": "Q271454",
+   "name": "Estádio do Dragão",
+   "detail": "Portugal",
+   "value": 50033,
+   "fame": 44,
+   "source": "https://www.wikidata.org/wiki/Q271454"
+  },
+  {
+   "id": "Q207623",
+   "name": "Letzigrund",
+   "detail": "Switzerland",
+   "value": 25000,
+   "fame": 44,
+   "source": "https://www.wikidata.org/wiki/Q207623"
+  },
+  {
+   "id": "Q276354",
+   "name": "Monumental Stadium, Buenos Aires",
+   "detail": "Argentina",
+   "value": 84567,
+   "fame": 44,
+   "source": "https://www.wikidata.org/wiki/Q276354"
+  },
+  {
+   "id": "Q152633",
+   "name": "Niedersachsenstadion",
+   "detail": "Germany",
+   "value": 49000,
+   "fame": 44,
+   "source": "https://www.wikidata.org/wiki/Q152633"
+  },
+  {
+   "id": "Q271568",
+   "name": "Stadio Luigi Ferraris",
+   "detail": "Italy",
+   "value": 33205,
+   "fame": 44,
+   "source": "https://www.wikidata.org/wiki/Q271568"
+  },
+  {
+   "id": "Q683112",
+   "name": "Turf Moor",
+   "detail": "United Kingdom",
+   "value": 22546,
+   "fame": 44,
+   "source": "https://www.wikidata.org/wiki/Q683112"
+  },
+  {
+   "id": "Q332219",
+   "name": "Helsinki Olympic Stadium",
+   "detail": "Finland",
+   "value": 42062,
+   "fame": 43,
+   "source": "https://www.wikidata.org/wiki/Q332219"
+  },
+  {
+   "id": "Q116601",
+   "name": "International Stadium Yokohama",
+   "detail": "Japan",
+   "value": 72327,
+   "fame": 43,
+   "source": "https://www.wikidata.org/wiki/Q116601"
+  },
+  {
+   "id": "Q580480",
+   "name": "Liberty Stadium",
+   "detail": "United Kingdom",
+   "value": 20750,
+   "fame": 43,
+   "source": "https://www.wikidata.org/wiki/Q580480"
+  },
+  {
+   "id": "Q3585",
+   "name": "Metalist Stadium",
+   "detail": "Ukraine",
+   "value": 40003,
+   "fame": 43,
+   "source": "https://www.wikidata.org/wiki/Q3585"
+  },
+  {
+   "id": "Q123017",
+   "name": "Carrow Road",
+   "detail": "United Kingdom",
+   "value": 27244,
+   "fame": 42,
+   "source": "https://www.wikidata.org/wiki/Q123017"
+  },
+  {
+   "id": "Q642557",
+   "name": "Hillsborough Stadium",
+   "detail": "United Kingdom",
+   "value": 39732,
+   "fame": 42,
+   "source": "https://www.wikidata.org/wiki/Q642557"
+  },
+  {
+   "id": "Q172732",
+   "name": "Indianapolis Motor Speedway",
+   "detail": "United States",
+   "value": 257325,
+   "fame": 42,
+   "source": "https://www.wikidata.org/wiki/Q172732"
+  },
+  {
+   "id": "Q622671",
+   "name": "King Baudouin Stadium",
+   "detail": "Belgium",
+   "value": 50024,
+   "fame": 42,
+   "source": "https://www.wikidata.org/wiki/Q622671"
+  },
+  {
+   "id": "Q754502",
+   "name": "Yves du Manoir Stadium",
+   "detail": "France",
+   "value": 14000,
+   "fame": 42,
+   "source": "https://www.wikidata.org/wiki/Q754502"
+  },
+  {
+   "id": "Q285531",
+   "name": "Al Janoub Stadium",
+   "detail": "Qatar",
+   "value": 40000,
+   "fame": 41,
+   "source": "https://www.wikidata.org/wiki/Q285531"
+  },
+  {
+   "id": "Q619409",
+   "name": "Brighton Community Stadium",
+   "detail": "United Kingdom",
+   "value": 31800,
+   "fame": 41,
+   "source": "https://www.wikidata.org/wiki/Q619409"
+  },
+  {
+   "id": "Q208709",
+   "name": "Ibrox Stadium",
+   "detail": "United Kingdom",
+   "value": 51700,
+   "fame": 41,
+   "source": "https://www.wikidata.org/wiki/Q208709"
+  },
+  {
+   "id": "Q727078",
+   "name": "Stockholm Olympic Stadium",
+   "detail": "Sweden",
+   "value": 14500,
+   "fame": 41,
+   "source": "https://www.wikidata.org/wiki/Q727078"
+  },
+  {
+   "id": "Q1138684",
+   "name": "Strawberry Arena",
+   "detail": "Sweden",
+   "value": 54329,
+   "fame": 41,
+   "source": "https://www.wikidata.org/wiki/Q1138684"
+  },
+  {
+   "id": "Q1164804",
+   "name": "Arena ”Philip II. of Macedonia / Toše Proeski / Todor”",
+   "detail": "North Macedonia",
+   "value": 33460,
+   "fame": 40,
+   "source": "https://www.wikidata.org/wiki/Q1164804"
+  },
+  {
+   "id": "Q244877",
+   "name": "Beijing National Aquatics Center",
+   "detail": "China",
+   "value": 17000,
+   "fame": 40,
+   "source": "https://www.wikidata.org/wiki/Q244877"
+  },
+  {
+   "id": "Q215295",
+   "name": "Stade de Genève",
+   "detail": "Switzerland",
+   "value": 30084,
+   "fame": 40,
+   "source": "https://www.wikidata.org/wiki/Q215295"
+  },
+  {
+   "id": "Q209725",
+   "name": "Twickenham Stadium",
+   "detail": "United Kingdom",
+   "value": 82000,
+   "fame": 40,
+   "source": "https://www.wikidata.org/wiki/Q209725"
+  },
+  {
+   "id": "Q639975",
+   "name": "United Center",
+   "detail": "United States",
+   "value": 23500,
+   "fame": 40,
+   "source": "https://www.wikidata.org/wiki/Q639975"
+  },
+  {
+   "id": "Q287359",
+   "name": "Estádio José Alvalade",
+   "detail": "Portugal",
+   "value": 52095,
+   "fame": 39,
+   "source": "https://www.wikidata.org/wiki/Q287359"
+  },
+  {
+   "id": "Q1132413",
+   "name": "Soldier Field",
+   "detail": "United States",
+   "value": 63500,
+   "fame": 39,
+   "source": "https://www.wikidata.org/wiki/Q1132413"
+  },
+  {
+   "id": "Q1053455",
+   "name": "Stade de la Beaujoire",
+   "detail": "France",
+   "value": 35318,
+   "fame": 39,
+   "source": "https://www.wikidata.org/wiki/Q1053455"
+  },
+  {
+   "id": "Q757182",
+   "name": "Stadio Renato Dall'Ara",
+   "detail": "Italy",
+   "value": 36462,
+   "fame": 39,
+   "source": "https://www.wikidata.org/wiki/Q757182"
+  },
+  {
+   "id": "Q10626",
+   "name": "Vicarage Road",
+   "detail": "United Kingdom",
+   "value": 22000,
+   "fame": 39,
+   "source": "https://www.wikidata.org/wiki/Q10626"
+  },
+  {
+   "id": "Q216167",
+   "name": "Wörthersee Stadion",
+   "detail": "Austria",
+   "value": 32000,
+   "fame": 39,
+   "source": "https://www.wikidata.org/wiki/Q216167"
+  },
+  {
+   "id": "Q478225",
+   "name": "Croke Park",
+   "detail": "Ireland",
+   "value": 82300,
+   "fame": 38,
+   "source": "https://www.wikidata.org/wiki/Q478225"
+  },
+  {
+   "id": "Q5364202",
+   "name": "The O2 Arena",
+   "detail": "United Kingdom",
+   "value": 20000,
+   "fame": 38,
+   "source": "https://www.wikidata.org/wiki/Q5364202"
+  },
+  {
+   "id": "Q242772",
+   "name": "Toughsheet Community Stadium",
+   "detail": "United Kingdom",
+   "value": 28723,
+   "fame": 38,
+   "source": "https://www.wikidata.org/wiki/Q242772"
+  },
+  {
+   "id": "Q172860",
+   "name": "Circuit Gilles Villeneuve",
+   "detail": "Canada",
+   "value": 100000,
+   "fame": 37,
+   "source": "https://www.wikidata.org/wiki/Q172860"
+  },
+  {
+   "id": "Q842077",
+   "name": "Coventry Building Society Arena",
+   "detail": "United Kingdom",
+   "value": 32609,
+   "fame": 37,
+   "source": "https://www.wikidata.org/wiki/Q842077"
+  },
+  {
+   "id": "Q594994",
+   "name": "Julio Martínez Prádanos National Stadium",
+   "detail": "Chile",
+   "value": 46190,
+   "fame": 37,
+   "source": "https://www.wikidata.org/wiki/Q594994"
+  },
+  {
+   "id": "Q849784",
+   "name": "Los Angeles Memorial Coliseum",
+   "detail": "United States",
+   "value": 77500,
+   "fame": 37,
+   "source": "https://www.wikidata.org/wiki/Q849784"
+  },
+  {
+   "id": "Q262326",
+   "name": "Lotto Park",
+   "detail": "Belgium",
+   "value": 21500,
+   "fame": 37,
+   "source": "https://www.wikidata.org/wiki/Q262326"
+  },
+  {
+   "id": "Q503319",
+   "name": "Olympic Stadium",
+   "detail": "Netherlands",
+   "value": 22288,
+   "fame": 37,
+   "source": "https://www.wikidata.org/wiki/Q503319"
+  },
+  {
+   "id": "Q815833",
+   "name": "Stade de la Mosson",
+   "detail": "France",
+   "value": 32900,
+   "fame": 37,
+   "source": "https://www.wikidata.org/wiki/Q815833"
+  },
+  {
+   "id": "Q786149",
+   "name": "Estadio Gran Parque Central",
+   "detail": "Uruguay",
+   "value": 34000,
+   "fame": 36,
+   "source": "https://www.wikidata.org/wiki/Q786149"
+  },
+  {
+   "id": "Q244592",
+   "name": "San Mamés Stadium",
+   "detail": "Spain",
+   "value": 40000,
+   "fame": 36,
+   "source": "https://www.wikidata.org/wiki/Q244592"
+  },
+  {
+   "id": "Q482441",
+   "name": "Daegu Stadium",
+   "detail": "South Korea",
+   "value": 68014,
+   "fame": 35,
+   "source": "https://www.wikidata.org/wiki/Q482441"
+  },
+  {
+   "id": "Q1130487",
+   "name": "Dinamo Stadium",
+   "detail": "Belarus",
+   "value": 22000,
+   "fame": 35,
+   "source": "https://www.wikidata.org/wiki/Q1130487"
+  },
+  {
+   "id": "Q312411",
+   "name": "Eden Park",
+   "detail": "New Zealand",
+   "value": 50000,
+   "fame": 35,
+   "source": "https://www.wikidata.org/wiki/Q312411"
+  },
+  {
+   "id": "Q695879",
+   "name": "La Rosaleda Stadium",
+   "detail": "Spain",
+   "value": 30778,
+   "fame": 35,
+   "source": "https://www.wikidata.org/wiki/Q695879"
+  },
+  {
+   "id": "Q201612",
+   "name": "Pride Park Stadium",
+   "detail": "United Kingdom",
+   "value": 33597,
+   "fame": 35,
+   "source": "https://www.wikidata.org/wiki/Q201612"
+  },
+  {
+   "id": "Q824352",
+   "name": "Ullevi",
+   "detail": "Sweden",
+   "value": 43000,
+   "fame": 35,
+   "source": "https://www.wikidata.org/wiki/Q824352"
+  },
+  {
+   "id": "Q537720",
+   "name": "Accor Arena",
+   "detail": "France",
+   "value": 19400,
+   "fame": 34,
+   "source": "https://www.wikidata.org/wiki/Q537720"
+  },
+  {
+   "id": "Q756452",
+   "name": "Caesars Superdome",
+   "detail": "United States",
+   "value": 75167,
+   "fame": 34,
+   "source": "https://www.wikidata.org/wiki/Q756452"
+  },
+  {
+   "id": "Q151816",
+   "name": "Estadio Nuevo José Zorrilla",
+   "detail": "Spain",
+   "value": 27618,
+   "fame": 34,
+   "source": "https://www.wikidata.org/wiki/Q151816"
+  },
+  {
+   "id": "Q375365",
+   "name": "Giants Stadium",
+   "detail": "United States",
+   "value": 80242,
+   "fame": 34,
+   "source": "https://www.wikidata.org/wiki/Q375365"
+  },
+  {
+   "id": "Q3531421",
+   "name": "Narendra Modi Stadium",
+   "detail": "India",
+   "value": 132000,
+   "fame": 34,
+   "source": "https://www.wikidata.org/wiki/Q3531421"
+  },
+  {
+   "id": "Q819179",
+   "name": "St Andrew's",
+   "detail": "United Kingdom",
+   "value": 30016,
+   "fame": 34,
+   "source": "https://www.wikidata.org/wiki/Q819179"
+  },
+  {
+   "id": "Q386547",
+   "name": "Stade Chaban-Delmas",
+   "detail": "France",
+   "value": 33290,
+   "fame": 34,
+   "source": "https://www.wikidata.org/wiki/Q386547"
+  },
+  {
+   "id": "Q610546",
+   "name": "Stadio Ennio Tardini",
+   "detail": "Italy",
+   "value": 22352,
+   "fame": 34,
+   "source": "https://www.wikidata.org/wiki/Q610546"
+  },
+  {
+   "id": "Q737093",
+   "name": "Stadio Marcantonio Bentegodi",
+   "detail": "Italy",
+   "value": 31045,
+   "fame": 34,
+   "source": "https://www.wikidata.org/wiki/Q737093"
+  },
+  {
+   "id": "Q494832",
+   "name": "Yanmar Stadium Nagai",
+   "detail": "Japan",
+   "value": 47853,
+   "fame": 34,
+   "source": "https://www.wikidata.org/wiki/Q494832"
+  },
+  {
+   "id": "Q4961609",
+   "name": "Brentford Community Stadium",
+   "detail": "United Kingdom",
+   "value": 20000,
+   "fame": 33,
+   "source": "https://www.wikidata.org/wiki/Q4961609"
+  },
+  {
+   "id": "Q849239",
+   "name": "Estádio Municipal de Braga",
+   "detail": "Portugal",
+   "value": 30286,
+   "fame": 33,
+   "source": "https://www.wikidata.org/wiki/Q849239"
+  },
+  {
+   "id": "Q31656",
+   "name": "Madejski Stadium",
+   "detail": "United Kingdom",
+   "value": 24161,
+   "fame": 33,
+   "source": "https://www.wikidata.org/wiki/Q31656"
+  },
+  {
+   "id": "Q1121760",
+   "name": "Roazhon Park",
+   "detail": "France",
+   "value": 31127,
+   "fame": 33,
+   "source": "https://www.wikidata.org/wiki/Q1121760"
+  },
+  {
+   "id": "Q175477",
+   "name": "Seoul World Cup Stadium",
+   "detail": "South Korea",
+   "value": 66806,
+   "fame": 33,
+   "source": "https://www.wikidata.org/wiki/Q175477"
+  },
+  {
+   "id": "Q908481",
+   "name": "The Den",
+   "detail": "United Kingdom",
+   "value": 20146,
+   "fame": 33,
+   "source": "https://www.wikidata.org/wiki/Q908481"
+  },
+  {
+   "id": "Q876286",
+   "name": "White City Stadium",
+   "detail": "United Kingdom",
+   "value": 93000,
+   "fame": 33,
+   "source": "https://www.wikidata.org/wiki/Q876286"
+  },
+  {
+   "id": "Q24895377",
+   "name": "Air Albania Stadium",
+   "detail": "Albania",
+   "value": 22500,
+   "fame": 32,
+   "source": "https://www.wikidata.org/wiki/Q24895377"
+  },
+  {
+   "id": "Q929315",
+   "name": "El Molinón-Enrique Castro Quini",
+   "detail": "Spain",
+   "value": 29371,
+   "fame": 32,
+   "source": "https://www.wikidata.org/wiki/Q929315"
+  },
+  {
+   "id": "Q1057274",
+   "name": "Estádio D. Afonso Henriques",
+   "detail": "Portugal",
+   "value": 30029,
+   "fame": 32,
+   "source": "https://www.wikidata.org/wiki/Q1057274"
+  },
+  {
+   "id": "Q1067235",
+   "name": "GelreDome",
+   "detail": "Netherlands",
+   "value": 41000,
+   "fame": 32,
+   "source": "https://www.wikidata.org/wiki/Q1067235"
+  },
+  {
+   "id": "Q1062157",
+   "name": "Mario Alberto Kempes Stadium",
+   "detail": "Argentina",
+   "value": 60000,
+   "fame": 32,
+   "source": "https://www.wikidata.org/wiki/Q1062157"
+  },
+  {
+   "id": "Q1139142",
+   "name": "Beijing National Indoor Stadium",
+   "detail": "China",
+   "value": 18000,
+   "fame": 31,
+   "source": "https://www.wikidata.org/wiki/Q1139142"
+  },
+  {
+   "id": "Q866409",
+   "name": "Bislett Stadion",
+   "detail": "Norway",
+   "value": 15400,
+   "fame": 31,
+   "source": "https://www.wikidata.org/wiki/Q866409"
+  },
+  {
+   "id": "Q1321458",
+   "name": "Cadillac Arena",
+   "detail": "China",
+   "value": 18000,
+   "fame": 31,
+   "source": "https://www.wikidata.org/wiki/Q1321458"
+  },
+  {
+   "id": "Q953600",
+   "name": "Estadio Manuel Martínez Valero",
+   "detail": "Spain",
+   "value": 31388,
+   "fame": 31,
+   "source": "https://www.wikidata.org/wiki/Q953600"
+  },
+  {
+   "id": "Q310525",
+   "name": "Lanxess Arena",
+   "detail": "Germany",
+   "value": 20000,
+   "fame": 31,
+   "source": "https://www.wikidata.org/wiki/Q310525"
+  },
+  {
+   "id": "Q32960",
+   "name": "Olympiysky Sports Complex",
+   "detail": "Russia",
+   "value": 25000,
+   "fame": 31,
+   "source": "https://www.wikidata.org/wiki/Q32960"
+  },
+  {
+   "id": "Q756433",
+   "name": "State Farm Stadium",
+   "detail": "United States",
+   "value": 63400,
+   "fame": 31,
+   "source": "https://www.wikidata.org/wiki/Q756433"
+  },
+  {
+   "id": "Q494761",
+   "name": "Suwon World Cup Stadium",
+   "detail": "South Korea",
+   "value": 43959,
+   "fame": 31,
+   "source": "https://www.wikidata.org/wiki/Q494761"
+  },
+  {
+   "id": "Q2701834",
+   "name": "3Arena",
+   "detail": "Sweden",
+   "value": 30001,
+   "fame": 30,
+   "source": "https://www.wikidata.org/wiki/Q2701834"
+  },
+  {
+   "id": "Q412824",
+   "name": "Ajinomoto Stadium",
+   "detail": "Japan",
+   "value": 48013,
+   "fame": 30,
+   "source": "https://www.wikidata.org/wiki/Q412824"
+  },
+  {
+   "id": "Q27768421",
+   "name": "Allegiant Stadium",
+   "detail": "United States",
+   "value": 65000,
+   "fame": 30,
+   "source": "https://www.wikidata.org/wiki/Q27768421"
+  },
+  {
+   "id": "Q494749",
+   "name": "Denka Big Swan Stadium",
+   "detail": "Japan",
+   "value": 42300,
+   "fame": 30,
+   "source": "https://www.wikidata.org/wiki/Q494749"
+  },
+  {
+   "id": "Q247420",
+   "name": "Dodger Stadium",
+   "detail": "United States",
+   "value": 56000,
+   "fame": 30,
+   "source": "https://www.wikidata.org/wiki/Q247420"
+  },
+  {
+   "id": "Q945070",
+   "name": "Estadio José Rico Pérez",
+   "detail": "Spain",
+   "value": 24704,
+   "fame": 30,
+   "source": "https://www.wikidata.org/wiki/Q945070"
+  },
+  {
+   "id": "Q49136",
+   "name": "Fenway Park",
+   "detail": "United States",
+   "value": 37499,
+   "fame": 30,
+   "source": "https://www.wikidata.org/wiki/Q49136"
+  },
+  {
+   "id": "Q1142586",
+   "name": "Ford Field",
+   "detail": "United States",
+   "value": 70000,
+   "fame": 30,
+   "source": "https://www.wikidata.org/wiki/Q1142586"
+  },
+  {
+   "id": "Q643328",
+   "name": "Lang Park",
+   "detail": "Australia",
+   "value": 52500,
+   "fame": 30,
+   "source": "https://www.wikidata.org/wiki/Q643328"
+  },
+  {
+   "id": "Q1024926",
+   "name": "Murrayfield Stadium",
+   "detail": "United Kingdom",
+   "value": 67144,
+   "fame": 30,
+   "source": "https://www.wikidata.org/wiki/Q1024926"
+  },
+  {
+   "id": "Q583085",
+   "name": "Northwest Stadium",
+   "detail": "United States",
+   "value": 64000,
+   "fame": 30,
+   "source": "https://www.wikidata.org/wiki/Q583085"
+  },
+  {
+   "id": "Q2860806",
+   "name": "Plenitude Arena",
+   "detail": "France",
+   "value": 32000,
+   "fame": 30,
+   "source": "https://www.wikidata.org/wiki/Q2860806"
+  },
+  {
+   "id": "Q739528",
+   "name": "Shanghai Stadium",
+   "detail": "China",
+   "value": 80000,
+   "fame": 30,
+   "source": "https://www.wikidata.org/wiki/Q739528"
+  },
+  {
+   "id": "Q1051683",
+   "name": "Spodek",
+   "detail": "Poland",
+   "value": 11500,
+   "fame": 30,
+   "source": "https://www.wikidata.org/wiki/Q1051683"
+  },
+  {
+   "id": "Q761682",
+   "name": "Sports Illustrated Stadium",
+   "detail": "United States",
+   "value": 25189,
+   "fame": 30,
+   "source": "https://www.wikidata.org/wiki/Q761682"
+  },
+  {
+   "id": "Q1052807",
+   "name": "Wrigley Field",
+   "detail": "United States",
+   "value": 41072,
+   "fame": 30,
+   "source": "https://www.wikidata.org/wiki/Q1052807"
+  }
+ ]
+}

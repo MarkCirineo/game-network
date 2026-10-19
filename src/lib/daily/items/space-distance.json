@@ -1,0 +1,104 @@
+{
+ "source": "NASA (public domain)",
+ "items": [
+  {
+   "id": "earth",
+   "name": "Earth",
+   "emoji": "🌍",
+   "detail": "Planet",
+   "fame": 100,
+   "source": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/",
+   "value": 149.6
+  },
+  {
+   "id": "jupiter",
+   "name": "Jupiter",
+   "emoji": "🪐",
+   "detail": "Planet",
+   "fame": 95,
+   "source": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/",
+   "value": 778.5
+  },
+  {
+   "id": "mars",
+   "name": "Mars",
+   "emoji": "🪐",
+   "detail": "Planet",
+   "fame": 95,
+   "source": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/",
+   "value": 228
+  },
+  {
+   "id": "saturn",
+   "name": "Saturn",
+   "emoji": "🪐",
+   "detail": "Planet",
+   "fame": 95,
+   "source": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/",
+   "value": 1432
+  },
+  {
+   "id": "mercury",
+   "name": "Mercury",
+   "emoji": "🪐",
+   "detail": "Planet",
+   "fame": 90,
+   "source": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/",
+   "value": 57.9
+  },
+  {
+   "id": "venus",
+   "name": "Venus",
+   "emoji": "🪐",
+   "detail": "Planet",
+   "fame": 90,
+   "source": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/",
+   "value": 108.2
+  },
+  {
+   "id": "neptune",
+   "name": "Neptune",
+   "emoji": "🪐",
+   "detail": "Planet",
+   "fame": 85,
+   "source": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/",
+   "value": 4515
+  },
+  {
+   "id": "pluto",
+   "name": "Pluto",
+   "emoji": "🪐",
+   "detail": "Dwarf planet",
+   "fame": 85,
+   "source": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/",
+   "value": 5906
+  },
+  {
+   "id": "uranus",
+   "name": "Uranus",
+   "emoji": "🪐",
+   "detail": "Planet",
+   "fame": 85,
+   "source": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/",
+   "value": 2867
+  },
+  {
+   "id": "ceres",
+   "name": "Ceres",
+   "emoji": "🪨",
+   "detail": "Dwarf planet",
+   "fame": 40,
+   "source": "https://ssd.jpl.nasa.gov/sats/phys_par/",
+   "value": 413.7
+  },
+  {
+   "id": "eris",
+   "name": "Eris",
+   "emoji": "🪨",
+   "detail": "Dwarf planet",
+   "fame": 35,
+   "source": "https://ssd.jpl.nasa.gov/sats/phys_par/",
+   "value": 10180
+  }
+ ]
+}

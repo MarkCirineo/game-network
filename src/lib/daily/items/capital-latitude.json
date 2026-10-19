@@ -1,0 +1,545 @@
+{
+ "source": "GeoNames (CC BY 4.0)",
+ "items": [
+  {
+   "id": "1816670",
+   "name": "Beijing",
+   "emoji": "🇨🇳",
+   "detail": "China",
+   "value": 39.91,
+   "fame": 1411778724,
+   "source": "https://www.geonames.org/1816670"
+  },
+  {
+   "id": "1261481",
+   "name": "New Delhi",
+   "emoji": "🇮🇳",
+   "detail": "India",
+   "value": 28.62,
+   "fame": 1352617328,
+   "source": "https://www.geonames.org/1261481"
+  },
+  {
+   "id": "4140963",
+   "name": "Washington, D.C.",
+   "emoji": "🇺🇸",
+   "detail": "United States",
+   "value": 38.9,
+   "fame": 327167434,
+   "source": "https://www.geonames.org/4140963"
+  },
+  {
+   "id": "1642911",
+   "name": "Jakarta",
+   "emoji": "🇮🇩",
+   "detail": "Indonesia",
+   "value": -6.215,
+   "fame": 267663435,
+   "source": "https://www.geonames.org/1642911"
+  },
+  {
+   "id": "1176615",
+   "name": "Islamabad",
+   "emoji": "🇵🇰",
+   "detail": "Pakistan",
+   "value": 33.72,
+   "fame": 212215030,
+   "source": "https://www.geonames.org/1176615"
+  },
+  {
+   "id": "3469058",
+   "name": "Brasília",
+   "emoji": "🇧🇷",
+   "detail": "Brazil",
+   "value": -15.78,
+   "fame": 209469333,
+   "source": "https://www.geonames.org/3469058"
+  },
+  {
+   "id": "2352778",
+   "name": "Abuja",
+   "emoji": "🇳🇬",
+   "detail": "Nigeria",
+   "value": 9.058,
+   "fame": 195874740,
+   "source": "https://www.geonames.org/2352778"
+  },
+  {
+   "id": "1185241",
+   "name": "Dhaka",
+   "emoji": "🇧🇩",
+   "detail": "Bangladesh",
+   "value": 23.71,
+   "fame": 161356039,
+   "source": "https://www.geonames.org/1185241"
+  },
+  {
+   "id": "524901",
+   "name": "Moscow",
+   "emoji": "🇷🇺",
+   "detail": "Russia",
+   "value": 55.75,
+   "fame": 144478050,
+   "source": "https://www.geonames.org/524901"
+  },
+  {
+   "id": "1850147",
+   "name": "Tokyo",
+   "emoji": "🇯🇵",
+   "detail": "Japan",
+   "value": 35.69,
+   "fame": 126529100,
+   "source": "https://www.geonames.org/1850147"
+  },
+  {
+   "id": "3530597",
+   "name": "Mexico City",
+   "emoji": "🇲🇽",
+   "detail": "Mexico",
+   "value": 19.43,
+   "fame": 126190788,
+   "source": "https://www.geonames.org/3530597"
+  },
+  {
+   "id": "344979",
+   "name": "Addis Ababa",
+   "emoji": "🇪🇹",
+   "detail": "Ethiopia",
+   "value": 9.025,
+   "fame": 109224559,
+   "source": "https://www.geonames.org/344979"
+  },
+  {
+   "id": "1701668",
+   "name": "Manila",
+   "emoji": "🇵🇭",
+   "detail": "Philippines",
+   "value": 14.6,
+   "fame": 106651922,
+   "source": "https://www.geonames.org/1701668"
+  },
+  {
+   "id": "360630",
+   "name": "Cairo",
+   "emoji": "🇪🇬",
+   "detail": "Egypt",
+   "value": 30.06,
+   "fame": 98423595,
+   "source": "https://www.geonames.org/360630"
+  },
+  {
+   "id": "1581130",
+   "name": "Hanoi",
+   "emoji": "🇻🇳",
+   "detail": "Vietnam",
+   "value": 21.02,
+   "fame": 95540395,
+   "source": "https://www.geonames.org/1581130"
+  },
+  {
+   "id": "2950159",
+   "name": "Berlin",
+   "emoji": "🇩🇪",
+   "detail": "Germany",
+   "value": 52.52,
+   "fame": 82927922,
+   "source": "https://www.geonames.org/2950159"
+  },
+  {
+   "id": "323786",
+   "name": "Ankara",
+   "emoji": "🇹🇷",
+   "detail": "Turkey",
+   "value": 39.92,
+   "fame": 82319724,
+   "source": "https://www.geonames.org/323786"
+  },
+  {
+   "id": "112931",
+   "name": "Tehran",
+   "emoji": "🇮🇷",
+   "detail": "Iran",
+   "value": 35.69,
+   "fame": 81800269,
+   "source": "https://www.geonames.org/112931"
+  },
+  {
+   "id": "1609350",
+   "name": "Bangkok",
+   "emoji": "🇹🇭",
+   "detail": "Thailand",
+   "value": 13.75,
+   "fame": 69428524,
+   "source": "https://www.geonames.org/1609350"
+  },
+  {
+   "id": "2988507",
+   "name": "Paris",
+   "emoji": "🇫🇷",
+   "detail": "France",
+   "value": 48.85,
+   "fame": 66987244,
+   "source": "https://www.geonames.org/2988507"
+  },
+  {
+   "id": "2643743",
+   "name": "London",
+   "emoji": "🇬🇧",
+   "detail": "United Kingdom",
+   "value": 51.51,
+   "fame": 66488991,
+   "source": "https://www.geonames.org/2643743"
+  },
+  {
+   "id": "3169070",
+   "name": "Rome",
+   "emoji": "🇮🇹",
+   "detail": "Italy",
+   "value": 41.89,
+   "fame": 60431283,
+   "source": "https://www.geonames.org/3169070"
+  },
+  {
+   "id": "964137",
+   "name": "Pretoria",
+   "emoji": "🇿🇦",
+   "detail": "South Africa",
+   "value": -25.74,
+   "fame": 57779622,
+   "source": "https://www.geonames.org/964137"
+  },
+  {
+   "id": "1835848",
+   "name": "Seoul",
+   "emoji": "🇰🇷",
+   "detail": "South Korea",
+   "value": 37.57,
+   "fame": 51635256,
+   "source": "https://www.geonames.org/1835848"
+  },
+  {
+   "id": "184745",
+   "name": "Nairobi",
+   "emoji": "🇰🇪",
+   "detail": "Kenya",
+   "value": -1.283,
+   "fame": 51393010,
+   "source": "https://www.geonames.org/184745"
+  },
+  {
+   "id": "3688689",
+   "name": "Bogotá",
+   "emoji": "🇨🇴",
+   "detail": "Colombia",
+   "value": 4.61,
+   "fame": 49648685,
+   "source": "https://www.geonames.org/3688689"
+  },
+  {
+   "id": "3117735",
+   "name": "Madrid",
+   "emoji": "🇪🇸",
+   "detail": "Spain",
+   "value": 40.42,
+   "fame": 46723749,
+   "source": "https://www.geonames.org/3117735"
+  },
+  {
+   "id": "703448",
+   "name": "Kyiv",
+   "emoji": "🇺🇦",
+   "detail": "Ukraine",
+   "value": 50.45,
+   "fame": 44622516,
+   "source": "https://www.geonames.org/703448"
+  },
+  {
+   "id": "3435910",
+   "name": "Buenos Aires",
+   "emoji": "🇦🇷",
+   "detail": "Argentina",
+   "value": -34.61,
+   "fame": 44494502,
+   "source": "https://www.geonames.org/3435910"
+  },
+  {
+   "id": "98182",
+   "name": "Baghdad",
+   "emoji": "🇮🇶",
+   "detail": "Iraq",
+   "value": 33.34,
+   "fame": 38433600,
+   "source": "https://www.geonames.org/98182"
+  },
+  {
+   "id": "756135",
+   "name": "Warsaw",
+   "emoji": "🇵🇱",
+   "detail": "Poland",
+   "value": 52.23,
+   "fame": 37978548,
+   "source": "https://www.geonames.org/756135"
+  },
+  {
+   "id": "1138958",
+   "name": "Kabul",
+   "emoji": "🇦🇫",
+   "detail": "Afghanistan",
+   "value": 34.53,
+   "fame": 37172386,
+   "source": "https://www.geonames.org/1138958"
+  },
+  {
+   "id": "6094817",
+   "name": "Ottawa",
+   "emoji": "🇨🇦",
+   "detail": "Canada",
+   "value": 45.41,
+   "fame": 37058856,
+   "source": "https://www.geonames.org/6094817"
+  },
+  {
+   "id": "2538475",
+   "name": "Rabat",
+   "emoji": "🇲🇦",
+   "detail": "Morocco",
+   "value": 34.01,
+   "fame": 36029138,
+   "source": "https://www.geonames.org/2538475"
+  },
+  {
+   "id": "108410",
+   "name": "Riyadh",
+   "emoji": "🇸🇦",
+   "detail": "Saudi Arabia",
+   "value": 24.69,
+   "fame": 33699947,
+   "source": "https://www.geonames.org/108410"
+  },
+  {
+   "id": "3936456",
+   "name": "Lima",
+   "emoji": "🇵🇪",
+   "detail": "Peru",
+   "value": -12.04,
+   "fame": 31989256,
+   "source": "https://www.geonames.org/3936456"
+  },
+  {
+   "id": "1735161",
+   "name": "Kuala Lumpur",
+   "emoji": "🇲🇾",
+   "detail": "Malaysia",
+   "value": 3.141,
+   "fame": 31528585,
+   "source": "https://www.geonames.org/1735161"
+  },
+  {
+   "id": "2306104",
+   "name": "Accra",
+   "emoji": "🇬🇭",
+   "detail": "Ghana",
+   "value": 5.556,
+   "fame": 29767108,
+   "source": "https://www.geonames.org/2306104"
+  },
+  {
+   "id": "3646738",
+   "name": "Caracas",
+   "emoji": "🇻🇪",
+   "detail": "Venezuela",
+   "value": 10.49,
+   "fame": 28870195,
+   "source": "https://www.geonames.org/3646738"
+  },
+  {
+   "id": "1283240",
+   "name": "Kathmandu",
+   "emoji": "🇳🇵",
+   "detail": "Nepal",
+   "value": 27.7,
+   "fame": 28087871,
+   "source": "https://www.geonames.org/1283240"
+  },
+  {
+   "id": "1871859",
+   "name": "Pyongyang",
+   "emoji": "🇰🇵",
+   "detail": "North Korea",
+   "value": 39.03,
+   "fame": 25549819,
+   "source": "https://www.geonames.org/1871859"
+  },
+  {
+   "id": "2172517",
+   "name": "Canberra",
+   "emoji": "🇦🇺",
+   "detail": "Australia",
+   "value": -35.28,
+   "fame": 24992369,
+   "source": "https://www.geonames.org/2172517"
+  },
+  {
+   "id": "3871336",
+   "name": "Santiago",
+   "emoji": "🇨🇱",
+   "detail": "Chile",
+   "value": -33.46,
+   "fame": 18729160,
+   "source": "https://www.geonames.org/3871336"
+  },
+  {
+   "id": "2759794",
+   "name": "Amsterdam",
+   "emoji": "🇳🇱",
+   "detail": "Netherlands",
+   "value": 52.37,
+   "fame": 17231017,
+   "source": "https://www.geonames.org/2759794"
+  },
+  {
+   "id": "2800866",
+   "name": "Brussels",
+   "emoji": "🇧🇪",
+   "detail": "Belgium",
+   "value": 50.85,
+   "fame": 11422068,
+   "source": "https://www.geonames.org/2800866"
+  },
+  {
+   "id": "3553478",
+   "name": "Havana",
+   "emoji": "🇨🇺",
+   "detail": "Cuba",
+   "value": 23.13,
+   "fame": 11338138,
+   "source": "https://www.geonames.org/3553478"
+  },
+  {
+   "id": "264371",
+   "name": "Athens",
+   "emoji": "🇬🇷",
+   "detail": "Greece",
+   "value": 37.98,
+   "fame": 10727668,
+   "source": "https://www.geonames.org/264371"
+  },
+  {
+   "id": "3067696",
+   "name": "Prague",
+   "emoji": "🇨🇿",
+   "detail": "Czechia",
+   "value": 50.09,
+   "fame": 10625695,
+   "source": "https://www.geonames.org/3067696"
+  },
+  {
+   "id": "2267057",
+   "name": "Lisbon",
+   "emoji": "🇵🇹",
+   "detail": "Portugal",
+   "value": 38.73,
+   "fame": 10281762,
+   "source": "https://www.geonames.org/2267057"
+  },
+  {
+   "id": "2673730",
+   "name": "Stockholm",
+   "emoji": "🇸🇪",
+   "detail": "Sweden",
+   "value": 59.33,
+   "fame": 10183175,
+   "source": "https://www.geonames.org/2673730"
+  },
+  {
+   "id": "3054643",
+   "name": "Budapest",
+   "emoji": "🇭🇺",
+   "detail": "Hungary",
+   "value": 47.5,
+   "fame": 9768785,
+   "source": "https://www.geonames.org/3054643"
+  },
+  {
+   "id": "292968",
+   "name": "Abu Dhabi",
+   "emoji": "🇦🇪",
+   "detail": "United Arab Emirates",
+   "value": 24.45,
+   "fame": 9630959,
+   "source": "https://www.geonames.org/292968"
+  },
+  {
+   "id": "2761369",
+   "name": "Vienna",
+   "emoji": "🇦🇹",
+   "detail": "Austria",
+   "value": 48.21,
+   "fame": 8847037,
+   "source": "https://www.geonames.org/2761369"
+  },
+  {
+   "id": "2661552",
+   "name": "Bern",
+   "emoji": "🇨🇭",
+   "detail": "Switzerland",
+   "value": 46.95,
+   "fame": 8516543,
+   "source": "https://www.geonames.org/2661552"
+  },
+  {
+   "id": "2618425",
+   "name": "Copenhagen",
+   "emoji": "🇩🇰",
+   "detail": "Denmark",
+   "value": 55.68,
+   "fame": 5797446,
+   "source": "https://www.geonames.org/2618425"
+  },
+  {
+   "id": "1880252",
+   "name": "Singapore",
+   "emoji": "🇸🇬",
+   "detail": "Singapore",
+   "value": 1.29,
+   "fame": 5638676,
+   "source": "https://www.geonames.org/1880252"
+  },
+  {
+   "id": "658225",
+   "name": "Helsinki",
+   "emoji": "🇫🇮",
+   "detail": "Finland",
+   "value": 60.17,
+   "fame": 5518050,
+   "source": "https://www.geonames.org/658225"
+  },
+  {
+   "id": "3143244",
+   "name": "Oslo",
+   "emoji": "🇳🇴",
+   "detail": "Norway",
+   "value": 59.91,
+   "fame": 5314336,
+   "source": "https://www.geonames.org/3143244"
+  },
+  {
+   "id": "2179537",
+   "name": "Wellington",
+   "emoji": "🇳🇿",
+   "detail": "New Zealand",
+   "value": -41.29,
+   "fame": 4885500,
+   "source": "https://www.geonames.org/2179537"
+  },
+  {
+   "id": "2964574",
+   "name": "Dublin",
+   "emoji": "🇮🇪",
+   "detail": "Ireland",
+   "value": 53.33,
+   "fame": 4853506,
+   "source": "https://www.geonames.org/2964574"
+  }
+ ]
+}

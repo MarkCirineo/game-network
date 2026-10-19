@@ -5,6 +5,7 @@ import { Gamepad2, Menu, UserRound, X } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { authClient } from "@/lib/auth-client";
+import { DAILY_PATH } from "@/lib/daily/config";
 
 /** "Sign in", or the signed-in player's username (links to /account) */
 function useAccountLink(): { href: string; label: string; signedIn: boolean } | null {
@@ -69,6 +70,12 @@ export function Header() {
             Games
           </Link>
           <Link
+            href={DAILY_PATH}
+            className="text-sm font-medium text-text-secondary transition-colors hover:text-foreground"
+          >
+            Daily
+          </Link>
+          <Link
             href="/tools"
             className="text-sm font-medium text-text-secondary transition-colors hover:text-foreground"
           >
@@ -114,6 +121,13 @@ export function Header() {
             className="rounded-lg px-3 py-2 text-sm font-medium text-text-secondary transition-colors hover:bg-white/5 hover:text-foreground"
           >
             Games
+          </Link>
+          <Link
+            href={DAILY_PATH}
+            onClick={() => setMobileMenuOpen(false)}
+            className="rounded-lg px-3 py-2 text-sm font-medium text-text-secondary transition-colors hover:bg-white/5 hover:text-foreground"
+          >
+            Daily puzzle
           </Link>
           <Link
             href="/tools"

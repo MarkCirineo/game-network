@@ -1,0 +1,229 @@
+{
+ "source": "Wikipedia",
+ "items": [
+  {
+   "id": "eiffel-tower",
+   "name": "Eiffel Tower",
+   "detail": "France",
+   "value": 330,
+   "fame": 100,
+   "source": "https://en.wikipedia.org/wiki/Eiffel_Tower"
+  },
+  {
+   "id": "great-pyramid-of-giza",
+   "name": "Great Pyramid of Giza",
+   "detail": "Egypt",
+   "value": 139,
+   "fame": 100,
+   "source": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza"
+  },
+  {
+   "id": "statue-of-liberty",
+   "name": "Statue of Liberty",
+   "detail": "United States",
+   "value": 93,
+   "fame": 100,
+   "source": "https://en.wikipedia.org/wiki/Statue_of_Liberty"
+  },
+  {
+   "id": "big-ben",
+   "name": "Big Ben",
+   "detail": "United Kingdom",
+   "value": 96,
+   "fame": 95,
+   "source": "https://en.wikipedia.org/wiki/Big_Ben"
+  },
+  {
+   "id": "burj-khalifa",
+   "name": "Burj Khalifa",
+   "detail": "United Arab Emirates",
+   "value": 828,
+   "fame": 95,
+   "source": "https://en.wikipedia.org/wiki/Burj_Khalifa"
+  },
+  {
+   "id": "colosseum",
+   "name": "Colosseum",
+   "detail": "Italy",
+   "value": 48,
+   "fame": 95,
+   "source": "https://en.wikipedia.org/wiki/Colosseum"
+  },
+  {
+   "id": "empire-state-building",
+   "name": "Empire State Building",
+   "detail": "United States",
+   "value": 443,
+   "fame": 95,
+   "source": "https://en.wikipedia.org/wiki/Empire_State_Building"
+  },
+  {
+   "id": "taj-mahal",
+   "name": "Taj Mahal",
+   "detail": "India",
+   "value": 73,
+   "fame": 95,
+   "source": "https://en.wikipedia.org/wiki/Taj_Mahal"
+  },
+  {
+   "id": "christ-the-redeemer-statue-",
+   "name": "Christ the Redeemer",
+   "detail": "Brazil",
+   "value": 30,
+   "fame": 90,
+   "source": "https://en.wikipedia.org/wiki/Christ_the_Redeemer_(statue)"
+  },
+  {
+   "id": "golden-gate-bridge",
+   "name": "Golden Gate Bridge (towers)",
+   "detail": "United States",
+   "value": 227,
+   "fame": 90,
+   "source": "https://en.wikipedia.org/wiki/Golden_Gate_Bridge"
+  },
+  {
+   "id": "leaning-tower-of-pisa",
+   "name": "Leaning Tower of Pisa",
+   "detail": "Italy",
+   "value": 56,
+   "fame": 90,
+   "source": "https://en.wikipedia.org/wiki/Leaning_Tower_of_Pisa"
+  },
+  {
+   "id": "stonehenge",
+   "name": "Stonehenge",
+   "detail": "United Kingdom",
+   "value": 7.3,
+   "fame": 90,
+   "source": "https://en.wikipedia.org/wiki/Stonehenge"
+  },
+  {
+   "id": "great-sphinx-of-giza",
+   "name": "Great Sphinx of Giza",
+   "detail": "Egypt",
+   "value": 20,
+   "fame": 85,
+   "source": "https://en.wikipedia.org/wiki/Great_Sphinx_of_Giza"
+  },
+  {
+   "id": "mount-rushmore",
+   "name": "Mount Rushmore (faces)",
+   "detail": "United States",
+   "value": 18,
+   "fame": 85,
+   "source": "https://en.wikipedia.org/wiki/Mount_Rushmore"
+  },
+  {
+   "id": "one-world-trade-center",
+   "name": "One World Trade Center",
+   "detail": "United States",
+   "value": 541,
+   "fame": 85,
+   "source": "https://en.wikipedia.org/wiki/One_World_Trade_Center"
+  },
+  {
+   "id": "arc-de-triomphe",
+   "name": "Arc de Triomphe",
+   "detail": "France",
+   "value": 50,
+   "fame": 80,
+   "source": "https://en.wikipedia.org/wiki/Arc_de_Triomphe"
+  },
+  {
+   "id": "london-eye",
+   "name": "London Eye",
+   "detail": "United Kingdom",
+   "value": 135,
+   "fame": 80,
+   "source": "https://en.wikipedia.org/wiki/London_Eye"
+  },
+  {
+   "id": "washington-monument",
+   "name": "Washington Monument",
+   "detail": "United States",
+   "value": 169,
+   "fame": 80,
+   "source": "https://en.wikipedia.org/wiki/Washington_Monument"
+  },
+  {
+   "id": "chrysler-building",
+   "name": "Chrysler Building",
+   "detail": "United States",
+   "value": 319,
+   "fame": 75,
+   "source": "https://en.wikipedia.org/wiki/Chrysler_Building"
+  },
+  {
+   "id": "cn-tower",
+   "name": "CN Tower",
+   "detail": "Canada",
+   "value": 553,
+   "fame": 75,
+   "source": "https://en.wikipedia.org/wiki/CN_Tower"
+  },
+  {
+   "id": "space-needle",
+   "name": "Space Needle",
+   "detail": "United States",
+   "value": 184,
+   "fame": 75,
+   "source": "https://en.wikipedia.org/wiki/Space_Needle"
+  },
+  {
+   "id": "st-peter-s-basilica",
+   "name": "St. Peter's Basilica",
+   "detail": "Vatican City",
+   "value": 137,
+   "fame": 75,
+   "source": "https://en.wikipedia.org/wiki/St._Peter's_Basilica"
+  },
+  {
+   "id": "gateway-arch",
+   "name": "Gateway Arch",
+   "detail": "United States",
+   "value": 192,
+   "fame": 70,
+   "source": "https://en.wikipedia.org/wiki/Gateway_Arch"
+  },
+  {
+   "id": "petronas-towers",
+   "name": "Petronas Towers",
+   "detail": "Malaysia",
+   "value": 452,
+   "fame": 70,
+   "source": "https://en.wikipedia.org/wiki/Petronas_Towers"
+  },
+  {
+   "id": "taipei-101",
+   "name": "Taipei 101",
+   "detail": "Taiwan",
+   "value": 508,
+   "fame": 70,
+   "source": "https://en.wikipedia.org/wiki/Taipei_101"
+  },
+  {
+   "id": "the-shard",
+   "name": "The Shard",
+   "detail": "United Kingdom",
+   "value": 310,
+   "fame": 70,
+   "source": "https://en.wikipedia.org/wiki/The_Shard"
+  },
+  {
+   "id": "tokyo-skytree",
+   "name": "Tokyo Skytree",
+   "detail": "Japan",
+   "value": 634,
+   "fame": 70,
+   "source": "https://en.wikipedia.org/wiki/Tokyo_Skytree"
+  },
+  {
+   "id": "shanghai-tower",
+   "name": "Shanghai Tower",
+   "detail": "China",
+   "value": 632,
+   "fame": 65,
+   "source": "https://en.wikipedia.org/wiki/Shanghai_Tower"
+  }
+ ]
+}

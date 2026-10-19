@@ -9,8 +9,8 @@
 // changing auth plugins or user fields.
 // ============================================================
 
-import { relations } from "drizzle-orm";
-import { boolean, index, pgTable, text, timestamp } from "drizzle-orm/pg-core";
+import { relations, sql } from "drizzle-orm";
+import { boolean, index, integer, jsonb, pgTable, text, timestamp, uniqueIndex } from "drizzle-orm/pg-core";
 
 export const user = pgTable("user", {
   id: text("id").primaryKey(),
@@ -118,3 +118,45 @@ export const releasedUsername = pgTable("released_username", {
   releasedAt: timestamp("released_at").defaultNow().notNull(),
   availableAt: timestamp("available_at").notNull(),
 });
+
+/**
+ * Daily Rank: each day's puzzle, saved the first time anyone opens
+ * it. Puzzles are generated from the category lists, so saving them
+ * keeps a published puzzle fixed when categories are added or fixed
+ * later. Holds the answers: never send `rounds` to the browser as is.
+ */
+export const dailyPuzzle = pgTable("daily_puzzle", {
+  puzzle: integer("puzzle").primaryKey(),
+  rounds: jsonb("rounds").$type<unknown[]>().notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+});
+
+/**
+ * Daily Rank: one row per play of a daily puzzle. Guests' plays have
+ * no user_id; signing in later claims them (see src/lib/daily/plays.ts).
+ * `id` is the play token the browser keeps. `rounds` holds each round
+ * the player has locked in: their order and the marks (2/1/0) per item.
+ */
+export const dailyPlay = pgTable(
+  "daily_play",
+  {
+    id: text("id").primaryKey(),
+    puzzle: integer("puzzle").notNull(),
+    userId: text("user_id").references(() => user.id, { onDelete: "cascade" }),
+    rounds: jsonb("rounds").$type<DailyPlayRound[]>().default([]).notNull(),
+    score: integer("score").default(0).notNull(),
+    startedAt: timestamp("started_at").defaultNow().notNull(),
+    completedAt: timestamp("completed_at"),
+  },
+  (table) => [
+    uniqueIndex("daily_play_user_puzzle_idx")
+      .on(table.userId, table.puzzle)
+      .where(sql`${table.userId} is not null`),
+    index("daily_play_puzzle_idx").on(table.puzzle, table.completedAt),
+  ],
+);
+
+export interface DailyPlayRound {
+  guess: string[];
+  marks: number[];
+}

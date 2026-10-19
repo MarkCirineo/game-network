@@ -1,0 +1,829 @@
+{
+ "source": "Wikidata (CC0)",
+ "items": [
+  {
+   "id": "Q16635",
+   "name": "Guam",
+   "detail": "United States",
+   "value": 544,
+   "fame": 195,
+   "source": "https://www.wikidata.org/wiki/Q16635"
+  },
+  {
+   "id": "Q17070",
+   "name": "Réunion",
+   "detail": "France",
+   "value": 2512,
+   "fame": 182,
+   "source": "https://www.wikidata.org/wiki/Q17070"
+  },
+  {
+   "id": "Q23666",
+   "name": "Great Britain",
+   "detail": "United Kingdom",
+   "value": 228938,
+   "fame": 173,
+   "source": "https://www.wikidata.org/wiki/Q23666"
+  },
+  {
+   "id": "Q3757",
+   "name": "Java",
+   "detail": "Indonesia",
+   "value": 128297,
+   "fame": 170,
+   "source": "https://www.wikidata.org/wiki/Q3757"
+  },
+  {
+   "id": "Q22890",
+   "name": "Ireland",
+   "detail": "Ireland / United Kingdom",
+   "value": 84421,
+   "fame": 169,
+   "source": "https://www.wikidata.org/wiki/Q22890"
+  },
+  {
+   "id": "Q14452",
+   "name": "Easter Island",
+   "detail": "Chile",
+   "value": 164,
+   "fame": 164,
+   "source": "https://www.wikidata.org/wiki/Q14452"
+  },
+  {
+   "id": "Q3492",
+   "name": "Sumatra",
+   "detail": "Indonesia",
+   "value": 473481,
+   "fame": 159,
+   "source": "https://www.wikidata.org/wiki/Q3492"
+  },
+  {
+   "id": "Q34374",
+   "name": "Crete",
+   "detail": "Greece",
+   "value": 8336,
+   "fame": 158,
+   "source": "https://www.wikidata.org/wiki/Q34374"
+  },
+  {
+   "id": "Q13353",
+   "name": "Montserrat",
+   "detail": "United Kingdom",
+   "value": 102,
+   "fame": 158,
+   "source": "https://www.wikidata.org/wiki/Q13353"
+  },
+  {
+   "id": "Q31063",
+   "name": "Christmas Island",
+   "detail": "Australia",
+   "value": 135,
+   "fame": 153,
+   "source": "https://www.wikidata.org/wiki/Q31063"
+  },
+  {
+   "id": "Q34497",
+   "name": "Saint Helena",
+   "detail": "United Kingdom",
+   "value": 121,
+   "fame": 149,
+   "source": "https://www.wikidata.org/wiki/Q34497"
+  },
+  {
+   "id": "Q36117",
+   "name": "Borneo",
+   "detail": "Brunei, Indonesia and others",
+   "value": 748168,
+   "fame": 147,
+   "source": "https://www.wikidata.org/wiki/Q36117"
+  },
+  {
+   "id": "Q40285",
+   "name": "New Guinea",
+   "detail": "Indonesia / Papua New Guinea",
+   "value": 785753,
+   "fame": 147,
+   "source": "https://www.wikidata.org/wiki/Q40285"
+  },
+  {
+   "id": "Q13987",
+   "name": "Kyushu",
+   "detail": "Japan",
+   "value": 36780,
+   "fame": 137,
+   "source": "https://www.wikidata.org/wiki/Q13987"
+  },
+  {
+   "id": "Q13991",
+   "name": "Shikoku",
+   "detail": "Japan",
+   "value": 18300,
+   "fame": 131,
+   "source": "https://www.wikidata.org/wiki/Q13991"
+  },
+  {
+   "id": "Q3812",
+   "name": "Sulawesi",
+   "detail": "Indonesia",
+   "value": 174600,
+   "fame": 126,
+   "source": "https://www.wikidata.org/wiki/Q3812"
+  },
+  {
+   "id": "Q8828",
+   "name": "Mallorca",
+   "detail": "Spain",
+   "value": 3620,
+   "fame": 124,
+   "source": "https://www.wikidata.org/wiki/Q8828"
+  },
+  {
+   "id": "Q25277",
+   "name": "Hispaniola",
+   "detail": "Dominican Republic / Haiti",
+   "value": 76420,
+   "fame": 123,
+   "source": "https://www.wikidata.org/wiki/Q25277"
+  },
+  {
+   "id": "Q42000",
+   "name": "Tahiti",
+   "detail": "France",
+   "value": 1042,
+   "fame": 123,
+   "source": "https://www.wikidata.org/wiki/Q42000"
+  },
+  {
+   "id": "Q125384",
+   "name": "Luzon",
+   "detail": "Philippines",
+   "value": 109965,
+   "fame": 119,
+   "source": "https://www.wikidata.org/wiki/Q125384"
+  },
+  {
+   "id": "Q7792",
+   "name": "Sakhalin",
+   "detail": "Russia",
+   "value": 72492,
+   "fame": 117,
+   "source": "https://www.wikidata.org/wiki/Q7792"
+  },
+  {
+   "id": "Q43048",
+   "name": "Rhodes",
+   "detail": "Greece",
+   "value": 1400,
+   "fame": 116,
+   "source": "https://www.wikidata.org/wiki/Q43048"
+  },
+  {
+   "id": "Q14056",
+   "name": "Jan Mayen",
+   "detail": "Norway",
+   "value": 377,
+   "fame": 114,
+   "source": "https://www.wikidata.org/wiki/Q14056"
+  },
+  {
+   "id": "Q124873",
+   "name": "Mindanao",
+   "detail": "Philippines",
+   "value": 97530,
+   "fame": 111,
+   "source": "https://www.wikidata.org/wiki/Q124873"
+  },
+  {
+   "id": "Q1027830",
+   "name": "Gotland",
+   "detail": "Sweden",
+   "value": 2968,
+   "fame": 104,
+   "source": "https://www.wikidata.org/wiki/Q1027830"
+  },
+  {
+   "id": "Q52631",
+   "name": "Ibiza",
+   "detail": "Spain",
+   "value": 577,
+   "fame": 104,
+   "source": "https://www.wikidata.org/wiki/Q52631"
+  },
+  {
+   "id": "Q4648",
+   "name": "Bali Island",
+   "detail": "Indonesia",
+   "value": 5633,
+   "fame": 103,
+   "source": "https://www.wikidata.org/wiki/Q4648"
+  },
+  {
+   "id": "Q25528",
+   "name": "Saba",
+   "detail": "Netherlands",
+   "value": 13,
+   "fame": 103,
+   "source": "https://www.wikidata.org/wiki/Q25528"
+  },
+  {
+   "id": "Q26180",
+   "name": "Sint Eustatius",
+   "detail": "Netherlands",
+   "value": 21,
+   "fame": 103,
+   "source": "https://www.wikidata.org/wiki/Q26180"
+  },
+  {
+   "id": "Q23408",
+   "name": "Bouvet Island",
+   "detail": "Norway",
+   "value": 49,
+   "fame": 102,
+   "source": "https://www.wikidata.org/wiki/Q23408"
+  },
+  {
+   "id": "Q25359",
+   "name": "Navassa Island",
+   "detail": "United States",
+   "value": 5.4,
+   "fame": 102,
+   "source": "https://www.wikidata.org/wiki/Q25359"
+  },
+  {
+   "id": "Q48335",
+   "name": "Newfoundland",
+   "detail": "Canada",
+   "value": 108860,
+   "fame": 102,
+   "source": "https://www.wikidata.org/wiki/Q48335"
+  },
+  {
+   "id": "Q83067",
+   "name": "Timor",
+   "detail": "Indonesia / Timor-Leste",
+   "value": 30777,
+   "fame": 102,
+   "source": "https://www.wikidata.org/wiki/Q83067"
+  },
+  {
+   "id": "Q46197",
+   "name": "Ascension Island",
+   "detail": "United Kingdom",
+   "value": 88,
+   "fame": 100,
+   "source": "https://www.wikidata.org/wiki/Q46197"
+  },
+  {
+   "id": "Q121378",
+   "name": "Corfu",
+   "detail": "Greece",
+   "value": 626,
+   "fame": 100,
+   "source": "https://www.wikidata.org/wiki/Q121378"
+  },
+  {
+   "id": "Q9679",
+   "name": "Isle of Wight",
+   "detail": "United Kingdom",
+   "value": 380.2,
+   "fame": 100,
+   "source": "https://www.wikidata.org/wiki/Q9679"
+  },
+  {
+   "id": "Q118863",
+   "name": "North Island",
+   "detail": "New Zealand",
+   "value": 113729,
+   "fame": 100,
+   "source": "https://www.wikidata.org/wiki/Q118863"
+  },
+  {
+   "id": "Q45328",
+   "name": "Elba",
+   "detail": "Italy",
+   "value": 223,
+   "fame": 99,
+   "source": "https://www.wikidata.org/wiki/Q45328"
+  },
+  {
+   "id": "Q120755",
+   "name": "South Island",
+   "detail": "New Zealand",
+   "value": 150437,
+   "fame": 99,
+   "source": "https://www.wikidata.org/wiki/Q120755"
+  },
+  {
+   "id": "Q25596",
+   "name": "Saint Martin",
+   "detail": "France / Sint Maarten",
+   "value": 87,
+   "fame": 97,
+   "source": "https://www.wikidata.org/wiki/Q25596"
+  },
+  {
+   "id": "Q22502",
+   "name": "Taiwan Island",
+   "detail": "Taiwan",
+   "value": 35883,
+   "fame": 97,
+   "source": "https://www.wikidata.org/wiki/Q22502"
+  },
+  {
+   "id": "Q769680",
+   "name": "Bornholm",
+   "detail": "Denmark",
+   "value": 588.4,
+   "fame": 96,
+   "source": "https://www.wikidata.org/wiki/Q769680"
+  },
+  {
+   "id": "Q25535",
+   "name": "Zealand",
+   "detail": "Denmark",
+   "value": 7031,
+   "fame": 96,
+   "source": "https://www.wikidata.org/wiki/Q25535"
+  },
+  {
+   "id": "Q81178",
+   "name": "Baffin Island",
+   "detail": "Canada",
+   "value": 507451,
+   "fame": 95,
+   "source": "https://www.wikidata.org/wiki/Q81178"
+  },
+  {
+   "id": "Q128087",
+   "name": "Lesbos",
+   "detail": "Greece",
+   "value": 1641,
+   "fame": 94,
+   "source": "https://www.wikidata.org/wiki/Q128087"
+  },
+  {
+   "id": "Q82859",
+   "name": "Socotra",
+   "detail": "Yemen",
+   "value": 3796,
+   "fame": 92,
+   "source": "https://www.wikidata.org/wiki/Q82859"
+  },
+  {
+   "id": "Q173292",
+   "name": "Capri",
+   "detail": "Italy",
+   "value": 10.4,
+   "fame": 91,
+   "source": "https://www.wikidata.org/wiki/Q173292"
+  },
+  {
+   "id": "Q178925",
+   "name": "Gran Canaria",
+   "detail": "Spain",
+   "value": 1560,
+   "fame": 91,
+   "source": "https://www.wikidata.org/wiki/Q178925"
+  },
+  {
+   "id": "Q52636",
+   "name": "Menorca",
+   "detail": "Spain",
+   "value": 692,
+   "fame": 90,
+   "source": "https://www.wikidata.org/wiki/Q52636"
+  },
+  {
+   "id": "Q161258",
+   "name": "Clipperton Island",
+   "detail": "France",
+   "value": 6,
+   "fame": 89,
+   "source": "https://www.wikidata.org/wiki/Q161258"
+  },
+  {
+   "id": "Q600614",
+   "name": "Okinawa",
+   "detail": "Japan",
+   "value": 1208,
+   "fame": 89,
+   "source": "https://www.wikidata.org/wiki/Q600614"
+  },
+  {
+   "id": "Q129296",
+   "name": "Santorini",
+   "detail": "Greece",
+   "value": 79.19,
+   "fame": 89,
+   "source": "https://www.wikidata.org/wiki/Q129296"
+  },
+  {
+   "id": "Q18438",
+   "name": "Long Island",
+   "detail": "United States",
+   "value": 3566,
+   "fame": 88,
+   "source": "https://www.wikidata.org/wiki/Q18438"
+  },
+  {
+   "id": "Q3237",
+   "name": "Rügen",
+   "detail": "Germany",
+   "value": 926,
+   "fame": 86,
+   "source": "https://www.wikidata.org/wiki/Q3237"
+  },
+  {
+   "id": "Q146841",
+   "name": "Ellesmere Island",
+   "detail": "Canada",
+   "value": 196235,
+   "fame": 85,
+   "source": "https://www.wikidata.org/wiki/Q146841"
+  },
+  {
+   "id": "Q131148",
+   "name": "Stromboli",
+   "detail": "Italy",
+   "value": 12.6,
+   "fame": 85,
+   "source": "https://www.wikidata.org/wiki/Q131148"
+  },
+  {
+   "id": "Q170479",
+   "name": "Vancouver Island",
+   "detail": "Canada",
+   "value": 32134,
+   "fame": 85,
+   "source": "https://www.wikidata.org/wiki/Q170479"
+  },
+  {
+   "id": "Q62218",
+   "name": "Jarvis Island",
+   "detail": "United States",
+   "value": 4.75,
+   "fame": 84,
+   "source": "https://www.wikidata.org/wiki/Q62218"
+  },
+  {
+   "id": "Q131305",
+   "name": "Howland Island",
+   "detail": "United States",
+   "value": 2.6,
+   "fame": 83,
+   "source": "https://www.wikidata.org/wiki/Q131305"
+  },
+  {
+   "id": "Q951302",
+   "name": "Saaremaa",
+   "detail": "Estonia",
+   "value": 2672,
+   "fame": 83,
+   "source": "https://www.wikidata.org/wiki/Q951302"
+  },
+  {
+   "id": "Q51679",
+   "name": "Saipan",
+   "detail": "United States",
+   "value": 115.4,
+   "fame": 83,
+   "source": "https://www.wikidata.org/wiki/Q51679"
+  },
+  {
+   "id": "Q128323",
+   "name": "Trinidad",
+   "detail": "Trinidad and Tobago",
+   "value": 4768,
+   "fame": 83,
+   "source": "https://www.wikidata.org/wiki/Q128323"
+  },
+  {
+   "id": "Q168159",
+   "name": "Anglesey",
+   "detail": "United Kingdom",
+   "value": 749,
+   "fame": 82,
+   "source": "https://www.wikidata.org/wiki/Q168159"
+  },
+  {
+   "id": "Q7564",
+   "name": "Lombok Island",
+   "detail": "Indonesia",
+   "value": 5435,
+   "fame": 82,
+   "source": "https://www.wikidata.org/wiki/Q7564"
+  },
+  {
+   "id": "Q131347",
+   "name": "Oahu",
+   "detail": "United States",
+   "value": 1545,
+   "fame": 82,
+   "source": "https://www.wikidata.org/wiki/Q131347"
+  },
+  {
+   "id": "Q156882",
+   "name": "Samos",
+   "detail": "Greece",
+   "value": 476,
+   "fame": 82,
+   "source": "https://www.wikidata.org/wiki/Q156882"
+  },
+  {
+   "id": "Q160483",
+   "name": "Chios",
+   "detail": "Greece",
+   "value": 842.5,
+   "fame": 81,
+   "source": "https://www.wikidata.org/wiki/Q160483"
+  },
+  {
+   "id": "Q182432",
+   "name": "Lanzarote",
+   "detail": "Spain",
+   "value": 791,
+   "fame": 81,
+   "source": "https://www.wikidata.org/wiki/Q182432"
+  },
+  {
+   "id": "Q59771",
+   "name": "New Britain",
+   "detail": "Papua New Guinea",
+   "value": 36520,
+   "fame": 81,
+   "source": "https://www.wikidata.org/wiki/Q59771"
+  },
+  {
+   "id": "Q173148",
+   "name": "Delos",
+   "detail": "Greece",
+   "value": 3.506,
+   "fame": 80,
+   "source": "https://www.wikidata.org/wiki/Q173148"
+  },
+  {
+   "id": "Q192534",
+   "name": "Fuerteventura",
+   "detail": "Spain",
+   "value": 1633,
+   "fame": 80,
+   "source": "https://www.wikidata.org/wiki/Q192534"
+  },
+  {
+   "id": "Q26503",
+   "name": "Funen",
+   "detail": "Denmark",
+   "value": 2985,
+   "fame": 80,
+   "source": "https://www.wikidata.org/wiki/Q26503"
+  },
+  {
+   "id": "Q29151",
+   "name": "Jeju Island",
+   "detail": "South Korea",
+   "value": 1848,
+   "fame": 80,
+   "source": "https://www.wikidata.org/wiki/Q29151"
+  },
+  {
+   "id": "Q188527",
+   "name": "Naxos Island",
+   "detail": "Greece",
+   "value": 429.8,
+   "fame": 80,
+   "source": "https://www.wikidata.org/wiki/Q188527"
+  },
+  {
+   "id": "Q3405693",
+   "name": "Sark",
+   "detail": "Guernsey",
+   "value": 5.5,
+   "fame": 80,
+   "source": "https://www.wikidata.org/wiki/Q3405693"
+  },
+  {
+   "id": "Q148440",
+   "name": "Flores Island",
+   "detail": "Indonesia",
+   "value": 13540,
+   "fame": 79,
+   "source": "https://www.wikidata.org/wiki/Q148440"
+  },
+  {
+   "id": "Q170488",
+   "name": "Gozo",
+   "detail": "Malta",
+   "value": 67,
+   "fame": 79,
+   "source": "https://www.wikidata.org/wiki/Q170488"
+  },
+  {
+   "id": "Q173096",
+   "name": "Euboea",
+   "detail": "Greece",
+   "value": 3670,
+   "fame": 78,
+   "source": "https://www.wikidata.org/wiki/Q173096"
+  },
+  {
+   "id": "Q146530",
+   "name": "Hiiumaa",
+   "detail": "Estonia",
+   "value": 989,
+   "fame": 78,
+   "source": "https://www.wikidata.org/wiki/Q146530"
+  },
+  {
+   "id": "Q187027",
+   "name": "Kos",
+   "detail": "Greece",
+   "value": 290.3,
+   "fame": 78,
+   "source": "https://www.wikidata.org/wiki/Q187027"
+  },
+  {
+   "id": "Q158129",
+   "name": "Victoria Island",
+   "detail": "Canada",
+   "value": 217291,
+   "fame": 78,
+   "source": "https://www.wikidata.org/wiki/Q158129"
+  },
+  {
+   "id": "Q238752",
+   "name": "Barbuda",
+   "detail": "Antigua and Barbuda",
+   "value": 161,
+   "fame": 77,
+   "source": "https://www.wikidata.org/wiki/Q238752"
+  },
+  {
+   "id": "Q178488",
+   "name": "Cephalonia",
+   "detail": "Greece",
+   "value": 734,
+   "fame": 76,
+   "source": "https://www.wikidata.org/wiki/Q178488"
+  },
+  {
+   "id": "Q187471",
+   "name": "Ithaca",
+   "detail": "Greece",
+   "value": 117,
+   "fame": 76,
+   "source": "https://www.wikidata.org/wiki/Q187471"
+  },
+  {
+   "id": "Q107338",
+   "name": "Lampedusa",
+   "detail": "Italy",
+   "value": 20.2,
+   "fame": 76,
+   "source": "https://www.wikidata.org/wiki/Q107338"
+  },
+  {
+   "id": "Q239276",
+   "name": "Öland",
+   "detail": "Sweden",
+   "value": 1347,
+   "fame": 76,
+   "source": "https://www.wikidata.org/wiki/Q239276"
+  },
+  {
+   "id": "Q21162",
+   "name": "Spitsbergen",
+   "detail": "Norway",
+   "value": 39044,
+   "fame": 75,
+   "source": "https://www.wikidata.org/wiki/Q21162"
+  },
+  {
+   "id": "Q104784",
+   "name": "Lord Howe Island",
+   "detail": "Australia",
+   "value": 14.6,
+   "fame": 74,
+   "source": "https://www.wikidata.org/wiki/Q104784"
+  },
+  {
+   "id": "Q146695",
+   "name": "Phú Quốc",
+   "detail": "Vietnam",
+   "value": 589.3,
+   "fame": 74,
+   "source": "https://www.wikidata.org/wiki/Q146695"
+  },
+  {
+   "id": "Q106594",
+   "name": "Wrangel Island",
+   "detail": "Russia",
+   "value": 7600,
+   "fame": 74,
+   "source": "https://www.wikidata.org/wiki/Q106594"
+  },
+  {
+   "id": "Q144880",
+   "name": "Zakynthos",
+   "detail": "Greece",
+   "value": 405.6,
+   "fame": 74,
+   "source": "https://www.wikidata.org/wiki/Q144880"
+  },
+  {
+   "id": "Q107393",
+   "name": "Isle of Skye",
+   "detail": "United Kingdom",
+   "value": 1656,
+   "fame": 73,
+   "source": "https://www.wikidata.org/wiki/Q107393"
+  },
+  {
+   "id": "Q188705",
+   "name": "Maui",
+   "detail": "United States",
+   "value": 1883,
+   "fame": 72,
+   "source": "https://www.wikidata.org/wiki/Q188705"
+  },
+  {
+   "id": "Q190053",
+   "name": "Patmos",
+   "detail": "Greece",
+   "value": 34.14,
+   "fame": 72,
+   "source": "https://www.wikidata.org/wiki/Q190053"
+  },
+  {
+   "id": "Q192493",
+   "name": "Robben Island",
+   "detail": "South Africa",
+   "value": 5.18,
+   "fame": 72,
+   "source": "https://www.wikidata.org/wiki/Q192493"
+  },
+  {
+   "id": "Q188489",
+   "name": "Cape Breton Island",
+   "detail": "Canada",
+   "value": 10311,
+   "fame": 71,
+   "source": "https://www.wikidata.org/wiki/Q188489"
+  },
+  {
+   "id": "Q201026",
+   "name": "Kauaʻi",
+   "detail": "United States",
+   "value": 1435,
+   "fame": 71,
+   "source": "https://www.wikidata.org/wiki/Q201026"
+  },
+  {
+   "id": "Q190210",
+   "name": "Mykonos",
+   "detail": "Greece",
+   "value": 105.8,
+   "fame": 71,
+   "source": "https://www.wikidata.org/wiki/Q190210"
+  },
+  {
+   "id": "Q316390",
+   "name": "Antigua",
+   "detail": "Antigua and Barbuda",
+   "value": 281,
+   "fame": 70,
+   "source": "https://www.wikidata.org/wiki/Q316390"
+  },
+  {
+   "id": "Q200226",
+   "name": "Banks Island",
+   "detail": "Canada",
+   "value": 70028,
+   "fame": 70,
+   "source": "https://www.wikidata.org/wiki/Q200226"
+  },
+  {
+   "id": "Q205022",
+   "name": "Bioko",
+   "detail": "Equatorial Guinea",
+   "value": 1935,
+   "fame": 70,
+   "source": "https://www.wikidata.org/wiki/Q205022"
+  },
+  {
+   "id": "Q193264",
+   "name": "Marajó",
+   "detail": "Brazil",
+   "value": 40100,
+   "fame": 70,
+   "source": "https://www.wikidata.org/wiki/Q193264"
+  },
+  {
+   "id": "Q3255",
+   "name": "Usedom",
+   "detail": "Germany / Poland",
+   "value": 445,
+   "fame": 70,
+   "source": "https://www.wikidata.org/wiki/Q3255"
+  }
+ ]
+}

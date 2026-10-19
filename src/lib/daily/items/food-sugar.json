@@ -1,0 +1,268 @@
+{
+ "source": "USDA FoodData Central",
+ "items": [
+  {
+   "id": "apple",
+   "name": "Apple",
+   "emoji": "🍎",
+   "detail": "Raw",
+   "fame": 95,
+   "source": "https://fdc.nal.usda.gov/food-details/171688/nutrients",
+   "value": 10.4
+  },
+  {
+   "id": "banana",
+   "name": "Banana",
+   "emoji": "🍌",
+   "detail": "Raw",
+   "fame": 95,
+   "source": "https://fdc.nal.usda.gov/food-details/173944/nutrients",
+   "value": 12.2
+  },
+  {
+   "id": "pizza",
+   "name": "Cheese pizza",
+   "emoji": "🍕",
+   "detail": "Frozen, baked",
+   "fame": 95,
+   "source": "https://fdc.nal.usda.gov/food-details/170317/nutrients",
+   "value": 3.57
+  },
+  {
+   "id": "egg",
+   "name": "Egg",
+   "emoji": "🥚",
+   "detail": "Hard-boiled",
+   "fame": 95,
+   "source": "https://fdc.nal.usda.gov/food-details/173424/nutrients",
+   "value": 1.12
+  },
+  {
+   "id": "chocolate",
+   "name": "Milk chocolate",
+   "emoji": "🍫",
+   "fame": 95,
+   "source": "https://fdc.nal.usda.gov/food-details/167587/nutrients",
+   "value": 51.5
+  },
+  {
+   "id": "milk",
+   "name": "Whole milk",
+   "emoji": "🥛",
+   "fame": 95,
+   "source": "https://fdc.nal.usda.gov/food-details/171265/nutrients",
+   "value": 5.05
+  },
+  {
+   "id": "broccoli",
+   "name": "Broccoli",
+   "emoji": "🥦",
+   "detail": "Raw",
+   "fame": 90,
+   "source": "https://fdc.nal.usda.gov/food-details/170379/nutrients",
+   "value": 1.7
+  },
+  {
+   "id": "carrot",
+   "name": "Carrot",
+   "emoji": "🥕",
+   "detail": "Raw",
+   "fame": 90,
+   "source": "https://fdc.nal.usda.gov/food-details/170393/nutrients",
+   "value": 4.74
+  },
+  {
+   "id": "cola",
+   "name": "Cola",
+   "emoji": "🥤",
+   "detail": "Regular",
+   "fame": 90,
+   "source": "https://fdc.nal.usda.gov/food-details/174852/nutrients",
+   "value": 9.94
+  },
+  {
+   "id": "donut",
+   "name": "Donut",
+   "emoji": "🍩",
+   "detail": "Plain cake donut",
+   "fame": 90,
+   "source": "https://fdc.nal.usda.gov/food-details/174990/nutrients",
+   "value": 18.2
+  },
+  {
+   "id": "orange",
+   "name": "Orange",
+   "emoji": "🍊",
+   "detail": "Raw",
+   "fame": 90,
+   "source": "https://fdc.nal.usda.gov/food-details/169097/nutrients",
+   "value": 9.35
+  },
+  {
+   "id": "pasta",
+   "name": "Pasta",
+   "emoji": "🍝",
+   "detail": "Cooked",
+   "fame": 90,
+   "source": "https://fdc.nal.usda.gov/food-details/169737/nutrients",
+   "value": 0.56
+  },
+  {
+   "id": "peanut-butter",
+   "name": "Peanut butter",
+   "emoji": "🥜",
+   "detail": "Smooth",
+   "fame": 90,
+   "source": "https://fdc.nal.usda.gov/food-details/172470/nutrients",
+   "value": 10.5
+  },
+  {
+   "id": "strawberries",
+   "name": "Strawberries",
+   "emoji": "🍓",
+   "detail": "Raw",
+   "fame": 90,
+   "source": "https://fdc.nal.usda.gov/food-details/167762/nutrients",
+   "value": 4.89
+  },
+  {
+   "id": "ice-cream",
+   "name": "Vanilla ice cream",
+   "emoji": "🍨",
+   "fame": 90,
+   "source": "https://fdc.nal.usda.gov/food-details/167575/nutrients",
+   "value": 21.2
+  },
+  {
+   "id": "watermelon",
+   "name": "Watermelon",
+   "emoji": "🍉",
+   "detail": "Raw",
+   "fame": 90,
+   "source": "https://fdc.nal.usda.gov/food-details/167765/nutrients",
+   "value": 6.2
+  },
+  {
+   "id": "bread",
+   "name": "White bread",
+   "emoji": "🍞",
+   "fame": 90,
+   "source": "https://fdc.nal.usda.gov/food-details/174924/nutrients",
+   "value": 5.67
+  },
+  {
+   "id": "almonds",
+   "name": "Almonds",
+   "emoji": "🌰",
+   "fame": 85,
+   "source": "https://fdc.nal.usda.gov/food-details/170567/nutrients",
+   "value": 4.35
+  },
+  {
+   "id": "avocado",
+   "name": "Avocado",
+   "emoji": "🥑",
+   "detail": "Raw",
+   "fame": 85,
+   "source": "https://fdc.nal.usda.gov/food-details/171705/nutrients",
+   "value": 0.66
+  },
+  {
+   "id": "potato",
+   "name": "Baked potato",
+   "emoji": "🥔",
+   "detail": "With skin",
+   "fame": 85,
+   "source": "https://fdc.nal.usda.gov/food-details/170093/nutrients",
+   "value": 1.18
+  },
+  {
+   "id": "grapes",
+   "name": "Grapes",
+   "emoji": "🍇",
+   "detail": "Raw",
+   "fame": 85,
+   "source": "https://fdc.nal.usda.gov/food-details/174683/nutrients",
+   "value": 15.5
+  },
+  {
+   "id": "honey",
+   "name": "Honey",
+   "emoji": "🍯",
+   "fame": 85,
+   "source": "https://fdc.nal.usda.gov/food-details/169640/nutrients",
+   "value": 82.1
+  },
+  {
+   "id": "ketchup",
+   "name": "Ketchup",
+   "emoji": "🍅",
+   "fame": 85,
+   "source": "https://fdc.nal.usda.gov/food-details/168556/nutrients",
+   "value": 21.3
+  },
+  {
+   "id": "orange-juice",
+   "name": "Orange juice",
+   "emoji": "🧃",
+   "detail": "Fresh",
+   "fame": 85,
+   "source": "https://fdc.nal.usda.gov/food-details/169098/nutrients",
+   "value": 8.4
+  },
+  {
+   "id": "popcorn",
+   "name": "Popcorn",
+   "emoji": "🍿",
+   "detail": "Air-popped",
+   "fame": 85,
+   "source": "https://fdc.nal.usda.gov/food-details/167959/nutrients",
+   "value": 0.87
+  },
+  {
+   "id": "sugar",
+   "name": "Sugar",
+   "emoji": "🧂",
+   "detail": "White, granulated",
+   "fame": 85,
+   "source": "https://fdc.nal.usda.gov/food-details/169655/nutrients",
+   "value": 99.8
+  },
+  {
+   "id": "cucumber",
+   "name": "Cucumber",
+   "emoji": "🥒",
+   "detail": "Raw, with peel",
+   "fame": 80,
+   "source": "https://fdc.nal.usda.gov/food-details/168409/nutrients",
+   "value": 1.67
+  },
+  {
+   "id": "lettuce",
+   "name": "Iceberg lettuce",
+   "emoji": "🥬",
+   "detail": "Raw",
+   "fame": 80,
+   "source": "https://fdc.nal.usda.gov/food-details/169248/nutrients",
+   "value": 1.97
+  },
+  {
+   "id": "raisins",
+   "name": "Raisins",
+   "emoji": "🍇",
+   "detail": "Dried grapes",
+   "fame": 75,
+   "source": "https://fdc.nal.usda.gov/food-details/168165/nutrients",
+   "value": 65.2
+  },
+  {
+   "id": "lentils",
+   "name": "Lentils",
+   "emoji": "🫘",
+   "detail": "Boiled",
+   "fame": 70,
+   "source": "https://fdc.nal.usda.gov/food-details/172421/nutrients",
+   "value": 1.8
+  }
+ ]
+}

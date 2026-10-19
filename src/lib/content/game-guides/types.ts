@@ -49,6 +49,17 @@ export interface RelatedTool {
 export interface GameGuide {
   gameId: string;
   gameName: string;
+  /**
+   * Where "Play" and the breadcrumb link to. Defaults to the game's
+   * page, /games/<gameId>; set it for games outside the multiplayer
+   * catalog (e.g. the daily puzzle at /daily).
+   */
+  playHref?: string;
+  /**
+   * Line under "Ready to play …?" at the end of the guide. Defaults
+   * to the create-a-room pitch used by the multiplayer games.
+   */
+  ctaText?: string;
   emoji: string;
   accentColor: string;
 

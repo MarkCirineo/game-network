@@ -5,6 +5,7 @@
 
 import type { MetadataRoute } from "next";
 import { gameCatalog } from "@/lib/gameCatalog";
+import { guideIds } from "@/lib/content/game-guides";
 
 const BASE_URL =
   process.env.NEXT_PUBLIC_SITE_URL || "https://arcadekit.games";
@@ -39,6 +40,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${BASE_URL}/games`,
       lastModified: now,
       changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${BASE_URL}/daily`,
+      lastModified: now,
+      changeFrequency: "daily",
       priority: 0.9,
     },
     {
@@ -88,7 +95,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   // How-to-play guides
-  const guidePages: MetadataRoute.Sitemap = gameIds.map((id) => ({
+  const guidePages: MetadataRoute.Sitemap = guideIds().map((id) => ({
     url: `${BASE_URL}/games/${id}/how-to-play`,
     lastModified: now,
     changeFrequency: "monthly" as const,

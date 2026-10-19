@@ -1,0 +1,164 @@
+{
+ "source": "Wikipedia",
+ "items": [
+  {
+   "id": "elephant",
+   "name": "African elephant",
+   "emoji": "🐘",
+   "value": 645,
+   "fame": 100,
+   "source": "https://en.wikipedia.org/wiki/African_bush_elephant"
+  },
+  {
+   "id": "dog",
+   "name": "Dog",
+   "emoji": "🐕",
+   "value": 63,
+   "fame": 100,
+   "source": "https://en.wikipedia.org/wiki/Dog"
+  },
+  {
+   "id": "cat",
+   "name": "House cat",
+   "emoji": "🐈",
+   "value": 65,
+   "fame": 100,
+   "source": "https://en.wikipedia.org/wiki/Cat"
+  },
+  {
+   "id": "human",
+   "name": "Human",
+   "emoji": "🧑",
+   "value": 280,
+   "fame": 100,
+   "source": "https://en.wikipedia.org/wiki/Pregnancy"
+  },
+  {
+   "id": "lion",
+   "name": "Lion",
+   "emoji": "🦁",
+   "value": 110,
+   "fame": 100,
+   "source": "https://en.wikipedia.org/wiki/Lion"
+  },
+  {
+   "id": "cow",
+   "name": "Cow",
+   "emoji": "🐄",
+   "value": 283,
+   "fame": 95,
+   "source": "https://en.wikipedia.org/wiki/Cattle"
+  },
+  {
+   "id": "horse",
+   "name": "Horse",
+   "emoji": "🐎",
+   "value": 340,
+   "fame": 95,
+   "source": "https://en.wikipedia.org/wiki/Horse"
+  },
+  {
+   "id": "tiger",
+   "name": "Tiger",
+   "emoji": "🐅",
+   "value": 103,
+   "fame": 95,
+   "source": "https://en.wikipedia.org/wiki/Tiger"
+  },
+  {
+   "id": "giraffe",
+   "name": "Giraffe",
+   "emoji": "🦒",
+   "value": 460,
+   "fame": 90,
+   "source": "https://en.wikipedia.org/wiki/Giraffe"
+  },
+  {
+   "id": "pig",
+   "name": "Pig",
+   "emoji": "🐖",
+   "value": 114,
+   "fame": 90,
+   "source": "https://en.wikipedia.org/wiki/Pig"
+  },
+  {
+   "id": "gorilla",
+   "name": "Gorilla",
+   "emoji": "🦍",
+   "value": 255,
+   "fame": 85,
+   "source": "https://en.wikipedia.org/wiki/Gorilla"
+  },
+  {
+   "id": "hippo",
+   "name": "Hippopotamus",
+   "emoji": "🦛",
+   "value": 240,
+   "fame": 85,
+   "source": "https://en.wikipedia.org/wiki/Hippopotamus"
+  },
+  {
+   "id": "mouse",
+   "name": "House mouse",
+   "emoji": "🐁",
+   "value": 20,
+   "fame": 85,
+   "source": "https://en.wikipedia.org/wiki/House_mouse"
+  },
+  {
+   "id": "rabbit",
+   "name": "Rabbit",
+   "emoji": "🐇",
+   "value": 31,
+   "fame": 85,
+   "source": "https://en.wikipedia.org/wiki/Rabbit"
+  },
+  {
+   "id": "kangaroo",
+   "name": "Red kangaroo",
+   "emoji": "🦘",
+   "value": 33,
+   "fame": 85,
+   "source": "https://en.wikipedia.org/wiki/Red_kangaroo"
+  },
+  {
+   "id": "sheep",
+   "name": "Sheep",
+   "emoji": "🐑",
+   "value": 152,
+   "fame": 85,
+   "source": "https://en.wikipedia.org/wiki/Sheep"
+  },
+  {
+   "id": "chimp",
+   "name": "Chimpanzee",
+   "emoji": "🐒",
+   "value": 230,
+   "fame": 80,
+   "source": "https://en.wikipedia.org/wiki/Chimpanzee"
+  },
+  {
+   "id": "hamster",
+   "name": "Hamster",
+   "emoji": "🐹",
+   "value": 16,
+   "fame": 75,
+   "source": "https://en.wikipedia.org/wiki/Golden_hamster"
+  },
+  {
+   "id": "rhino",
+   "name": "White rhinoceros",
+   "emoji": "🦏",
+   "value": 490,
+   "fame": 75,
+   "source": "https://en.wikipedia.org/wiki/White_rhinoceros"
+  },
+  {
+   "id": "opossum",
+   "name": "Opossum",
+   "value": 13,
+   "fame": 60,
+   "source": "https://en.wikipedia.org/wiki/Virginia_opossum"
+  }
+ ]
+}
