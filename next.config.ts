@@ -4,6 +4,13 @@ const nextConfig: NextConfig = {
   output: "standalone",
   poweredByHeader: false,
 
+  // The type check runs out of memory on the small production server
+  // (Better Auth's types are heavy), so builds skip it. Run
+  // `yarn typecheck` locally before pushing instead.
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+
   // Proxy WebSocket connections to game server in development
   async rewrites() {
     return [
