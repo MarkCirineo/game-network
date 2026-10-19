@@ -85,10 +85,32 @@ cp .env.example .env.local
 
 ## Production Deployment
 
+Secrets go in `docker/.env` on the server (see the variables in `docker/docker-compose.yml`).
+
 ```bash
 cd docker
 docker-compose build
 docker-compose up -d
+```
+
+`up` also applies any new database migrations before the site starts (the `migrate` service), so there is no separate step.
+
+### Database backups
+
+The `backup` service dumps Postgres to `docker/backups/` on start and every night at 03:00 UTC, keeping 14 days. The dumps are on the same disk as the database, so also keep an off-server copy: turn on Hetzner's server backups, or copy the folder elsewhere.
+
+Take a backup by hand (e.g. before a risky deploy):
+
+```bash
+docker-compose exec backup sh /backup-db.sh once
+```
+
+Restore one (this replaces the current data):
+
+```bash
+docker-compose stop web
+docker-compose exec -T postgres pg_restore -U arcadekit -d arcadekit --clean --if-exists --no-owner < backups/arcadekit-YYYY-MM-DDTHHMMZ.dump
+docker-compose start web
 ```
 
 Target: Hetzner Cloud CX31 (2 vCPU, 8GB RAM, ~€8.50/month)

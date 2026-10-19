@@ -10,9 +10,11 @@ import { useEffect, useState, useMemo } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
+import { Loader2 } from "lucide-react";
 import { useGameSocket } from "@/lib/ws/client";
 import { useGameStore } from "@/lib/stores/gameStore";
 import { trackEvent } from "@/lib/analytics";
+import { authClient } from "@/lib/auth-client";
 import {
   getSessionToken,
   getSavedPlayerName,
@@ -133,12 +135,26 @@ export function GameShell({
     return getSessionToken();
   }, []);
 
+  // Signed-in players join as their username, without the name step.
+  // If the room refuses it (e.g. a guest already took that name), the
+  // join error shows the normal name form instead.
+  const { data: accountSession, isPending: accountPending } = authClient.useSession();
+  const accountName =
+    accountSession?.user.displayUsername || accountSession?.user.username || null;
+  const autoJoining = !hasJoined && Boolean(accountName) && !joinError;
+  const joinName = hasJoined ? playerName : autoJoining ? (accountName ?? "") : "";
+
+  // Remember the auto-join for this tab, so a refresh rejoins the same way
+  useEffect(() => {
+    if (autoJoining && myPlayerId && accountName) persistJoin(roomCode, accountName);
+  }, [autoJoining, myPlayerId, accountName, roomCode]);
+
   // WebSocket connection
   const { sendMessage, connectionStatus, sendAction } = useGameSocket({
     roomCode,
-    playerName,
+    playerName: joinName,
     sessionToken,
-    enabled: hasJoined && !!playerName,
+    enabled: (hasJoined || autoJoining) && !!joinName,
   });
 
   // Reset store on true unmount (navigation away). Empty deps = only on unmount.
@@ -203,8 +219,23 @@ export function GameShell({
     );
   }
 
-  // Name entry screen
-  if (!hasJoined) {
+  // Checking whether this visitor is signed in, or joining as their
+  // username: don't flash the name form at signed-in players
+  if (!hasJoined && (accountPending || (autoJoining && !myPlayerId))) {
+    return (
+      <div className="flex min-h-[60vh] flex-col items-center justify-center gap-3 px-4">
+        <Loader2 className="h-6 w-6 animate-spin text-ember" />
+        {autoJoining && (
+          <p className="text-sm text-text-secondary">
+            Joining as <span className="font-semibold text-text-primary">{accountName}</span>…
+          </p>
+        )}
+      </div>
+    );
+  }
+
+  // Name entry screen (guests, or a signed-in player whose name was refused)
+  if (!hasJoined && !autoJoining) {
     return (
       <div className="flex min-h-[60vh] flex-col items-center justify-center px-4">
         <motion.div

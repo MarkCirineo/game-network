@@ -84,7 +84,7 @@ export default function TermsPage() {
             Terms of Service
           </h1>
           <p className="mt-2 text-text-muted text-sm">
-            Last updated: July 1, 2026
+            Last updated: October 13, 2026
           </p>
         </div>
 
@@ -127,7 +127,8 @@ export default function TermsPage() {
               These Terms apply to all visitors, users, and others who access or
               use ArcadeKit. You do not need to create an account to use the
               Service — by simply visiting the site and playing games, you agree
-              to these Terms.
+              to these Terms. If you create an optional account, these Terms
+              also cover your account and username.
             </p>
           </SectionCard>
 
@@ -141,7 +142,18 @@ export default function TermsPage() {
               <li>Play multiplayer games directly in their web browser</li>
               <li>Create game rooms and invite others via shareable links</li>
               <li>Access all games without creating an account or paying fees</li>
+              <li>
+                Optionally create an account (13 or older only) with a public
+                username
+              </li>
             </ul>
+            <p>
+              <strong className="text-text-primary">Accounts.</strong> You must
+              be 13 or older to create an account. Keep your sign-in methods
+              secure, and use one account per person. You can delete your
+              account at any time from your account page. Your username is
+              public: other players can see it.
+            </p>
             <p>
               The Service is provided free of charge. We reserve the right to
               modify, suspend, or discontinue any part of the Service at any
@@ -174,6 +186,13 @@ export default function TermsPage() {
                 servers, network, or infrastructure
               </li>
               <li>
+                <strong className="text-text-primary">Use an inappropriate username</strong>{" "}
+                — Pick a username that is offensive, hateful, or sexual,
+                pretends to be someone else (including ArcadeKit staff), or
+                contains another person&apos;s real name or personal
+                information
+              </li>
+              <li>
                 <strong className="text-text-primary">Reverse engineer</strong>{" "}
                 — Attempt to decompile, reverse engineer, or extract the source
                 code of the Service for commercial purposes
@@ -181,7 +200,7 @@ export default function TermsPage() {
             </ul>
             <p>
               We reserve the right to restrict access to anyone who violates
-              these guidelines.
+              these guidelines, and to change any username that breaks them.
             </p>
           </SectionCard>
 
@@ -295,8 +314,9 @@ export default function TermsPage() {
               including but not limited to a breach of these Terms.
             </p>
             <p>
-              Since ArcadeKit does not require accounts, termination typically
-              means blocking access from a specific IP address or network. All
+              For players without an account, this typically means blocking
+              access from a specific IP address or network. For accounts, it
+              can mean suspending or deleting the account. All
               provisions of these Terms that by their nature should survive
               termination shall survive, including intellectual property
               provisions, disclaimers, and limitations of liability.

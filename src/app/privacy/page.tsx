@@ -4,29 +4,30 @@
 // ============================================================
 
 import type { Metadata } from "next";
-import { Shield, Eye, Cookie, Server, Baby, Database, Mail } from "lucide-react";
+import { Shield, Eye, Cookie, Server, Baby, Database, Mail, UserRound } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "ArcadeKit's privacy policy. Learn how we handle your data — spoiler: we collect almost nothing. No accounts, no personal data, privacy-friendly analytics.",
+    "ArcadeKit's privacy policy. Accounts are optional: without one we collect no personal data. Here's exactly what we store if you make an account.",
   openGraph: {
     title: "Privacy Policy | ArcadeKit",
     description:
-      "Learn how ArcadeKit handles your data. We use privacy-friendly analytics and collect no personal information.",
+      "Learn how ArcadeKit handles your data. Accounts are optional, analytics are privacy-friendly, and we never store real names or photos.",
   },
 };
 
 const sections = [
   { id: "introduction", label: "1. Introduction" },
   { id: "data-we-collect", label: "2. Data We Collect" },
-  { id: "cookies", label: "3. Cookies" },
-  { id: "third-party-services", label: "4. Third-Party Services" },
-  { id: "childrens-privacy", label: "5. Children's Privacy" },
-  { id: "data-retention", label: "6. Data Retention" },
-  { id: "your-rights", label: "7. Your Rights" },
-  { id: "changes", label: "8. Changes to This Policy" },
-  { id: "contact", label: "9. Contact Us" },
+  { id: "accounts", label: "3. Accounts" },
+  { id: "cookies", label: "4. Cookies" },
+  { id: "third-party-services", label: "5. Third-Party Services" },
+  { id: "childrens-privacy", label: "6. Children's Privacy" },
+  { id: "data-retention", label: "7. Data Retention" },
+  { id: "your-rights", label: "8. Your Rights" },
+  { id: "changes", label: "9. Changes to This Policy" },
+  { id: "contact", label: "10. Contact Us" },
 ];
 
 function SectionCard({
@@ -111,20 +112,25 @@ export default function PrivacyPage() {
             <p>
               We take your privacy seriously. This Privacy Policy explains what
               information we collect, how we use it, and what choices you have.
-              The short version: <strong className="text-text-primary">we collect almost nothing.</strong>{" "}
-              There are no accounts, no personal data collection, and no
-              tracking cookies from our side.
+              The short version: <strong className="text-text-primary">accounts are optional, and without one we collect no personal data.</strong>{" "}
+              Every game works without an account. If you do make one, we store
+              only what&apos;s needed to sign you in and show your username,
+              and we never store your real name or photo. We don&apos;t use
+              tracking cookies.
             </p>
           </SectionCard>
 
           {/* 2. Data We Collect */}
           <SectionCard id="data-we-collect" icon={Eye} title="2. Data We Collect">
             <p>
-              <strong className="text-text-primary">We do not collect personal information.</strong>{" "}
+              <strong className="text-text-primary">Without an account, we don&apos;t collect personal information.</strong>{" "}
               ArcadeKit does not require you to create an account, provide an
-              email address, or share any personal details to use our platform.
+              email address, or share any personal details to play. If you
+              choose to make an account, see{" "}
+              <a href="#accounts" className="text-ember hover:text-ember/80">Accounts</a>{" "}
+              for exactly what we store.
             </p>
-            <p>We collect the following anonymous, aggregated data:</p>
+            <p>For everyone, we collect the following anonymous, aggregated data:</p>
             <ul className="ml-4 list-disc space-y-1.5 text-text-secondary">
               <li>
                 <strong className="text-text-primary">Anonymous analytics</strong>{" "}
@@ -158,11 +164,64 @@ export default function PrivacyPage() {
             </ul>
           </SectionCard>
 
-          {/* 3. Cookies */}
-          <SectionCard id="cookies" icon={Cookie} title="3. Cookies">
+          {/* 3. Accounts */}
+          <SectionCard id="accounts" icon={UserRound} title="3. Accounts">
+            <p>
+              Accounts are optional and only for people 13 or older. You can
+              sign in with Google, with a code we email you, or with an email
+              and password. If you make an account, we store:
+            </p>
+            <ul className="ml-4 list-disc space-y-1.5 text-text-secondary">
+              <li>
+                <strong className="text-text-primary">Your email address</strong>{" "}
+                — used only to sign you in and to send account emails (sign-in
+                codes, password resets, and delete confirmations). It&apos;s
+                never shown to other players.
+              </li>
+              <li>
+                <strong className="text-text-primary">Your username</strong>{" "}
+                — the name you pick. Other players can see it.
+              </li>
+              <li>
+                <strong className="text-text-primary">How you sign in</strong>{" "}
+                — if you use Google, the ID Google gives your account (we ask
+                Google only for your email address, and we don&apos;t store your
+                name, photo, or Google sign-in tokens). If you set a password,
+                we store a hashed version, never the password itself.
+              </li>
+              <li>
+                <strong className="text-text-primary">Sign-in sessions</strong>{" "}
+                — for each device you&apos;re signed in on: when the session
+                started and expires, the IP address, and the browser type. This
+                is how we keep you signed in and spot misuse.
+              </li>
+              <li>
+                <strong className="text-text-primary">Sign-in codes</strong>{" "}
+                — kept until they&apos;re used or expire (5 minutes).
+              </li>
+              <li>
+                <strong className="text-text-primary">When you confirmed you&apos;re 13 or older</strong>,
+                and when your account was created and last changed.
+              </li>
+            </ul>
+            <p>
+              We don&apos;t sell this information or use it for advertising.
+              It&apos;s stored in our own database on our server.
+            </p>
+          </SectionCard>
+
+          {/* 4. Cookies */}
+          <SectionCard id="cookies" icon={Cookie} title="4. Cookies">
             <p>
               <strong className="text-text-primary">Umami Analytics is completely cookieless.</strong>{" "}
-              We do not set any first-party tracking cookies.
+              We do not set any tracking cookies.
+            </p>
+            <p>
+              If you sign in, we set cookies that keep you signed in (they last
+              up to 30 days). While you&apos;re on the sign-in page, ticking
+              the &quot;13 or older&quot; box sets a short cookie (one hour)
+              that records it. These are needed for accounts to work, and
+              they&apos;re not used for tracking.
             </p>
             <p>
               Third-party services on our platform may use cookies to serve
@@ -191,8 +250,8 @@ export default function PrivacyPage() {
             </p>
           </SectionCard>
 
-          {/* 4. Third-Party Services */}
-          <SectionCard id="third-party-services" icon={Server} title="4. Third-Party Services">
+          {/* 5. Third-Party Services */}
+          <SectionCard id="third-party-services" icon={Server} title="5. Third-Party Services">
             <p>We use the following third-party services:</p>
             <div className="overflow-x-auto">
               <table className="w-full text-left text-sm">
@@ -215,6 +274,16 @@ export default function PrivacyPage() {
                     <td className="py-2.5">Cookies for ad personalization</td>
                   </tr>
                   <tr className="border-b border-white/5">
+                    <td className="py-2.5 pr-4">Google Sign-In</td>
+                    <td className="py-2.5 pr-4">Optional way to sign in</td>
+                    <td className="py-2.5">Your email address and Google account ID, only if you choose it</td>
+                  </tr>
+                  <tr className="border-b border-white/5">
+                    <td className="py-2.5 pr-4">Resend</td>
+                    <td className="py-2.5 pr-4">Sends account emails (sign-in codes, password resets)</td>
+                    <td className="py-2.5">Your email address and the email we send, only if you have an account</td>
+                  </tr>
+                  <tr className="border-b border-white/5">
                     <td className="py-2.5 pr-4">Discord</td>
                     <td className="py-2.5 pr-4">Delivers Feedback form messages to a private channel</td>
                     <td className="py-2.5">Only what you send in the Feedback form</td>
@@ -234,14 +303,18 @@ export default function PrivacyPage() {
             </p>
           </SectionCard>
 
-          {/* 5. Children's Privacy */}
-          <SectionCard id="childrens-privacy" icon={Baby} title="5. Children's Privacy">
+          {/* 6. Children's Privacy */}
+          <SectionCard id="childrens-privacy" icon={Baby} title="6. Children's Privacy">
             <p>
               ArcadeKit does not knowingly collect personal information from
-              children under the age of 13. Our platform does not require
-              account creation or the submission of any personal data, so we do
-              not intentionally collect information from any users, including
-              children.
+              children under the age of 13. Anyone can play without an
+              account, and playing without one collects no personal data.
+              Accounts are only for people 13 or older, and everyone confirms
+              their age before making one.
+            </p>
+            <p>
+              If we learn that an account belongs to someone under 13, we
+              delete it.
             </p>
             <p>
               If you believe that a child under 13 has somehow provided us with
@@ -260,12 +333,16 @@ export default function PrivacyPage() {
             </p>
           </SectionCard>
 
-          {/* 6. Data Retention */}
-          <SectionCard id="data-retention" icon={Database} title="6. Data Retention">
+          {/* 7. Data Retention */}
+          <SectionCard id="data-retention" icon={Database} title="7. Data Retention">
             <p>
-              <strong className="text-text-primary">We do not store personal data.</strong>{" "}
-              Since we don&apos;t collect personal information, there is nothing
-              to retain.
+              <strong className="text-text-primary">Without an account, we store no personal data.</strong>
+            </p>
+            <p>
+              If you have an account, we keep its information until you delete
+              the account. Deleting it removes your account, username, sign-in
+              methods, and sessions right away. Sessions you stop using expire
+              after 30 days.
             </p>
             <p>
               Temporary game session data (moves, scores, room state) exists
@@ -285,13 +362,18 @@ export default function PrivacyPage() {
             </p>
           </SectionCard>
 
-          {/* 7. Your Rights */}
-          <SectionCard id="your-rights" icon={Shield} title="7. Your Rights">
+          {/* 8. Your Rights */}
+          <SectionCard id="your-rights" icon={Shield} title="8. Your Rights">
             <p>
-              Because we do not collect or store personal data, traditional data
-              rights requests (access, deletion, portability) are not applicable
-              in most cases. There is simply no personal data to access or
+              Without an account, there is no personal data to access or
               delete.
+            </p>
+            <p>
+              If you have an account, your account page shows your username,
+              email, and how you sign in, and you can delete the account there
+              at any time. For a copy of your account data, or if you
+              can&apos;t sign in and want your account deleted, email us from
+              the address on the account.
             </p>
             <p>
               If you have concerns about data collected by third-party services
@@ -311,8 +393,8 @@ export default function PrivacyPage() {
             </p>
           </SectionCard>
 
-          {/* 8. Changes */}
-          <SectionCard id="changes" icon={Eye} title="8. Changes to This Policy">
+          {/* 9. Changes */}
+          <SectionCard id="changes" icon={Eye} title="9. Changes to This Policy">
             <p>
               We may update this Privacy Policy from time to time to reflect
               changes in our practices or in applicable laws. When we make
@@ -326,8 +408,8 @@ export default function PrivacyPage() {
             </p>
           </SectionCard>
 
-          {/* 9. Contact */}
-          <SectionCard id="contact" icon={Mail} title="9. Contact Us">
+          {/* 10. Contact */}
+          <SectionCard id="contact" icon={Mail} title="10. Contact Us">
             <p>
               If you have any questions or concerns about this Privacy Policy or
               our data practices, please contact us:

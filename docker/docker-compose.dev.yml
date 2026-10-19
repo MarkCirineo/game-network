@@ -1,0 +1,27 @@
+# ArcadeKit — Local development database
+# Start:  docker compose -f docker/docker-compose.dev.yml up -d
+# Stop:   docker compose -f docker/docker-compose.dev.yml down
+# Port 5433, not 5432: WSL's own PostgreSQL already uses 5432.
+# Matches DATABASE_URL=postgres://arcadekit:arcadekit@localhost:5433/arcadekit
+
+services:
+  postgres:
+    image: postgres:17-alpine
+    # Comes back on its own whenever Docker starts (e.g. after WSL restarts)
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: arcadekit
+      POSTGRES_PASSWORD: arcadekit
+      POSTGRES_DB: arcadekit
+    ports:
+      - "127.0.0.1:5433:5432"
+    volumes:
+      - postgres_dev_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U arcadekit -d arcadekit"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  postgres_dev_data:

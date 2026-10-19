@@ -8,8 +8,23 @@ services:
     environment:
       - NODE_ENV=production
       - GAME_SERVER_INTERNAL_URL=http://gameserver:3001
-      # Secret: set it in docker/.env on the server (gitignored), not .env.production (committed)
+      # Secrets: set them in docker/.env on the server (gitignored), not .env.production (committed)
       - DISCORD_FEEDBACK_WEBHOOK_URL=${DISCORD_FEEDBACK_WEBHOOK_URL:-}
+      # Accounts (Better Auth + Postgres + Resend)
+      - DATABASE_URL=postgres://arcadekit:${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in docker/.env}@postgres:5432/arcadekit
+      - BETTER_AUTH_URL=https://arcadekit.games
+      - BETTER_AUTH_SECRET=${BETTER_AUTH_SECRET:?set BETTER_AUTH_SECRET in docker/.env}
+      - GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID:-}
+      - GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET:-}
+      - RESEND_API_KEY=${RESEND_API_KEY:-}
+      - EMAIL_FROM=${EMAIL_FROM:-ArcadeKit <no-reply@arcadekit.games>}
+      - DISCORD_ALERTS_WEBHOOK_URL=${DISCORD_ALERTS_WEBHOOK_URL:-}
+    depends_on:
+      postgres:
+        condition: service_healthy
+      # The site only starts once the database is up to date
+      migrate:
+        condition: service_completed_successfully
     healthcheck:
       test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3000/api/health"]
       interval: 30s
@@ -52,5 +67,56 @@ services:
       start_period: 5s
     restart: unless-stopped
 
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: arcadekit
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in docker/.env}
+      POSTGRES_DB: arcadekit
+    # No ports: only reachable from the other containers on this network
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U arcadekit -d arcadekit"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    restart: unless-stopped
+
+  # Applies any new database migrations, then exits. Runs on every
+  # `up`; web waits for it, so deploys need no extra step.
+  migrate:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.web
+      target: migrator
+    environment:
+      - DATABASE_URL=postgres://arcadekit:${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in docker/.env}@postgres:5432/arcadekit
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  # Nightly database dumps into docker/backups/ on the server (kept 14
+  # days). Restore steps are in README.md.
+  backup:
+    image: postgres:17-alpine
+    entrypoint: ["sh", "/backup-db.sh"]
+    environment:
+      - PGHOST=postgres
+      - PGUSER=arcadekit
+      - PGDATABASE=arcadekit
+      - PGPASSWORD=${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in docker/.env}
+      - BACKUP_KEEP_DAYS=14
+      - BACKUP_HOUR=3
+    volumes:
+      - ./backups:/backups
+      - ../scripts/backup-db.sh:/backup-db.sh:ro
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+
 volumes:
   redis_data:
+  postgres_data:
