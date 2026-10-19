@@ -298,7 +298,7 @@ the results screen on 2026-10-17: the guest streak carried over.
 - **Stats** are on the results screen (played, streak, best streak,
   average) instead of a separate `/daily/stats` page for now.
 - Puzzle #1 date: `DAILY_FIRST_DATE` in `src/lib/daily/config.ts`, set to
-  2026-10-01 for dev. **Change it to launch day before launch.**
+  launch day, 2026-10-18. Never change it now.
 
 ### Categories (20 in the daily, 7 held back for packs)
 
@@ -349,5 +349,5 @@ Preview upcoming puzzles (WSL):
 
 1. Review the item lists once more by hand (companies, islands,
    stadiums, buildings are the noisiest).
-2. Before launch: set `DAILY_FIRST_DATE`, add `DAILY_SEED_SECRET` to
-   `docker/.env` on the server, how-to-play guide page.
+2. Before deploying: add `DAILY_SEED_SECRET` to `docker/.env` on the
+   server.

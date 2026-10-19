@@ -9,10 +9,10 @@ export const DAILY_PATH = "/daily";
 export const DAILY_TAGLINE = "Five things, one question: put them in order.";
 
 /**
- * The day of puzzle #1. Set this to launch day when the game goes
- * live; before then, dev builds just count from here.
+ * The day of puzzle #1 (launch day). Every puzzle number counts from
+ * here, so never change it once the game is live.
  */
-export const DAILY_FIRST_DATE = "2026-10-01";
+export const DAILY_FIRST_DATE = "2026-10-18";
 
 export const ROUNDS_PER_DAY = 3;
 export const ITEMS_PER_ROUND = 5;
