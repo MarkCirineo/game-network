@@ -1,5 +1,5 @@
 # Stage 1: Dependencies
-FROM node:20-alpine AS deps
+FROM node:22-alpine AS deps
 WORKDIR /app
 COPY package.json yarn.lock* ./
 RUN yarn install --frozen-lockfile --production=false
@@ -7,7 +7,7 @@ RUN yarn install --frozen-lockfile --production=false
 # Stage: Migrator (one-off, not part of the web image)
 # Applies database migrations, then exits. Built and run on demand:
 #   docker compose -f docker/docker-compose.yml run --rm migrate
-FROM node:20-alpine AS migrator
+FROM node:22-alpine AS migrator
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY package.json ./
@@ -16,7 +16,7 @@ COPY scripts/migrate.mjs ./scripts/migrate.mjs
 CMD ["node", "scripts/migrate.mjs"]
 
 # Stage 2: Builder
-FROM node:20-alpine AS builder
+FROM node:22-alpine AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY package.json yarn.lock* next.config.ts tsconfig.json postcss.config.mjs eslint.config.mjs components.json ./
@@ -35,7 +35,7 @@ ENV NEXT_PUBLIC_WS_URL=$NEXT_PUBLIC_WS_URL
 RUN yarn build
 
 # Stage 3: Runner
-FROM node:20-alpine AS runner
+FROM node:22-alpine AS runner
 WORKDIR /app
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
