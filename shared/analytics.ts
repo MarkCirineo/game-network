@@ -51,17 +51,24 @@ export interface ClientEvents {
   /** Started a sign-in on /sign-in (Google redirect, code requested, or password submitted) */
   'sign-in-start': { method: 'google' | 'code' | 'password' };
   /**
-   * Finished signing in with a code or password (Google finishes on
-   * Google's side, so it only has sign-in-start). new_account is true
-   * when this created the account.
+   * Finished signing in (Google: fired when Google sends the player
+   * back). new_account is true when this sign-in created the account.
    */
-  'sign-in-complete': { method: 'code' | 'password'; new_account: boolean };
+  'sign-in-complete': { method: 'google' | 'code' | 'password'; new_account: boolean };
   /** A sign-in step failed; reason is a short fixed code, never user input */
   'sign-in-error': { method: 'google' | 'code' | 'password'; reason: string };
   /** Signed out from the account page */
   'sign-out': Record<string, never>;
+  /**
+   * Saved a first username: the account is ready to use. The one
+   * sign-up count, whichever way they signed in. method is 'unknown'
+   * when they arrived from somewhere other than the sign-in page.
+   */
+  'account-created': { method: 'google' | 'code' | 'password' | 'unknown' };
   /** Asked for the delete-account email */
   'account-delete-request': Record<string, never>;
+  /** Confirmed from the emailed link; the account is gone */
+  'account-deleted': Record<string, never>;
 
   // ---- Daily Rank (single-player daily puzzle) ----
   /** Opened today's daily puzzle with rounds still to play */

@@ -20,6 +20,8 @@ import {
   CODE_LENGTH,
   CODE_RESEND_SECONDS,
   MIN_PASSWORD_LENGTH,
+  isNewAccount,
+  type SignInMethod,
 } from "@/lib/accounts";
 
 type Step = "start" | "code" | "password" | "create" | "verify" | "forgot" | "reset";
@@ -63,12 +65,6 @@ function setAgeCookie(confirmed: boolean) {
 
 function hasAgeCookie(): boolean {
   return document.cookie.split("; ").some((c) => c === `${AGE_COOKIE}=1`);
-}
-
-/** True when the account was created in the last minute (i.e. by this sign-in). */
-function isNewAccount(createdAt: Date | string | undefined): boolean {
-  if (!createdAt) return false;
-  return Date.now() - new Date(createdAt).getTime() < 60_000;
 }
 
 // ── Small UI pieces ─────────────────────────────────────────
@@ -171,11 +167,12 @@ export function SignInFlow({
   }
 
   // /welcome asks for a username if the account doesn't have one yet,
-  // then continues to `next`
-  const afterSignIn = `/welcome?next=${encodeURIComponent(next)}`;
+  // then continues to `next`. ?via= is only for analytics.
+  const afterSignIn = (via: SignInMethod) =>
+    `/welcome?next=${encodeURIComponent(next)}&via=${via}`;
 
-  function finish() {
-    router.push(afterSignIn);
+  function finish(via: SignInMethod) {
+    router.push(afterSignIn(via));
     router.refresh();
   }
 
@@ -192,7 +189,7 @@ export function SignInFlow({
     trackEvent("sign-in-start", { method: "google" });
     const { error } = await authClient.signIn.social({
       provider: "google",
-      callbackURL: afterSignIn,
+      callbackURL: afterSignIn("google"),
       // Better Auth adds ?error=<code>
       errorCallbackURL: `/sign-in?next=${encodeURIComponent(next)}`,
     });
@@ -238,7 +235,7 @@ export function SignInFlow({
       return;
     }
     trackEvent("sign-in-complete", { method: "code", new_account: isNewAccount(data?.user.createdAt) });
-    finish();
+    finish("code");
   }
 
   async function onPasswordSubmit(e: FormEvent) {
@@ -259,7 +256,7 @@ export function SignInFlow({
       return;
     }
     trackEvent("sign-in-complete", { method: "password", new_account: false });
-    finish();
+    finish("password");
   }
 
   async function onCreateSubmit(e: FormEvent) {
@@ -292,7 +289,7 @@ export function SignInFlow({
     }
     // Verifying signs the account in (autoSignInAfterVerification)
     trackEvent("sign-in-complete", { method: "password", new_account: true });
-    finish();
+    finish("password");
   }
 
   async function onForgotSubmit(e: FormEvent) {
@@ -329,7 +326,7 @@ export function SignInFlow({
       return;
     }
     trackEvent("sign-in-complete", { method: "password", new_account: false });
-    finish();
+    finish("password");
   }
 
   async function resend(kind: "sign-in" | "email-verification" | "reset") {

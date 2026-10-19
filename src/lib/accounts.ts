@@ -22,6 +22,19 @@ export const SESSION_DAYS = 30;
 export const MIN_PASSWORD_LENGTH = 8;
 export const MAX_NAME_LENGTH = 40;
 
+/** How a player signed in; carried to /welcome as ?via= for analytics */
+export type SignInMethod = "google" | "code" | "password";
+
+export function parseSignInMethod(value: string | null | undefined): SignInMethod | null {
+  return value === "google" || value === "code" || value === "password" ? value : null;
+}
+
+/** True when the account was created in the last minute (i.e. by this sign-in) */
+export function isNewAccount(createdAt: Date | string | undefined): boolean {
+  if (!createdAt) return false;
+  return Date.now() - new Date(createdAt).getTime() < 60_000;
+}
+
 /** Shown when a code email can't be sent (daily budget or provider error) */
 export const EMAIL_UNAVAILABLE_MESSAGE =
   "We can't send codes right now. Sign in with Google, or try again later.";

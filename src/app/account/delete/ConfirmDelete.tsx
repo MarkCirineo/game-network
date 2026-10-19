@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Loader2, Trash2 } from "lucide-react";
 import { authClient } from "@/lib/auth-client";
+import { trackEvent } from "@/lib/analytics";
 
 export function ConfirmDelete({ token, username }: { token: string; username: string }) {
   const router = useRouter();
@@ -24,6 +25,7 @@ export function ConfirmDelete({ token, username }: { token: string; username: st
       );
       return;
     }
+    trackEvent("account-deleted", {});
     router.push("/account/deleted");
     router.refresh();
   }

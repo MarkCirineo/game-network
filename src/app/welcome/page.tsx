@@ -8,7 +8,8 @@ import type { Metadata } from "next";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { auth } from "@/lib/auth";
-import { safeNextPath } from "@/lib/accounts";
+import { isNewAccount, parseSignInMethod, safeNextPath } from "@/lib/accounts";
+import { GoogleSignInDone } from "./GoogleSignInDone";
 import { WelcomeForm } from "./WelcomeForm";
 
 export const metadata: Metadata = {
@@ -21,12 +22,34 @@ type Props = {
 };
 
 export default async function WelcomePage({ searchParams }: Props) {
-  const rawNext = (await searchParams).next;
-  const next = safeNextPath(Array.isArray(rawNext) ? rawNext[0] : rawNext);
+  const params = await searchParams;
+  const first = (value: string | string[] | undefined) => (Array.isArray(value) ? value[0] : value);
+  const next = safeNextPath(first(params.next));
+  const via = parseSignInMethod(first(params.via));
 
   const session = await auth.api.getSession({ headers: await headers() });
   if (!session) redirect(`/sign-in?next=${encodeURIComponent(next)}`);
-  if (session.user.username) redirect(next);
+
+  // Google comes back here from its own site, so this is the only place
+  // its sign-in can be counted (code and password count it themselves)
+  const googleDone = via === "google" && (
+    <GoogleSignInDone
+      signInKey={new Date(session.session.createdAt).getTime().toString()}
+      newAccount={isNewAccount(session.user.createdAt)}
+      continueTo={session.user.username ? next : null}
+    />
+  );
+  if (session.user.username) {
+    if (googleDone) {
+      return (
+        <p className="px-4 py-14 text-center text-sm text-text-secondary">
+          Signing you in…
+          {googleDone}
+        </p>
+      );
+    }
+    redirect(next);
+  }
 
   return (
     <div className="px-4 py-8 md:py-14">
@@ -36,8 +59,9 @@ export default async function WelcomePage({ searchParams }: Props) {
           This is the only name other players will see, so don&apos;t use your real name.
           You can change it later.
         </p>
-        <WelcomeForm next={next} />
+        <WelcomeForm next={next} method={via ?? "unknown"} />
       </div>
+      {googleDone}
     </div>
   );
 }
