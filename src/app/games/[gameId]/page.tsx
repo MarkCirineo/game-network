@@ -6,7 +6,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { BookOpen, Clock, Users } from "lucide-react";
+import { BookOpen, Clock, Layers, Users } from "lucide-react";
 import { CreateRoomButton } from "@/components/game/CreateRoomButton";
 import { JoinRoomForm } from "@/components/game/JoinRoomForm";
 import { gameCatalog, getCatalogGame } from "@/lib/gameCatalog";
@@ -84,6 +84,25 @@ export default async function GameDetailPage({ params }: Props) {
           <CreateRoomButton gameId={game.id} accentColor={game.accentColor} />
           <JoinRoomForm gameId={game.id} accentColor={game.accentColor} />
         </div>
+
+        {/* Board packs (Rule Out) */}
+        {game.id === "rule-out" && (
+          <Link
+            href="/games/rule-out/packs"
+            className="mt-8 flex items-center justify-between rounded-2xl border border-white/5 bg-surface p-5 transition-colors hover:border-white/15"
+          >
+            <div className="flex items-center gap-3">
+              <Layers className="h-5 w-5 text-amber" />
+              <div>
+                <p className="text-sm font-semibold">Board packs</p>
+                <p className="text-xs text-text-muted">
+                  Monsters, dogs, fantasy and more. Only the host needs one.
+                </p>
+              </div>
+            </div>
+            <span className="text-text-muted">→</span>
+          </Link>
+        )}
 
         {/* Rules */}
         <div className="mt-12 rounded-2xl border border-white/5 bg-surface p-6">
