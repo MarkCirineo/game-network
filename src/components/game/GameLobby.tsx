@@ -11,9 +11,10 @@ import { cn } from "@/lib/utils";
 import { gameRegistry } from "@/games/registry";
 import { InvitePanel } from "./InvitePanel";
 import { PlayerList } from "./PlayerList";
-import { Users, Play, CheckCircle2, Settings } from "lucide-react";
+import { Users, Play, CheckCircle2, Settings, Loader2 } from "lucide-react";
 import type { PlayerInfo, SpectatorInfo } from "../../../shared/messages";
 import type { GameOptionSchema } from "../../../shared/gameOptions";
+import type { GameDefinition } from "@/games/types";
 
 interface GameLobbyProps {
   roomCode: string;
@@ -26,9 +27,12 @@ interface GameLobbyProps {
   maxPlayers: number;
   onReady: () => void;
   onStartGame: () => void;
+  /** The host's start is waiting on a pre-start step */
+  isStarting?: boolean;
   optionsSchema?: GameOptionSchema[];
   gameOptions?: Record<string, unknown>;
   onOptionsChange?: (options: Record<string, unknown>) => void;
+  LobbyOptions?: GameDefinition["LobbyOptions"];
 }
 
 // Framer Motion variants for staggered entrance
@@ -56,9 +60,11 @@ export function GameLobby({
   maxPlayers,
   onReady,
   onStartGame,
+  isStarting = false,
   optionsSchema,
   gameOptions,
   onOptionsChange,
+  LobbyOptions,
 }: GameLobbyProps) {
   const game = gameRegistry.byId(gameId);
   const isHost = myPlayerId != null && myPlayerId === hostId;
@@ -195,6 +201,18 @@ export function GameLobby({
         </motion.div>
       )}
 
+      {/* Game-specific lobby section (e.g. Rule Out's board picker) */}
+      {LobbyOptions && gameOptions && onOptionsChange && (
+        <motion.div variants={item}>
+          <LobbyOptions
+            roomCode={roomCode}
+            isHost={isHost}
+            options={gameOptions}
+            onOptionsChange={onOptionsChange}
+          />
+        </motion.div>
+      )}
+
       {/* Action buttons */}
       <motion.div variants={item} className="flex flex-col gap-3">
         {isHost ? (
@@ -202,15 +220,19 @@ export function GameLobby({
           <div className="flex flex-col items-center gap-2">
             <button
               onClick={onStartGame}
-              disabled={!canStart}
+              disabled={!canStart || isStarting}
               className={cn(
                 "inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold transition-all xl:py-3.5 xl:text-base",
-                canStart
+                canStart && !isStarting
                   ? "bg-violet text-white shadow-lg shadow-violet/25 hover:bg-violet/90 active:translate-y-px"
                   : "cursor-not-allowed bg-elevated text-text-muted"
               )}
             >
-              <Play className="h-4 w-4" />
+              {isStarting ? (
+                <Loader2 className="h-4 w-4 animate-spin" />
+              ) : (
+                <Play className="h-4 w-4" />
+              )}
               Start Game
             </button>
             {startDisabledReason && (

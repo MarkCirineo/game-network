@@ -4,6 +4,7 @@
 // ============================================================
 
 import { create } from "zustand";
+import { toast } from "sonner";
 import type {
   RoomState,
   PlayerInfo,
@@ -204,6 +205,8 @@ export const useGameStore = create<GameStore>((set, get) => ({
         const terminalCodes = ['DUPLICATE_NAME', 'SESSION_CONFLICT', 'ROOM_NOT_FOUND', 'ROOM_FULL'];
         if (terminalCodes.includes(msg.code)) {
           set({ joinError: msg.message });
+        } else if (msg.code === 'PACK_LOCKED') {
+          toast.error(msg.message);
         }
         break;
       }

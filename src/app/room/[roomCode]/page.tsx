@@ -112,6 +112,8 @@ export default function RoomPage({ params }: Props) {
       ResultComponent={game.ResultComponent}
       wideLayout={game.wideLayout}
       optionsSchema={game.optionsSchema}
+      LobbyOptions={game.LobbyOptions}
+      prepareStart={game.prepareStart}
     />
   );
 }

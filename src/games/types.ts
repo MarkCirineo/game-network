@@ -51,6 +51,28 @@ export interface GameDefinition<TState = any, TAction = any> {
   ResultComponent?: ComponentType<GameResultProps<TState>>;
   /** Let the game area grow past the default width on large screens */
   wideLayout?: boolean;
+  /** Optional lobby section for options the schema can't express (e.g. a board picker) */
+  LobbyOptions?: ComponentType<LobbyOptionsProps>;
+  /**
+   * Optional step before the host's start_game is sent, e.g. fetching
+   * a pack pass. Returns the options to send; throw an Error with a
+   * player-facing message to cancel the start.
+   */
+  prepareStart?: (options: Record<string, unknown>, roomCode: string) => Promise<Record<string, unknown>>;
+}
+
+// ------------------------------------------------------------
+// Lobby Options Props — passed to a game's custom lobby section
+// ------------------------------------------------------------
+
+export interface LobbyOptionsProps {
+  /** Room the lobby belongs to */
+  roomCode: string;
+  /** Only the host can change options */
+  isHost: boolean;
+  /** The host's current option choices */
+  options: Record<string, unknown>;
+  onOptionsChange: (options: Record<string, unknown>) => void;
 }
 
 // ------------------------------------------------------------

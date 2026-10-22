@@ -11,6 +11,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Loader2 } from "lucide-react";
+import { toast } from "sonner";
 import { useGameSocket } from "@/lib/ws/client";
 import { useGameStore } from "@/lib/stores/gameStore";
 import { trackEvent } from "@/lib/analytics";
@@ -20,6 +21,7 @@ import {
   getSavedPlayerName,
   savePlayerName,
 } from "@/lib/utils/playerSession";
+import { readRoomOptions } from "@/lib/utils/roomOptions";
 import { PlayerList } from "./PlayerList";
 import { SpectatorBanner } from "./SpectatorBanner";
 import { InvitePanel } from "./InvitePanel";
@@ -27,7 +29,12 @@ import { ReconnectOverlay } from "./ReconnectOverlay";
 import { GameLobby } from "./GameLobby";
 import { GameOver } from "./GameOver";
 
-import type { GameComponentProps, GameOptionSchema, GameResultProps } from "@/games/types";
+import type {
+  GameComponentProps,
+  GameDefinition,
+  GameOptionSchema,
+  GameResultProps,
+} from "@/games/types";
 import type { ComponentType } from "react";
 
 interface GameShellProps {
@@ -43,6 +50,8 @@ interface GameShellProps {
   /** Drop the max-w-4xl cap from xl up (the game sizes itself) */
   wideLayout?: boolean;
   optionsSchema?: GameOptionSchema[];
+  LobbyOptions?: GameDefinition["LobbyOptions"];
+  prepareStart?: GameDefinition["prepareStart"];
 }
 
 // Helpers to persist join state in sessionStorage (per-tab, survives remounts/HMR)
@@ -86,6 +95,8 @@ export function GameShell({
   ResultComponent,
   wideLayout,
   optionsSchema,
+  LobbyOptions,
+  prepareStart,
 }: GameShellProps) {
   const router = useRouter();
 
@@ -107,8 +118,10 @@ export function GameShell({
         defaults[opt.key] = opt.default;
       }
     }
-    return defaults;
+    // A starting choice from the page that created the room (e.g. a pack)
+    return { ...defaults, ...readRoomOptions(roomCode) };
   });
+  const [isStarting, setIsStarting] = useState(false);
 
   // Get session token and saved name
   useEffect(() => {
@@ -184,6 +197,24 @@ export function GameShell({
       }
     }
   }, [joinError, roomCode, myPlayerId]);
+
+  // Host starts the game; some games need a step first (e.g. a pack pass)
+  const handleStartGame = async () => {
+    if (isStarting) return;
+    let options = gameOptions;
+    if (prepareStart) {
+      setIsStarting(true);
+      try {
+        options = await prepareStart(gameOptions, roomCode);
+      } catch (err) {
+        toast.error(err instanceof Error ? err.message : "Couldn't start the game.");
+        return;
+      } finally {
+        setIsStarting(false);
+      }
+    }
+    sendMessage({ type: "start_game", options });
+  };
 
   // Handle join — persist to sessionStorage
   const handleJoin = (name: string) => {
@@ -359,10 +390,12 @@ export function GameShell({
                   minPlayers={minPlayers}
                   maxPlayers={maxPlayers}
                   onReady={() => sendMessage({ type: "player_ready" })}
-                  onStartGame={() => sendMessage({ type: "start_game", options: gameOptions })}
+                  onStartGame={handleStartGame}
+                  isStarting={isStarting}
                   optionsSchema={optionsSchema}
                   gameOptions={gameOptions}
                   onOptionsChange={setGameOptions}
+                  LobbyOptions={LobbyOptions}
                 />
               </motion.div>
             )}
