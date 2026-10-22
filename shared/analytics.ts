@@ -81,6 +81,12 @@ export interface ClientEvents {
   'daily-share': { puzzle: number; method: 'share-sheet' | 'copy' };
   /** The "save your streak" sign-in prompt on the results screen */
   'daily-signin-prompt': { action: 'shown' | 'sign-in' | 'not-now'; streak: number };
+
+  // ---- Rule Out board packs ----
+  /** Clicked a buy button on the packs page; item is a pack id or "bundle" */
+  'pack-checkout-start': { item: string };
+  /** Came back from a paid checkout; packs is a comma-separated list of pack ids */
+  'pack-purchase': { packs: string; count: number };
 }
 
 /**

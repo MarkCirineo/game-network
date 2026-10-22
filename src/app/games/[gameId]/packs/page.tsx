@@ -1,9 +1,11 @@
 // ============================================================
 // ArcadeKit — Rule Out Board Packs Page
 // /games/rule-out/packs — every board pack, what it costs, and a
-// way to play it. Only the host needs a pack; everyone who joins
-// plays it with them, with or without an account. The "packs"
-// coming-soon link lands here.
+// way to play or buy it. Only the host needs a pack; everyone who
+// joins plays it with them, with or without an account. The "packs"
+// coming-soon link lands here, and so does Stripe after a checkout
+// (?checkout=<session id>), which records the purchase if the
+// webhook hasn't yet.
 // ============================================================
 
 import type { Metadata } from "next";
@@ -11,18 +13,24 @@ import Image from "next/image";
 import Link from "next/link";
 import { headers } from "next/headers";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Lock, UserRound } from "lucide-react";
+import { ArrowLeft, CheckCircle2, Layers, UserRound } from "lucide-react";
 import { CreateRoomButton } from "@/components/game/CreateRoomButton";
 import { auth } from "@/lib/auth";
 import { getCatalogGame } from "@/lib/gameCatalog";
 import { packsFor, type PackWithStatus } from "@/lib/packs";
+import { fulfillCheckout, type FulfilledCheckout } from "@/lib/packPurchases";
+import { stripeConfigured } from "@/lib/stripe";
 import { getBoard } from "../../../../../shared/boards";
+import { bundlePriceCents, formatPrice, getPack } from "../../../../../shared/boards/packs";
+import { BuyButton } from "./BuyButton";
+import { PurchaseTracker } from "./PurchaseTracker";
 
 const GAME_ID = "rule-out";
 const PACKS_PATH = `/games/${GAME_ID}/packs`;
 
 type Props = {
   params: Promise<{ gameId: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -39,16 +47,38 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 function statusLabel(pack: PackWithStatus): string {
   if (pack.access === "free") return "Free";
   if (pack.access === "account") return "Free with an account";
-  return pack.owned ? "Owned" : "Paid pack";
+  return pack.owned ? "Owned" : formatPrice(pack.priceCents ?? 0);
 }
 
-export default async function PacksPage({ params }: Props) {
+/** Record a checkout the buyer just came back from, if it's theirs and paid */
+async function checkoutResult(raw: unknown, userId: string | null): Promise<FulfilledCheckout | null> {
+  if (!userId || typeof raw !== "string" || !/^cs_[A-Za-z0-9_]+$/.test(raw)) return null;
+  try {
+    const result = await fulfillCheckout(raw);
+    return result?.userId === userId ? result : null;
+  } catch (error) {
+    console.error("[packs] checkout return", error);
+    return null;
+  }
+}
+
+export default async function PacksPage({ params, searchParams }: Props) {
   const { gameId } = await params;
   const game = getCatalogGame(gameId);
   if (gameId !== GAME_ID || !game) notFound();
 
   const session = await auth.api.getSession({ headers: await headers() });
-  const packs = await packsFor(session?.user.id ?? null);
+  const userId = session?.user.id ?? null;
+  const checkoutId = (await searchParams).checkout;
+  const purchase = await checkoutResult(checkoutId, userId);
+  const packs = await packsFor(userId);
+
+  const owned = new Set(packs.filter((p) => p.owned).map((p) => p.id));
+  const bundlePrice = bundlePriceCents(owned);
+  const bundlePacks = packs.filter((p) => p.access === "paid" && !p.owned);
+  const bundleSeparately = bundlePacks.reduce((sum, p) => sum + (p.priceCents ?? 0), 0);
+  const buyingOpen = stripeConfigured();
+  const signInHref = (hash = "") => `/sign-in?next=${encodeURIComponent(`${PACKS_PATH}${hash}`)}`;
 
   return (
     <div className="px-4 py-8 md:py-12">
@@ -69,14 +99,24 @@ export default async function PacksPage({ params }: Props) {
           joins plays it with you, no account needed.
         </p>
 
+        {purchase && typeof checkoutId === "string" && (
+          <div className="mt-5 flex items-start gap-3 rounded-xl bg-amber/10 p-4 text-sm">
+            <PurchaseTracker checkoutId={checkoutId} packIds={purchase.packIds} />
+            <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-amber" />
+            <p>
+              <strong className="text-text-primary">Thanks for your purchase!</strong>{" "}
+              {purchase.packIds.map((id) => getPack(id)?.name).join(" and ")}{" "}
+              {purchase.packIds.length === 1 ? "is" : "are"} now yours. Pick{" "}
+              {purchase.packIds.length === 1 ? "it" : "them"} in the lobby when you host a game.
+            </p>
+          </div>
+        )}
+
         {!session && (
           <div className="mt-5 flex items-start gap-3 rounded-xl bg-cyan/10 p-4 text-sm">
             <UserRound className="mt-0.5 h-4 w-4 shrink-0 text-cyan" />
             <p>
-              <Link
-                href={`/sign-in?next=${encodeURIComponent(PACKS_PATH)}`}
-                className="font-semibold text-cyan hover:text-cyan/80"
-              >
+              <Link href={signInHref()} className="font-semibold text-cyan hover:text-cyan/80">
                 Sign in or create a free account
               </Link>{" "}
               to play Monster Mash for free. Accounts are optional, and Classic never needs one.
@@ -84,10 +124,42 @@ export default async function PacksPage({ params }: Props) {
           </div>
         )}
 
-        <ul className="mt-8 grid gap-4 md:grid-cols-2">
+        {/* All the paid packs the viewer is missing, for less */}
+        {bundlePrice !== null && (
+          <section className="mt-6 flex flex-col gap-4 rounded-2xl border border-amber/20 bg-amber/5 p-4 md:flex-row md:items-center md:justify-between md:p-5">
+            <div className="flex items-start gap-3">
+              <Layers className="mt-1 h-5 w-5 shrink-0 text-amber" />
+              <div>
+                <h2 className="font-heading text-lg font-bold">
+                  {owned.size > 0 ? "Complete your collection" : "Get every pack"}
+                </h2>
+                <p className="mt-1 text-sm text-text-secondary">
+                  {bundlePacks.map((p) => `${p.emoji} ${p.name}`).join(" + ")} for{" "}
+                  <strong className="text-text-primary">{formatPrice(bundlePrice)}</strong>
+                  {bundleSeparately > bundlePrice && (
+                    <> instead of {formatPrice(bundleSeparately)} separately</>
+                  )}
+                  . Yours to keep.
+                </p>
+              </div>
+            </div>
+            {!session ? (
+              <Link
+                href={signInHref()}
+                className="inline-flex h-12 shrink-0 items-center justify-center rounded-xl bg-amber px-6 text-base font-semibold text-black transition-colors hover:bg-amber/90"
+              >
+                Sign in to buy
+              </Link>
+            ) : buyingOpen ? (
+              <BuyButton item="bundle" label={`Buy all for ${formatPrice(bundlePrice)}`} />
+            ) : null}
+          </section>
+        )}
+
+        <ul className="mt-6 grid gap-4 md:grid-cols-2">
           {packs.map((pack) => {
             const board = getBoard(pack.id);
-            const locked = pack.status !== "unlocked";
+            const isPaid = pack.access === "paid";
             return (
               <li
                 key={pack.id}
@@ -108,9 +180,9 @@ export default async function PacksPage({ params }: Props) {
                   </h2>
                   <span
                     className={
-                      pack.owned || pack.access !== "paid"
-                        ? "shrink-0 rounded-full bg-white/5 px-2.5 py-1 text-xs font-medium text-text-secondary"
-                        : "shrink-0 rounded-full bg-amber/10 px-2.5 py-1 text-xs font-medium text-amber"
+                      isPaid && !pack.owned
+                        ? "shrink-0 rounded-full bg-amber/10 px-2.5 py-1 text-xs font-medium text-amber"
+                        : "shrink-0 rounded-full bg-white/5 px-2.5 py-1 text-xs font-medium text-text-secondary"
                     }
                   >
                     {statusLabel(pack)}
@@ -120,7 +192,7 @@ export default async function PacksPage({ params }: Props) {
                 <p className="mt-1 text-xs text-text-muted">{board.cards.length} cards</p>
 
                 <div className="mt-4 flex flex-1 items-end">
-                  {!locked ? (
+                  {pack.status === "unlocked" ? (
                     <CreateRoomButton
                       gameId={GAME_ID}
                       accentColor={game.accentColor}
@@ -129,14 +201,22 @@ export default async function PacksPage({ params }: Props) {
                     />
                   ) : pack.status === "sign-in" ? (
                     <Link
-                      href={`/sign-in?next=${encodeURIComponent(`${PACKS_PATH}#${pack.id}`)}`}
+                      href={signInHref(`#${pack.id}`)}
                       className="inline-flex h-12 items-center rounded-xl bg-cyan px-6 text-base font-semibold text-black transition-colors hover:bg-cyan/90"
                     >
                       Sign in to play free
                     </Link>
+                  ) : !session ? (
+                    <Link
+                      href={signInHref(`#${pack.id}`)}
+                      className="inline-flex h-12 items-center rounded-xl border border-amber/40 px-6 text-base font-semibold text-amber transition-colors hover:bg-amber/10"
+                    >
+                      Sign in to buy
+                    </Link>
+                  ) : buyingOpen ? (
+                    <BuyButton item={pack.id} label={`Buy for ${formatPrice(pack.priceCents ?? 0)}`} />
                   ) : (
-                    <span className="inline-flex h-12 items-center gap-2 rounded-xl bg-elevated px-6 text-sm font-semibold text-text-muted">
-                      <Lock className="h-4 w-4" />
+                    <span className="inline-flex h-12 items-center rounded-xl bg-elevated px-6 text-sm font-semibold text-text-muted">
                       Buying opens soon
                     </span>
                   )}
@@ -146,9 +226,16 @@ export default async function PacksPage({ params }: Props) {
           })}
         </ul>
 
-        <p className="mx-auto mt-10 max-w-md text-center text-xs leading-relaxed text-text-secondary">
-          Packs you unlock are tied to your account, so they work on any device you sign in on.
-        </p>
+        <div className="mx-auto mt-10 max-w-md space-y-2 text-center text-xs leading-relaxed text-text-secondary">
+          <p>
+            Packs you buy are tied to your account, so they work on any device you sign in on.
+            They&apos;re yours to keep: there&apos;s no subscription.
+          </p>
+          <p>
+            Prices are in US dollars. Stripe handles payment and adds sales tax or VAT at
+            checkout where it applies.
+          </p>
+        </div>
       </div>
     </div>
   );
