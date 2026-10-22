@@ -22,6 +22,13 @@
       "when": 1792199219694,
       "tag": "0002_daily_rank",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1792627334757,
+      "tag": "0003_board_packs",
+      "breakpoints": true
     }
   ]
 }
