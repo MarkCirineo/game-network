@@ -6,10 +6,12 @@ the Classic board.
 
 ## How to generate
 
-1. Open [gemini.google.com](https://gemini.google.com) and start a **new chat
-   for each pack** (style drifts less inside one chat).
+1. Open [gemini.google.com](https://gemini.google.com) and start a **new plain
+   chat for each pack**. A chat remembers the references and earlier results,
+   which keeps the 24 images consistent.
 2. Attach two Classic cards as style references:
-   `public/boards/classic/diana.webp` and `public/boards/classic/carlos.webp`.
+   `public/boards/classic/ethan.webp` and `public/boards/classic/bella.webp`
+   (bright, friendly, and no frame, like most of the Classic board).
 3. Paste the pack's **style message** (below) as the first message.
 4. Then send the character prompts **one at a time**. If a result is wrong
    (missing trait, extra eye, text in the image, different style), say
@@ -41,7 +43,7 @@ I'm making a set of 24 character cards for a guessing game. Match the attached r
 
 - Flat vector cartoon portrait, head and shoulders, centered, facing the viewer.
 - Thick dark navy outlines, flat colors with very light soft shading, simple friendly features.
-- A solid pastel background inside a rounded-square frame with a thin dark navy border, on a cream outer margin, exactly like the references.
+- A solid pastel background that fills the whole square, with no frame, border or margin, like the references.
 - Square 1:1 image.
 - No text, letters, numbers or logos anywhere.
 - Every card must look like part of the same set.
