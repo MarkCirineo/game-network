@@ -33,6 +33,13 @@ const nextConfig: NextConfig = {
 
   // WSL: filesystem events don't propagate, so use polling for HMR
   webpack: (config, { dev }) => {
+    // shared/ is also compiled by the game server (NodeNext), so its
+    // imports name files "./x.js"; resolve those to the .ts sources
+    config.resolve.extensionAlias = {
+      ...config.resolve.extensionAlias,
+      ".js": [".ts", ".tsx", ".js"],
+    };
+
     if (dev) {
       config.watchOptions = {
         ...config.watchOptions,
