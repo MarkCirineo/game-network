@@ -23,7 +23,7 @@ the Classic board.
 **Free limit:** about 20 images a day, so plan on a pack every day or two
 (retries count too). Start with Monster Mash.
 
-**Rules for every image:**
+**What to check in each image (for you, not Gemini; the style message already tells Gemini):**
 - One character, head and shoulders, centered, looking at the viewer.
 - No text, letters, numbers, logos or watermarks drawn in the image.
 - The listed traits must be clearly visible at thumbnail size. Those traits
