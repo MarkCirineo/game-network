@@ -54,7 +54,7 @@ I'll describe one character per message. Draw only that character, and make ever
 Then add one line for the pack:
 
 - **Monster Mash:** `This set is friendly, cute monsters (not scary). Smiling, kid-friendly, original designs that don't resemble any existing cartoon or movie characters.`
-- **Dogs:** `This set is cartoon dogs, drawn like the references: friendly, expressive, head and shoulders. Original designs, not based on any famous cartoon dog.`
+- **Dogs:** `This set is cartoon dogs, drawn like the references: friendly, expressive, head and shoulders, with the chest and shoulders going all the way off the bottom edge of the image (no floating cutout). Original designs, not based on any famous cartoon dog.`
 - **Fantasy:** `This set is fantasy characters (wizards, knights, elves, dwarves and more). Friendly, kid-friendly, original designs that don't resemble characters from any book, movie or game.`
 
 ---
