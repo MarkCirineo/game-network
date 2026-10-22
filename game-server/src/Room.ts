@@ -671,7 +671,12 @@ export class Room {
 
     // Resolve options: merge user options with engine defaults
     const defaults = this.gameEngine.getDefaultOptions();
-    this.gameOptions = { ...defaults, ...options };
+    const checked = this.gameEngine.checkStartOptions({ ...defaults, ...options }, this.roomCode);
+    if (!checked.ok) {
+      this.sendErrorToPlayer(playerId, 'PACK_LOCKED', checked.message);
+      return;
+    }
+    this.gameOptions = checked.options;
 
     // Create initial game state
     const playerInfos = Array.from(this.players.values()).map((p) => this.toPlayerInfo(p));

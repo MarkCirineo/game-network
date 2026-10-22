@@ -35,6 +35,23 @@ export abstract class GameEngine {
   }
 
   /**
+   * Optional: check the host's options before a game starts, for
+   * options that need permission (e.g. Rule Out's packs). Returns the
+   * options to keep, with anything only needed for the check (such
+   * as a pack pass) removed, or a message telling the host why the
+   * game can't start. Rematches reuse the kept options unchecked.
+   *
+   * @param options  - Engine defaults merged with the host's choices
+   * @param roomCode - The room the game is starting in
+   */
+  checkStartOptions(
+    options: Record<string, unknown>,
+    _roomCode: string,
+  ): { ok: true; options: Record<string, unknown> } | { ok: false; message: string } {
+    return { ok: true, options };
+  }
+
+  /**
    * Create the initial game state for a new round.
    * @param players - Array of players participating in this round
    * @param options - Optional game configuration from the lobby

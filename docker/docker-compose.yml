@@ -21,6 +21,8 @@ services:
       - DISCORD_ALERTS_WEBHOOK_URL=${DISCORD_ALERTS_WEBHOOK_URL:-}
       # Daily Rank puzzle generator key
       - DAILY_SEED_SECRET=${DAILY_SEED_SECRET:?set DAILY_SEED_SECRET in docker/.env}
+      # Rule Out packs: signs pack passes (the game server checks them)
+      - PACK_PASS_SECRET=${PACK_PASS_SECRET:?set PACK_PASS_SECRET in docker/.env}
     depends_on:
       postgres:
         condition: service_healthy
@@ -45,6 +47,7 @@ services:
       - NODE_ENV=production
       - PORT=3001
       - REDIS_URL=redis://redis:6379
+      - PACK_PASS_SECRET=${PACK_PASS_SECRET:?set PACK_PASS_SECRET in docker/.env}
     depends_on:
       redis:
         condition: service_healthy

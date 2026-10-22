@@ -92,7 +92,9 @@ export type ErrorCode =
   | 'INVALID_MESSAGE'
   | 'RATE_LIMITED'
   | 'SESSION_CONFLICT'
-  | 'DUPLICATE_NAME';
+  | 'DUPLICATE_NAME'
+  /** The host picked a board pack they can't use (no account, not bought, or an expired pass) */
+  | 'PACK_LOCKED';
 
 // ------------------------------------------------------------
 // Internal Server Messages (game server ↔ Next.js API)
