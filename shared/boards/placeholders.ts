@@ -1,6 +1,6 @@
 // ============================================================
 // ArcadeKit — Placeholder Pack Boards (Rule Out)
-// TEMPORARY: stand-ins for Monster Mash, Dogs and Fantasy until
+// TEMPORARY: stand-ins for Dogs and Fantasy until
 // their art exists. Each one reuses the classic portraits and tags
 // under its own id and card names, so the pack system can be built
 // and tested end to end. Replace each with a real board file
@@ -21,12 +21,6 @@ function placeholderBoard(id: string, name: string, cardNames: string[]): Board 
     questions: classicBoard.questions,
   };
 }
-
-export const monsterMashBoard = placeholderBoard("monster-mash", "Monster Mash", [
-  "Boris", "Mona", "Grub", "Fang", "Zelda", "Igor", "Wanda", "Gloop",
-  "Drac", "Mabel", "Bones", "Wisp", "Hex", "Nessie", "Slime", "Pumpkin",
-  "Vlad", "Ghoulia", "Moss", "Batty", "Frank", "Shade", "Ooze", "Talon",
-]);
 
 export const dogsBoard = placeholderBoard("dogs", "Dogs", [
   "Biscuit", "Daisy", "Rocky", "Luna", "Max", "Pepper", "Buddy", "Coco",
