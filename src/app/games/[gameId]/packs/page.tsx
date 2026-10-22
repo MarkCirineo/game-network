@@ -235,6 +235,12 @@ export default async function PacksPage({ params, searchParams }: Props) {
             Prices are in US dollars. Stripe handles payment and adds sales tax or VAT at
             checkout where it applies.
           </p>
+          <p>
+            Not happy with a pack? Ask within 14 days for a refund.{" "}
+            <Link href="/terms#purchases" className="text-ember hover:text-ember/80">
+              Purchase terms
+            </Link>
+          </p>
         </div>
       </div>
     </div>

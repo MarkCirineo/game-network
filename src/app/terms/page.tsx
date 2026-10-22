@@ -16,6 +16,7 @@ import {
   ExternalLink,
   RefreshCw,
   Mail,
+  ShoppingBag,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -32,16 +33,17 @@ export const metadata: Metadata = {
 const sections = [
   { id: "acceptance", label: "1. Acceptance of Terms" },
   { id: "description", label: "2. Description of Service" },
-  { id: "user-conduct", label: "3. User Conduct" },
-  { id: "intellectual-property", label: "4. Intellectual Property" },
-  { id: "disclaimers", label: "5. Disclaimers" },
-  { id: "limitation-of-liability", label: "6. Limitation of Liability" },
-  { id: "affiliate-links", label: "7. Affiliate Links Disclosure" },
-  { id: "external-links", label: "8. External Links" },
-  { id: "termination", label: "9. Termination" },
-  { id: "changes", label: "10. Changes to Terms" },
-  { id: "governing-law", label: "11. Governing Law" },
-  { id: "contact", label: "12. Contact Us" },
+  { id: "purchases", label: "3. Purchases and Refunds" },
+  { id: "user-conduct", label: "4. User Conduct" },
+  { id: "intellectual-property", label: "5. Intellectual Property" },
+  { id: "disclaimers", label: "6. Disclaimers" },
+  { id: "limitation-of-liability", label: "7. Limitation of Liability" },
+  { id: "affiliate-links", label: "8. Affiliate Links Disclosure" },
+  { id: "external-links", label: "9. External Links" },
+  { id: "termination", label: "10. Termination" },
+  { id: "changes", label: "11. Changes to Terms" },
+  { id: "governing-law", label: "12. Governing Law" },
+  { id: "contact", label: "13. Contact Us" },
 ];
 
 function SectionCard({
@@ -84,7 +86,7 @@ export default function TermsPage() {
             Terms of Service
           </h1>
           <p className="mt-2 text-text-muted text-sm">
-            Last updated: October 13, 2026
+            Last updated: October 21, 2026
           </p>
         </div>
 
@@ -141,7 +143,14 @@ export default function TermsPage() {
             <ul className="ml-4 list-disc space-y-1.5">
               <li>Play multiplayer games directly in their web browser</li>
               <li>Create game rooms and invite others via shareable links</li>
-              <li>Access all games without creating an account or paying fees</li>
+              <li>Play every game without creating an account or paying</li>
+              <li>
+                Optionally buy extras, such as board packs for Rule Out (see{" "}
+                <a href="#purchases" className="text-ember hover:text-ember/80">
+                  Purchases and Refunds
+                </a>
+                )
+              </li>
               <li>
                 Optionally create an account (13 or older only) with a public
                 username
@@ -155,14 +164,59 @@ export default function TermsPage() {
               public: other players can see it.
             </p>
             <p>
-              The Service is provided free of charge. We reserve the right to
-              modify, suspend, or discontinue any part of the Service at any
-              time without prior notice.
+              Every game is free to play. Some optional extras cost money.
+              We reserve the right to modify, suspend, or discontinue any part
+              of the Service at any time without prior notice.
             </p>
           </SectionCard>
 
-          {/* 3. User Conduct */}
-          <SectionCard id="user-conduct" icon={UserCheck} title="3. User Conduct">
+          {/* 3. Purchases and Refunds */}
+          <SectionCard id="purchases" icon={ShoppingBag} title="3. Purchases and Refunds">
+            <p>
+              <strong className="text-text-primary">What you can buy.</strong>{" "}
+              Some extras, such as themed board packs for Rule Out, can be
+              bought with an account. A purchase unlocks the content on your
+              account, on any device you sign in on. It&apos;s a one-time
+              payment, not a subscription. Only the person hosting a game
+              needs a pack: everyone who joins their room plays it with them.
+            </p>
+            <p>
+              <strong className="text-text-primary">Who sells it.</strong>{" "}
+              Purchases are sold through Link, Stripe&apos;s merchant of record
+              service. Link is the seller for the transaction: it takes the
+              payment, adds sales tax or VAT where it applies, and sends your
+              receipt. Its terms, shown at checkout, apply to the payment.
+              Prices are shown in US dollars before tax.
+            </p>
+            <p>
+              <strong className="text-text-primary">Ages.</strong> If
+              you&apos;re under 18, ask a parent or guardian before buying
+              anything.
+            </p>
+            <p>
+              <strong className="text-text-primary">Refunds.</strong> If
+              you&apos;re not happy with a purchase, email{" "}
+              <a
+                href="mailto:support@arcadekit.games"
+                className="text-ember hover:text-ember/80"
+              >
+                support@arcadekit.games
+              </a>{" "}
+              within 14 days of buying it and we&apos;ll refund it. You can
+              also ask through the support link on your Link receipt. A
+              refunded purchase is removed from your account. This doesn&apos;t
+              limit any rights you have under the consumer laws where you live.
+            </p>
+            <p>
+              <strong className="text-text-primary">If your account goes.</strong>{" "}
+              Purchases belong to the account that made them and can&apos;t be
+              moved to another account. Deleting your account removes them,
+              and so does a payment that&apos;s charged back.
+            </p>
+          </SectionCard>
+
+          {/* 4. User Conduct */}
+          <SectionCard id="user-conduct" icon={UserCheck} title="4. User Conduct">
             <p>When using ArcadeKit, you agree not to:</p>
             <ul className="ml-4 list-disc space-y-1.5">
               <li>
@@ -204,8 +258,8 @@ export default function TermsPage() {
             </p>
           </SectionCard>
 
-          {/* 4. Intellectual Property */}
-          <SectionCard id="intellectual-property" icon={Scale} title="4. Intellectual Property">
+          {/* 5. Intellectual Property */}
+          <SectionCard id="intellectual-property" icon={Scale} title="5. Intellectual Property">
             <p>
               The ArcadeKit platform, including its design, code, graphics,
               game implementations, logos, and branding, is owned by ArcadeKit
@@ -224,8 +278,8 @@ export default function TermsPage() {
             </ul>
           </SectionCard>
 
-          {/* 5. Disclaimers */}
-          <SectionCard id="disclaimers" icon={AlertTriangle} title="5. Disclaimers">
+          {/* 6. Disclaimers */}
+          <SectionCard id="disclaimers" icon={AlertTriangle} title="6. Disclaimers">
             <p>
               <strong className="text-text-primary">
                 The Service is provided &quot;as is&quot; and &quot;as
@@ -243,13 +297,13 @@ export default function TermsPage() {
               <li>Any defects in the Service will be corrected</li>
             </ul>
             <p>
-              You use ArcadeKit at your own risk. We are a free service and make
+              You use ArcadeKit at your own risk. We make
               no guarantees about uptime or availability.
             </p>
           </SectionCard>
 
-          {/* 6. Limitation of Liability */}
-          <SectionCard id="limitation-of-liability" icon={ShieldAlert} title="6. Limitation of Liability">
+          {/* 7. Limitation of Liability */}
+          <SectionCard id="limitation-of-liability" icon={ShieldAlert} title="7. Limitation of Liability">
             <p>
               To the fullest extent permitted by applicable law, ArcadeKit and
               its operators shall not be liable for any indirect, incidental,
@@ -265,14 +319,14 @@ export default function TermsPage() {
               <li>Any bugs, viruses, or similar issues transmitted through the Service</li>
             </ul>
             <p>
-              Since ArcadeKit is a free service with no paid plans or
-              transactions, our total liability to you for any claims is limited
-              to zero dollars ($0).
+              Our total liability to you for any claims is limited to the
+              amount you paid for purchases in the 12 months before the claim,
+              or zero dollars ($0) if you haven&apos;t bought anything.
             </p>
           </SectionCard>
 
-          {/* 7. Affiliate Links */}
-          <SectionCard id="affiliate-links" icon={Link2} title="7. Affiliate Links Disclosure">
+          {/* 8. Affiliate Links */}
+          <SectionCard id="affiliate-links" icon={Link2} title="8. Affiliate Links Disclosure">
             <p>
               ArcadeKit may contain affiliate links to third-party products or
               services. This means that if you click on a link and make a
@@ -291,8 +345,8 @@ export default function TermsPage() {
             </p>
           </SectionCard>
 
-          {/* 8. External Links */}
-          <SectionCard id="external-links" icon={ExternalLink} title="8. External Links">
+          {/* 9. External Links */}
+          <SectionCard id="external-links" icon={ExternalLink} title="9. External Links">
             <p>
               ArcadeKit may contain links to third-party websites or services
               that are not owned or controlled by ArcadeKit. This includes
@@ -306,8 +360,8 @@ export default function TermsPage() {
             </p>
           </SectionCard>
 
-          {/* 9. Termination */}
-          <SectionCard id="termination" icon={AlertTriangle} title="9. Termination">
+          {/* 10. Termination */}
+          <SectionCard id="termination" icon={AlertTriangle} title="10. Termination">
             <p>
               We reserve the right to restrict or terminate your access to the
               Service at any time, without prior notice, for any reason,
@@ -323,8 +377,8 @@ export default function TermsPage() {
             </p>
           </SectionCard>
 
-          {/* 10. Changes */}
-          <SectionCard id="changes" icon={RefreshCw} title="10. Changes to Terms">
+          {/* 11. Changes */}
+          <SectionCard id="changes" icon={RefreshCw} title="11. Changes to Terms">
             <p>
               We reserve the right to modify or replace these Terms at any time.
               When we make changes, we will update the &quot;Last updated&quot;
@@ -337,8 +391,8 @@ export default function TermsPage() {
             </p>
           </SectionCard>
 
-          {/* 11. Governing Law */}
-          <SectionCard id="governing-law" icon={Scale} title="11. Governing Law">
+          {/* 12. Governing Law */}
+          <SectionCard id="governing-law" icon={Scale} title="12. Governing Law">
             <p>
               These Terms shall be governed by and construed in accordance with
               the laws of the United States, without regard to conflict of law
@@ -352,8 +406,8 @@ export default function TermsPage() {
             </p>
           </SectionCard>
 
-          {/* 12. Contact */}
-          <SectionCard id="contact" icon={Mail} title="12. Contact Us">
+          {/* 13. Contact */}
+          <SectionCard id="contact" icon={Mail} title="13. Contact Us">
             <p>
               If you have any questions about these Terms of Service, please
               contact us:
