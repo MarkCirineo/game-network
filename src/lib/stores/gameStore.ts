@@ -32,6 +32,8 @@ interface GameStore {
   players: PlayerInfo[];
   spectators: SpectatorInfo[];
   hostId: string | null;
+  /** The host's lobby choices, as the server shares them */
+  lobbyOptions: Record<string, string | number>;
 
   // Player identity
   myPlayerId: string | null;
@@ -77,6 +79,7 @@ const initialState = {
   players: [] as PlayerInfo[],
   spectators: [] as SpectatorInfo[],
   hostId: null as string | null,
+  lobbyOptions: {} as Record<string, string | number>,
   myPlayerId: null as string | null,
   isSpectator: false,
   gameState: null as unknown,
@@ -98,6 +101,7 @@ export const useGameStore = create<GameStore>((set, get) => ({
       players: room.players,
       spectators: room.spectators,
       hostId: room.hostId,
+      lobbyOptions: room.lobbyOptions ?? {},
       gameState: room.gameState ?? get().gameState,
     }),
 
@@ -198,6 +202,9 @@ export const useGameStore = create<GameStore>((set, get) => ({
         break;
       case "rematch_requested":
         store.addRematchRequest(msg.playerId);
+        break;
+      case "lobby_options":
+        set({ lobbyOptions: msg.options });
         break;
       case "error": {
         console.error(`[ArcadeKit] Server error: ${msg.code} — ${msg.message}`);

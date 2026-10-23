@@ -170,6 +170,20 @@ export function GameShell({
     enabled: (hasJoined || autoJoining) && !!joinName,
   });
 
+  // The host shares their lobby choices so everyone sees them (e.g. the
+  // board); everyone else shows the host's choices instead of their own
+  const lobbyOptions = useGameStore((s) => s.lobbyOptions);
+  const isHost = myPlayerId !== null && myPlayerId === hostId;
+  const shownOptions = useMemo(
+    () => (isHost ? gameOptions : { ...gameOptions, ...lobbyOptions }),
+    [isHost, gameOptions, lobbyOptions],
+  );
+  useEffect(() => {
+    if (isHost && phase === "waiting" && connectionStatus === "connected") {
+      sendMessage({ type: "lobby_options", options: gameOptions });
+    }
+  }, [isHost, phase, connectionStatus, gameOptions, sendMessage]);
+
   // Reset store on true unmount (navigation away). Empty deps = only on unmount.
   useEffect(() => {
     return () => {
@@ -393,7 +407,7 @@ export function GameShell({
                   onStartGame={handleStartGame}
                   isStarting={isStarting}
                   optionsSchema={optionsSchema}
-                  gameOptions={gameOptions}
+                  gameOptions={shownOptions}
                   onOptionsChange={setGameOptions}
                   LobbyOptions={LobbyOptions}
                 />

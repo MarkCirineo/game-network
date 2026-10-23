@@ -3,7 +3,7 @@
 // The host picks which board pack the room plays. Locked packs
 // explain how to unlock them; those links open in a new tab so the
 // host keeps the room, and the list refreshes when they come back.
-// Joiners just see that the host picks.
+// Joiners see the board the host has picked so far.
 // ============================================================
 
 'use client';
@@ -29,6 +29,7 @@ export default function BoardPicker({ roomCode, isHost, options, onOptionsChange
   const statuses = usePackStatuses();
   const selectedId = typeof options.board === 'string' ? options.board : DEFAULT_BOARD_ID;
   const selected = statuses?.find((p) => p.id === selectedId);
+  const selectedPack = BOARD_PACKS.find((p) => p.id === selectedId);
 
   return (
     <div className="rounded-xl border border-white/5 bg-surface p-4 xl:p-5">
@@ -47,9 +48,19 @@ export default function BoardPicker({ roomCode, isHost, options, onOptionsChange
       </div>
 
       {!isHost ? (
-        <p className="text-sm text-text-secondary">
-          The host picks the board. You don&apos;t need an account to play any of them.
-        </p>
+        <div className="flex items-center gap-3">
+          <span className="relative h-14 w-14 shrink-0 overflow-hidden rounded-lg bg-elevated">
+            <Image src={getBoard(selectedId).cards[0].image} alt="" fill sizes="56px" className="object-cover" />
+          </span>
+          <div className="min-w-0">
+            <p className="text-sm font-semibold text-foreground">
+              {selectedPack?.emoji} {selectedPack?.name ?? getBoard(selectedId).name}
+            </p>
+            <p className="text-xs text-text-secondary">
+              The host picks the board. You don&apos;t need an account to play it.
+            </p>
+          </div>
+        </div>
       ) : (
         <>
           <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
