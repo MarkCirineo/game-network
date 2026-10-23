@@ -1,9 +1,9 @@
 // ============================================================
 // ArcadeKit — Placeholder Pack Boards (Rule Out)
-// TEMPORARY: stand-ins for Dogs and Fantasy until
-// their art exists. Each one reuses the classic portraits and tags
+// TEMPORARY: a stand-in for Fantasy until
+// its art exists. It reuses the classic portraits and tags
 // under its own id and card names, so the pack system can be built
-// and tested end to end. Replace each with a real board file
+// and tested end to end. Replace it with a real board file
 // (like classic.ts) before launch.
 // ============================================================
 
@@ -21,12 +21,6 @@ function placeholderBoard(id: string, name: string, cardNames: string[]): Board 
     questions: classicBoard.questions,
   };
 }
-
-export const dogsBoard = placeholderBoard("dogs", "Dogs", [
-  "Biscuit", "Daisy", "Rocky", "Luna", "Max", "Pepper", "Buddy", "Coco",
-  "Duke", "Rosie", "Bear", "Penny", "Scout", "Lola", "Tucker", "Ginger",
-  "Ziggy", "Maple", "Otis", "Waffles", "Bandit", "Nala", "Ollie", "Pickles",
-]);
 
 export const fantasyBoard = placeholderBoard("fantasy", "Fantasy", [
   "Alaric", "Brenna", "Cedric", "Dwyn", "Elowen", "Faelan", "Gorrin", "Hilda",
