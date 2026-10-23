@@ -59,6 +59,11 @@ export class RuleOutEngine extends GameEngine {
     ];
   }
 
+  /** The schema options plus the board (a known board id, else the default) */
+  describeOptions(options: Record<string, unknown>): Record<string, string | number> {
+    return { ...super.describeOptions(options), board: getBoard(options.board).id };
+  }
+
   /**
    * Boards outside the free packs need a pass the site signed for this
    * board in this room (see shared/packPass.ts). The pass is dropped

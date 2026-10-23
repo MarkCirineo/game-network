@@ -110,7 +110,8 @@ export interface ServerEvents {
   'room-created': { game: string };
   /**
    * A game started — every game, including rematches. Game options
-   * are added as option_<key> properties (e.g. option_theme).
+   * are added as option_<key> properties (e.g. option_theme, and
+   * option_board for Rule Out's board pack).
    */
   'game-started': { game: string; players: number; game_number: number; rematch: boolean };
   /** A game ended */

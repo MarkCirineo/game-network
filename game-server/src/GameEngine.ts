@@ -35,6 +35,29 @@ export abstract class GameEngine {
   }
 
   /**
+   * The host's options that are safe to show everyone and to report to
+   * analytics: only keys and values this game defines, since options
+   * arrive from the client. By default that's the options schema;
+   * engines with options outside the schema (e.g. Rule Out's board)
+   * add their own.
+   */
+  describeOptions(options: Record<string, unknown>): Record<string, string | number> {
+    const described: Record<string, string | number> = {};
+    for (const schema of this.getOptionsSchema()) {
+      const value = options[schema.key];
+      if (schema.type === 'select') {
+        const known = schema.options?.some((o) => o.value === value);
+        if (known && (typeof value === 'string' || typeof value === 'number')) {
+          described[schema.key] = value;
+        }
+      } else if (typeof value === 'number' && Number.isFinite(value)) {
+        described[schema.key] = value;
+      }
+    }
+    return described;
+  }
+
+  /**
    * Optional: check the host's options before a game starts, for
    * options that need permission (e.g. Rule Out's packs). Returns the
    * options to keep, with anything only needed for the check (such
