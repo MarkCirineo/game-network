@@ -3,10 +3,11 @@
 // ============================================================
 // ArcadeKit — Account panel
 // Username, email, sign-in methods (code / Google / password),
-// sign out, and delete account (confirmed by an emailed link).
+// board packs, sign out, and delete account (confirmed by an emailed link).
 // ============================================================
 
 import { useState, type FormEvent, type ReactNode } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Check, KeyRound, Loader2, LogOut, Mail, Trash2 } from "lucide-react";
 import { authClient } from "@/lib/auth-client";
@@ -25,6 +26,10 @@ interface AccountPanelProps {
   googleEnabled: boolean;
   /** Message for a failed "Connect Google" (Better Auth's ?error=<code>) */
   linkError: string | null;
+  /** Rule Out packs this account can host beyond the free ones */
+  packs: { id: string; name: string; emoji: string; bought: boolean }[];
+  /** Paid packs not owned yet (for the "get more" link) */
+  packsToBuy: number;
 }
 
 const inputClass =
@@ -169,7 +174,10 @@ export function AccountPanel({
   hasGoogle,
   googleEnabled,
   linkError,
+  packs,
+  packsToBuy,
 }: AccountPanelProps) {
+  const boughtPacks = packs.filter((p) => p.bought);
   const router = useRouter();
   const [name, setName] = useState(username);
   const [editingName, setEditingName] = useState(false);
@@ -244,6 +252,27 @@ export function AccountPanel({
         )}
       </Section>
 
+      <Section title="Board packs">
+        <ul className="flex flex-col gap-2">
+          {packs.map((pack) => (
+            <li key={pack.id} className="flex items-center justify-between gap-3 text-sm">
+              <span>
+                <span aria-hidden="true">{pack.emoji}</span> {pack.name}
+              </span>
+              <span className="text-xs text-text-secondary">
+                {pack.bought ? "Yours to keep" : "Free with your account"}
+              </span>
+            </li>
+          ))}
+        </ul>
+        <p className="mt-3 text-xs text-text-secondary">
+          Pick them in the Rule Out lobby when you host. Everyone who joins plays them with you.{" "}
+          <Link href="/games/rule-out/packs" className="font-medium text-ember hover:text-ember/80">
+            {packsToBuy > 0 ? "Get more packs" : "See all packs"}
+          </Link>
+        </p>
+      </Section>
+
       <Section title="Email">
         <p className="truncate text-sm">{email}</p>
         <p className="mt-1 text-xs text-text-secondary">Only used to sign in. Never shown to other players.</p>
@@ -296,6 +325,12 @@ export function AccountPanel({
               Permanently delete your account and everything saved with it. Games stay free to play
               without an account.
             </p>
+            {boughtPacks.length > 0 && (
+              <p className="text-sm text-text-secondary">
+                Packs you bought ({boughtPacks.map((p) => p.name).join(", ")}) go with it and
+                can&apos;t be moved to another account.
+              </p>
+            )}
             <SmallButton tone="danger" onClick={() => setDeleteStep("confirm")}>
               <Trash2 className="h-4 w-4" />
               Delete my account
