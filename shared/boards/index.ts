@@ -7,7 +7,7 @@ import type { Board } from "./types.js";
 import { classicBoard } from "./classic.js";
 import { monsterMashBoard } from "./monsterMash.js";
 import { dogsBoard } from "./dogs.js";
-import { fantasyBoard } from "./placeholders.js";
+import { fantasyBoard } from "./fantasy.js";
 
 export type { Board, BoardCard, SuggestedQuestion } from "./types.js";
 
