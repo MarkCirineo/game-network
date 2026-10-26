@@ -208,7 +208,7 @@ no purple starry hat, no half-moon glasses), and the dwarf avoids Gimli
 | Hilda | queen | gray | | | | ✓ | | | ✓ |
 | Isolde | sorceress | black | | | | | ✓ hat | | |
 | Jorund | barbarian | blonde | ✓ | | | | | | ✓ |
-| Kade | rogue | brown | | | | | ✓ hood | | |
+| Kade | traveler | brown | | | | | ✓ hood | | ✓ |
 | Lyra | bard | red | | | | | ✓ feathered cap | | ✓ |
 | Mirren | elf mage | white | | ✓ | | | | ✓ | |
 | Nyx | orc warrior | black | | | ✓ | | | | |
@@ -235,7 +235,7 @@ no purple starry hat, no half-moon glasses), and the dwarf avoids Gimli
 8. **Hilda:** `Hilda: an older queen with gray hair in a bun, wearing a gold crown with red gems and a purple royal cloak, a warm smile. Light green background.`
 9. **Isolde:** `Isolde: a sorceress with long black hair, wearing a wide-brimmed dark green pointed witch hat and a dark green robe, a mysterious closed-mouth expression. Light orange background.`
 10. **Jorund:** `Jorund: a big barbarian with long blonde hair and a blonde beard, wearing a gray fur cloak over bare shoulders, no helmet, a hearty laughing smile. Light blue background.`
-11. **Kade:** `Kade: a young rogue with messy brown hair under a dark gray hood, a small scar on one cheek, wearing a dark leather jacket, a sly closed-mouth smirk. Light pink background.`
+11. **Kade:** `Kade: a friendly young traveler with messy brown hair poking out from under a brown cloth hood that is pulled up over his head, wearing a simple tan tunic with a small satchel strap across his chest, a cheerful grin. Light pink background.` (The earlier "hooded rogue with a scar" version was refused as too close to existing characters.)
 12. **Lyra:** `Lyra: a bard woman with wavy red hair, wearing a green cap with a long white feather and a yellow tunic, a lute strap across her shoulder, a big smile. Light purple background.`
 13. **Mirren:** `Mirren: an elf mage with long white hair, pointed ears clearly visible, wearing small round glasses and a blue mage robe, no hat, a thoughtful expression. Light peach background.`
 14. **Nyx:** `Nyx: an orc warrior woman with green skin, two small tusks, long black hair in a ponytail, wearing dark iron shoulder armor, a fierce but friendly expression. Light yellow background.`
