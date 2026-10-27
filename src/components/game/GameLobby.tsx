@@ -163,7 +163,7 @@ export function GameLobby({
                           const num = Number(raw);
                           handleOptionChange(opt.key, isNaN(num) ? raw : num);
                         }}
-                        className="cursor-pointer rounded-lg border border-white/10 bg-elevated px-3 py-1.5 text-sm text-foreground outline-none transition-colors hover:border-white/20 focus:border-violet/50 focus:ring-1 focus:ring-violet/30"
+                        className="cursor-pointer rounded-lg border border-white/10 bg-elevated px-3 py-1.5 text-sm text-foreground outline-none transition-colors hover:border-white/20 focus:border-ember/50 focus:ring-1 focus:ring-ember/30"
                       >
                         {opt.options.map((o) => (
                           <option key={String(o.value)} value={String(o.value)}>
@@ -186,7 +186,7 @@ export function GameLobby({
                         max={opt.max}
                         value={Number(gameOptions[opt.key] ?? opt.default)}
                         onChange={(e) => handleOptionChange(opt.key, Number(e.target.value))}
-                        className="w-20 rounded-lg border border-white/10 bg-elevated px-3 py-1.5 text-sm text-foreground outline-none transition-colors hover:border-white/20 focus:border-violet/50 focus:ring-1 focus:ring-violet/30"
+                        className="w-20 rounded-lg border border-white/10 bg-elevated px-3 py-1.5 text-sm text-foreground outline-none transition-colors hover:border-white/20 focus:border-ember/50 focus:ring-1 focus:ring-ember/30"
                       />
                     ) : (
                       <span className="rounded-lg bg-elevated px-3 py-1.5 text-sm text-muted-foreground">
@@ -224,7 +224,7 @@ export function GameLobby({
               className={cn(
                 "inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold transition-all xl:py-3.5 xl:text-base",
                 canStart && !isStarting
-                  ? "bg-violet text-white shadow-lg shadow-violet/25 hover:bg-violet/90 active:translate-y-px"
+                  ? "bg-ember text-white shadow-lg shadow-ember/25 hover:bg-ember/90 active:translate-y-px"
                   : "cursor-not-allowed bg-elevated text-text-muted"
               )}
             >
@@ -268,7 +268,7 @@ export function GameLobby({
         {[0, 1, 2].map((i) => (
           <span
             key={i}
-            className="h-1.5 w-1.5 rounded-full bg-violet/60"
+            className="h-1.5 w-1.5 rounded-full bg-ember/60"
             style={{
               animation: "pulse 1.4s ease-in-out infinite",
               animationDelay: `${i * 0.2}s`,
