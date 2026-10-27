@@ -50,6 +50,20 @@ export const FEATURES: Record<FeatureKey, ComingSoonFeature> = {
   },
 };
 
+/**
+ * Features that have launched, and where their link now goes. The
+ * page promises "this same link will take you straight to it", so a
+ * launched key redirects instead of showing the coming-soon card.
+ */
+export const LIVE_FEATURE_PATHS: Partial<Record<FeatureKey, string>> = {
+  packs: "/games/rule-out/packs",
+};
+
+/** Features still to come (launched ones drop out of the lists) */
+export const PLANNED_FEATURE_KEYS: FeatureKey[] = FEATURE_KEYS.filter(
+  (key) => !LIVE_FEATURE_PATHS[key],
+);
+
 export interface ParsedFeature {
   /** The matched feature, or null for a missing/unknown value */
   key: FeatureKey | null;

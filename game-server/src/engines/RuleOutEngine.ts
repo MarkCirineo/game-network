@@ -10,6 +10,8 @@ import { GameEngine } from '../GameEngine.js';
 import type { PlayerInfo, GameStatus } from '../../../shared/messages.js';
 import type { GameOptionSchema } from '../../../shared/gameOptions.js';
 import { getBoard, DEFAULT_BOARD_ID } from '../../../shared/boards/index.js';
+import { getPack } from '../../../shared/boards/packs.js';
+import { verifyPackPass } from '../../../shared/packPass.js';
 import {
   normalizeQuestion,
   RULE_OUT_MAX_HISTORY,
@@ -55,6 +57,29 @@ export class RuleOutEngine extends GameEngine {
         default: 'free',
       },
     ];
+  }
+
+  /** The schema options plus the board (a known board id, else the default) */
+  describeOptions(options: Record<string, unknown>): Record<string, string | number> {
+    return { ...super.describeOptions(options), board: getBoard(options.board).id };
+  }
+
+  /**
+   * Boards outside the free packs need a pass the site signed for this
+   * board in this room (see shared/packPass.ts). The pass is dropped
+   * from the kept options; unknown boards fall back to the default.
+   */
+  checkStartOptions(
+    options: Record<string, unknown>,
+    roomCode: string,
+  ): { ok: true; options: Record<string, unknown> } | { ok: false; message: string } {
+    const { boardPass, ...rest } = options;
+    const pack = getPack(rest.board);
+    if (!pack) return { ok: true, options: { ...rest, board: DEFAULT_BOARD_ID } };
+    if (pack.access === 'free' || verifyPackPass(boardPass, pack.id, roomCode)) {
+      return { ok: true, options: rest };
+    }
+    return { ok: false, message: `The host can't use the ${pack.name} pack. Pick another board.` };
   }
 
   createInitialState(players: PlayerInfo[], options?: Record<string, unknown>): RuleOutState {

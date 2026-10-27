@@ -70,7 +70,7 @@ export default function PrivacyPage() {
             Privacy Policy
           </h1>
           <p className="mt-2 text-text-muted text-sm">
-            Last updated: October 16, 2026
+            Last updated: October 21, 2026
           </p>
         </div>
 
@@ -114,8 +114,9 @@ export default function PrivacyPage() {
               information we collect, how we use it, and what choices you have.
               The short version: <strong className="text-text-primary">accounts are optional, and without one we collect no personal data.</strong>{" "}
               Every game works without an account. If you do make one, we store
-              only what&apos;s needed to sign you in and show your username,
-              and we never store your real name or photo. We don&apos;t use
+              only what&apos;s needed to sign you in, show your username, and
+              remember what you&apos;ve played and bought, and we never store
+              your real name or photo. We don&apos;t use
               tracking cookies.
             </p>
           </SectionCard>
@@ -219,6 +220,13 @@ export default function PrivacyPage() {
                 puzzles you played in that browser as a guest are added to your
                 account.
               </li>
+              <li>
+                <strong className="text-text-primary">Packs you own</strong>{" "}
+                — which board packs you&apos;ve bought (or were given), when,
+                and the Stripe checkout ID of each purchase, so we can match
+                refunds. We never see or store your card details: payment
+                happens on Stripe&apos;s checkout page.
+              </li>
             </ul>
             <p>
               We don&apos;t sell this information or use it for advertising.
@@ -305,6 +313,11 @@ export default function PrivacyPage() {
                     <td className="py-2.5">Your email address and the email we send, only if you have an account</td>
                   </tr>
                   <tr className="border-b border-white/5">
+                    <td className="py-2.5 pr-4">Stripe (Link)</td>
+                    <td className="py-2.5 pr-4">Sells and takes payment for purchases, as the merchant of record</td>
+                    <td className="py-2.5">What you enter at checkout (email, name, billing address, payment details), only if you buy something</td>
+                  </tr>
+                  <tr className="border-b border-white/5">
                     <td className="py-2.5 pr-4">Discord</td>
                     <td className="py-2.5 pr-4">Delivers Feedback form messages to a private channel</td>
                     <td className="py-2.5">Only what you send in the Feedback form</td>
@@ -362,7 +375,9 @@ export default function PrivacyPage() {
             <p>
               If you have an account, we keep its information until you delete
               the account. Deleting it removes your account, username, sign-in
-              methods, and sessions right away. Sessions you stop using expire
+              methods, sessions, and the packs you own right away. Stripe keeps
+              its own records of any purchases, as payment and tax laws
+              require. Sessions you stop using expire
               after 30 days.
             </p>
             <p>

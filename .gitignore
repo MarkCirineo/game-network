@@ -45,3 +45,6 @@ next-env.d.ts
 
 # database backups (production server)
 /docker/backups/
+
+# Raw pack art from the image generator (processed copies go in public/boards)
+/art/

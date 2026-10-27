@@ -104,6 +104,9 @@ export class Room {
   /** Resolved game options for the current/last game */
   private gameOptions: Record<string, unknown> = {};
 
+  /** The host's lobby choices so far (vetted by the engine), shown to everyone */
+  private lobbyOptions: Record<string, string | number> = {};
+
   /** Order of player joins (for host migration) */
   private joinOrder: string[];
 
@@ -200,6 +203,7 @@ export class Room {
           : this.gameEngine.getPlayerView(this.gameState, viewerId),
       createdAt: this.createdAt,
       gameOptionsSchema: this.gameEngine.getOptionsSchema(),
+      lobbyOptions: this.lobbyOptions,
     };
   }
 
@@ -593,6 +597,9 @@ export class Room {
       case 'start_game':
         this.handleStartGame(playerId, msg.options);
         break;
+      case 'lobby_options':
+        this.handleLobbyOptions(playerId, msg.options);
+        break;
       case 'game_action':
         this.handleGameAction(playerId, msg.action);
         break;
@@ -647,6 +654,14 @@ export class Room {
     this.markDirty();
   }
 
+  /** The host's lobby choices, shared so everyone sees e.g. the board picked */
+  private handleLobbyOptions(playerId: string, options: unknown): void {
+    if (playerId !== this.hostId || this.phase !== 'waiting') return;
+    if (!options || typeof options !== 'object' || Array.isArray(options)) return;
+    this.lobbyOptions = this.gameEngine.describeOptions(options as Record<string, unknown>);
+    this.broadcast({ type: 'lobby_options', options: this.lobbyOptions });
+  }
+
   private handleStartGame(playerId: string, options?: Record<string, unknown>): void {
     // Only the host can start
     if (playerId !== this.hostId) {
@@ -671,7 +686,12 @@ export class Room {
 
     // Resolve options: merge user options with engine defaults
     const defaults = this.gameEngine.getDefaultOptions();
-    this.gameOptions = { ...defaults, ...options };
+    const checked = this.gameEngine.checkStartOptions({ ...defaults, ...options }, this.roomCode);
+    if (!checked.ok) {
+      this.sendErrorToPlayer(playerId, 'PACK_LOCKED', checked.message);
+      return;
+    }
+    this.gameOptions = checked.options;
 
     // Create initial game state
     const playerInfos = Array.from(this.players.values()).map((p) => this.toPlayerInfo(p));
@@ -804,22 +824,13 @@ export class Room {
   }
 
   /**
-   * The chosen game options as option_<key> properties. Only keys and
-   * values the game's options schema defines are reported, since the
-   * options arrive from the client.
+   * The chosen game options as option_<key> properties: only what the
+   * engine's describeOptions vouches for, since options come from the client.
    */
   private optionsForAnalytics(): Record<string, string | number> {
     const props: Record<string, string | number> = {};
-    for (const schema of this.gameEngine.getOptionsSchema()) {
-      const value = this.gameOptions[schema.key];
-      if (schema.type === 'select') {
-        const known = schema.options?.some((o) => o.value === value);
-        if (known && (typeof value === 'string' || typeof value === 'number')) {
-          props[`option_${schema.key}`] = value;
-        }
-      } else if (typeof value === 'number' && Number.isFinite(value)) {
-        props[`option_${schema.key}`] = value;
-      }
+    for (const [key, value] of Object.entries(this.gameEngine.describeOptions(this.gameOptions))) {
+      props[`option_${key}`] = value;
     }
     return props;
   }

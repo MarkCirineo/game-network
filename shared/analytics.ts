@@ -81,6 +81,12 @@ export interface ClientEvents {
   'daily-share': { puzzle: number; method: 'share-sheet' | 'copy' };
   /** The "save your streak" sign-in prompt on the results screen */
   'daily-signin-prompt': { action: 'shown' | 'sign-in' | 'not-now'; streak: number };
+
+  // ---- Rule Out board packs ----
+  /** Clicked a buy button on the packs page; item is a pack id or "bundle" */
+  'pack-checkout-start': { item: string };
+  /** Came back from a paid checkout; packs is a comma-separated list of pack ids */
+  'pack-purchase': { packs: string; count: number };
 }
 
 /**
@@ -104,7 +110,8 @@ export interface ServerEvents {
   'room-created': { game: string };
   /**
    * A game started — every game, including rematches. Game options
-   * are added as option_<key> properties (e.g. option_theme).
+   * are added as option_<key> properties (e.g. option_theme, and
+   * option_board for Rule Out's board pack).
    */
   'game-started': { game: string; players: number; game_number: number; rematch: boolean };
   /** A game ended */

@@ -8,13 +8,23 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { ArrowRight, Loader2 } from "lucide-react";
+import { saveRoomOptions } from "@/lib/utils/roomOptions";
 
 interface CreateRoomButtonProps {
   gameId: string;
   accentColor: string;
+  /** Button text (default "Create Room") */
+  label?: string;
+  /** Starting lobby options for the new room, e.g. { board: "dogs" } */
+  initialOptions?: Record<string, unknown>;
 }
 
-export function CreateRoomButton({ gameId, accentColor }: CreateRoomButtonProps) {
+export function CreateRoomButton({
+  gameId,
+  accentColor,
+  label = "Create Room",
+  initialOptions,
+}: CreateRoomButtonProps) {
   const router = useRouter();
   const [isCreating, setIsCreating] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -58,6 +68,7 @@ export function CreateRoomButton({ gameId, accentColor }: CreateRoomButtonProps)
       }
 
       if (data?.roomCode) {
+        if (initialOptions) saveRoomOptions(data.roomCode, initialOptions);
         router.push(`/room/${data.roomCode}`);
       } else {
         throw new Error("Invalid response from server");
@@ -86,7 +97,7 @@ export function CreateRoomButton({ gameId, accentColor }: CreateRoomButtonProps)
           </>
         ) : (
           <>
-            Create Room
+            {label}
             <ArrowRight className="h-4 w-4" />
           </>
         )}

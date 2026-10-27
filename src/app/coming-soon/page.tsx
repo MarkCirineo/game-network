@@ -7,11 +7,13 @@
 
 import type { Metadata } from "next";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import type { LucideIcon } from "lucide-react";
 import { ArrowRight, ImagePlus, Layers, Sparkles, Trophy } from "lucide-react";
 import {
   FEATURES,
-  FEATURE_KEYS,
+  LIVE_FEATURE_PATHS,
+  PLANNED_FEATURE_KEYS,
   parseFeature,
   type FeatureKey,
 } from "@/lib/comingSoon";
@@ -47,9 +49,16 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
 }
 
 export default async function ComingSoonPage({ searchParams }: Props) {
-  const { key, tracked } = parseFeature((await searchParams).feature);
+  const params = await searchParams;
+  const { key, tracked } = parseFeature(params.feature);
+
+  // Launched: send the link straight to the feature, keeping utm_* etc.
+  // so analytics still sees where the visit came from
+  const livePath = key ? LIVE_FEATURE_PATHS[key] : undefined;
+  if (livePath) redirect(withQuery(livePath, params));
+
   const feature = key ? FEATURES[key] : null;
-  const otherKeys = FEATURE_KEYS.filter((k) => k !== key);
+  const otherKeys = PLANNED_FEATURE_KEYS.filter((k) => k !== key);
 
   return (
     <div className="px-4 py-8 md:py-12">
@@ -190,6 +199,20 @@ export default async function ComingSoonPage({ searchParams }: Props) {
       </div>
     </div>
   );
+}
+
+/** The path plus every query parameter except "feature" */
+function withQuery(
+  path: string,
+  params: { [key: string]: string | string[] | undefined },
+): string {
+  const query = new URLSearchParams();
+  for (const [name, value] of Object.entries(params)) {
+    if (name === "feature" || value === undefined) continue;
+    for (const v of Array.isArray(value) ? value : [value]) query.append(name, v);
+  }
+  const qs = query.toString();
+  return qs ? `${path}?${qs}` : path;
 }
 
 function FeatureIcon({

@@ -35,6 +35,8 @@ export interface RoomState {
   gameState?: unknown;
   createdAt: number;
   gameOptionsSchema?: GameOptionSchema[];
+  /** The host's current lobby choices, for everyone to see (only vetted values) */
+  lobbyOptions?: Record<string, string | number>;
 }
 
 export interface GameStatus {
@@ -53,6 +55,8 @@ export type ClientMessage =
   | { type: 'game_action'; action: unknown }
   | { type: 'player_ready' }
   | { type: 'start_game'; options?: Record<string, unknown> }
+  /** Host only: the options picked so far in the lobby, shown to everyone */
+  | { type: 'lobby_options'; options: Record<string, unknown> }
   | { type: 'rematch_request' }
   | { type: 'ping' };
 
@@ -72,6 +76,7 @@ export type ServerMessage =
   | { type: 'game_over'; result: GameStatus }
   | { type: 'host_changed'; newHostId: string }
   | { type: 'rematch_requested'; playerId: string }
+  | { type: 'lobby_options'; options: Record<string, string | number> }
   | { type: 'error'; code: ErrorCode; message: string }
   | { type: 'pong' };
 
@@ -92,7 +97,9 @@ export type ErrorCode =
   | 'INVALID_MESSAGE'
   | 'RATE_LIMITED'
   | 'SESSION_CONFLICT'
-  | 'DUPLICATE_NAME';
+  | 'DUPLICATE_NAME'
+  /** The host picked a board pack they can't use (no account, not bought, or an expired pass) */
+  | 'PACK_LOCKED';
 
 // ------------------------------------------------------------
 // Internal Server Messages (game server ↔ Next.js API)

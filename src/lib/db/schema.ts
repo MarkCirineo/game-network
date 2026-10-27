@@ -10,7 +10,7 @@
 // ============================================================
 
 import { relations, sql } from "drizzle-orm";
-import { boolean, index, integer, jsonb, pgTable, text, timestamp, uniqueIndex } from "drizzle-orm/pg-core";
+import { boolean, index, integer, jsonb, pgTable, primaryKey, text, timestamp, uniqueIndex } from "drizzle-orm/pg-core";
 
 export const user = pgTable("user", {
   id: text("id").primaryKey(),
@@ -160,3 +160,24 @@ export interface DailyPlayRound {
   guess: string[];
   marks: number[];
 }
+
+/**
+ * Rule Out board packs an account owns, one row per pack (pack ids
+ * are in shared/boards/packs.ts). Packs that are free with an account
+ * need no row. `source` is "purchase" for a Stripe checkout (with its
+ * session id, so a repeated webhook can't add a pack twice) or
+ * "grant" for packs given by hand.
+ */
+export const ownedPack = pgTable(
+  "owned_pack",
+  {
+    userId: text("user_id")
+      .notNull()
+      .references(() => user.id, { onDelete: "cascade" }),
+    packId: text("pack_id").notNull(),
+    source: text("source").$type<"purchase" | "grant">().notNull(),
+    checkoutSessionId: text("checkout_session_id"),
+    acquiredAt: timestamp("acquired_at").defaultNow().notNull(),
+  },
+  (table) => [primaryKey({ columns: [table.userId, table.packId] })],
+);

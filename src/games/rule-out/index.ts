@@ -9,6 +9,8 @@ import { getCatalogGame } from '@/lib/gameCatalog';
 import type { RuleOutState, RuleOutAction } from './types';
 import RuleOutGame from './RuleOutGame';
 import RuleOutResult from './RuleOutResult';
+import BoardPicker from './BoardPicker';
+import { prepareRuleOutStart } from './packs';
 
 export type { RuleOutState, RuleOutAction } from './types';
 
@@ -43,6 +45,8 @@ const ruleOut: GameDefinition<RuleOutState, RuleOutAction> = {
       default: 'free',
     },
   ],
+  LobbyOptions: BoardPicker,
+  prepareStart: prepareRuleOutStart,
 };
 
 export default ruleOut;
