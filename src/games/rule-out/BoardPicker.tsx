@@ -3,6 +3,8 @@
 // The host picks which board pack the room plays. Locked packs
 // explain how to unlock them; those links open in a new tab so the
 // host keeps the room, and the list refreshes when they come back.
+// Signing in there ends on /signed-in rather than the room, so the
+// host doesn't join their own room a second time.
 // Joiners see the board the host has picked so far.
 // ============================================================
 
@@ -12,6 +14,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Check, Layers, Lock } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { openSignInTab, SIGN_IN_TAB_HREF } from '@/lib/signInTab';
 import type { LobbyOptionsProps } from '@/games/types';
 import { getBoard, DEFAULT_BOARD_ID } from '../../../shared/boards';
 import { BOARD_PACKS } from '../../../shared/boards/packs';
@@ -25,7 +28,7 @@ function badge(pack: PackWithStatus | undefined): { text: string; tone: string }
   return { text: 'Free', tone: 'text-text-secondary' };
 }
 
-export default function BoardPicker({ roomCode, isHost, options, onOptionsChange }: LobbyOptionsProps) {
+export default function BoardPicker({ isHost, options, onOptionsChange }: LobbyOptionsProps) {
   const statuses = usePackStatuses();
   const selectedId = typeof options.board === 'string' ? options.board : DEFAULT_BOARD_ID;
   const selected = statuses?.find((p) => p.id === selectedId);
@@ -114,8 +117,11 @@ export default function BoardPicker({ roomCode, isHost, options, onOptionsChange
               {selected.name} is free with an account. Only you need one: your friends join
               without signing in.{' '}
               <Link
-                href={`/sign-in?next=${encodeURIComponent(`/room/${roomCode}`)}`}
+                href={SIGN_IN_TAB_HREF}
                 target="_blank"
+                onClick={(e) => {
+                  if (openSignInTab()) e.preventDefault();
+                }}
                 className="font-semibold text-cyan hover:text-cyan/80"
               >
                 Sign in or create an account

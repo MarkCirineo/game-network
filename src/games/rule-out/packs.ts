@@ -5,6 +5,7 @@
 // ============================================================
 
 import { useCallback, useEffect, useState } from 'react';
+import { listenForSignIn } from '@/lib/signInTab';
 import { getPack, type BoardPack } from '../../../shared/boards/packs';
 
 export type PackStatus = 'unlocked' | 'sign-in' | 'buy';
@@ -19,8 +20,8 @@ export const PACKS_PATH = '/games/rule-out/packs';
 
 /**
  * Pack statuses for this browser's account (or signed out). Reloads
- * when the tab regains focus, so signing in or buying in another tab
- * shows up without a refresh.
+ * when the tab regains focus or another tab finishes signing in, so
+ * signing in or buying in another tab shows up without a refresh.
  */
 export function usePackStatuses(): PackWithStatus[] | null {
   const [packs, setPacks] = useState<PackWithStatus[] | null>(null);
@@ -38,7 +39,11 @@ export function usePackStatuses(): PackWithStatus[] | null {
     // eslint-disable-next-line react-hooks/set-state-in-effect -- fetch on mount
     load();
     window.addEventListener('focus', load);
-    return () => window.removeEventListener('focus', load);
+    const stopListening = listenForSignIn(load);
+    return () => {
+      window.removeEventListener('focus', load);
+      stopListening();
+    };
   }, [load]);
 
   return packs;
