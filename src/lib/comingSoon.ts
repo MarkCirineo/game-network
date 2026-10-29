@@ -21,11 +21,12 @@ export interface ComingSoonFeature {
 export const FEATURES: Record<FeatureKey, ComingSoonFeature> = {
   "custom-boards": {
     key: "custom-boards",
-    title: "Custom photo boards",
+    title: "Build your own board",
     summary:
-      "Build a board for the game you came from using your own photos, then play it with a friend.",
+      "Make a board for the game you came from: pick characters from any board and give them your own names, then play it with a friend.",
     plans: [
-      "Upload your own pictures to make a set of cards",
+      "Choose which characters go on your board",
+      "Give each card any name you like",
       "Share the board only with the people you play with",
     ],
   },

@@ -9,7 +9,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import type { LucideIcon } from "lucide-react";
-import { ArrowRight, ImagePlus, Layers, Sparkles, Trophy } from "lucide-react";
+import { ArrowRight, Layers, PencilLine, Sparkles, Trophy } from "lucide-react";
 import {
   FEATURES,
   LIVE_FEATURE_PATHS,
@@ -27,7 +27,7 @@ type Props = {
 
 // Icon + color per feature (full class strings so Tailwind picks them up)
 const FEATURE_STYLE: Record<FeatureKey, { icon: LucideIcon; tone: string }> = {
-  "custom-boards": { icon: ImagePlus, tone: "bg-pink/10 text-pink" },
+  "custom-boards": { icon: PencilLine, tone: "bg-pink/10 text-pink" },
   stats: { icon: Trophy, tone: "bg-cyan/10 text-cyan" },
   packs: { icon: Layers, tone: "bg-amber/10 text-amber" },
 };
